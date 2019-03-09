@@ -1,0 +1,298 @@
+ <div class="container-fluid">
+     <div id="facaseujogo" class="anchor"></div>
+    <div class="aposta-desc bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aposta-descricao" v-if="loteria && apostar.isHome">
+                        <div class="row padding-bottom">
+                            <div class="col-xs-2"> <span class="title">CONCURSO</span><div> {{ loteria.concurso.Numero || loteria.concurso.NumeroConcurso }}</div></div>
+                            <div class="col-xs-2"> <span class="title">SORTEIO</span><div> {{ loteria.diaSorteio }}</div></div>
+                            <div class="col-xs-2"> <span class="title"> PRÊMIO ESTIMADO</span><div> {{ loteria.estimativaPremio }}</div></div>
+                            <div class="col-xs-6 clock"><span class="horario-concurso col-xs-12"><i class="far fa-clock"></i>&nbsp;{{ loteria.timer }}</span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                {{ loteria.descricao }}
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" v-if="apostar.isSelected(loteria) && loteria.hasFacaSeuJogo && loteria.isLotogol">
+        @Html.Partial("/Views/Home/Apostar/Lotogol.cshtml")
+    </div>
+    <div class="container" v-if="apostar.isSelected(loteria) && loteria.hasFacaSeuJogo && loteria.isLoteca">
+        @Html.Partial("/Views/Home/Apostar/Loteca.cshtml")
+    </div>
+    <div class="container container-apostar" v-if="apostar.isSelected(loteria) && loteria.hasFacaSeuJogo && loteria.isDezenas">
+       
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="color opcoes-aposta">opções para fazer sua aposta</h4>
+                <p class="instrucoes no-mobile">
+                    Aposte com seus próprios números na {{ loteria.nome }}, como se estivesse em uma casa lotérica.
+                    Escolha suas dezenas e boa sorte! Atenção: {{ loteria.mensagemHorarioLimite }}
+                </p>
+                <p class="instrucoes mobile">
+                        Use os números abaixo para definir sua aposta. É simples como se você estivesse em
+                        uma lotérica convencional. Mas aqui você pode mudar de ideia quantas vezes quiser
+                        antes de confirmar seu jogo. Essa é a hora de testar a sua Sorte!
+                </p>
+            </div>
+        </div>
+         <div class="row apostar-tabs">
+            <div class="line col-xs-12 bg">
+                 <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6" style="text-align: center;">
+                                <label for="exampleFormControlSelect2" class="label-surpresinha">SUPRESINHA</label>
+                            </div>
+                            <div class="col-xs-2">
+                                <select id="hintQty" name="hintQty" v-model="apostar.hintQty" class="input input-dark input_hint_qty bg" autocomplete="off">
+                                    <option v-for="i in loteria.ConcursoFacaJogo.MaximoDeDezenasJogo-loteria.ConcursoFacaJogo.MininoDezena+1" v-bind:value="loteria.ConcursoFacaJogo.MininoDezena+i-1">{{(loteria.ConcursoFacaJogo.MininoDezena+i-1).format('00')}}</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-4">
+                                <button type="button" class="btn btn-testarpalpite center-block color" v-on:click="apostar.hint(loteria, 0)">OK</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="jogo_header no-mobile">
+                    <h5 class="color">escolha suas dezenas favoritas</h5>
+                    <p class="instrucoes">
+                        Use os números abaixo para definir sua aposta. É simples como se você estivesse em
+                        uma lotérica convencional. Mas aqui você pode mudar de ideia quantas vezes quiser
+                        antes de confirmar seu jogo. Essa é a hora de testar a sua Sorte!
+                    </p>
+                </div>
+                <div class="jogo_cartela">
+                    <form name="form_hint" autocomplete="off" parsed="true">
+                        <div class="card ">
+                            <div class="units-container">
+                                <ul class="units">
+                                    <li v-for="i in loteria.ConcursoFacaJogo.Dezenas">
+                                        <button type="button" class="unit bg-hover" v-on:click="apostar.toogleDozen(loteria, i, 0)" v-bind:class="['unit_' + (i == 100 ? 0 : i).format('00'), apostar.game(loteria, 0).isSelected(i) ? 'bg' : '']" v-bind:data-dozen="(i == 100 ? 0 : i).format('00')">{{ (i == 100 ? 0 : i).format('00') }}</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                   
+                    <div class="jogo_footer">
+                         <div class="col-md-12 timeDoCoracao" v-if="loteria.ConcursoFacaJogo.times">
+                            <i class="far fa-heart col-md-2"></i>
+                            <select v-model="apostar.game(loteria, 0).timeDoCoracao">
+                                <option v-for="time in loteria.ConcursoFacaJogo.times" v-bind:value="time.Key">{{time.Value}}</option>
+                            </select>
+                    </div>
+                    <div class="col-md-12 timeDoCoracao" v-if="loteria.class == 'diadesorte'">
+                            <select v-model="apostar.game(loteria, 0).mesDeSorte">
+                                <option v-for="mes, index in apostar.meses()" v-bind:value="index+1">{{mes}}</option>
+                            </select>
+                    </div>
+                        <div class="jogo_footer_container jogo_footer_container-left no-mobile" >
+                            <p v-if="loteria.ConcursoFacaJogo.MininoDezena != loteria.ConcursoFacaJogo.MaximoDeDezenasJogo">Quantidade de dezenas possíveis:&nbsp <b>{{ loteria.ConcursoFacaJogo.MininoDezena.format('00') }} a {{ loteria.ConcursoFacaJogo.MaximoDeDezenasJogo.format('00') }}</b></p>
+                            <p v-if="loteria.ConcursoFacaJogo.MininoDezena == loteria.ConcursoFacaJogo.MaximoDeDezenasJogo">Quantidade de dezenas possíveis:&nbsp <b>{{ loteria.ConcursoFacaJogo.MininoDezena.format('00') }}</b></p>
+                            <p>Dezenas selecionadas:&nbsp <b>{{apostar.game(loteria, 0).quantitySelected}}</b></p>
+                        </div>
+                          <div class="jogo_footer_container jogo_footer_container-right no-mobile">
+                          <span v-on:click="apostar.cleanGame(loteria, 0)">limpar</span>
+                             <i class="far fa-trash-alt fa-lg" v-on:click="apostar.cleanGame(loteria, 0)"></i>
+                         </div>
+                    </div>
+                </div>
+                 <div class="no-padding col-xs-12 mobile jogo-footer" >
+                     <div class="no-padding col-xs-12" v-if="loteria.ConcursoFacaJogo.MininoDezena != loteria.ConcursoFacaJogo.MaximoDeDezenasJogo">Mínimo de dezenas:&nbsp <b>{{ loteria.ConcursoFacaJogo.MininoDezena.format('00') }} a {{ loteria.ConcursoFacaJogo.MaximoDeDezenasJogo.format('00') }}</b></div>
+                     <div class="no-padding col-xs-12" v-if="loteria.ConcursoFacaJogo.MininoDezena == loteria.ConcursoFacaJogo.MaximoDeDezenasJogo">Mínimo de dezenas::&nbsp <b>{{ loteria.ConcursoFacaJogo.MininoDezena.format('00') }}</b></div>
+                     <div class="no-padding col-xs-12">Dezenas selecionadas:&nbsp <b>{{apostar.game(loteria, 0).quantitySelected}}</b> <i class="far fa-trash-alt fa-lg" v-on:click="apostar.cleanGame(loteria, 0)"></i></div>
+                 </div>
+                
+                 
+                 <div class="col-md-12  jogo_footer btn-jogar-left">
+                     <button type="button" class="btn center-block bg bg-hover" v-on:click="apostar.add(loteria, 0)">incluir aposta</button>
+                 </div>
+            </div>
+            <div class="col-md-2 coluna-central no-mobile">
+                <p class="color ou">ou</p>
+            </div>
+            <div class="col-md-5 no-mobile">
+                <div class="jogo_header">
+                    <h5 class="color">
+                        use nosso palpite
+                        <font class="color-secondary">(surpresinha)</font>
+                    </h5>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="cold-md-12">
+                                <label for="exampleFormControlSelect2" class="label1">Quantas dezenas deseja em sua aposta?</label>
+                                <select id="hintQty" name="hintQty" v-model="apostar.hintQty" class="input input-dark input_hint_qty" autocomplete="off">
+                                    <option v-for="i in loteria.ConcursoFacaJogo.MaximoDeDezenasJogo-loteria.ConcursoFacaJogo.MininoDezena+1" v-bind:value="loteria.ConcursoFacaJogo.MininoDezena+i-1">{{(loteria.ConcursoFacaJogo.MininoDezena+i-1).format('00')}}</option>
+                                </select>
+                                <label for="exampleFormControlSelect2" class="label2">Quantas apostas deseja incluir?</label>
+                                <select id="hintTotal" name="hintTotal" v-model="apostar.hintTotal" class="input input-dark input_hint_qty" autocomplete="off">
+                                    <option v-for="i in 100" v-bind:value="i">{{i.format('00')}}</option>
+                                </select>
+                            </div>
+                            <div class="cold-md-12">
+                                <button type="button" class="btn btn-testarpalpite center-block bg bg-hover" v-on:click="apostar.hint(loteria, 1)">testar palpite</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="jogo_cartela">
+                    <form name="form_hint" autocomplete="off" parsed="true">
+                        <div class="card ">
+                            <div class="units-container">
+                                <ul class="units">
+                                    <li v-for="i in loteria.ConcursoFacaJogo.Dezenas">
+                                        <button type="button" class="unit bg-hover" v-on:click="apostar.toogleDozen(loteria, i, 1)" v-bind:class="['unit_' + (i == 100 ? 0 : i).format('00'), apostar.game(loteria, 1).isSelected(i) ? 'bg' : '']" v-bind:data-dozen="(i == 100 ? 0 : i).format('00')">{{ (i == 100 ? 0 : i).format('00') }}</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                     
+                    <div class="jogo_footer">
+                        <div class="col-md-12 timeDoCoracao" v-if="loteria.ConcursoFacaJogo.times">
+                            <i class="far fa-heart col-md-2"></i>
+                            <select v-model="apostar.game(loteria, 1).timeDoCoracao">
+                                <option v-for="time in loteria.ConcursoFacaJogo.times" v-bind:value="time.Key">{{time.Value}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 timeDoCoracao" v-if="loteria.class == 'diadesorte'">
+                                <select v-model="apostar.game(loteria, 1).mesDeSorte">
+                                    <option v-for="mes, index in apostar.meses()" v-bind:value="index+1">{{mes}}</option>
+                                </select>
+                        </div>
+                        <div class="jogo_footer_container jogo_footer_container-left">
+                            <p v-if="loteria.ConcursoFacaJogo.MininoDezena != loteria.ConcursoFacaJogo.MaximoDeDezenasJogo">Quantidade de dezenas possíveis:&nbsp <b>{{ loteria.ConcursoFacaJogo.MininoDezena.format('00') }} a {{ loteria.ConcursoFacaJogo.MaximoDeDezenasJogo.format('00') }}</b></p>
+                            <p v-if="loteria.ConcursoFacaJogo.MininoDezena == loteria.ConcursoFacaJogo.MaximoDeDezenasJogo">Quantidade de dezenas possíveis:&nbsp <b>{{ loteria.ConcursoFacaJogo.MininoDezena.format('00') }}</b></p>
+                            <p>Dezenas selecionadas:&nbsp <b>{{apostar.game(loteria, 1).quantitySelected}}</b></p>
+                        </div>
+                        <div class="jogo_footer_container jogo_footer_container-right">
+                            <span v-on:click="apostar.cleanGame(loteria, 1)">limpar</span>
+                            <i class="far fa-trash-alt fa-lg" v-on:click="apostar.cleanGame(loteria, 1)"></i>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="button" class="btn center-block bg bg-hover" v-on:click="apostar.add(loteria, 1)">incluir aposta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" v-if="apostar.selected.JogosNoCarrinho && apostar.selected.JogosNoCarrinho.length && apostar.selected.Loteria.Teimosinhas.length">
+                <div class="container-outras_opcoes bg-light">
+                    <div class="col-xs-12 col-md-4">
+                        <span class="title color">super teimosinha</span>
+                        <p class="desc">Você tem 2 opções para não perder mais nenhum concurso:</p>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <span class="title color no-mobile">1. renovação automática em ciclos de {{apostar.selected.Loteria.Teimosinhas[apostar.selected.Loteria.Teimosinhas.length-1]}} concursos:</span>
+                        <span class="title color mobile">1. renovação automática:</span>
+                        <div class="checkbox">
+                            <label class="desc">
+                                <span class="desc no-mobile">
+                                    Renovação Automática <input type="checkbox" v-model="apostar.isRecorrente()" v-on:click="apostar.toogleRecorrente()">
+                                </span>
+                                <span class="desc mobile">
+                                   Em ciclos de {{apostar.selected.Loteria.Teimosinhas[apostar.selected.Loteria.Teimosinhas.length-1]}}  concursos <input type="checkbox" v-model="apostar.isRecorrente()" v-on:click="apostar.toogleRecorrente()">
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <span class="title color">2. Quantidade de concursos</span>
+                        <p class="desc">Quantos concursos deseja concorrer com esta aposta?</p>
+                        <!-- <div class="slidecontainer">
+                            <input type="range" v-bind:min="1" v-bind:max="apostar.stepsTeimosinhas()-1" class="slider slider-thumb-bg" v-model="apostar.sliderConcursos" v-on:change="apostar.changeConcursos()">
+                          
+                            
+                        </div> -->
+                        <div class="slider-container">
+                              <!-- <input type="range" 
+                                    v-bind:min="1" 
+                                    v-bind:max="apostar.stepsTeimosinhas()-1" 
+                                    v-model="apostar.sliderConcursos" 
+                                    v-on:change="apostar.changeConcursos()"
+                                    list="tickmarks"> -->
+                              
+                              <div class="slider-range">
+                                  <span class="slider-completed-background bg"></span>
+                                  <span class="slider-pointer bg"></span>
+                              </div>
+                              <div class="slider-numbers"></div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="row ">
+                <div class="row mobile container-resumo-mobile bg bg-light" v-if="apostar.selected.JogosNoCarrinho && apostar.selected.JogosNoCarrinho.length">
+                    <div class="no-padding col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <b class="color title">Seu Carrinho:</b>
+                            </div>
+                        </div>
+                        <div class="row padding-left" v-for="aposta, index in apostar.selected.JogosNoCarrinho">
+                            <div class="no-padding col-xs-10">
+                                    Simples - {{aposta.Cartao.split('-')[0].trim().split(' ').length.format('00')}} Dezenas {{apostar.descricaoAposta(aposta)}} - <b class="color">{{aposta.ValorTotal.format('C2')}}</b>
+                            </div>
+                            <div class="no-padding col-xs-2">
+                                <i class="far fa-times-circle color" v-on:click="apostar.showGameDozens(aposta.Cartao)"></i>
+                                <i class="delete-game fas fa-trash-alt color" v-on:click="apostar.deleteGame(index+1, aposta.Loteria, aposta.NumeroConcurso)"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row container-outras_apostas no-mobile" v-if="apostar.selected.JogosNoCarrinho && apostar.selected.JogosNoCarrinho.length">
+                    <div class="col-md-12">
+                        <div v-for="aposta, index in apostar.selected.JogosNoCarrinho">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <form name="form_hint" autocomplete="off" parsed="true" >
+                                        <p class="titulo-outros_concursos color">{{aposta.Apostas.format("00")}} {{(aposta.Apostas > 1 ? 'apostas' : 'aposta')}}  {{apostar.descricaoAposta(aposta)}} </p>
+                                        <div class="card">
+                                            <div class="units-container">
+                                                <ul class="units">
+                                                    <li v-for="dozen in aposta.Cartao.split('-')[0].trim().split(' ')">
+                                                        <button type="button" class="unit bg-hover" autocomplete="off">{{parseInt(dozen).format("00")}}</button>
+                                                    </li>
+                                                    <li v-if="aposta.Cartao.split('-')[1]">
+                                                        <button type="button" class="unit bg-hover" autocomplete="off">{{aposta.Cartao.split('-')[1].trim()}}</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-sm-6 col-md-6 container-total_aposta">
+                                    <span class="qtde_aposta"> Simples - {{aposta.Apostas.format("00")}} {{(aposta.Apostas > 1 ? 'Apostas' : 'Aposta')}} </span>
+                                    <b class="valor_aposta color">{{aposta.ValorTotal.format('C2')}}</b>
+                                    <i class="delete-game fas fa-trash-alt" v-on:click="apostar.deleteGame(index+1, aposta.Loteria, aposta.NumeroConcurso)"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span class="total_aposta pull-right color">Total: {{apostar.totalApostas().format("C2")}}</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-success btn_finalizar-compra pull-right" v-on:click="apostar.go('/carrinho')">finalizar compra</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+      

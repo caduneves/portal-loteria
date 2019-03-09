@@ -1,0 +1,83 @@
+{
+    "home": {
+        "area": "carousel",
+        "routes": [
+            "/",
+            "/home",
+            "/home/index"
+        ],
+        "banners": [
+            {
+                "url": "/",
+                "url-tablet": "/",
+                "url-smartphone": "/",
+                "image": "/images/banner/banner_caranova_desktop.jpg",
+                "image-tablet": "/images/banner/banner_caranova_mobile.jpg",
+                "image-smartphone": "/images/banner/banner_caranova_mobile.jpg",
+                "start": "2018-01-23 19:00",
+                "end": "2018-08-23 19:00",
+                "midia": "3330"
+            }
+            
+        ]
+    },
+    "carrinho": {
+        "area": "top-banner",
+        "routes": [
+            "/carrinho"
+        ],
+        "banners":[
+            {
+                "url": "/quina/sao-joao",
+                "url-tablet": "/quina/sao-joao",
+                "url-smartphone": "/quina/sao-joao",
+                "image": "https://www.sorteonline.com.br/Content/assets/js/modules/banners/images/banner_sj_desk_19062018.jpg",
+                "image-tablet": "https://www.sorteonline.com.br/Content/assets/js/modules/banners/images/banner_sj_desk_19062018.jpg",
+                "image-smartphone": "https://www.sorteonline.com.br/Content/assets/js/modules/banners/images/banner_sj_desk_19062018.jpg",
+                "start": "2018-01-23 19:00",
+                "end": "2018-06-23 19:00",
+                "midia": "10348"
+            }
+        ]
+    },
+    "noticiasGeralTopo": {
+        "area": "top-banner",
+        "routes": [
+            "/noticias",
+            "/*/noticias"
+        ],
+        "banners":[
+            {
+                "url": "/quina/sao-joao",
+                "url-tablet": "/quina/sao-joao",
+                "url-smartphone": "/quina/sao-joao",
+                "image": "https://www.sorteonline.com.br/Content/assets/js/modules/banners/images/banner_sj_desk_19062018.jpg",
+                "image-tablet": "https://www.sorteonline.com.br/Content/assets/js/modules/banners/images/banner_sj_desk_19062018.jpg",
+                "image-smartphone": "https://www.sorteonline.com.br/Content/assets/js/modules/banners/images/banner_sj_desk_19062018.jpg",
+                "start": "2018-01-23 19:00",
+                "end": "2018-06-23 19:00",
+                "midia": "10348"
+            }
+        ]
+    },
+    "noticiasGeralCentro": {
+        "area": "center-banner",
+        "routes": [
+            "/noticias",
+            "/*/noticias"
+        ],
+        "banners":[
+            {
+                "url": "/quina/sao-joao",
+                "url-tablet": "/quina/sao-joao",
+                "url-smartphone": "/quina/sao-joao",
+                "image": "/images/banner/banner_facaseujogo.jpg",
+                "image-tablet": "/images/banner/banner_facaseujogo.jpg",
+                "image-smartphone": "/images/banner/banner_facaseujogo.jpg",
+                "start": "2018-01-23 19:00",
+                "end": "2018-06-23 19:00",
+                "midia": "10348"
+            }
+        ]
+    }
+}

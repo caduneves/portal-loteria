@@ -1,0 +1,55 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/fontawesome.all.min.css",
+      "wwwroot/css/bootstrap.css",
+      "wwwroot/css/owl.theme.default.css",
+      "wwwroot/css/owl.carousel.css",
+      "wwwroot/css/styles.css",
+      "wwwroot/css/minhas-compras.css",
+      "wwwroot/css/custom.css",
+      "wwwroot/css/aposta.css",
+      "wwwroot/css/verjogo.css",
+      "wwwroot/css/page.loteria.css",
+      "wwwroot/css/page.estatisticas.css",
+      "wwwroot/css/page.resultados.css",
+      "wwwroot/css/page.all-lotteries.css",
+      "wwwroot/css/component.header.css",
+      "wwwroot/css/component.whybet.css",
+      "wwwroot/css/component.lastresults.css",
+      "wwwroot/css/component.countryrewards.css",
+      "wwwroot/css/component.hero-rewards.css",
+      "wwwroot/css/component.hero-probabilities.css",
+      "wwwroot/css/component.hero-news.css",
+      "wwwroot/css/component.hero-great-rewards.css",
+      "wwwroot/css/component.mapa.css",
+      "wwwroot/css/component.slider.css",
+      "wwwroot/css/component.howto.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/dist/OneSignalSDK.js",
+      "wwwroot/js/dist/OneSIgnalConfig.js",
+      "wwwroot/js/dist/jquery.min.js",
+      "wwwroot/js/dist/bootstrap.min.js",
+      "wwwroot/js/dist/owl.carousel.js",
+      "wwwroot/js/components/mapa.js",
+      "wwwroot/js/dist/vue.min.js",
+      "wwwroot/js/dist/format-helper.min.js",
+      "wwwroot/js/dist/bundle.js",
+      "wwwroot/js/dist/tagmanager.js"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

@@ -1,0 +1,275 @@
+﻿<section id="ultimosresultados" data-vue="BannerResultados">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="">
+                    últimos resultados
+                </h4>
+                <p class="">Os resultados de todas as Loterias, sempre atualizados, você pode encontrar no Loteria Brasil!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" v-if="data.length">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-carousel owl-carousel-resultados owl-theme owl-drag">
+                    
+                    <div v-for="item in data" class="item bg" v-bind:class="['resultado-'+item.className, item.className]" v-if="!item.isLoteca && !item.isLotogol">
+                        <div class="radial-interno"></div>
+                        <span class="nome-concurso">{{item.loteriaNome}}</span>
+
+                        <div class="col-md-12 resultado-item-container" v-if="item.isDezenas && (item.Loteria != 9 && item.Loteria != 10 && item.Loteria != 2)">
+                            <div v-for="numeros in item.dezenas">
+                                <span v-for="dozen in numeros" class="resultado-item" v-bind:class="{ 'resultado-item-peq' : (item.dezenas[0].length > 6), 'resultado-item-grande' : (item.dezenas[0].length <= 6) }">{{dozen}}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12 resultado-item-container" v-if="item.isDezenas && item.Loteria == 2">
+                            <div v-for="(numeros, index) in item.dezenas">
+                                <div class="key">{{index + 1}}º Sorteio</div>
+                                <span v-for="dozen in numeros" class="resultado-item resultado-item-peq">{{dozen}}</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 resultado-item-container" v-if="item.isDezenas && (item.Loteria == 9 || item.Loteria == 10)">
+                            <div v-for="(numeros, index) in item.dezenas">
+                                <span v-for="dozen in numeros" v-if="index == 0" class="resultado-item resultado-item-peq">{{dozen}}</span>
+                                <div v-for="dozen in numeros" v-if="index == 1" class="key -big"><i class="fa fa-heart" v-if="item.Loteria == 9"></i> {{dozen}}</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 resultado-item-container" v-if="item.isFederal">
+                            <div>
+                                <span v-for="(dozen, index) in item.NumerosSorteados" class="resultado-item resultado-item-grande resultado-item-grande_lotfederal"><span class="color">{{index+1}}°</span> {{dozen.Value}}</span>
+                            </div>
+                        </div>
+
+                        <div class="footer-resultado">
+                            <div class="footer-container">
+                                <p>data sorteio</p>
+                                <span>{{item.diaSorteio}}</span>
+                            </div>
+                            <div class="footer-container">
+                                <p>concurso</p>
+                                <span>{{item.concurso}}</span>
+                            </div>
+                        </div>
+                    </div> <!--/.item -->
+
+                </div><!--/.owl-carousel -->
+            </div>
+        </div>
+    </div>
+
+ @*
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-carousel owl-carousel-resultados owl-theme owl-drag">
+                    <div class="item resultado-megasena mega-sena bg">
+                        <div class="radial-interno"></div>
+                        <span class="nome-concurso">mega-sena</span>
+                        <div class="col-md-12 resultado-item-container">
+                            <span class="resultado-item resultado-item-grande">01</span>
+                            <span class="resultado-item resultado-item-grande">02</span>
+                            <span class="resultado-item resultado-item-grande">03</span>
+                            <span class="resultado-item resultado-item-grande">04</span>
+                            <span class="resultado-item resultado-item-grande">05</span>
+                            <span class="resultado-item resultado-item-grande">06</span>
+                        </div>
+                        <div class="footer-resultado">
+                            <div class="footer-container">
+                                <p>data sorteio</p>
+                                <span>03/11</span>
+                            </div>
+                            <div class="footer-container">
+                                <p>concurso</p>
+                                <span>15855</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item resultado-duplasena dupla-sena bg">
+                        <div class="radial-interno"></div>
+                        <span class="nome-concurso">dupla-sena</span>
+                        <div class="col-md-12 resultado-item-container">
+                            <span class="resultado-item resultado-item-grande">01</span>
+                            <span class="resultado-item resultado-item-grande">02</span>
+                            <span class="resultado-item resultado-item-grande">03</span>
+                            <span class="resultado-item resultado-item-grande">04</span>
+                            <span class="resultado-item resultado-item-grande">05</span>
+                            <span class="resultado-item resultado-item-grande">06</span>
+                        </div>
+                        <div class="footer-resultado">
+                            <div class="footer-container">
+                                <p>data sorteio</p>
+                                <span>03/11</span>
+                            </div>
+                            <div class="footer-container">
+                                <p>concurso</p>
+                                <span>15855</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item resultado-quina quina bg">
+                        <div class="radial-interno"></div>
+                        <span class="nome-concurso">quina</span>
+                        <div class="col-md-12 resultado-item-container">
+                            <span class="resultado-item resultado-item-grande">01</span>
+                            <span class="resultado-item resultado-item-grande">02</span>
+                            <span class="resultado-item resultado-item-grande">03</span>
+                            <span class="resultado-item resultado-item-grande">04</span>
+                            <span class="resultado-item resultado-item-grande">05</span>
+                        </div>
+                        <div class="footer-resultado">
+                            <div class="footer-container">
+                                <p>data sorteio</p>
+                                <span>03/11</span>
+                            </div>
+                            <div class="footer-container">
+                                <p>concurso</p>
+                                <span>15855</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item resultado-timemania timemania bg">
+                        <div class="radial-interno"></div>
+                        <span class="nome-concurso">timemania</span>
+                        <div class="col-md-12 resultado-item-container">
+                            <span class="resultado-item resultado-item-grande-7">01</span>
+                            <span class="resultado-item resultado-item-grande-7">02</span>
+                            <span class="resultado-item resultado-item-grande-7">03</span>
+                            <span class="resultado-item resultado-item-grande-7">04</span>
+                            <span class="resultado-item resultado-item-grande-7">05</span>
+                            <span class="resultado-item resultado-item-grande-7">06</span>
+                            <span class="resultado-item resultado-item-grande-7">07</span>
+                        </div>
+                        <div class="footer-resultado">
+                            <div class="footer-container">
+                                <p>data sorteio</p>
+                                <span>03/11</span>
+                            </div>
+                            <div class="footer-container">
+                                <p>concurso</p>
+                                <span>15855</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item resultado-diadesorte diadesorte bg">
+                        <div class="radial-interno"></div>
+                        <span class="nome-concurso">dia de sorte</span>
+                        <div class="col-md-12 resultado-item-container">
+                            <span class="resultado-item resultado-item-grande-7">01</span>
+                            <span class="resultado-item resultado-item-grande-7">02</span>
+                            <span class="resultado-item resultado-item-grande-7">03</span>
+                            <span class="resultado-item resultado-item-grande-7">04</span>
+                            <span class="resultado-item resultado-item-grande-7">05</span>
+                            <span class="resultado-item resultado-item-grande-7">06</span>
+                            <span class="resultado-item resultado-item-grande-7">07</span>
+                        </div>
+                        <div class="footer-resultado">
+                            <div class="footer-container">
+                                <p>data sorteio</p>
+                                <span>03/11</span>
+                            </div>
+                            <div class="footer-container">
+                                <p>concurso</p>
+                                <span>15855</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item resultado-loteriafederal loteria-federal bg">
+                        <div class="radial-interno"></div>
+                        <span class="nome-concurso">loteria federal</span>
+                        <div class="col-md-12 resultado-item-container">
+                            <span class="resultado-item resultado-item-grande resultado-item-grande_lotfederal">20000</span>
+                            <span class="resultado-item resultado-item-grande resultado-item-grande_lotfederal">30000</span>
+                            <span class="resultado-item resultado-item-grande resultado-item-grande_lotfederal">40000</span>
+                            <span class="resultado-item resultado-item-grande resultado-item-grande_lotfederal">50000</span>
+                            <span class="resultado-item resultado-item-grande resultado-item-grande_lotfederal">60000</span>
+                        </div>
+                        <div class="footer-resultado">
+                            <div class="footer-container">
+                                <p>data sorteio</p>
+                                <span>03/11</span>
+                            </div>
+                            <div class="footer-container">
+                                <p>concurso</p>
+                                <span>15855</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item resultado-lotomania lotomania bg">
+                        <div class="radial-interno"></div>
+                        <span class="nome-concurso">lotomania</span>
+                        <div class="col-md-12 resultado-item-container">
+                            <span class="resultado-item resultado-item-peq">01</span>
+                            <span class="resultado-item resultado-item-peq">02</span>
+                            <span class="resultado-item resultado-item-peq">03</span>
+                            <span class="resultado-item resultado-item-peq">04</span>
+                            <span class="resultado-item resultado-item-peq">05</span>
+                            <span class="resultado-item resultado-item-peq">06</span>
+                            <span class="resultado-item resultado-item-peq">07</span>
+                            <span class="resultado-item resultado-item-peq">08</span>
+                            <span class="resultado-item resultado-item-peq">09</span>
+                            <span class="resultado-item resultado-item-peq">10</span>
+                            <span class="resultado-item resultado-item-peq">11</span>
+                            <span class="resultado-item resultado-item-peq">12</span>
+                            <span class="resultado-item resultado-item-peq">13</span>
+                            <span class="resultado-item resultado-item-peq">14</span>
+                            <span class="resultado-item resultado-item-peq">15</span>
+                            <span class="resultado-item resultado-item-peq">16</span>
+                            <span class="resultado-item resultado-item-peq">17</span>
+                            <span class="resultado-item resultado-item-peq">18</span>
+                            <span class="resultado-item resultado-item-peq">19</span>
+                            <span class="resultado-item resultado-item-peq">20</span>
+                        </div>
+                        <div class="footer-resultado">
+                            <div class="footer-container">
+                                <p>data sorteio</p>
+                                <span>03/11</span>
+                            </div>
+                            <div class="footer-container">
+                                <p>concurso</p>
+                                <span>15855</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item resultado-lotofacil lotofacil bg">
+                        <div class="radial-interno"></div>
+                        <span class="nome-concurso">lotofácil</span>
+                        <div class="col-md-12 resultado-item-container">
+                            <span class="resultado-item resultado-item-peq-15">01</span>
+                            <span class="resultado-item resultado-item-peq-15">02</span>
+                            <span class="resultado-item resultado-item-peq-15">03</span>
+                            <span class="resultado-item resultado-item-peq-15">04</span>
+                            <span class="resultado-item resultado-item-peq-15">05</span>
+                            <span class="resultado-item resultado-item-peq-15">06</span>
+                            <span class="resultado-item resultado-item-peq-15">07</span>
+                            <span class="resultado-item resultado-item-peq-15">08</span>
+                            <span class="resultado-item resultado-item-peq-15">09</span>
+                            <span class="resultado-item resultado-item-peq-15">10</span>
+                            <span class="resultado-item resultado-item-peq-15">11</span>
+                            <span class="resultado-item resultado-item-peq-15">12</span>
+                            <span class="resultado-item resultado-item-peq-15">13</span>
+                            <span class="resultado-item resultado-item-peq-15">14</span>
+                            <span class="resultado-item resultado-item-peq-15">15</span>
+                        </div>
+                        <div class="footer-resultado">
+                            <div class="footer-container">
+                                <p>data sorteio</p>
+                                <span>03/11</span>
+                            </div>
+                            <div class="footer-container">
+                                <p>concurso</p>
+                                <span>15855</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    *@
+    </div>
+</section>

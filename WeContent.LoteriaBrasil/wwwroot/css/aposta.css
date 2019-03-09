@@ -1,0 +1,1409 @@
+/* individual colors */
+section#aposteaqui #mega-sena .aposta-desc {
+    background-color: #af1129;
+}
+
+section#aposteaqui .aposta-desc,
+section#aposteaqui #mega-sena .aposta-desc,
+section#aposteaqui_lotogol #mega-sena .aposta-desc {
+    background-color: #af1129;
+}
+
+section#aposteaqui .aposta-desc, section#aposteaqui_lotogol .aposta-desc {
+    margin-bottom: 40px;
+}
+
+section#aposteaqui #mega-sena p.aposta-descricao {
+    color: #fff;
+}
+
+section#aposteaqui #mega-sena h4,
+section#aposteaqui #mega-sena h5 {
+    color: #af1129;
+}
+
+section#aposteaqui #mega-sena button:hover,
+section#aposteaqui #mega-sena button:focus,
+section#aposteaqui #mega-sena button.selected,
+section#aposteaqui #mega-sena h4, 
+section#aposteaqui #mega-sena h5 {
+    color: #af1129;
+}
+
+section#aposteaqui #mega-sena button:hover, 
+section#aposteaqui #mega-sena button:focus, 
+section#aposteaqui #mega-sena button.selected {
+    color: #fff;
+}
+
+section#aposteaqui ul.nav a {
+    font-family: "Fredoka One";
+    font-size: 11px;
+    color: #424242;
+    text-transform: uppercase;
+    /*border-bottom: 1px solid #af1129;*/
+}
+
+
+.nav-tabs.nav-justified li a {
+    border-bottom: none;
+}
+
+/* */
+
+section#aposteaqui p.instrucoes {
+    padding: 0 24px;
+}
+
+section#aposteaqui .aposta-desc .aposta-descricao {
+    font-family: "calibri-bold";
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 0 10px;
+    color: white;
+}
+
+section#aposteaqui form {
+    position: relative;
+}
+
+section#aposteaqui ul.nav {
+    margin: 0;
+}
+
+.jogo_cartela {
+    padding: 0 20px;
+}
+
+.jogo_footer {
+    padding: 0 15px;
+    margin-top: 20px;
+}
+
+.jogo_footer_container {
+    width: auto;
+}
+
+.jogo_footer_container-left {
+    float: left;
+    text-align: left;
+}
+
+.jogo_footer_container-right {
+    float: right;
+    text-align: right;
+}
+
+section#aposteaqui .card {
+    width: 100%;
+    height: 230px;
+    margin-top: 10px;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.container-outras_apostas .card {
+    height: auto !important;
+}
+
+section#aposteaqui .card .units li {
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin: 2px;
+    font-size: 11px;
+}
+
+section#aposteaqui .coluna-central {
+    height: 100%;
+    vertical-align: middle;
+}
+
+section#aposteaqui .card ul {
+    padding-left: 0;
+}
+
+/* section#aposteaqui .card .units .unit:hover, */
+section#aposteaqui .card .units .unit.bg {
+    color: white !important;
+}
+
+section#aposteaqui .card .units .unit {
+    background:none;
+    display: block;
+    text-align: center;
+    width: 37px;
+    height: 37px;
+    line-height: 21px;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+    color: #000000;
+    user-select: none;
+    font-weight: 600;
+    font-size: 1.6em;
+    transition: .2s all linear;
+    border: 1px solid #8e8a8a;
+}
+
+section#aposteaqui button:focus {
+    outline: 0;
+}
+
+section#aposteaqui label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-family: "calibri";
+    font-weight: normal;
+}
+
+section#aposteaqui select {
+    width: 40px;
+    height: 33px;
+    vertical-align: text-bottom;
+    border: 1px solid #7c7c7c;
+    font-family: "calibri-light";
+    font-size: 15px;
+    color: #383838;
+    outline: none !important;
+    background: white;
+}
+
+section#aposteaqui .label1 {
+    width: 137px;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+section#aposteaqui .label2 {
+    width: 100px;
+    margin-left: 45px;
+}
+
+.jogo_footer p {
+    margin: 0;
+}
+
+.jogo_footer .btn {
+    font-family: "calibri-bold";
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 40px;
+    margin-top: 20px;
+}
+
+.btn-testarpalpite {
+    font-family: "calibri-bold";
+    font-size: 14px;
+    color: #fff !important;
+    text-transform: uppercase;
+    border-radius: 0;
+    width: 85%;
+}
+
+.ou {
+    font-family: "Fredoka One";
+    font-size: 46px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    top: 75px;
+    margin-bottom: 120px;
+}
+
+.container-outras_opcoes {
+    width: 100%;
+    /* height: 200px; */
+    float: left;
+    background-color: #edccd1;
+    padding: 30px 0;
+    margin: 50px 0 10px 0;
+}
+
+    .container-outras_opcoes .title {
+        font-family: "Fredoka One";
+        font-size: 16px;
+        color: #af1129;
+        text-transform: uppercase;
+    }
+
+
+    .container-outras_opcoes .desc {
+        font-family: "calibri-light";
+        font-size: 17px;
+        color: #252525;
+    }
+
+        .container-outras_opcoes .desc input {
+            margin-left: 10px;
+            width: 22px;
+            height: 22px;
+            background-color: #FFFFFF;
+            border: 1px solid #9c9c9c;
+            position: relative;
+            top: 5px;
+        }
+
+.container-outras_opcoes .title {
+    font-family: "Fredoka One";
+    font-size: 16px;
+    color: #af1129;
+    text-transform: uppercase;
+}
+
+.container-outras_opcoes .desc {
+    font-family: "calibri-light";
+    font-size: 17px;
+    color: #252525;
+}
+
+.container-resumo_apostas {
+    width: 100%;
+    /* height: 200px; */
+    float: left;
+    background-color: #FFFFFF;
+    padding: 30px 0;
+    border: 2px solid #d0cccd;
+    margin-bottom: 40px;
+}
+
+.teste2 {
+    width: 100%;
+    height: 200px;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+.container-outras_apostas {
+    width: 100%;
+    /* height: 200px; */
+    float: left;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border: 2px solid #d0cccd;
+    margin-bottom: 40px;
+}
+
+    .container-outras_apostas form {
+        margin-bottom: 20px;
+    }
+
+    .container-outras_apostas span.qtde_aposta,
+    .container-outras_apostas span.valor_aposta {
+        font-family: "calibri-light";
+        font-size: 14px;
+    }
+
+    .container-outras_apostas span.qtde_aposta {
+        color:#666666;
+    }
+
+.container-total_aposta{
+    margin-top:35px;
+}
+
+
+.container-outras_apostas span.total_aposta {
+    font-family: "calibri-bold";
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+.btn_finalizar-compra {
+    background-color: #6baf52;
+    font-family: "calibri-bold";
+    font-size: 17px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border-radius:0;
+}
+
+section#aposteaqui div.container-outras_apostas .card .units .unit {
+    width: 19px !important;
+    height: 17px !important;
+    line-height: 17px !important;
+    border-radius: 5px !important;
+    color: #393939 !important;
+    font-size: 12px !important;
+    border: 1px solid #393939 !important;
+    font-family: "calibri-light";
+    background-color: #ffffff;
+}
+
+.titulo-outros_concursos {
+    font-family: "calibri-light";
+    margin: 0;
+    font-size: 19px;
+    /*color: #ee363d;*/
+}
+
+.slider {
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #af1129;
+        cursor: pointer;
+    }
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #af1129;
+    cursor: pointer;
+}
+
+    .slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #af1129;
+        cursor: pointer;
+    }
+
+section#aposteaqui table p {
+    margin: 0;
+}
+
+.selo {
+    font-family: "calibri";
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 2px 4px;
+    border-radius: 5px;
+}
+
+    .selo.premiada {
+        color: #252525;
+        background-color: #ffcc00;
+    }
+
+    .selo.inedito {
+        color: #FFFFFF;
+    }
+
+    .selo.novo {
+        color: #41480f;
+        background-color: #cbe70d;
+    }
+.selo.premiada {
+    color: #252525;
+    background-color: #ffcc00;
+}
+
+.selo.inedito {
+    color: #FFFFFF;
+}
+
+.selo.novo {
+    color: #41480f;
+    background-color: #cbe70d;
+}
+
+.btn_apostar {
+    font-family: "calibri-bold";
+    font-size: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 5px 30px;
+}
+
+    .btn_apostar:hover {
+        color: white !important;
+    }
+
+    .btn_apostar i {
+        margin-left: 5px;
+    }
+
+
+.btn_apostar:hover {
+    color: white !important;
+}
+
+.btn_apostar i {
+    margin-left: 5px;
+}
+
+.row-tabela-aposteaqui{
+    margin-top:35px;
+}
+
+section#aposteaqui .input-number {
+    border: 0;
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height: 20px;
+    padding: 0 0;
+    margin: 0 5px;
+    background: transparent;
+    border-radius: 0;
+    text-align: center;
+    border-bottom: 1px solid #393939;
+}
+
+section#aposteaqui .sign {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    padding: 0;
+    font-size: 15px;
+    color: #fff;
+    background-color: #4c4c4c;
+    transition: background-color 0.5s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 128%;
+    user-select: none;
+}
+
+section#aposteaqui a.sign:hover {
+    text-decoration: none;
+}
+
+section#aposteaqui a.sign:focus {
+    text-decoration: none;
+}
+
+section#aposteaqui .selecionaBolao {
+    margin-top: 10px;
+}
+
+section#aposteaqui table i {
+    margin-top: 5px;
+}
+
+section#aposteaqui p.chances {
+    font-family: "calibri-bold";
+    color: #252525;
+}
+
+section#aposteaqui .btn_maisjogos {
+    font-family: "Fredoka One";
+    font-size: 18px;
+    color: #253e1c;
+    text-transform: uppercase;
+}
+
+/* loteca */
+
+table.table-loteca {
+    margin-bottom: 0;
+}
+
+.container-table_loteca_lotogol {
+    margin: 30px 0;
+}
+
+table.table-loteca, table.table-loteca td {
+    border-top: none!important;
+    border: none;
+}
+
+table.table-loteca td {
+    vertical-align: middle!important;
+}
+
+table.table-loteca td.loteca-coluna1 {
+    width: 75px;
+}
+
+    table.table-loteca td.loteca-coluna5 {
+        width: 50px;
+    }
+
+table.table-loteca td.loteca-coluna3 input {
+    display: none;
+}
+
+table.table-loteca td.loteca-coluna3 input+label {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    position: relative;
+}
+
+table.table-loteca td.loteca-coluna3 input+label::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 26px;
+    top: 2px;
+    left: 2px;
+    position: absolute;
+}
+
+table.table-loteca td.loteca-coluna3 input:checked+label::after {
+    background-image: url("../images/main/custom_checkbox_check.png");
+}
+
+table.table-loteca td.loteca-coluna1 p {
+    font-family: "Fredoka One";
+    font-size: 22px;
+    color: #ee363d;
+}
+
+table.table-loteca td.loteca-coluna2 p, table.table-loteca td.loteca-coluna4 p, table.table-loteca td.loteca-coluna5 p {
+    font-family: "calibri-light";
+    font-size: 14px;
+    color: #464646;
+}
+
+.container-loteca-results input,
+.container-lotogol-results input {
+    width: 100%;
+    height: 36px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.result-loteca-total,
+.result-lotogol-total {
+    list-style: none;
+    padding: 0;
+}
+
+.container-loteca-results p,
+.container-lotogol-results p {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p.selecione_aposta_p {
+    font-family: "calibri";
+    color: #464646;
+    font-size: 19px;
+    text-align: center;
+}
+
+.btn_limpar-aposta, .btn_incluir-aposta {
+    width: 100%;
+    font-family: "calibri-bold";
+    font-size: 19px;
+    color:white;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+.block.block-gameresume .list .list-content .result-loteca-total li {
+    font-family: "calibri-bold";
+    display: inline-block;
+    vertical-align: top;
+    font-weight: 700;
+    padding: 0 4px;
+    text-align: center;
+    line-height: 1em;
+}
+
+    .block.block-gameresume .list .list-content .result-loteca-total li div,
+    .result-loteca-total .price {
+        font-family: "calibri-bold";
+        font-weight: 700;
+        color: #ee363d;
+        text-align: center;
+        line-height: 1em;
+        margin-top: 3px;
+    }
+
+
+.block.block-gameresume .list .list-content .result-loteca li {
+    display: inline-block;
+    vertical-align: top;
+    width: 45px;
+    height: 32px;
+    overflow: hidden;
+    float: left;
+    text-align: center;
+    line-height: 1em;
+    margin: 2px 1px 2px 0;
+    user-select: none;
+    border-right: 1px solid #d4d4d4;
+}
+
+.block.block-gameresume .list .list-content .result-lotogol li {
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    text-align: center;
+    line-height: 1em;
+    margin: 2px 1px 2px 0;
+    user-select: none;
+    border-right: 1px solid #d4d4d4;
+}
+
+    .block.block-gameresume .list .list-content .result-lotogol li div, 
+    .block.block-gameresume .list .list-content .result-loteca li div {
+        line-height: 12px;
+        height: 17px;
+        font-weight: 600;
+        float: left;
+        width: 100%;
+        font-family: "calibri-bold";
+    }
+
+    .block.block-gameresume .list .list-content .result-loteca li .marks span {
+        height: 10px;
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid #393939;
+        vertical-align: middle;
+        width: 10px;
+        margin: 0 1px;
+        border-radius: 2px;
+    }
+
+.block.block-gameresume .list .list-content .result-lotogol li .marks span {
+    height: 15px;
+    box-sizing: border-box;
+    display: inline-block;
+    border: 1px solid #393939;
+    vertical-align: middle;
+    width: 15px;
+    margin: 0 1px;
+    line-height: 12px;
+    font-size: 12px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="7"] .marks span:nth-child(1), 
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="6"] .marks span:nth-child(1), 
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="5"] .marks span:nth-child(1), 
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="4"] .marks span:nth-child(1) {
+    background: #ee363d;
+}
+
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="2"] .marks span:nth-child(2),
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="3"] .marks span:nth-child(2), 
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="7"] .marks span:nth-child(2), 
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="6"] .marks span:nth-child(2) {
+    background: #ee363d;
+}
+
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="1"] .marks span:nth-child(3), 
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="3"] .marks span:nth-child(3), 
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="7"] .marks span:nth-child(3), 
+.block.block-gameresume .list .list-content .result-loteca li[data-markvalue="5"] .marks span:nth-child(3) {
+    background: #ee363d;
+}
+
+/* */
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="7"] .marks span:nth-child(1),
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="6"] .marks span:nth-child(1),
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="5"] .marks span:nth-child(1),
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="4"] .marks span:nth-child(1) {
+        background: #00a3c2;
+    }
+
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="2"] .marks span:nth-child(2),
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="3"] .marks span:nth-child(2),
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="7"] .marks span:nth-child(2),
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="6"] .marks span:nth-child(2) {
+        background: #00a3c2;
+    }
+
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="1"] .marks span:nth-child(3),
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="3"] .marks span:nth-child(3),
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="7"] .marks span:nth-child(3),
+    .block.block-gameresume .list .list-content .result-lotogol li[data-markvalue="5"] .marks span:nth-child(3) {
+        background: #00a3c2;
+    }
+
+/* LOTOGOL */
+
+table.table-lotogol, table.table-lotogol td {
+    border-top: none!important;
+    border: none;
+}
+
+table.table-lotogol td {
+    vertical-align: middle!important;
+}
+
+table.table-lotogol td.lotogol-coluna1 {
+    width: 75px;
+}
+
+/*table.table-lotogol td.lotogol-coluna3 input+label {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    position: relative;
+}*/
+
+/*table.table-lotogol td.loteca-coluna3 input+label::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 26px;
+    top: 2px;
+    left: 2px;
+    position: absolute;
+}*/
+
+table.table-lotogol td.lotogol-coluna1 p {
+    font-family: "Fredoka One";
+    font-size: 22px;
+}
+
+table.table-lotogol td.lotogol-coluna2 p {
+    font-family: "calibri-light";
+    font-size: 14px;
+    color: #464646;
+}
+
+table.table-lotogol td.lotogol-coluna3 ul {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+table.table-lotogol td.lotogol-coluna3 {
+    text-align: center;
+}
+
+table.table-lotogol td.lotogol-coluna3 span.hidden-xs {
+    margin: 0 20px;
+}
+
+table.table-lotogol td.lotogol-coluna3 ul li {
+    border: 1px solid #1a8ab5;
+    border-radius: 100px;
+    display: inline-block;
+    font-family: "Calibri";
+    font-size: 14px;
+    font-weight: 600;
+    height: 25px;
+    line-height: 24px;
+    list-style: none;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    width: 25px;
+}
+
+table.table-lotogol td.lotogol-coluna3 ul li.active {
+    background-color: #1a8ab5;
+    border-radius: 100px;
+    color: #ffffff;
+    left: -1px;
+    top: 0px;
+}
+
+table.table-lotogol tr td:nth-child(2) { text-align: center; }
+
+@media screen and (max-width: 767px) {
+    table.table-lotogol .hidden-xs, table.table-lotogol .hidden-sm { display: none; }
+    table.table-lotogol td.lotogol-coluna3 ul { display: block; }
+    table.table-lotogol td.lotogol-coluna3 ul:nth-child(1) { margin-bottom: 10px; }
+    table.table-lotogol td.lotogol-coluna3 ul:nth-child(2) { margin-top: 10px; }
+}
+
+@media screen and (min-width: 768px) {
+    /* table.table-lotogol .hidden-md, table.table-lotogol .hidden-lg { display: none; } */
+}
+
+/* APOSTA RESPONSIVE */
+@media screen and (max-width: 767px) {
+    section#aposteaqui ul.nav_loterias li {
+        padding-bottom: 0px;
+        min-height: 88px;
+    }
+    section#aposteaqui ul.nav_loterias li a.mobile {
+        padding-bottom: 0px;
+        padding-top: 5px;
+    }
+    /*section#aposteaqui{
+        display: none;
+    }*/
+    
+    section#aposteaqui .card .units .unit {
+        width: 26px;
+        height: 26px;
+    }
+
+    .ou { top: 0px; }
+
+    table.table-loteca td.loteca-coluna1 { width: 35px; }
+    table.table-loteca td.loteca-coluna1 p {
+        font-family: "Fredoka One";
+        font-size: 18px;
+        color: #ee363d;
+    }
+
+    table.table-loteca td.loteca-coluna3 input + label {
+        width: 28px;
+        height: 28px;
+    }
+
+    table.table-loteca td.loteca-coluna2 p, table.table-loteca td.loteca-coluna4 p, table.table-loteca td.loteca-coluna5 p {
+        font-family: "calibri-light";
+        font-size: 12px;
+        color: #464646;
+    }
+
+    table.table-loteca .loteca-coluna5 { min-width: 61px; }
+
+    table.table-loteca, table.table-loteca td {
+        border-top: none!important;
+        border: none;
+    }
+    
+    table.table-loteca td.loteca-coluna3 input:checked + label::after {
+        background-image: url("../images/main/custom_checkbox_check_mobile.png");
+    }
+
+    table.table-loteca td.loteca-coluna3 input + label::after {
+        width: 27px;
+        height: 18px;
+        top: 3px;
+    }
+
+}
+
+@media screen and (max-width: 479px) {
+    table.table-loteca td.loteca-coluna1 {
+        width: 35px;
+    }
+    table.table-loteca td.loteca-coluna1 p {
+        font-family: "Fredoka One";
+        font-size: 18px;
+        color: #ee363d;
+    }
+    table.table-loteca td.loteca-coluna3 input+label {
+        width: 20px;
+        height: 20px;
+    }
+    table.table-loteca td.loteca-coluna2 p, table.table-loteca td.loteca-coluna4 p {
+        width: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    table.table-loteca td.loteca-coluna2 p, table.table-loteca td.loteca-coluna4 p, table.table-loteca td.loteca-coluna5 p {
+        font-family: "calibri-light";
+        font-size: 12px;
+        color: #464646;
+    }
+    table.table-loteca, table.table-loteca td {
+        border-top: none!important;
+        border: none;
+        padding: 0!important;
+    }
+    table.table-loteca td.loteca-coluna3 input:checked+label::after {
+        background-image: url("../images/main/custom_checkbox_check_mobile.png");
+        background-size: 17px 14px;
+    }
+    table.table-loteca td.loteca-coluna3 input+label::after {
+        width: 17px;
+        height: 14px;
+        top: 3px;
+    }
+    .btn_limpar-aposta {
+        margin-bottom: 20px;
+    }
+}
+
+/* NEW MOBILE APOSTA RESPONSIVE*/
+/* abas gerais*/
+section#aposte-aqui_mobile ul.nav_loterias li {
+    font-family: "Fredoka One";
+    text-transform: uppercase;
+    color: #FFF;
+    width: 20%;
+    float: left;
+    text-align: center;
+    padding: 15px 0;
+}
+
+section#aposteaqui ul.nav a:hover {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+    section#aposteaqui ul.nav a{
+        font-size:12px;
+    }
+
+    section#aposte-aqui_mobile ul.nav_loterias li {
+        font-size: 10px;
+    }
+}
+
+    @media screen and (min-width: 768px) {
+        section#aposte-aqui_mobile ul.nav_loterias li {
+            font-size: 18px;
+        }
+    }
+
+    section#aposte-aqui_mobile ul.nav_loterias li a {
+        color: #FFF;
+        width: 100%;
+        float: left;
+    }
+
+    .container_line_aba, .container_line_aba2 {
+        float: left;
+        width: 100%;
+        padding: 0;
+    }
+
+    div.nopadding { padding: 0; }
+
+    .jogo_cartela {
+        padding: 0 20px;
+        width: 450px;
+        margin: 0px auto;
+    }
+
+    .jogo_footer {
+        padding: 0 15px;
+        margin-top: 20px;
+        clear: both;
+    }
+
+    .jogo_footer_container {
+        width: auto;
+    }
+
+    .jogo_footer_container-left {
+        float: left;
+        text-align: left;
+    }
+
+    .jogo_footer_container-right {
+        float: right;
+        text-align: right;
+    }
+
+    section#aposte-aqui_mobile .card {
+        width: 100%;
+        height: 230px;
+        margin-top: 10px;
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .container-outras_apostas .card {
+        height: auto !important;
+    }
+
+    section#aposte-aqui_mobile .card .units li {
+        display: inline-block;
+        vertical-align: top;
+        float: left;
+        margin: 2px;
+        font-size: 11px;
+    }
+
+    
+
+    section#aposte-aqui_mobile .coluna-central {
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    section#aposte-aqui_mobile .card ul {
+        padding-left: 0;
+    }
+
+    section#aposte-aqui_mobile .card .units .unit:hover, section#aposteaqui .card .units .unit.bg {
+        color: white !important;
+    }
+
+    section#aposte-aqui_mobile .card .units .unit {
+        display: block;
+        text-align: center;
+        width: 37px;
+        height: 37px;
+        line-height: 21px;
+        padding: 0;
+        border-radius: 15px;
+        cursor: pointer;
+        border: 0;
+        color: #000000;
+        user-select: none;
+        font-weight: 600;
+        font-size: 1em;
+        transition: .2s all linear;
+        border: 1px solid #000000;
+    }
+
+    section#aposte-aqui_mobile button:focus {
+        outline: 0;
+    }
+
+    section#aposte-aqui_mobile label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-family: "calibri";
+        font-weight: normal;
+    }
+
+    section#aposte-aqui_mobile select {
+        width: 40px;
+        height: 33px;
+        vertical-align: text-bottom;
+    }
+
+    section#aposte-aqui_mobile .label1 {
+        width: 137px;
+        margin-left: 30px;
+        margin-right: 10px;
+    }
+
+    section#aposte-aqui_mobile .label2 {
+        width: 100px;
+        margin-left: 45px;
+    }
+
+    .jogo_footer p {
+        margin: 0;
+    }
+
+    .jogo_footer .btn {
+        font-family: "calibri-bold";
+        font-size: 18px;
+        color: #fff;
+        text-transform: uppercase;
+        border-radius: 0;
+        padding: 10px 40px;
+        margin-top: 20px;
+    }
+
+    .btn-testarpalpite {
+        font-family: "calibri-bold";
+        font-size: 14px;
+        color: #fff !important;
+        text-transform: uppercase;
+        border-radius: 0;
+        width: 85%;
+    }
+
+
+    /* abas gerais - panel*/
+    section#aposteaqui ul.nav_loterias li {
+        font-family: "Fredoka One";
+        text-transform: uppercase;
+        color: #FFF;
+        max-width: 20%;
+        min-width: 10%;
+        float: left;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    @media screen and (max-width: 767px) {
+        section#aposteaqui ul.nav_loterias li {
+            font-size: 10px;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        section#aposteaqui ul.nav_loterias li {
+            font-size: 18px;
+        }
+    }
+
+    section#aposteaqui ul.nav_loterias li a {
+        color: #FFF;
+        width: 100%;
+        float: left;
+        border: none;
+        background-color: transparent;
+        padding: 15px 5px 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    section#aposteaqui ul.nav_loterias li a.mobile{
+        display: none;
+    }
+    @media screen and (max-width: 768px) {
+        section#aposteaqui ul.nav_loterias li{
+            min-width: 20% !important;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        section#aposteaqui ul.nav_loterias li a.mobile{
+            display: block;
+        }
+        section#aposteaqui ul.nav_loterias li a:not(.mobile){
+            display: none;
+        }
+        section#aposteaqui ul.nav_loterias li a {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        section#aposteaqui ul.nav_loterias li.diadesorte {
+            padding-bottom: 0px !important;
+            padding-top: 13px !important;
+        }
+    }
+  
+     @media screen and (max-width: 320px) {
+        section#aposteaqui ul.nav_loterias li a {
+            font-size: 10px;
+        }
+        section#aposteaqui ul.nav_loterias li.diadesorte {
+            padding-bottom: 1px !important;
+            padding-top: 15px !important;
+        }
+    }
+    .container_line_aba, .container_line_aba2 {
+        float: left;
+        width: 100%;
+        padding: 0;
+    }
+
+    div.nopadding {
+        padding: 0;
+    }
+    .slidenumbers span  {
+        display: inline-block;
+    }
+    .slidenumbers{
+        position: relative;
+        left: 20px;
+        top: 5px;
+    }
+    .container-outras_apostas .delete-game{
+        float: right;
+        color: #a0a0a0;
+        cursor: pointer;
+    }
+
+/*
+APOSTAR MOBILE
+*/
+    .container-apostar .apostar-tabs{
+        display: none;
+    }
+    .container-apostar .mobile {
+        display: none;
+    }
+    @media screen and (max-width: 425px){
+        .jogo_cartela {
+            padding: 0;
+            width: 320px;
+            margin: 0px auto;
+        }
+        .lotofacil .jogo_cartela .card .units{
+            margin-left: 0px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .timeDoCoracao select {
+            width: 280px !important;
+        }
+        .container-apostar .apostar-tabs {
+            display: block;
+        }
+        .container-apostar .apostar-tabs .col{
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            height: 40px;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            line-height: 40px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        .container-apostar .apostar-tabs .line {
+            height: 40px;
+            position: relative;
+            top: -1px;
+        }
+        .container-apostar .opcoes-aposta{
+            font-size: 19px;
+            margin-top: 30px;
+        }
+        .container-apostar .no-mobile{
+            display: none;
+        }
+        .container-apostar .mobile{
+            display: block;
+        }
+        .container-apostar .instrucoes{
+            padding: 0 !important;
+        }
+        .aposta-desc{
+            display: none;
+        }
+        .container-apostar .jogo_footer{
+            padding: 0 !important;
+        }
+        .container-apostar .jogo-footer{
+            margin-bottom: 20px;       
+        }
+
+        .container-apostar .jogo-footer i{
+            position: absolute;
+            right: -5px;
+        }
+        .apostar-tabs .btn-testarpalpite{
+            background-color: white !important;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            padding: 0px;
+            margin-top: 3px;
+        }
+        .apostar-tabs .label-surpresinha{
+            text-align: center !important;
+            color: white !important;
+            font-family: "calibri-bold" !important;
+            font-size: 18px !important;
+            margin-top: 8px !important;
+        }
+        .apostar-tabs  .input_hint_qty{
+            font-size: 18px !important;
+            border: none !important;
+            color: white !important;
+            font-family: "calibri-bold" !important;
+            font-weight: bolder !important;
+            margin-top: 4px !important;
+        }
+        .container-outras_opcoes .desc {
+            font-size: 15px;
+            text-align: center;
+        }
+        .container-outras_opcoes .title:not(.no-mobile) {
+            font-size: 17px;
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+        }
+        .container-outras_opcoes .col-xs-12 .title {
+            font-size: 30px;
+        }
+        .container-outras_opcoes .slidecontainer .slider {
+            background-color: #848484;
+        }
+        .container-outras_opcoes .slidenumbers span {
+            font-size: 10px;
+        }
+        .container-outras_opcoes .slidenumbers {
+            left: 7px;
+        }
+        .container-outras_opcoes.bg-light {
+            background-color: white !important;
+            margin-top: 0px;
+        }
+        .container-outras_apostas {
+            padding: 15px 5px;
+        }
+        .container-outras_opcoes.bg-light {
+            background-color: #f6f6f6 !important;
+            padding: 10px 0px;
+            margin: 0px;
+            margin-top: 20px;
+        }
+        .container-resumo-mobile .title {
+            font-size: 17px;
+            font-weight: normal;
+            font-family: "Fredoka One";
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .container-resumo-mobile i.fa-times-circle {
+            transform: rotate(45deg) !important;
+            font-size: 20px;
+            position: relative;
+            top: -5px;
+        }
+        .container-resumo-mobile i.fa-trash-alt {
+            font-size: 20px;
+            top: -5px;
+            position: relative;
+            left: 2px;
+            margin-left: 0px;
+        }
+        .container-resumo-mobile .padding-left{
+            padding-left: 15px;
+        }
+        .container-resumo-mobile {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .dozen-modal .unit{
+            width: 19px !important;
+            height: 17px !important;
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 17px;
+            margin-right: 5px;
+        }
+        .dozen-modal .unit.last {
+            display: inline;
+            padding: 0 5px;
+            position: relative;
+            top: -1px;
+        }
+        
+    }
+ .aposta-descricao .padding-bottom{
+        padding-bottom: 15px;
+    }
+  .aposta-descricao .title{
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .aposta-descricao .clock{
+    line-height: 50px;
+    text-align: right;
+  }

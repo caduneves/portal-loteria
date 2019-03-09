@@ -1,0 +1,477 @@
+.hero-lastresults {
+    width: 100%;
+    color: white;
+    padding: 0 0;
+    text-align: center;
+}
+
+.hero-lastresults .container-fluid {
+    overflow: hidden;
+    width: 100%;
+}
+
+.hero-lastresults .lastresults-text {
+    text-align: center;
+    font-size: 21px;
+    display: block;
+    width: 50%;
+    float: left;
+}
+
+.hero-lastresults .lastresults-text .wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 0 15px;
+    height: 442px;
+}
+
+.hero-lastresults.loteria-federal .result-federal-title,
+.hero-lastresults .lastresults-text .title {
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 36px;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.hero-lastresults .lastresults-text .description {
+    max-width: 385px;
+    margin: 15px auto;
+}
+
+.hero-lastresults .lastresults-text .btn {
+    display: inline-block;
+    border: 1px solid white;
+    background: transparent;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Fredoka One', sans-serif;
+    text-decoration: none;
+    border-radius: 0;
+    height: 46px;
+    padding: 0 10px;
+    line-height: 44px;
+    font-size: 16px;
+    min-width: 248px;
+    transition: .1s all linear;
+    outline: none;
+}
+
+.hero-lastresults .lastresults-text .btn:hover { background: rgba(255, 255, 255, .1); }
+
+.hero-lastresults .result-wrap {
+    display: block;
+    padding-top: 40px;
+    width: 50%;
+    height: 442px;
+    float: left;
+}
+
+.hero-lastresults .phone {
+    width: 312px;
+    height: 404px;
+    background: url(../images/last-results/phone.png);
+    padding: 67px 13px 0;
+    margin: 0 auto;
+}
+
+.hero-lastresults .phone .phone-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    height: 338px;
+    background: red;
+    text-align: center;
+    background-image: url(../images/last-results/bg-phone.jpg);
+}
+
+.hero-lastresults.loteria-federal .result-federal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.hero-lastresults .phone .phone-title {
+    text-transform: uppercase;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .5);
+    line-height: 1.2em;
+    margin-bottom: 10px;
+}
+
+.hero-lastresults.loteria-federal .result-federal ul,
+.hero-lastresults .phone .dozens {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+    display: block;
+    width: 216px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-lastresults.loteria-federal .result-federal ul {
+    display: block; 
+    width: 100%; 
+}
+
+.hero-lastresults.loteria-federal .result-federal ul li,
+.hero-lastresults .phone .dozens li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+.hero-lastresults.loteria-federal .result-federal ul li {
+    margin-left: 0;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.hero-lastresults .phone .dozens li span {
+    display: block;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    background: white;
+    border-radius: 50%;
+    text-align: center;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 24px;
+}
+
+.hero-lastresults.loteria-federal .result-federal ul li {
+    vertical-align: top;
+}
+
+.hero-lastresults.loteria-federal .result-federal ul li span {
+    display: block;
+    background: white;
+    width: 95px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 19px;
+}
+
+.hero-lastresults.timemania .phone .dozens.dozens-0 li,
+.hero-lastresults.lotofacil .phone .dozens li,
+.hero-lastresults.lotomania .phone .dozens li,
+.hero-lastresults.dupla-sena .phone .dozens li {
+    margin: 5px;
+}
+
+.hero-lastresults.timemania .phone .dozens.dozens-0 li span,
+.hero-lastresults.lotofacil .phone .dozens li span,
+.hero-lastresults.dupla-sena .phone .dozens li span,
+.hero-lastresults.lotomania .phone .dozens li span {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 18px;
+}
+
+.hero-lastresults.timemania .phone .dozens.dozens-0,
+.hero-lastresults.lotofacil .phone .dozens,
+.hero-lastresults.dupla-sena .phone .dozens,
+.hero-lastresults.lotomania .phone .dozens {
+    width: 100%;
+}
+
+.hero-lastresults.timemania .phone .dozens.dozens-1 li {
+    margin: 0 auto;
+    line-height: 1em;
+}
+
+.hero-lastresults.timemania .phone .dozens.dozens-1 li span {
+    background: transparent;
+    width: 100%;
+    color: white !important;
+    height: auto;
+    line-height: 1em;
+}
+
+.hero-history {
+    width: 100%;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-align: center;
+}
+
+.hero-history .text {
+    margin: 0 auto;
+    max-width: 520px;
+    font-size: 24px;
+}
+
+.hero-history .title {
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 36px;
+}
+
+.hero-history .description {
+    line-height: 1.2em;
+    margin: 14px 0;
+}
+
+.wrap-results-history {
+    overflow: hidden;
+    width: 100%;
+}
+
+.wrap-results-history .hero-lastresults {
+    width: 60%;
+    float: left;
+}
+.wrap-results-history .hero-history {
+    width: 40%;
+    height: 442px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    float: left;
+    text-align: center;
+}
+
+/* DEFINE CORES LOTERIAS */
+.hero-lastresults.mega-sena { background: #9fa43c !important; }
+.hero-history.mega-sena { background: #c4cb35 !important; }
+.hero-lastresults.mega-sena .color-primary,
+.hero-history.mega-sena .color-primary { color: #434605 !important; }
+.hero-lastresults.loteria-federal {  background: #062043 !important;  }
+
+
+.hero-lastresults.loteria-federal .container-fluid { max-width: 1200px; }
+.hero-history.loteria-federal { background: #062043 !important; }
+.hero-lastresults.loteca {  background: #ee363d !important;  }
+.hero-history.loteca { background: #ee363d !important; }
+
+.hero-lastresults.loteca .lastresults-text,
+.hero-lastresults.loteria-federal .lastresults-text { width: 40%; }
+
+.hero-lastresults.loteca .lastresults-text { width: 30%; }
+
+.hero-lastresults.loteca .wrap-result-table,
+.hero-lastresults.loteria-federal .result-wrap {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-lastresults.loteca .wrap-result-table {
+    width: 70%;
+    height: 442px;
+}
+
+.hero-lastresults.loteca .table.result-loteca {
+    margin: 0 20px;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+
+.hero-lastresults.loteca .table.result-loteca tr td { 
+    border-top: 0;
+    padding: 4px; 
+}
+
+.hero-lastresults.loteca .table.result-loteca tr td:nth-child(1) {
+    width: 40px;
+    text-align: right;
+}
+
+.hero-lastresults.loteca .table.result-loteca tr td:nth-child(3),
+.hero-lastresults.loteca .table.result-loteca tr td:nth-child(4),
+.hero-lastresults.loteca .table.result-loteca tr td:nth-child(5) {
+    width: 33px;
+}
+
+.hero-lastresults.loteca .table.result-loteca tr td:nth-child(2),
+.hero-lastresults.loteca .table.result-loteca tr td:nth-child(6) {
+    width: 35%;
+}
+
+.hero-lastresults.loteca .table.result-loteca tr td div,
+.hero-lastresults.loteca .table.result-loteca tr td:nth-child(1) { 
+    font-family: 'Fredoka One', sans-serif;
+}
+
+.hero-lastresults.loteca .table.result-loteca tr td div {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    border-radius: 50%;
+    line-height: 24px;
+    text-align: center;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    border: 1px solid white;
+}
+
+.hero-lastresults.loteca .table.result-loteca tr td div.active {
+    background: white;
+    color: #8b3f41;
+}
+
+.hero-lastresults.loteca .table.result-loteca tr td p {
+    width: 100%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    margin: 0 auto !important;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .hero-lastresults .lastresults-text .title,
+    .hero-history .title,
+    .hero-history.loteria-federal .result-federal-title {
+        font-size: 32px;
+    }
+
+    .hero-lastresults .lastresults-text,
+    .hero-history .description {
+        font-size: 18px;
+    }
+
+    .hero-lastresults.loteca .lastresults-text,
+    .hero-lastresults.loteca .lastresults-text .wrap,
+    .hero-lastresults.loteca .wrap-result-table {
+        width: 100%;
+        display: block;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .hero-lastresults.loteca .wrap-result-table {
+        overflow: hidden;
+    }
+    .hero-lastresults.loteca .table.result-loteca {
+        width: calc(50% - 40px);
+        float: left;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero-lastresults.loteria-federal .lastresults-text,
+    .hero-lastresults.loteria-federal .result-wrap,
+    .hero-lastresults .lastresults-text,
+    .wrap-results-history .hero-history,
+    .wrap-results-history .hero-lastresults {
+        width: 100%;
+        float: none;
+        height: auto;
+    }
+
+    .wrap-results-history .hero-history {
+        height: auto;
+        padding: 20px 15px;
+    }
+    
+
+    .hero-lastresults.loteria-federal .result-wrap,
+    .hero-lastresults .lastresults-text {
+        padding: 20px 15px;
+    }
+    .hero-lastresults .lastresults-text .description {
+        width: 100%;
+        max-width: initial;
+    }
+
+    .hero-lastresults .result-wrap,
+    .hero-lastresults .lastresults-text .wrap {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    
+    .hero-lastresults .result-wrap {
+        background: transparent;
+        padding: 20px 15px;
+        padding-bottom: 0;
+    }
+
+    .hero-lastresults .phone {
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        height: auto;
+        padding: 0 0;
+        background: none;
+    }
+
+    .hero-lastresults .phone .phone-content {
+        height: auto;
+        display: block;
+        padding: 20px 0;
+        background: rgba(0,0,0,.1);
+    }
+
+    .hero-lastresults .phone .dozens {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .hero-lastresults.loteria-federal .result-federal ul,
+    .hero-lastresults.loteria-federal .result-wrap,
+    .hero-lastresults.loteria-federal .result-federal-title {
+        text-align: center;
+    }
+
+    .hero-lastresults.loteca .table.result-loteca {
+        width: 100%;
+        float: none;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .hero-lastresults.loteria-federal .result-federal-title,
+    .hero-lastresults .lastresults-text .title,
+    .hero-history .title {
+        font-size: 22px;
+    }
+
+    .hero-lastresults .lastresults-text,
+    .hero-history .description {
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 479px) {
+    .hero-lastresults.loteca .table.result-loteca tr td div,
+    .hero-lastresults.loteca .table.result-loteca {
+        font-size: 10px;
+    }
+
+    .hero-lastresults.loteca .table.result-loteca tr td div {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+    }
+
+    .hero-lastresults.loteca .table.result-loteca tr td:nth-child(1) {
+        padding: 0;
+    }
+
+    .hero-lastresults.loteca .table.result-loteca tr td {
+        padding: 2px;
+    }
+}

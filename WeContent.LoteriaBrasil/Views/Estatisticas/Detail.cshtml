@@ -1,0 +1,151 @@
+@{
+    ViewData["Title"] = ViewBag.sectionName + " | Loteria Brasil";
+}
+
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="@(ViewBag.sectionName) | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="" />
+}
+<section class="page-estatisticas" data-vue="EstatisticasDetail" data-lottery="@Model" data-mode="@ViewBag.slugEstatisticas" v-bind:class="loteria.class">
+    @Html.Partial("../Loteria/_HeaderLoteria.cshtml")
+
+    <div class="container">
+        <div class="col-lg-2 col-md-3 navigator-wrap">
+            @Html.Partial("_Navigator.cshtml")
+        </div>
+
+        <div class="col-lg-10 col-md-9">
+            <article>
+                <h2 class="color">@ViewBag.sectionName</h2>
+                <div class="intro">
+                    @if (ViewBag.slugEstatisticas == "maiores-premios")
+                    {
+                        <p>
+                            Estes são os maiores prêmios entregues na história da <strong>{{loteria.nome}}</strong>. Confira a lista dos mais altos valores, quantos apostadores receberam esses valores, onde moram e a data em que o prêmio saiu.
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "numeros-mais-sorteados")
+                    {
+                        <p>
+                            Você quer saber se o seu número da sorte está entre os mais sorteados? Veja a lista dos números mais queridinhos da <strong>{{loteria.nome}}</strong> e monte sua estratégia de jogo.
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "dezenas-mais-atrasadas")
+                    {
+                        <p>
+                            Será que faz muito tempo que o seu número da sorte não sai em nenhum concurso da <strong>{{loteria.nome}}</strong>? Nesta lista, você descobre quais as dezenas que estão há mais tempo sem aparecer no jogo.
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "soma-das-dezenas")
+                    {
+                        <p>
+                            Você sabia que a soma das dezenas escolhidas pode ser levada em consideração na confecção de suas apostas?<br>
+                            Confira quais são as somas de dezenas que mais aparecem nos resultados.
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "pares-e-impares")
+                    {
+                        <p>
+                            Você prefere os números pares ou os ímpares? Saiba, na lista abaixo, qual combinação entre pares e ímpares ocorre mais vezes nos concursos.
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "linhas-e-colunas")
+                    {
+                        <p>
+                            Você prefere os números pares ou os ímpares? Saiba, na lista abaixo, qual combinação entre pares e ímpares ocorre mais vezes nos concursos.
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "premios-estado")
+                    {
+                        <p>
+                            Você sabe qual é o Estado que mais recebeu prêmios desta <strong>{{loteria.nome}}</strong>? Confira na lista e vejo se você mora num destes lugares de sorte.
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "colunas-por-concursos")
+                    {
+                        <p>
+                            Você sabe qual a coluna mais sorteada? Confira a quantidade de acertos em toda história dos concursos, para cada uma das colunas!
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "colunas-seguidas-por-concursos")
+                    {
+                        <p>
+                            Quantas vezes aconteceu acertos seguidos na mesma coluna nos concursos? Confira abaixo as quantidades em toda história da Loteca!
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "placares-mais-frequentes")
+                    {
+                        <p>
+                            Quantas vezes aconteceu acertos seguidos na mesma coluna nos concursos? Confira abaixo as quantidades em toda história da Loteca!
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "placares-mais-frequentes")
+                    {
+                        <p>
+                            Para você que gosta de comemorar os gols do seu time. Veja quais são os placares mais frequentes da Lotogol.
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "soma-de-gols-por-concurso")
+                    {
+                        <p>
+                            Você pode analisar a soma dos gols na hora de apostar. Veja quais as somas mais comuns da Lotogol.
+                        </p>
+                    }
+                    else if (ViewBag.slugEstatisticas == "quantidade-de-gols-por-concurso")
+                    {
+                        <p>
+                            Você sabe qual é a quantidade de gols que mais ocorre no concurso? Confira abaixo!
+                        </p>
+                    }
+                </div>
+
+                <section>
+                    @if (ViewBag.slugEstatisticas == "maiores-premios")
+                    {
+                        @Html.Partial("_Stats-maiores-premios.cshtml");
+                    }
+                    @if (ViewBag.slugEstatisticas == "premios-estado")
+                    {
+                        @Html.Partial("_Stats-premios-estado.cshtml");
+                    }
+                    @if (ViewBag.slugEstatisticas == "numeros-mais-sorteados")
+                    {
+                        @Html.Partial("_Stats-numeros-mais-sorteados.cshtml");
+                    }
+                    @if (ViewBag.slugEstatisticas == "dezenas-mais-atrasadas")
+                    {
+                        @Html.Partial("_Stats-dezenas-mais-atrasadas.cshtml");
+                    }
+                    @if (ViewBag.slugEstatisticas == "soma-das-dezenas")
+                    {
+                        @Html.Partial("_Stats-soma-das-dezenas.cshtml");
+                    }
+                    @if (ViewBag.slugEstatisticas == "pares-e-impares")
+                    {
+                        @Html.Partial("_Stats-pares-e-impares.cshtml");
+                    }
+                    @if (ViewBag.slugEstatisticas == "linhas-e-colunas")
+                    {
+                        @Html.Partial("_Stats-linhas-e-colunas.cshtml");
+                    }
+                    @if (ViewBag.slugEstatisticas == "soma-de-gols-por-concurso")
+                    {
+                        @Html.Partial("_Stats-soma-de-gols-por-concurso.cshtml");
+                    }
+                    @if (ViewBag.slugEstatisticas == "quantidade-de-gols-por-concurso")
+                    {
+                        @Html.Partial("_Stats-quantidade-de-gols-por-concurso.cshtml");
+                    }
+                </section>
+
+                <div class="article-footer">
+                    <a href="#" class="btn bg">Apostar na {{loteria.nome}}</a>
+                </div>
+
+
+            </article>
+        </div>
+    </div>
+</section>

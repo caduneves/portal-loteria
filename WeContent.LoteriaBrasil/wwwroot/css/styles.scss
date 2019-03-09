@@ -1,0 +1,93 @@
+﻿/* CORES LOTERIAS */
+
+$lotteries: (
+    mega-sena: (
+        primary: #6a8e20,
+        secondary: #bce46a,
+        third: #222e0a
+    ),
+    dupla-sena: (
+        primary: #af1129,
+        secondary: #dba129,
+        third: #35040b
+    ),
+    lotomania: (
+        primary: #fd6532,
+        secondary: #efbdac,
+        third: #601a03
+    ),
+    quina: (
+        primary: #0d2d64,
+        secondary: #4b6086,
+        third: #000f2a
+    ),
+    loteria-federal: (
+        primary: #0d46a6,
+        secondary: #79a0e2,
+        third: #055cef
+    ),
+    loteca: (
+        primary: #ff2222,
+        secondary: #ff4949,
+        third: #ffcaca
+    ),
+    lotogol: (
+        primary: #00a3c2,
+        secondary: #6dc2d7,
+        third: #004c62
+    ),
+    lotofacil: (
+        primary: #99209e,
+        secondary: #3c033e,
+        third: #b65ab7
+    ),
+    timemania: (
+        primary: #d2a907,
+        secondary: #d2a907,
+        third: #534409
+    ),
+    diadesorte: (
+        primary: #b38c41,
+        secondary: darken(#b38c41, 10%),
+        third: darken(#73561e, 20%)
+    )
+);
+
+@each $lottery, $colors in $lotteries {
+    
+    .#{$lottery} .color, .#{$lottery}.color { color: map-get($colors, 'primary') !important; }
+    
+    .#{$lottery} .bg, .#{$lottery}.bg { background-color: map-get($colors, 'primary') !important; }
+    .#{$lottery} .bg-light, .#{$lottery}.bg-light { background-color: lighten(map-get($colors, 'primary'), 50%) !important; }
+    .#{$lottery} .bg-lighter, .#{$lottery}.bg-lighter { background-color: lighten(map-get($colors, 'primary'), 50%) !important; }
+
+    .#{$lottery} .border-color, .#{$lottery}.border-color { border-color: map-get($colors, 'primary') !important; }
+    .#{$lottery} .border-bottom-color, .#{$lottery}.border-bottom-color { border-bottom-color: map-get($colors, 'primary') !important; }
+    .#{$lottery} .slider-thumb-bg::-webkit-slider-thumb { background-color: map-get($colors, 'primary') }
+
+    @each $name, $color in $colors {
+
+       .#{$lottery} .color-#{$name}, .#{$lottery}.color-#{$name} { color: $color !important; }
+       
+       .#{$lottery} .bg-#{$name}, .#{$lottery}.bg-#{$name} { background-color: $color !important; }
+       .#{$lottery} .bg-light-#{$name}, .#{$lottery}.bg-light-#{$name} { background-color: lighten($color, 50%) !important; }
+
+       
+       .#{$lottery} .border-color-#{$name}, .#{$lottery}.border-color-#{$name} { border-color: $color !important; }
+       .#{$lottery} .border-bottom-color-#{$name}, .#{$lottery}.border-bottom-color-#{$name} { border-bottom-color: $color !important;  }
+       .#{$lottery} .slider-thumb-bg-#{$name}::-webkit-slider-thumb { background-color: $color; }
+    }
+};
+
+@media (max-width: 768px) {
+    @each $lottery, $colors in $lotteries {
+        .#{$lottery} .hover:hover, .#{$lottery}.hover:hover { color: darken(map-get($colors, 'primary'), 10%) !important; }    
+        .#{$lottery} .bg-hover:hover, .#{$lottery}.bg-hover:hover { background-color: darken(map-get($colors, 'primary'), 10%) !important; }
+
+        @each $name, $color in $colors {
+
+            .#{$lottery} .hover-#{$name}:hover, .#{$lottery}.hover-#{$name}:hover { color: darken($color, 10%) !important; }
+            .#{$lottery} .bg-hover-#{$name}:hover, .#{$lottery}.bg-hover-#{$name}:hover { background-color: darken($color, 10%) !important; }
+        }
+    }
+}

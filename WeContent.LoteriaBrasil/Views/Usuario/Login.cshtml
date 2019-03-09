@@ -1,0 +1,105 @@
+
+@{
+    ViewData["Title"] = "Login | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Login | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+@section scripts{
+    <script async="async" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js??onload=reCaptchaLoaded&render=explicit' async defer></script>
+}
+<section id="login-cadastro" data-vue="Login" class="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="title text-md-left text-sm-center">
+                            Identificação do Usuário
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <h3 class="subtitle text-md-left text-sm-center">Já sou Cadastrado</h3>
+                        <form>
+                            <div class="form-group login-form">
+                                <input v-on:keyup.enter="login()" v-model="email" type="email" class="form-control" id="loginEmailInput" aria-describedby="emailHelp" placeholder="E-mail ou Celular">
+                                <input v-on:keyup.enter="login()" v-model="password" type="password" class="form-control" id="loginPasswordInput" placeholder="Senha">
+                                <div>
+                                    <a class="text-sm-left" v-on:click="showRecoveryPassword()">Esqueceu sua senha?</a>
+                                    <a class="text-sm-right" v-on:click="showRecoveryEmail()">Esqueceu seu e-mail?</a>
+                                </div>
+                                <div id="loginReCaptcha" class="g-recaptcha"></div>
+                                <button type="button" class="btn btn-success" v-on:click="login()">Entrar</button>
+                                <div class="separator">Ou</div>
+                                <button type="button" class="btn btn-primary facebook"><i class="fab fa-facebook-f"></i>Logar com o Facebook</button>
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h3 class="subtitle text-md-right text-sm-center">Quero me Cadastrar</h3>
+                        <form v-show="registerStep == 0">
+                            <div class="form-group login-form">
+                                <input type="text" class="form-control" placeholder="Nome Completo" v-model="newUser.name">
+                                <input type="tel" class="form-control" placeholder="Data de Nascimento" v-mask="'##/##/####'" v-model="newUser.birthDate">
+                                <input type="tel" class="form-control" placeholder="Telefone Celular" v-mask="['(##) ####-####', '(##) #####-####']" v-model="newUser.celPhone">
+                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail" v-model="newUser.email">
+                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Confirmar E-mail" v-model="newUser.emailConfirmation">
+                                <div id="cadastrarReCaptcha" class="g-recaptcha"></div>
+                                <button type="button" class="btn btn-success" v-on:click="registerNextStep()">Cadastrar</button>
+                            </div>
+                        </form>
+                        <form v-show="registerStep == 1">
+                            <div class="form-group login-form">
+                                <input type="text" class="form-control" placeholder="CPF" v-model="newUser.cpf" v-mask="'###.###.###-##'">
+                                <select autocomplete="off" v-model="newUser.sexo" v-bind:class="[ newUser.sexo != '' ? 'valid' : '' ]">
+                                    <option value="">Sexo</option>
+                                    <option value="m">Masculino</option>
+                                    <option value="f">Feminino</option>
+                                    <option value="n">Não Informar</option>
+                                </select>
+                                <input type="tel" class="form-control" placeholder="CEP" v-mask="'#####-###'" v-model="newUser.cep">
+                                <input type="password" class="form-control" placeholder="Senha" v-model="newUser.password">
+                                <input type="password" class="form-control" placeholder="Confirmar Senha" v-model="newUser.passwordConfirmation">
+                                <button type="button" class="btn btn-success" v-on:click="register()">Criar Conta</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="message hidden" v-show="recoverPasswordModalVisible">
+        <div class="background" v-on:click="closeRecoveryPassword()"></div>
+        <div class="login-form modal">
+            <div class="no-padding-bottom">Insira o e-mail que você utilizou no cadastro.<br />Enviaremos um e-mail com as instruções de como redefinir a sua senha.</div>
+            <input type="email" class="form-control" placeholder="Informe seu e-mail" v-model="emailPasswordRecover" v-on:keyup.enter="recoverPassword()">
+            <button type="button" class="btn btn-success" v-on:click="recoverPassword()">Enviar</button>
+        </div>
+    </div>
+    <div class="message hidden" v-show="recoverEmailModalVisible">
+        <div class="background" v-on:click="closeRecoveryEmail()"></div>
+        <div class="login-form modal" v-if="recoverEmailStep == 0">
+            <div class="no-padding-bottom">Insira o número do CPF que você utilizou em nosso cadastro.</div>
+            <input type="text" class="form-control" placeholder="Informe seu CPF" v-model="cpfEmailRecover" v-mask="'###.###.###-##'" v-on:keyup.enter="recoverEmail()">
+            <button type="button" class="btn btn-success" v-on:click="recoverEmail()">Enviar</button>
+        </div>
+        <div class="login-form modal" v-if="recoverEmailStep == 1">
+            <div class="no-padding-bottom">
+                O e-mail abaixo foi utilizado no cadastro.
+                <br><br> <b class="default-green">{{recoveredEmail}}</b><br><br>
+                Caso você não utilize mais este e-mail,<br> entre em contato com nosso atendimento: (11) 3541-3001.
+            </div>
+
+            <button type="button" class="btn btn-success" v-on:click="closeRecoveryEmail()">Fechar</button>
+        </div>
+    </div>
+</section>

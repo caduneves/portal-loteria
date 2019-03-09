@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Resultado";
+    ViewBag.hasFilter = true;
+}
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="@(ViewBag.sectionName) | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="" />
+}
+
+
+<section id="resultadosDetail" class="page-resultados" data-vue="ResultadosController" data-lottery="@Model" data-concurso="@ViewBag.concurso" v-bind:class="loteria.class">
+
+    @Html.Partial("../Loteria/_HeaderLoteria.cshtml")
+
+    <div class="container" v-if="resultadoSelected">
+        <div class="col-lg-12" v-for="item in resultadoSelected">
+            @Html.Partial("_Result.cshtml")
+        </div>
+    </div>
+
+
+    <div class="container" v-if="sections.length">
+        <div class="col-lg-12">
+
+            <section class="list-info border-color">
+                <section class="info-section" v-for="item in sections">
+                    <h3 class="title color">{{ item.title }}</h3>
+                    <div class="description" v-html="item.text"></div>
+                </section> <!-- /.info-section -->
+            </section><!-- /.list-info -->
+
+        </div>
+    </div>
+
+</section>

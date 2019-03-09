@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Carrinho | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Carrinho | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+@Html.Partial("_StaticBanner", "top-banner")
+<section class="content-carrinho default-font">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" data-vue="Cart">
+                <h1 class="title-h1">carrinho de compras</h1>
+                <div class="col-md-12 table" v-if="items().length">
+                    <div class="row header hidden-xs-down">
+                        <b class="col-xs-2 default-green">
+                            Grupo
+                        </b>
+                        <b class="col-xs-2 default-green">
+                            Concurso
+                        </b>
+                        <b class="col-xs-2 default-green">
+                            Cotas
+                        </b>
+                        <b class="col-xs-2 default-green">
+                            Unitário
+                        </b>
+                        <b class="col-xs-2 default-green">
+                            Total
+                        </b>
+                        <b class="col-xs-2 default-green">
+                            Excluir
+                        </b>
+                    </div>
+                    <div class="row" v-for="item in items()" v-bind:class="classLoteria(item)">
+                        <b class="col-sm-2 col-xs-4 color text-md-center">
+                            <span class="mini-title">Grupo</span>
+                            {{item.NomeGrupo}}
+                        </b>
+                        <div class="col-sm-2 col-xs-8 text-md-center" v-if="item.TipoCompra == 'AP' && item.CodigoLoteria != 6 && item.CodigoLoteria != 7">
+                            <span class="mini-title">Concurso</span>
+                            <select v-model="item.Teimosinha" v-on:change="updateTeimosinha(item)">
+                                <option value="1">01</option>
+                                <option v-for="teimosinha in item.Teimosinhas" v-bind:value="teimosinha">{{teimosinha.format("00")}}</option>
+                            </select>
+                            <span>{{item.Numero}}</span>
+                            <i class="fas fa-redo"
+                               v-bind:class="[ item.Recorrente ? 'default-green' : '' ]"
+                               v-on:click="toogleRecorrente(item)"
+                               v-bind:title="`Recorrência ${(item.Recorrente ? 'Ativada' : 'Desativada')}`"></i>
+                            <i class="fas fa-trash-alt hidden-sm-up" v-on:click="remove(item)"></i>
+                        </div>
+                        <div class="col-sm-2 col-xs-8 text-md-center" v-if="item.TipoCompra != 'AP' || (item.CodigoLoteria == 6 || item.CodigoLoteria == 7)">
+                            <span class="mini-title">Concurso</span>
+                            {{item.Numero}}
+                            <i class="fas fa-trash-alt hidden-sm-up" v-on:click="remove(item)"></i>
+                        </div>
+                        <div class="col-sm-2 col-xs-4 text-md-center">
+                            <span class="mini-title">Cotas</span>
+                            <span v-if="item.CotaUnica || item.TipoCompra == 'AP'">Única</span>
+                            <span v-if="!item.CotaUnica && item.TipoCompra != 'AP'">
+                                <select v-model="item.Cotas" v-on:change="updateCotas(item)">
+                                    <option v-for="cotas in item.CotasDisponiveis" v-bind:value="cotas">{{cotas.format("00")}}</option>
+                                </select> / {{item.TotalDeCotas}}
+                            </span>
+                        </div>
+                        <div class="col-sm-2 col-xs-4 text-md-center">
+                            <span class="mini-title">Unitário</span>
+                            {{item.ValorCota.format("C2")}}
+                        </div>
+                        <div class="col-sm-2 col-xs-4 text-md-center">
+                            <span class="mini-title">Total</span>
+                            {{(item.ValorCota * item.Teimosinha * item.Cotas).format("C2")}}
+                        </div>
+                        <div class="col-sm-2 col-xs-4 text-sm-center hidden-xs-down">
+                            <i class="fas fa-trash-alt" v-on:click="remove(item)"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row no-margin" v-if="items().length">
+                    <div class="col-xs-12 btn-esvaziar">
+                        <a href="javascript:void(0)" v-on:click="esvaziar()">Esvaziar Carrinho</a>
+                    </div>
+                </div>
+                 <div class="row no-margin" v-if="items().length">
+                    <div class="col-sm-3 col-xs-12 no-padding">
+                        <input v-model="coupom" type="text" placeholder="Cupom" aria-describedby="basic-addon1" class="form-control coupom" v-on:keyup.enter="validateCoupom()" v-if="hasCoupom()">
+                         <button type="button" class="btn btn-lg btn-success btn-pagar coupom" v-on:click="validateCoupom()" v-if="hasCoupom()">Ok</button>
+                    </div>
+                    <div class="col-sm-4 col-xs-12  col-sm-offset-5 text-md-right text-sm-center cart-total-wrapper">
+                        TOTAL: <span class="default-green cart-total">{{cart().TotalValor.format('C2')}}</span>
+                        <div v-if="coupomInfo && coupomInfo.ValorDesconto">Desconto: {{coupomInfo.ValorDesconto.format("C2")}}</div>
+                        <div v-if="coupomInfo && coupomInfo.ValorBonus">Bônus: {{coupomInfo.ValorBonus.format("C2")}}</div>
+                    </div>
+                </div>
+                <div class="row" v-if="!items().length">
+                    <div class="text-md-center text-sm-center">
+                        <div style="font-size: 24px;padding-bottom: 30px;"><b>Carrinho Vazio</b></div>
+                        <button type="button" class="btn btn-lg btn-success btn-pagar"
+                                style="width: auto;"
+                                v-on:click="go('/')">
+                            Voltar às Apostas
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @Html.Partial("FormasPagamento")
+            </div>
+        </div>
+    </div>
+</section>

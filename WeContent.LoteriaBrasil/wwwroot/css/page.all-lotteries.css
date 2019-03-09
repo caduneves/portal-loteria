@@ -1,0 +1,498 @@
+.page-alllotteries .header-page {
+    padding: 40px 0 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #252525;
+}
+
+.page-alllotteries .header-page .title {
+    font-family: 'Fredoka One',sans-serif;
+    color: #6baf52;
+    font-size: 55px;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    margin: 0 auto;
+}
+
+.hero-lottery .hidden-content {
+    max-height: 0;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    opacity: 0;
+    transition: .2s all linear;
+    padding: 0 20px;
+}
+
+.hero-lottery.is-active .hidden-content {
+    max-height: 100%;
+    opacity: 1;
+}
+
+.hero-lottery-special,
+.hero-lottery {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-bottom: 84px;
+}
+
+.hero-lottery-special::before,
+.hero-lottery-special::after,
+.hero-lottery::before,
+.hero-lottery::after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+    height: 0;
+}
+
+.hero-lottery-special .container-valign,
+.hero-lottery .container-valign {
+    display: flex;
+    align-items: center;
+}
+
+
+.hero-lottery .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.hero-lottery .menu ul li a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Fredoka One',sans-serif;
+    padding: 10px;
+    display: block;
+    transition: .2s all linear;
+}
+
+.hero-lottery .menu ul li a:hover {
+    background-color: rgba(0,0,0,.1);
+    text-decoration: none;
+}
+
+.hero-lottery .about {
+    min-height: 185px;
+}
+
+.hero-lottery .about h2 {
+    margin: 20px auto 10px;
+    font-size: 100px;
+    line-height: 1em;
+    color: rgba(0,0,0,.5);
+}
+
+.hero-lottery.loteria-federal .about h2 { font-size: 80px; }
+
+.hero-lottery .color-third { color:     rgba(0,0,0,.5) !important; }
+.hero-lottery .bg-third { background: rgba(0,0,0,.5) !important; }
+
+.hero-lottery .about p {
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.5em;
+    max-width: 630px;
+    margin: 0 auto;
+}
+
+.hero-lottery .btn-large {
+    width: 100%;
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Fredoka One', sans-serif;
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+    margin-top: 20px;
+    height: 64px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0,0,0,.5);
+    transition: .2s all linear;
+}
+
+.hero-lottery .btn-large:focus,
+.hero-lottery .btn-large:active,
+.hero-lottery .btn-large:visited,
+.hero-lottery .btn-large:hover { text-decoration: none; }
+
+.hero-lottery .btn-large:hover {
+    background: rgba(0,0,0,.4);
+}
+
+.hero-lottery .info {
+    color: white;
+    text-align: center;
+}
+
+.hero-lottery .next-contest {
+    font-family: 'Fredoka One',sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 1.2em;
+}
+
+.hero-lottery .next-contest > div { font-size: 1.5em; }
+
+.hero-lottery .reward {
+    width: 100%;
+    text-align: center;
+    margin: 5px auto;
+	font-family: 'Fredoka One', sans-serif;
+}
+
+.hero-lottery .reward span {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1em;
+    height: 100px;
+}
+
+.hero-lottery .reward .rs { font-size: 32px; }
+
+.hero-lottery .reward .price { 
+    font-size: 120px;
+    line-height: 85px;
+}
+
+.hero-lottery .reward .unity {
+    color: #fff;
+    width: 120px;
+    font-size: 38px;
+    word-break: break-all;
+    text-align: left;
+    padding-left: 10px;
+    text-transform: uppercase;
+} 
+
+.hero-lottery .reward.to-define .price,
+.hero-lottery .reward.to-define .rs { display: none; }
+.hero-lottery .reward.to-define .unity { 
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    line-height: 1em;
+    color: rgba(0,0,0,.5);
+    height: auto;
+}
+
+
+.btn-rounded {
+    font-family: 'Fredoka One',sans-serif;
+    text-transform: uppercase; 
+    color: white;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    max-width: 230px;
+    margin: 0 auto;
+    font-size: 22px;
+    border-radius: 8px;
+    transition: .2s all linear;
+}
+
+.btn-rounded:hover {
+    color: white;
+    text-decoration: none;
+    opacity: .8;
+}
+
+
+/* GRADIENTS */
+
+.hero-lottery {
+    background: -moz-radial-gradient(center, ellipse cover,rgba(255, 255, 255,.3) 0%,  rgba(0,0,0,.2) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover,rgba(255, 255, 255,.3) 0%,rgba(0,0,0,.2) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center,rgba(255, 255, 255,.3) 0%,rgba(0,0,0,.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.hero-lottery .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-lottery::after {
+    content: "";
+    background-repeat: no-repeat;
+    background-position: top center;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: .2s all linear;
+}
+
+.hero-lottery.is-active::after { opacity: 0; }
+
+.hero-lottery.mega-sena::after { background-image: url(../images/loterias/mega-sena.png); }
+.hero-lottery.dupla-sena::after { background-image: url(../images/loterias/dupla-sena.png); }
+.hero-lottery.lotomania::after { background-image: url(../images/loterias/lotomania.png); }
+.hero-lottery.quina::after { background-image: url(../images/loterias/quina.png); }
+.hero-lottery.loteria-federal::after { background-image: url(../images/loterias/loteria-federal.png); }
+.hero-lottery.loteca::after { background-image: url(../images/loterias/loteca.png); }
+.hero-lottery.lotogol::after { background-image: url(../images/loterias/lotogol.png); }
+.hero-lottery.lotofacil::after { background-image: url(../images/loterias/lotofacil.png); }
+.hero-lottery.timemania::after { background-image: url(../images/loterias/timemania.png); }
+/* .hero-lottery.dia-de-sorte::after { background-image: url(../images/loterias/dia-de-sorte.png); } */
+
+.hero-lottery .lottery-details {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.hero-lottery .lottery-details .item {
+    text-align: center;
+    margin: 10px;
+    color: white;
+    font-size: 18px;
+    min-width: 20%;
+}
+
+.hero-lottery .lottery-details .item-title {
+    text-transform: uppercase;
+    font-family: 'Fredoka One',sans-serif;
+    font-size: 22px;
+}
+
+.hero-lottery .lottery-details .dark-text { color: rgba(0,0,0,.5); }
+.hero-lottery .lottery-details .item-content {
+    line-height: 1.8em;
+    padding-top: 30px;
+}
+
+.hero-lottery .lottery-details ul {
+    display: block;
+    margin: 0 auto;
+    list-style: none;
+    width: 100%;
+    max-width: 230px;
+    text-align: left;
+    padding: 0;
+}
+
+.hero-lottery .lottery-details ul li {
+    display: block;
+}
+
+.hero-lottery .lottery-details ul li .label {
+    display: inline-block;
+    width: calc(100% - 142px);
+    text-align: left;
+    vertical-align: top;
+    height: 20px;
+}
+
+.hero-lottery .lottery-details .rank {
+    width: 142px;
+    display: inline-block;
+    background: url(../images/loterias/bullets.png) repeat-x;
+    height: 20px;
+    background-position: left center;
+    opacity: .5;
+}
+
+.hero-lottery .lottery-details .rank.rank-5 { width: 115px; }
+.hero-lottery .lottery-details .rank.rank-4 { width: 90px; }
+
+.hero-lottery .lottery-details .bullets span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 26px;
+    height: 26px;
+    border: 1px solid rgba(0,0,0,.5);
+    background: rgba(0,0,0,.5);
+    text-align: center;
+    line-height: 24px;
+    border-radius: 50%;
+}
+
+
+.hero-lottery .lottery-details .bullets span.outline { background: transparent; }
+
+
+.hero-lottery-special {
+    background: #000;
+    padding: 40px 0;
+}
+
+.hero-lottery-special h2 {
+    margin: 0;
+    text-align: left;
+    font-size: 90px;
+    text-transform: uppercase;
+    line-height: 1.3em;
+    color: white;
+}
+
+.hero-lottery-special h2 span {
+    background: #9cb72f;
+}
+
+.hero-lottery-special .about p {
+    margin: 20px 0;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.2em;
+    color: white;
+}
+
+.hero-lottery-special .btn-apostar {
+    display: inline-block;
+    font-size: 40px;
+    color: white;
+    font-family: 'Fredoka One',sans-serif;
+    text-transform: uppercase;
+    background: red;
+    line-height: 66px;
+    width: 326px;
+    padding: 0 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 1400px) {
+    .hero-lottery .lottery-details .item-title { font-size: 18px; }
+    .hero-lottery .lottery-details .item-content { padding-top: 20px; }
+    .hero-lottery .lottery-details .item-content { line-height: 1.5em; }
+}
+
+@media screen and (max-width: 1200px) {
+    .hero-lottery .next-contest { font-size: 20px; }
+    .hero-lottery .reward .price { font-size: 90px; line-height: 68px; }
+    .hero-lottery .reward .rs { font-size: 28px; }
+    .hero-lottery .reward .unity { font-size: 30px; }
+    .hero-lottery .menu ul li a { font-size: 13px; }
+    .hero-lottery .about h2 { font-size: 90px; }
+    .hero-lottery .about p { font-size: 14px; }
+    .hero-lottery .reward span { height: 70px; }
+
+    .hero-lottery .lottery-details .item { font-size: 16px; }
+    .hero-lottery .lottery-details { flex-wrap: wrap; }
+} /* max-width: 1200px */
+
+
+@media screen and (max-width: 992px) {
+    .hero-lottery .container-valign { display: block; }
+    .hero-lottery::after { display: none; }
+    .hero-lottery .about { 
+        min-height: initial;
+        margin-bottom: 15px;
+    }
+
+    .hero-lottery.loteria-federal .about h2,
+    .hero-lottery .about h2 { font-size: 50px; }
+
+    .hero-lottery .info > div {
+        float: left;
+        width: 50%;
+    }
+
+    .hero-lottery .btn-rounded {
+        clear: both;
+    }
+
+    .hero-lottery .next-contest,
+    .hero-lottery .reward {
+        padding: 0 0;
+        margin: 0 0;
+    }
+
+    .hero-lottery .next-contest { padding: 16px 0; }
+
+    .page-alllotteries .header-page { line-height: 1.2em; }
+    .page-alllotteries .header-page .title {
+        font-size: 46px;
+        margin-bottom: 10px;
+        line-height: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .hero-lottery.loteria-federal .about h2,
+    .hero-lottery .about h2 { font-size: 40px; }
+    
+    .hero-lottery .menu {
+        overflow: scroll;
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        text-align: center;
+    }
+
+    .hero-lottery .menu ul { 
+        display: block;
+        white-space: nowrap; 
+    }
+
+    .hero-lottery .menu ul li {  display: inline-block; }
+    
+    .hero-lottery .info > div { width: 100%; }
+
+    .hero-lottery .next-contest { font-size: 14px; }
+
+    .hero-lottery .reward .rs {
+        font-size: 21px;
+        line-height: 1.8em;
+        margin-left: -1em;
+    }
+    .hero-lottery .reward .price {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .hero-lottery .reward span { height: 50px; }
+
+    .hero-lottery .reward .unity {
+        text-align: center;
+        line-height: 1em;
+        height: auto;
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .hero-lottery .reward .unity br { display: none; }
+
+    .hero-lottery .about p {
+        font-size: 12px;
+        line-height: 1.2em;
+    }
+
+    .hero-lottery .btn-large {
+        font-size: 18px;
+        height: 55px;
+    }
+
+    .page-alllotteries .header-page {
+        padding: 20px 0 10px;
+    }
+
+    .page-alllotteries .header-page .title {
+        font-size: 36px;
+    }
+
+    .hero-lottery .lottery-details .item {
+        width: 50%;
+        min-width: 240px;
+    }
+}
+

@@ -1,0 +1,370 @@
+@{
+    ViewData["Title"] = "Loteria";
+}
+
+<section id="allLotteries" data-vue="TodasLoterias" class="page-alllotteries">
+    
+    <div class="container">
+        <div class="col-lg-12">
+            <header class="header-page">
+                <h1 class="title">Loterias</h1>
+                <p>Saiba tudo sobre as loterias oficiais aqui no Sorte Online. Aposte na Mega-Sena, Lotofácil, Quina e nas principais loterias sem sair de casa e com segurança.</p>
+            </header>
+        </div>
+    </div>
+
+    <section class="hero-lottery bg" v-if="loterias.length" v-for="(loteria, loteria_index) in loterias" v-bind:class="[loteria.class, { 'is-active' : (showContentLottery == loteria_index) }]">
+        
+        <div class="container container-valign">
+            <div class="col-md-8">
+
+                <div class="menu">
+                    <ul>
+                        <li><a v-bind:href="loteria.url">Como Jogar</a></li>
+                        <li><a v-bind:href="loteria.url">Resultados</a></li>
+                        <li><a v-bind:href="loteria.url">Probabilidades</a></li>
+                        <li v-if="!loteria.isFederal"><a v-bind:href="loteria.url">Estatísticas</a></li>
+                        <li><a v-bind:href="loteria.url">Prêmios no Site</a></li>
+                    </ul>
+                </div> <!-- /.menu -->
+
+
+                <div class="about">
+                    <h2>{{loteria.nome}}</h2>
+                    <p>{{ loteria.descricao }}</p>
+                </div> <!-- /.about -->
+
+            </div> <!-- /.col -->
+
+            <div class="col-md-4 no-padding">
+
+                <div class="info">
+                    <div class="next-contest">
+                        <div>Próximo Sorteio:</div>
+                        {{loteria.diaSorteio}} - Concurso {{loteria.concurso.Numero}}<br>
+                    </div>
+
+
+                    <div class="reward color-third" v-if="loteria.estimativaPremio" v-bind:class="{ 'to-define' : (loteria.estimativaPremio == 'a definir') }">
+                        <span class="rs">R$</span>
+                        <span class="price">{{loteria.estimativaPremio.split(' ')[0]}}</span>
+                        <span class="unity" v-html="loteria.estimativaPremioUnidadeEstilizado"></span>
+                    </div><!-- /.price-wrap -->
+
+                    <a v-bind:href="loteria.url" class="btn-rounded bg-third">Apostar</a>
+
+                </div><!-- /.info -->
+
+            </div> <!-- /.col -->
+        </div><!-- /.container -->
+
+
+        <div class="hidden-content">
+            <div class="container-fluid">
+                <div class="col-lg-12">
+                    
+                    <section class="lottery-details">
+                        
+                        <div class="item -dia-de-sorteio">
+                            <div class="item-title dark-text">Dias de Sorteio</div>
+                            <div class="item-content">
+                                4° Feira<br>
+                                Sábado<br>
+                                <span class="dark-text">Sempre às 20:00</span>
+                            </div>
+                        </div> <!-- /.dia-de-sorteio -->
+
+                        <div class="item -como-jogar">
+                            <div class="item-title dark-text">Como Jogar</div>
+                            <div class="item-content">
+                                Marcar entre<br>
+                                <div class="bullets"><span>6</span> e <span>15</span> de <span class="outline">60</span></div>
+                                <span class="dark-text">Números Existentes</span>
+
+                            </div>
+                        </div> <!-- /.como-jogar -->
+
+                        <div class="item -dia-de-sorteio">
+                            <div class="item-title dark-text">Faixa de Premiação</div>
+                            <div class="item-content">
+                                
+                                <ul>
+                                    <li>
+                                        <div class="label">Quina</div>
+                                        <div class="rank rank-5"></div>
+                                    </li>
+                                    <li>
+                                        <div class="label">Sena</div>
+                                        <div class="rank rank-6"></div>
+                                    </li>
+                                    <li>
+                                        <div class="label">Quadra</div>
+                                        <div class="rank rank-4"></div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div> <!-- /.dia-de-sorteio -->
+
+
+                        <div class="item -distribuicao-premio">
+                            <div class="item-title dark-text">Distribuição Prêmio</div>
+                            <div class="item-content">
+                                
+                                <span class="dark-text">45,3% da arrecadação</span><br>
+                                35% para acertos na Sena<br>
+                                19% para acertos na Quina<br>
+                                19% para acertos na Quadra
+                            </div>
+                        </div> <!-- /.distribuicao-premio -->
+
+
+                        <div class="item -acumula-premio">
+                            <div class="item-title dark-text">Acumula Prêmio</div>
+                            <div class="item-content">
+
+                                <span class="dark-text">22% para Sena</span><br>
+                                dos Concursos Final 0 e 5<br>
+                                <span class="dark-text">5% para Sena</span><br>
+                                do Concurso Especial<br>
+                                da Mega da Virada
+                            </div>
+                        </div> <!-- /.acumula-premio -->
+
+                    </section> <!-- /.lottery-details -->
+
+                </div> <!-- /.col -->
+            </div> <!-- /.container -->
+        </div> <!-- /.hidden-content -->
+
+
+        <a href="#" class="btn-large color" v-on:click.stop.prevent="showContent(loteria_index)">{{ (showContentLottery != loteria_index) ? 'Veja Como Funciona' : 'Fechar' }} <i class="fa" v-bind:class="{ 'fa-chevron-up' : (showContentLottery == loteria_index),  'fa-chevron-down' : (showContentLottery != loteria_index)}"></i></a>
+
+    </section> <!--/.hero-lottery -->
+
+    <section class="hero-whybet -default">
+        <div class="container">
+            <div class="icon"></div>
+            <div class="text">
+                <div class="title">Como apostar no <span class="color">Loteria Brasil</span></span>?</div>
+                <p>
+                    É Rápido, Fácil e Seguro
+                </p>
+            </div>
+
+            <a href="#" class="monitor">Monitor</a>
+        </div>
+    </section><!-- /.hero-whybet -->
+
+
+    <div class="container">
+        <div class="col-lg-12">
+            <header class="header-page">
+                <h1 class="title">Loterias Especiais Comemorativas</h1>
+                <p>Ao longo do ano, quatro loterias têm sorteios especiais, divulgados em datas comemorativas como a Dupla de Páscoa, Quina de São João, Lotofácil da Independência e Mega da Virada. Embora as apostas funcionem da mesma maneira, os sorteios têm algumas peculiaridades. O valor, por exemplo, corresponde a uma porcentagem acumulada de todos os concursos do ano, e o prêmio não acumula.</p>
+            </header>
+        </div>
+    </div>
+
+    <section class="hero-lottery-special bg" v-if="loteriasEspeciais.length" v-for="(loteria, loteria_index) in loteriasEspeciais">
+        
+        <div class="container container-valign">
+            <div class="col-md-8">
+
+                <div class="about">
+                    <h2><span>{{loteria.NomeDaLoteria}}</span></h2>
+                    <p>Ao longo do ano, quatro loterias têm sorteios especiais, divulgados em datas comemorativas como a Dupla de Páscoa, Quina de São João, Lotofácil da Independência e Mega da Virada. Embora as apostas funcionem da mesma maneira, os sorteios têm algumas peculiaridades. O valor, por exemplo, corresponde a uma porcentagem acumulada de todos os concursos do ano, e o prêmio não acumula.</p>
+                    
+                    <a href="/" class="btn-apostar">Apostar</a>
+
+                </div> <!-- /.about -->
+
+            </div> <!-- /.col -->
+
+            <div class="col-md-4 no-padding">
+
+                <div class="info">
+                    <div class="next-contest">
+                        <div>Último Concurso:</div>
+                        {{loteria.DataSorteio}} - Concurso {{loteria.NumeroConcurso}}<br>
+                    </div>
+
+
+                    <div class="reward color-third" v-if="loteria.estimativaPremio" v-bind:class="{ 'to-define' : (loteria.estimativaPremio == 'a definir') }">
+                        <span class="rs">R$</span>
+                        <span class="price">{{loteria.EstimativaDePremio}</span>
+                        <span class="unity">Milhões</span>
+                    </div><!-- /.price-wrap -->
+
+                </div><!-- /.info -->
+
+            </div> <!-- /.col -->
+        </div><!-- /.container -->
+
+    </section> <!--/.hero-lottery-special -->
+
+
+    <section class="wrap-hero-news" v-if="noticias.length">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="header">
+                    <h2 class="color-secondary">Notícias</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="slider-news">
+                    <div class="items owl-carousel owl-carousel-news owl-theme">
+                        <div v-for="item in noticias" class="item">
+                            <a v-bind:href="item.url" class="cover">
+                                <div class="image bg-primary" v-bind:style="{ 'background-image' : 'url('+item.Imagem+')'}"></div>
+                                <div class="text">
+                                    <div class="date color-primary">{{item.data}}</div>
+                                    <div class="title color-primary">{{item.Titulo}}</div>
+                                    <div class="description">{{item.description}}</div>
+                                </div>
+                            </a>
+                            <a v-bind:href="item.url" class="btn color-primary"><i class="fa fa-chevron-right"></i> <span>Continuar Lendo</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- /.wrap-hero-news -->
+</section> <!-- .page-alllotteries -->
+
+<section id="banner-ranking" data-vue="Premios">
+    <div class="container-fluid banner-ranking_container">
+        <div class="row">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 premiacao1">
+                        <p class="text-center static">nos últimos 30 dias</p>
+                        <p class="text-center valor">{{ mes }}</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 premiacao2">
+                        <p class="text-center static">nos últimos 12 meses</p>
+                        <p class="text-center valor">{{ ano }}</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 premiacao3">
+                        <p class="text-center static2">pagos até o momentos</p>
+                        <p class="text-center valor">{{ total }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content-ranking" data-vue="RankingPremios">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <h4>ranking de prêmios</h4>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <form class="form-inline text-center">
+                        <div class="form-group form-group1">
+                            <select class="form-control" v-model="quantidade" v-on:change="update()">
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            <label>Maiores prêmios</label>
+                        </div>
+                        <div class="form-group form-group-mobile">
+                            <select class="form-control" v-model="quantidade" v-on:change="update()">
+                                <option value="20">20 maiores prêmios</option>
+                                <option value="50">50 maiores prêmios</option>
+                                <option value="100">100 maiores prêmios</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-group2">
+                            <select class="form-control" v-model="loteria" v-on:change="update()">
+                                <option value="0">Loteria</option>
+                                <option value="1">Mega-Sena</option>
+                                <option value="2">Dupla Sena</option>
+                                <option value="3">Lotomania</option>
+                                <option value="4">Quina</option>
+                                <option value="5">Lot. Federal</option>
+                                <option value="6">Loteca</option>
+                                <option value="7">Lotogol</option>
+                                <option value="8">Lotofácil</option>
+                                <option value="9">Timemania</option>
+                                <option value="10">Dia de Sorte</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-group3">
+                            <i class="far fa-calendar-alt fa-lg"></i>
+                            <input type="tel" v-mask="'##/##/####'" class="form-control" v-model="dataInicio" v-on:change="update()">
+                        </div>
+                        <div class="form-group form-group4">
+                            <i class="far fa-calendar-alt fa-lg"></i>
+                            <input type="tel" v-mask="'##/##/####'" class="form-control" v-model="dataFim" v-on:change="update()">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="panel panel-default">
+                        <div class="table-responsive">
+                            <table class="table table-fixed">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            <a>
+                                                <i class="fas fa-angle-down fa-lg"></i>loteria</a>
+                                        </th>
+                                        <th>
+                                            <a>
+                                                <i class="fas fa-angle-down fa-lg"></i>concurso</a>
+                                        </th>
+                                        <th>
+                                            <a>
+                                                <i class="fas fa-angle-down fa-lg"></i>data</a>
+                                        </th>
+                                        <th>
+                                            <a>
+                                                <i class="fas fa-angle-down fa-lg"></i>prêmio</a>
+                                        </th>
+                                        <th>
+                                            <a>
+                                                <i class="fas fa-angle-down fa-lg"></i>grupo</a>
+                                        </th>
+                                        <th>
+                                            <a>
+                                                <i class="fas fa-angle-down fa-lg"></i>cotas</a>
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="resultado in resultados">
+                                        <td>{{resultado.ranking}}°</td>
+                                        <td>{{resultado.name}}</td>
+                                        <td>{{resultado.concurso}}</td>
+                                        <td>{{resultado.data}}</td>
+                                        <td>{{resultado.premio}}</td>
+                                        <td>{{resultado.grupo}}</td>
+                                        <td>{{resultado.cotas}}</td>
+                                        <td>
+                                            <i class="far fa-file fa-lg" v-on:click="verJogo(resultado)"></i>
+                                            <i class="fas fa-info-circle fa-lg" v-on:click="verComprovante(resultado)"></i>
+                                        </td>
+                                        <td>
+                                            <a v-bind:href="resultado.urlLoteria" class="btn btn-success btn-apostar">Apostar</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+@Html.Partial("../Home/Depoimentos")
+@Html.Partial("../Home/Sliders/ComoApostar")

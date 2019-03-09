@@ -1,0 +1,136 @@
+@Html.Partial("_StaticBanner", "top-banner")
+
+@section metas{
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Cadastrar | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+
+
+<section class="content-cadastro">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_MenuMinhaConta")
+            <div class="col-xs-12 col-sm-12 col-md-9" data-vue="Cadastro">
+                <div class="container-dadoscadastrais">
+                    <ul class="nav nav-tabs nav-justified tabs-cadastro">
+                        <div class="col-xs-12 col-sm-12 col-md-4">
+                            <li role="presentation" v-bind:class="[currentTab == 'dadospessoais' ? 'active' : '']">
+                                <a data-toggle="tab" class="tab_dadoscadastrais" v-on:click="selectTab('dadospessoais')">
+                                    <i class="far fa-user"></i>dados pessoais
+                                </a>
+                            </li>
+                        </div>
+                        <div class="col-xs-12 col-sm-12  col-md-4">
+                            <li role="presentation" v-bind:class="[currentTab == 'alteracaodesenha' ? 'active' : '']">
+                                <a data-toggle="tab" class="tab_dadoscadastrais" v-on:click="selectTab('alteracaodesenha')">
+                                    <i class="fas fa-key"></i>alteração de senha
+                                </a>
+                            </li>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4">
+                            <li role="presentation" v-bind:class="[currentTab == 'dadosdepagamento' ? 'active' : '']">
+                                <a data-toggle="tab" class="tab_dadoscadastrais" v-on:click="selectTab('dadosdepagamento')">
+                                    <i class="fas fa-credit-card"></i>dados de pagamento
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="dadospessoais" class="tab-pane fade" v-bind:class="[currentTab == 'dadospessoais' ? 'in active' : '']">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-2">
+                                        <a href="javascript:void(0)" v-on:click="changeAvatar()">
+                                            <input id="fileInput" name="fileInput" type="file" class="hidden" v-on:change="onAvatarChange()">
+                                            <div class="btn_escolherfoto" v-if="!user.Avatar"></div>
+                                            <img v-bind:src="[ user.Avatar ? `data:${user.TipoImagem};base64,${user.Avatar}` : ''  ]" class="btn_escolherfoto" alt="Avatar" v-if="user.Avatar" />
+                                        </a>
+
+                                    </div>
+                                    <div class="col-xs-12 col-md-3">
+                                        <span class="dado_usuario_titulo">Nome</span>
+                                        <span class="dado_usuario">{{user.NomeUsuario}}</span>
+                                    </div>
+                                    <div class="col-xs-12 col-md-3">
+                                        <span class="dado_usuario_titulo">CPF</span>
+                                        <input type="tel" class="form-control hidden" placeholder="CPF" v-model="user.CPF" v-mask="'###.###.###-##'">
+                                        <span class="dado_usuario">{{user.CPF}}</span>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4 container-btn_facebook">
+                                        <button type="button" class="btn btn-primary facebook" v-if="user.FacebookUserId"><i class="fab fa-facebook-f"></i>Desvincular Facebook</button>
+                                        <button type="button" class="btn btn-primary facebook" v-if="!user.FacebookUserId"><i class="fab fa-facebook-f"></i>Vincular ao Facebook</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" placeholder="Apelido" v-model="user.Apelido">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="tel" class="form-control" placeholder="Data de Nascimento" v-model="user.Nascimento" v-mask="'##/##/####'">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select class="form-control" placeholder="Sexo" v-model="user.Sexo">
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Feminino</option>
+                                            <option value="N">Não Informar</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="tel" class="form-control" placeholder="Telefone Celular" v-model="user.TelefoneCelular" v-mask="['(##) ####-####', '(##) #####-####']">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="tel" class="form-control" placeholder="Telefone Residencial" v-model="user.TelefoneResidencial" v-mask="['(##) ####-####', '(##) #####-####']">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="tel" class="form-control" placeholder="CEP" v-model="user.CEP" v-mask="'#####-###'" v-model="CEP">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" placeholder="E-mail" v-model="user.Email">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" placeholder="Confirmar E-mail" v-model="user.ConfirmacaoEmail">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="checknotifica" class="checkbox_recebernotificacoes" v-model="receiveEmail">
+                                            <label for="checknotifica"></label>Deseja receber nossos comunicados?
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="alteracaodesenha" class="tab-pane fade" v-bind:class="[currentTab == 'alteracaodesenha' ? 'in active' : '']">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="password" class="form-control" placeholder="Senha Atual" v-model="passwordData.password">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="password" class="form-control" placeholder="Nova Senha" v-model="passwordData.newPassword">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="password" class="form-control" placeholder="Confirme a Nova Senha" v-model="passwordData.confPassword">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="dadosdepagamento" class="tab-pane fade" v-bind:class="[currentTab == 'dadosdepagamento' ? 'in active' : '']">
+                            <h5>Não existem cartões cadastrados.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 container_btn-confirmar" v-show="currentTab != 'dadosdepagamento'">
+                    <button type="button" class="btn btn-success btn-confirmar btn-lg" v-on:click="confirm()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

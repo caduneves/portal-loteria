@@ -1,0 +1,369 @@
+/*Minhas compras*/
+.container-dadoscadastrais.minhas-compras {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+    .container-dadoscadastrais.minhas-compras .row.item {
+        cursor: pointer;
+    }
+
+    .container-dadoscadastrais.minhas-compras .row.item,
+    .container-dadoscadastrais.minhas-compras .row.header {
+        background-color: white;
+        padding: 0px;
+        margin: 0;
+        min-height: 40px;
+        text-align: center;
+        line-height: 14px;
+        padding-top: 10px;
+    }
+
+        .container-dadoscadastrais.minhas-compras .row.item .pendente {
+            color: #feb546;
+            font-weight: bolder;
+        }
+
+        .container-dadoscadastrais.minhas-compras .row.item .cancelado {
+            color: #cb2615;
+            font-weight: bolder;
+        }
+
+        .container-dadoscadastrais.minhas-compras .row.item .confirmado {
+            color: #0a8b74;
+            font-weight: bolder;
+        }
+
+        .container-dadoscadastrais.minhas-compras .row.item small {
+            color: black;
+            font-weight: normal;
+            display: inline-block;
+            line-height: 12px;
+        }
+
+    .container-dadoscadastrais.minhas-compras .row.header {
+        color: #6baf52;
+        font-weight: bolder;
+        background-color: #f1f1f1;
+        height: 20px;
+        line-height: 20px;
+        min-height: 20px;
+        padding-top: 0px;
+        border-bottom: none !important;
+    }
+
+    .container-dadoscadastrais.minhas-compras .row.item:not(:last-child) {
+        border-bottom: 1px solid #d7d7d7;
+    }
+
+    .container-dadoscadastrais.minhas-compras .row.subitem {
+        margin: 0px;
+        font-size: 12px;
+        text-align: center;
+        line-height: 12px;
+    }
+
+    .container-dadoscadastrais.minhas-compras .row.subheader {
+        margin: 10px 0px;
+        font-size: 12px;
+        font-weight: bolder;
+        color: #6baf52;
+        background-color: #f1f1f1;
+        width: 100%;
+    }
+
+    .container-dadoscadastrais.minhas-compras .colheader {
+        padding: 0px;
+    }
+
+    .container-dadoscadastrais.minhas-compras .text-red {
+        color: #c51813 !important
+    }
+
+    .container-dadoscadastrais.minhas-compras span.mini-title.hidden-md.hidden-lg.hidden-sm {
+        display: block;
+        clear: both;
+        margin-bottom: 5px;
+        margin-top: 10px;
+        color: #6baf52;
+        font-weight: bolder;
+        text-align: left;
+    }
+
+
+@media (max-width: 425px) {
+.container-dadoscadastrais.minhas-compras .row.subitem {
+    border-top: 1px solid lightgray;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container-dadoscadastrais.minhas-compras .row.item .cancelado,
+.container-dadoscadastrais.minhas-compras .row.item .pendente
+.container-dadoscadastrais.minhas-compras .row.item .confirmado {
+    padding: 0px;
+}
+}
+
+.floating-filter {
+position: absolute;
+right: 10px;
+background: white;
+z-index: 99;
+border: 1px solid gray;
+border-radius: 10px;
+width: 300px;
+padding: 5px;
+}
+
+.floating-filter .row {
+    padding: 0px;
+    margin: 10px 0px;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+    .floating-filter .row > div {
+        padding: 5px;
+    }
+
+    .floating-filter .row .btn-full {
+        width: 100%;
+    }
+
+    .floating-filter .row select, .floating-filter .row input {
+        background-color: white;
+        text-align: left;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+        padding-left: 10px;
+        outline: none;
+    }
+
+.filters span {
+cursor: pointer;
+}
+
+.filters {
+text-align: right;
+position: relative;
+}
+
+.container-dadoscadastrais.minhas-compras .row.item .col-xs-3 {
+padding: 0px;
+}
+
+.container-dadoscadastrais.minhas-compras .row.item.empty {
+height: 80px;
+line-height: 60px;
+font-size: 20px;
+}
+
+.filters .left-table .col .value {
+font-size: small;
+}
+
+.filters .left-table {
+text-align: left;
+display: inline-block;
+position: absolute;
+left: 0;
+top: -16px;
+font-size: 10px;
+}
+
+.filters .left-table .row, .filters .left-table .row .col {
+display: inline-block;
+padding: 0;
+margin: 0 10px;
+}
+
+
+.aposta-facil .title, .novo-depoimento .title{
+font-family: "Fredoka One";
+text-transform: uppercase;
+color: #6baf52;
+text-align: center;
+font-size: 30px;
+margin-bottom: 0;
+}
+.aposta-facil .subtitle, .novo-depoimento .subtitle{
+font-weight: bolder;
+font-size: 16px;
+}
+.novo-depoimento .value-btn{
+    max-width: 237px;
+}
+.novo-depoimento .subtitle {
+    margin: 0px;
+}
+.novo-depoimento div.city-state {
+    padding-top: 0px !important;
+    padding-bottom: 20px !important;
+}
+.novo-depoimento .text-limit {
+    padding: 0 !important;
+    margin: 0 !important;
+    float: right;
+}
+.novo-depoimento .modal {
+    top: 50% !important;
+    margin-top: -275px;
+}
+.aposta-facil .value-input{
+width: 250px;
+display: inline-block;
+height: 40px;
+}
+.aposta-facil select {
+background: white;
+border-radius: 5px;
+height: 40px;
+width: 250px;
+}
+.aposta-facil .modal{
+top: 30%;
+}
+.novo-depoimento textarea{
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+.novo-depoimento .text-limit{
+    padding: 0;float: right;
+}
+@media (max-width: 450px){
+
+.aposta-facil .value-input, .aposta-facil select {
+    width: 175px;
+}
+.aposta-facil .message button {
+    max-width: 50%;
+}
+}
+.aposta-facil .value-btn{
+max-width: 80px;
+}
+.aposta-facil .steps {
+padding: 0px !important;
+margin: 0px !important;
+}
+.aposta-facil .steps .step {
+padding-bottom: 0px !important;
+padding-top: 10px !important;
+}
+.aposta-facil  .dezena-sorte {
+width: 30px;
+text-align: center;
+margin-left: 10px;
+display: inline-block;
+}
+.container-dadoscadastrais.minhas-compras.resgate input,
+ .container-dadoscadastrais.minhas-compras.resgate select {
+    background-color: white;
+    border: 1px solid #c1c1c1;
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+@media (min-width: 768px){
+    .container-dadoscadastrais.minhas-compras.resgate .no-padding{
+        padding-right: 15px !important;         
+    }
+  
+}
+.container-dadoscadastrais.minhas-compras.resgate .row.item {
+    padding: 20px;
+}
+
+.box-minha-conta {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    background: white;
+    z-index: 999;
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 2px -2px 3px rgba(0, 0, 0, .2);
+    border: 1px solid #f0efef;
+    display: none;
+    height: auto;
+}
+@media (max-width: 576px) {
+    .box-minha-conta{
+        top: 49px;
+        left: 7px;
+    }
+}
+@media (max-width: 768px){
+    .header-bar_customer .container-user div.mini-cart {
+        padding-right: 0px !important;
+    }
+    .header-bar_customer .container-user div.login-header {
+        padding-left: 30px !important;
+    }
+    .login-btns {
+        position: absolute;
+        top: 6px;
+        left: 80px;
+        width: 100px;
+        display: block !important;
+    }
+    .container-dadoscadastrais.minhas-compras .row.item {
+        font-size: 11px;
+    }
+    .container-dadoscadastrais.minhas-compras .row.item .pendente,
+    .container-dadoscadastrais.minhas-compras .row.item .cancelado,
+    .container-dadoscadastrais.minhas-compras .row.item .confirmado {
+        position: relative;
+        left: -16px;
+    }
+}
+
+
+.login-header:hover .box-minha-conta{
+    display: block !important;
+}
+.box-minha-conta a {
+    display: block;
+    height: 40px;
+    text-align: center;
+}
+.box-minha-conta a .label {
+    color: black;
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: bold;
+}
+.box-minha-conta a:hover,
+ .box-minha-conta a:hover .label {
+    color: #6baf52 !important;
+    text-decoration: none;
+}
+.minhas-compras .row.item{
+    position: relative;
+}
+.minhas-compras .row.item.expandable::after, 
+.minhas-compras .row.item.expanded::after {
+    font-family: Font Awesome\ 5 Free;
+    content: "\f107";
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+    position: absolute;
+    right: 6px;
+    top: 17px;
+    font-weight: 900;
+    transform: translate(0,-50%);
+}
+.minhas-compras .row.item.expanded::after {
+    content: "\f106" !important;
+}

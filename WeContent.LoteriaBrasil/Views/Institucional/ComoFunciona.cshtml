@@ -1,0 +1,378 @@
+@{
+    ViewData["Title"] = "Como Funciona";
+}
+
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Como Funciona | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+
+@Html.Partial("_StaticBanner", "top-banner")
+
+
+<section class="content-institucional">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <h1 class="title-h1">Como Funciona</h1>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <ul class="nav nav-pills nav-justified nav-institucional">
+                        <li>
+                            <a href="/quem-somos">Quem Somos</a>
+                        </li>
+                        <li class="active">
+                            <a href="/como-funciona">Como Funciona</a>
+                        </li>
+                        <li>
+                            <a href="/sobre-sorteios">Dias de Sorteio</a>
+                        </li>
+                        <li>
+                            <a href="/como-pagar">Como Pagar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="howto-wrap">
+
+    <section class="step step-one">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="step-header">
+                    <h2>1. faça seu cadastro ou efetue o login</h2>
+                </div> <!-- /.step-header -->
+                <div class="step-content">
+                    <p>Para participar de nossos Grupos, primeiramente é necessário cadastrar-se. O usuário deve ser maior de 18 anos e juridicamente capaz. O cadastro é simples e pode ser preenchido em poucos minutos. Certifique-se de digitar seu e-mail corretamente, pois é através dele que você faz seu login no LoteriaBrasil, além de ser o meio utilizado para envio dos nossos comunicados, inclusive os de premiação. Fique tranquilo, pois em hipótese alguma seus dados serão divulgados à terceiros. </p>
+                    <p>IMPORTANTE: Se você ou a sua empresa possuem qualquer tipo de anti-spam, não se esqueça de efetuar a liberação de e-mails oriundos do LoteriaBrasil!</p>
+                </div> <!-- /.step-content -->
+
+                <a href="/usuario/login" class="btn btn-success btn-lg text-uppercase"> <i class="fa fa-user"></i> Fazer Login</a>
+
+            </div> <!--/.col -->
+        </div> <!-- /.container -->
+    </section> <!-- /.step.step-one -->
+
+    <section class="step step-two">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="step-header">
+                    <h2>2. Escolha um bolão ou faça seu jogo</h2>
+                </div> <!-- /.step-header -->
+
+                <div class="step-content">
+
+                    <div class="container-fluid flex-centering">
+                        <div class="col-md-6">
+                            <figure class="text-center">
+                                <img src="/images/como-funciona/step-2.png" class="img-responsive center-block" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+
+                            <h3>Escolhendo Nossos Jogos</h3>
+                            <p>
+                                Para verificar, salvar ou mesmo imprimir os cartões que fazem parte de cada grupo, basta clicar na “Lupa” (Ver Jogo e Ver Comprovante) que se encontra ao lado do nome dos Grupos. Para apostar você deve indicar a quantidade de cotas que deseja adquirir e clicar em COMPRAR ao lado da quantidade de cotas desejadas. Será exibido seu carrinho de compras para conferência e confirmação.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>Escolhendo seus Próprios Números</h3>
+
+                    <p>
+                        Selecione a loteria desejada, clique em cima das dezenas ou palpites para selecioná-los e apagá-los, você tem a opção de gerar as suas dezenas através da “Surpresinha”. Seus jogos poderão ser repetidos utilizando as opções de “SuperTeimosinha”, temos a "Recorrência Automática" onde o sistema refaz as suas apostas automaticamente (permitida somente através do Cartão de Crédito) e temos também a "Quantidade de Concursos" que permite comprar mais concursos que a quantidade normal. (ex. oferecemos a Quina para até 72 concursos). Após a confecção de sua aposta, clique em “INCLUIR” em seguida "FINALIZAR COMPRA". O valor mínimo para esta modalidade é de R$ 5,00.
+                    </p>
+
+                    <p>O prazo limite para apostas com seus próprios números no dia do sorteio é:</p>
+                    <ul>
+                        <li>Mega-Sena e Dupla Sena, até as 15:00 horas com 06 dezenas e até as 16:00 horas com 08 dezenas ou mais.</li>
+                        <li>Loteca e Lotogol, até as 09:00 horas.</li>
+                        <li>Demais loterias, até as 15:00 horas.</li>
+                    </ul>
+
+                </div><!--/.step-content -->
+
+            </div> <!--/.col -->
+        </div>
+    </section> <!-- /.step.step-two -->
+
+    <section class="step step-three">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="step-header">
+                    <h2>3. Escolha a forma de pagamento</h2>
+                </div> <!-- /.step-header -->
+
+                <div class="step-content">
+
+
+                    <div class="container-fluid flex-centering">
+                        <div class="col-md-6">
+                            <figure class="text-center">
+                                <img src="/images/como-funciona/step-3.png" class="img-responsive center-block" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                Se você quiser agilizar o processo de compra no LoteriaBrasil, é possível adquirir antecipadamente créditos que podem ser usados posteriormente para o pagamento de suas apostas. Antes de apostar, faça sua compra de créditos clicando botão “COMPRAR CRÉDITO” na parte superior do site ou no rodapé nos casos de mobile. Informe o valor dos créditos que deseja adquirir e escolha uma das formas de pagamento apresentadas anteriormente.
+                            </p>
+                            <p>
+                                Efetue o pagamento e aguarde o e-mail de confirmação do LoteriaBrasil, indicando que seus créditos já estão disponíveis para apostas.
+                            </p>
+                            <p>
+                                Com os créditos disponíveis, você pode apostar em seu jogo preferido até 1 minuto antes da realização do sorteio!
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        Os créditos funcionam como um depósito em sua conta do LoteriaBrasil. Toda aposta que você efetuar será abatida do seu saldo de créditos. Seu saldo no LoteriaBrasil nunca expira e não tem prazo de validade. Você poderá controlar seu extrato de movimentação através da opção “SALDO” no menu do usuário.
+                    </p>
+
+                    <p>
+                        Selecione a forma de pagamento desejada. Em seguida, leia as disposições gerais e em caso de concordar com a mesma, clique em “Sim, eu li e aceito as disposições gerais” em seguida clique em “FINALIZAR PAGAMENTO”.
+                    </p>
+
+                    <p>
+                        <a href="#">Conheça nossas formas de pagamento.</a>
+                    </p>
+                </div>
+
+            </div> <!--/.col -->
+        </div><!-- /.container -->
+    </section> <!-- /.step.step-three -->
+
+    <section class="step step-four">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="step-header">
+                    <h2>4. Conclua a operação de compra</h2>
+                </div> <!-- /.step-header -->
+
+                <div class="step-content">
+
+                    <div class="container-fluid flex-centering">
+                        <div class="col-md-6">
+
+                            <figure class="text-center">
+                                <img src="/images/como-funciona/step-4.png" class="img-responsive center-block" alt="">
+                            </figure>
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <p>
+                                Agora, você deverá informar os dados da agência e conta da qual você efetuará a transferência bancária.
+                            </p>
+                            <p>
+                                ATENÇÃO: As informações fornecidas por você de agência e conta, são apenas para que possamos identificar seu pagamento junto ao banco.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        O Sorte Online não efetua qualquer transação bancária.
+                    </p>
+                    <p>
+                        Não é permitido depósito bancário, pois o mesmo, normalmente não é identificado pelos bancos, podendo causar o cancelamento da compra devido ao prazo de expiração. Se por ventura, você efetuar um depósito, nos envie o comprovante imediatamente para que sua compra não seja cancelada pela não identificação do pagamento. Em seguida, clique em “FINALIZAR PAGAMENTO”. Ao concluir sua operação, você receberá os seguintes e-mails do Sorte Online:
+                    </p>
+                    <p>
+                        a) Se você apostou utilizando seus “Créditos”:<br>
+                        Você receberá de imediato um e-mail de confirmação de compra com a relação das apostas adquiridas. Para visualizar e/ou imprimir os cartões de suas apostas, basta clicar na “Lupa” que encontra-se ao lado do nome dos Grupos.
+                    </p>
+                    <p>
+                        b) Se você comprou através de Transferência Bancária ou Boleto:<br>
+                        Você receberá um primeiro e-mail com instruções importantes de como efetuar o seu pagamento e o prazo de expiração de suas compras.
+                    </p>
+                    <p>
+                        c) Se você optou pelo pagamento através do Cartão de Crédito e NÃO teve sua compra autorizada:<br>
+                        Sua compra será automaticamente cancelada, e você receberá um e-mail do Sorte Online notificando seu cancelamento.<br>
+                        Suas apostas perderão a validade e você não estará mais concorrendo aos prêmios.<br>
+                        Na compra de apostas você receberá também um link para a seção “COMPRAS” do menu do usuário, onde podem ser verificados os Grupos que você escolheu participar e a situação de suas apostas, que continuarão pendentes até que haja a confirmação do seu pagamento. IMPORTANTE: FAÇA RAPIDAMENTE O PAGAMENTO E AGUARDE O E-MAIL DE CONFIRMAÇÃO!<br>
+                    </p>
+                    <p>
+                        Observe que todas as compras efetuadas têm seu prazo de expiração. Se o seu pagamento não for efetuado e identificado em nosso sistema em tempo hábil, sua compra será automaticamente cancelada, e você receberá um segundo e-mail do Sorte Online notificando seu cancelamento.
+                    </p>
+                    <p>
+                        Se você adquiriu apostas, neste momento elas perderão sua validade e você não estará concorrendo aos prêmios.<br>
+                        Quando seu pagamento for identificado e confirmado pelo Sorte Online, você receberá um novo e-mail de confirmação de pagamento, dentro dos prazos a seguir, desde que no horário de atendimento do site:
+                    </p>
+                    <p>
+                        Boleto Bancário: no dia seguinte para pagamentos efetuados de Segunda à Sexta-feira, e na Terça-Feira para os pagamentos realizados nos Finais de Semana.<br>
+                        Cartão de Crédito: Aprovação automática pela Elavon, em até 20 min. após o pagamento. 7 dias por semana, 24 horas por dia.<br>
+                        Transferência entre Contas: em até 2 horas desde que dentro do horário de atendimento do site.
+                    </p>
+                </div>
+
+            </div> <!--/.col -->
+        </div>
+    </section> <!-- /.step.step-four -->
+
+    <section class="step step-five">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="step-header">
+                    <h2>5. faça seu cadastro ou efetue o login</h2>
+                </div> <!-- /.step-header -->
+
+                <div class="step-content">
+
+                    <figure class="text-center">
+                        <img src="/images/como-funciona/step-5.png" class="img-responsive center-block" alt="">
+                    </figure>
+
+                    <p>
+                        ATENÇÃO: nosso horário de atendimento é de Segunda a Sexta, das 8:30 hs. às 20:00 hs., e nos Sábados, das 09:00 hs. às 19:30 hs. horas (exceto feriados) Se você precisa da confirmação com urgência para participar de sorteios cujos horários estão se aproximando, envie-nos imediatamente para o e-mail <a href="mailto:pagamento@sorteonline.com.br">pagamento@sorteonline.com.br</a> o comprovante da operação para fazermos sua liberação.
+                    </p>
+
+                </div>
+
+            </div> <!--/.col -->
+        </div>
+    </section> <!-- /.step.step-five -->
+
+    <section class="step step-six">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="step-header">
+                    <h2>6. Comprovante Digitalizado, Verificado, Validado e Custodiado</h2>
+                </div> <!-- /.step-header -->
+
+                <div class="step-content">
+
+                    <p>
+                        Para garantir sua segurança todas as apostas feitas no site Sorte Online são digitalizadas.
+                    </p>
+                    <p>
+                        Nesse processo ocorrem 3 etapas:
+                    </p>
+
+                    <figure class="text-center">
+                        <img src="/images/como-funciona/step-6.png" class="img-responsive center-block" alt="">
+                    </figure>
+
+                    <p>
+                        Digitalização: Seu volante é digitalizado.
+                    </p>
+
+                    <p>
+                        Verificação: Após a digitalização o sistema confere uma a uma as apostas realizadas.
+                    </p>
+                    <p>
+                        Validação: Após a verificação das apostas o sistema valida seu jogo.
+                    </p>
+
+                    <p>
+                        Todos os volante são enviados para a seção “COMPRAS” no painel do usuário.<br>
+                        Assim você poderá consultar todos os seus volantes sempre que quiser.
+                    </p>
+                    <p>
+                        Após o processamento e digitalização de suas apostas, os seus comprovantes serão custodiados (armazenados guardados) em local seguro e restrito.
+                    </p>
+                    <p>
+                        1º Acesse sua conta confirmando o login e senha.
+                    </p>
+                    <p>
+                        2º Selecione a opção “COMPRAS”.
+                    </p>
+                    <p>
+                        3º Basta clicar no ícone da coluna “Jogo / Comprovante” para visualizar os volantes ou mesmo imprimi-los.
+                    </p>
+
+                </div>
+
+            </div> <!--/.col -->
+        </div>
+    </section> <!-- /.step.step-six -->
+
+    <section class="step step-seven">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="step-header">
+                    <h2>7. Conferimos e comunicamos o resultado.<br>Torça para ficar rico!</h2>
+                </div> <!-- /.step-header -->
+
+                <div class="step-content">
+                    <div class="container-fluid flex-centering">
+                        <div class="col-md-4">
+                            <figure class="text-center">
+                                <img src="/images/como-funciona/step-7.png" class="img-responsive center-block" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                Agora é só torcer.
+                            </p>
+                            <p>
+                                Lembrando que nosso sistema confere todas as apostas realizadas no site, então não se preocupe se algum dos seus jogos for premiado enviaremos um e-mail avisando sua premiação.
+                            </p>
+                            <p>
+                                Você também pode acompanhar o resultado das suas apostas na opção “COMPRAS” do menu do usuário. Lá você encontra todas as apostas em andamento, ou seja, aquelas que você ainda está concorrendo aos prêmios.
+                            </p>
+                            <p>
+                                Comece agora mesmo a realizar suas apostas. Não perca mais tempo, você pode ser o próximo milionário!!!
+                            </p>
+                            <p>
+                                Seja bem vindo e boa sorte!!!
+                            </p>
+                        </div>
+                    </div>
+
+                </div> <!--/.col -->
+            </div>
+    </section> <!-- /.step.step-seven -->
+
+    <section class="step step-eight">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="step-header">
+                    <h2>8. Resgate de prêmios</h2>
+                </div> <!-- /.step-header -->
+
+                <div class="step-content">
+
+                    <div class="container-fluid flex-centering">
+                        <div class="col-md-4">
+                            <figure class="text-center">
+                                <img src="/images/como-funciona/step-8.png" class="img-responsive center-block" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                Em caso de premiação, o Sorte Online irá resgatar o valor junto a CEF e creditará em sua conta. Caso queira, você poderá solicitar o Resgate do Prêmio para a sua conta bancário, utilizando a opção "RESGATAR PRÊMIOS" no menu do usuário.
+                            </p>
+                            <p>
+                                Será cobrada uma taxa de resgate, independente do valor e banco solicitado. No prazo máximo de 5 dias úteis o valor será creditado na conta bancária indicada, considerando a veracidade das informações.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> <!--/.col -->
+        </div>
+    </section> <!-- /.step.step-eight -->
+
+</section><!-- /.steps-wrap -->
+
+
+<figure style="margin-bottom: 2rem;">
+    <a href="#">
+        <img src="/images/como-funciona/banner.jpg" class="center-block img-responsive" alt="">
+    </a>
+</figure>

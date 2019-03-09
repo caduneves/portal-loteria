@@ -1,0 +1,582 @@
+.page-estatisticas .navigator {
+    width: 100%;
+    padding-top: 45px;
+}
+
+.page-estatisticas .navigator ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.page-estatisticas .navigator ul li {
+    display: block;
+    margin-bottom: 13px;
+}
+
+.page-estatisticas .navigator ul li a {
+    display: block;
+    font-family: "Fredoka One", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid #818181;
+    border-radius: 8px;
+    font-size: 17px;
+    line-height: 1em;
+    text-align: center;
+    padding: 10px 15px;
+    background: white;
+    color: #3c3c3c;
+    transition: .2s all linear;
+}
+
+.page-estatisticas .navigator ul li a:hover { background: whitesmoke; }
+
+.page-estatisticas article {
+    padding-top: 45px;
+    font-size: 16px;
+    color: #363636;
+}
+
+.page-estatisticas article p { line-height: 1.4em; }
+
+.page-estatisticas article h3,
+.page-estatisticas article h2 {
+    font-family: "insaniburger", sans-serif;
+    display: block;
+    font-size: 31px;
+    text-align: left;
+}
+
+.page-estatisticas article h2 { margin-top: 0; }
+
+.page-estatisticas article p + h3 { margin-top: 2em; }
+
+.page-estatisticas .list-states ul,
+.page-estatisticas .list-rewards ul {
+    list-style: none;
+    padding: 0;
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.page-estatisticas .list-states li,
+.page-estatisticas .list-rewards li {
+    display: inline-block;
+    width: 110px;
+    height: 160px;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+.page-estatisticas .list-rewards li .item {
+    position: absolute;
+    bottom: 0;
+}
+
+
+.page-estatisticas .list-rewards li .item .icon {
+    display: block;
+    width: 100%;
+    height: 86px;
+    background: #444;
+    margin: 5px 0;
+    -webkit-mask-image: url(../images/stats/moneystack.png);
+    -moz-mask-image: url(../images/stats/moneystack.png);
+    -ms-mask-image: url(../images/stats/moneystack.png);
+    mask-image: url(../images/stats/moneystack.png);
+}
+
+.page-estatisticas .list-rewards li:nth-child(2) .item .icon { height: 77px; }
+.page-estatisticas .list-rewards li:nth-child(3) .item .icon { height: 65px; }
+.page-estatisticas .list-rewards li:nth-child(4) .item .icon { height: 55px; }
+.page-estatisticas .list-rewards li:nth-child(5) .item .icon { height: 44px; }
+
+.page-estatisticas .list-rewards li:nth-child(2) .item { opacity: 0.7; }
+.page-estatisticas .list-rewards li:nth-child(3) .item { opacity: 0.5; }
+.page-estatisticas .list-rewards li:nth-child(4) .item { opacity: 0.3; }
+.page-estatisticas .list-rewards li:nth-child(5) .item { opacity: 0.2; }
+
+.page-estatisticas .list-rewards li .rank {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.page-estatisticas .list-rewards li .price {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+}
+
+
+.page-estatisticas .list-footer { text-align: right; }
+
+.page-estatisticas .btn-more {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.page-estatisticas .btn-more:hover { text-decoration: none; }
+
+.page-estatisticas .article-footer {
+    width: 100%;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.page-estatisticas .article-footer .btn {
+    border-radius: 0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 15px;
+    min-width: 295px;
+}
+
+.page-estatisticas .list-states li .map-wrap {
+    width: 100%;
+    height: 90px;
+    position: relative;    
+}
+.page-estatisticas .list-states li .map {
+    display: block;
+    width: 100%;
+    height: 90px;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -moz-mask-size: contain;
+    -moz-mask-repeat: no-repeat;
+    -moz-mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    margin-bottom: 10px;
+}
+
+.page-estatisticas .list-states li .uf {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    font-size: 22px;
+    font-family: "insaniburger", sans-serif;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    border-radius: 50%;
+    color: white;
+}
+
+/* mask states */
+.page-estatisticas .list-states li .map.-ac {
+    -webkit-mask-image: url(../images/states/ac.png);
+    -moz-mask-image: url(../images/states/ac.png);
+    -ms-mask-image: url(../images/states/ac.png);
+    mask-image: url(../images/states/ac.png);
+}
+
+.page-estatisticas .list-states li .map.-al {
+    -webkit-mask-image: url(../images/states/al.png);
+    -moz-mask-image: url(../images/states/al.png);
+    -ms-mask-image: url(../images/states/al.png);
+    mask-image: url(../images/states/al.png);
+}
+
+.page-estatisticas .list-states li .map.-am {
+    -webkit-mask-image: url(../images/states/am.png);
+    -moz-mask-image: url(../images/states/am.png);
+    -ms-mask-image: url(../images/states/am.png);
+    mask-image: url(../images/states/am.png);
+}
+
+.page-estatisticas .list-states li .map.-ap {
+    -webkit-mask-image: url(../images/states/ap.png);
+    -moz-mask-image: url(../images/states/ap.png);
+    -ms-mask-image: url(../images/states/ap.png);
+    mask-image: url(../images/states/ap.png);
+}
+
+.page-estatisticas .list-states li .map.-ba {
+    -webkit-mask-image: url(../images/states/ba.png);
+    -moz-mask-image: url(../images/states/ba.png);
+    -ms-mask-image: url(../images/states/ba.png);
+    mask-image: url(../images/states/ba.png);
+}
+
+.page-estatisticas .list-states li .map.-ba {
+    -webkit-mask-image: url(../images/states/ba.png);
+    -moz-mask-image: url(../images/states/ba.png);
+    -ms-mask-image: url(../images/states/ba.png);
+    mask-image: url(../images/states/ba.png);
+}
+
+.page-estatisticas .list-states li .map.-ce {
+    -webkit-mask-image: url(../images/states/ce.png);
+    -moz-mask-image: url(../images/states/ce.png);
+    -ms-mask-image: url(../images/states/ce.png);
+    mask-image: url(../images/states/ce.png);
+}
+
+.page-estatisticas .list-states li .map.-df {
+    -webkit-mask-image: url(../images/states/df.png);
+    -moz-mask-image: url(../images/states/df.png);
+    -ms-mask-image: url(../images/states/df.png);
+    mask-image: url(../images/states/df.png);
+}
+
+.page-estatisticas .list-states li .map.-es {
+    -webkit-mask-image: url(../images/states/es.png);
+    -moz-mask-image: url(../images/states/es.png);
+    -ms-mask-image: url(../images/states/es.png);
+    mask-image: url(../images/states/es.png);
+}
+
+.page-estatisticas .list-states li .map.-go {
+    -webkit-mask-image: url(../images/states/go.png);
+    -moz-mask-image: url(../images/states/go.png);
+    -ms-mask-image: url(../images/states/go.png);
+    mask-image: url(../images/states/go.png);
+}
+
+.page-estatisticas .list-states li .map.-ma {
+    -webkit-mask-image: url(../images/states/ma.png);
+    -moz-mask-image: url(../images/states/ma.png);
+    -ms-mask-image: url(../images/states/ma.png);
+    mask-image: url(../images/states/ma.png);
+}
+
+.page-estatisticas .list-states li .map.-mg {
+    -webkit-mask-image: url(../images/states/mg.png);
+    -moz-mask-image: url(../images/states/mg.png);
+    -ms-mask-image: url(../images/states/mg.png);
+    mask-image: url(../images/states/mg.png);
+}
+
+.page-estatisticas .list-states li .map.-ms {
+    -webkit-mask-image: url(../images/states/ms.png);
+    -moz-mask-image: url(../images/states/ms.png);
+    -ms-mask-image: url(../images/states/ms.png);
+    mask-image: url(../images/states/ms.png);
+}
+
+.page-estatisticas .list-states li .map.-mt {
+    -webkit-mask-image: url(../images/states/mt.png);
+    -moz-mask-image: url(../images/states/mt.png);
+    -ms-mask-image: url(../images/states/mt.png);
+    mask-image: url(../images/states/mt.png);
+}
+
+.page-estatisticas .list-states li .map.-pa {
+    -webkit-mask-image: url(../images/states/pa.png);
+    -moz-mask-image: url(../images/states/pa.png);
+    -ms-mask-image: url(../images/states/pa.png);
+    mask-image: url(../images/states/pa.png);
+}
+
+.page-estatisticas .list-states li .map.-pb {
+    -webkit-mask-image: url(../images/states/pb.png);
+    -moz-mask-image: url(../images/states/pb.png);
+    -ms-mask-image: url(../images/states/pb.png);
+    mask-image: url(../images/states/pb.png);
+}
+
+.page-estatisticas .list-states li .map.-pe {
+    -webkit-mask-image: url(../images/states/pe.png);
+    -moz-mask-image: url(../images/states/pe.png);
+    -ms-mask-image: url(../images/states/pe.png);
+    mask-image: url(../images/states/pe.png);
+}
+
+.page-estatisticas .list-states li .map.-pi {
+    -webkit-mask-image: url(../images/states/pi.png);
+    -moz-mask-image: url(../images/states/pi.png);
+    -ms-mask-image: url(../images/states/pi.png);
+    mask-image: url(../images/states/pi.png);
+}
+
+.page-estatisticas .list-states li .map.-pr {
+    -webkit-mask-image: url(../images/states/pr.png);
+    -moz-mask-image: url(../images/states/pr.png);
+    -ms-mask-image: url(../images/states/pr.png);
+    mask-image: url(../images/states/pr.png);
+}
+
+.page-estatisticas .list-states li .map.-rj {
+    -webkit-mask-image: url(../images/states/rj.png);
+    -moz-mask-image: url(../images/states/rj.png);
+    -ms-mask-image: url(../images/states/rj.png);
+    mask-image: url(../images/states/rj.png);
+}
+
+.page-estatisticas .list-states li .map.-rn {
+    -webkit-mask-image: url(../images/states/rn.png);
+    -moz-mask-image: url(../images/states/rn.png);
+    -ms-mask-image: url(../images/states/rn.png);
+    mask-image: url(../images/states/rn.png);
+}
+
+.page-estatisticas .list-states li .map.-ro {
+    -webkit-mask-image: url(../images/states/ro.png);
+    -moz-mask-image: url(../images/states/ro.png);
+    -ms-mask-image: url(../images/states/ro.png);
+    mask-image: url(../images/states/ro.png);
+}
+
+.page-estatisticas .list-states li .map.-rr {
+    -webkit-mask-image: url(../images/states/rr.png);
+    -moz-mask-image: url(../images/states/rr.png);
+    -ms-mask-image: url(../images/states/rr.png);
+    mask-image: url(../images/states/rr.png);
+}
+
+.page-estatisticas .list-states li .map.-rs {
+    -webkit-mask-image: url(../images/states/rs.png);
+    -moz-mask-image: url(../images/states/rs.png);
+    -ms-mask-image: url(../images/states/rs.png);
+    mask-image: url(../images/states/rs.png);
+}
+
+.page-estatisticas .list-states li .map.-sc {
+    -webkit-mask-image: url(../images/states/sc.png);
+    -moz-mask-image: url(../images/states/sc.png);
+    -ms-mask-image: url(../images/states/sc.png);
+    mask-image: url(../images/states/sc.png);
+}
+
+.page-estatisticas .list-states li .map.-se {
+    -webkit-mask-image: url(../images/states/se.png);
+    -moz-mask-image: url(../images/states/se.png);
+    -ms-mask-image: url(../images/states/se.png);
+    mask-image: url(../images/states/se.png);
+}
+
+.page-estatisticas .list-states li .map.-sp {
+    -webkit-mask-image: url(../images/states/sp.png);
+    -moz-mask-image: url(../images/states/sp.png);
+    -ms-mask-image: url(../images/states/sp.png);
+    mask-image: url(../images/states/sp.png);
+}
+
+.page-estatisticas .list-states li .map.-to {
+    -webkit-mask-image: url(../images/states/to.png);
+    -moz-mask-image: url(../images/states/to.png);
+    -ms-mask-image: url(../images/states/to.png);
+    mask-image: url(../images/states/to.png);
+}
+
+.page-estatisticas .list-states li .qty-suffix,
+.page-estatisticas .list-states li .qty {
+    display: block;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
+    font-size: 22px;
+}
+
+.page-estatisticas .list-states li .map .qty-suffix {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.page-estatisticas .container-fluid-stats .row {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.page-estatisticas .dozens-stats,
+.page-estatisticas .dozens-stats h3 {
+    text-align: center;
+}
+
+.page-estatisticas .dozens-stats p {
+    height: 240px;
+}
+
+.page-estatisticas .dozen-graph {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+    height: 200px;
+    list-style: none;
+    display: block;
+}
+
+.page-estatisticas .dozen-graph li {
+    width: 50px;
+}
+
+.page-estatisticas .dozen-graph .bar {
+    height: 150px;
+    width: 100%;
+    position: relative;
+}
+
+.page-estatisticas .dozen-graph .bar .bar-inner {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    min-height: 50px;
+    max-height: 100%;
+    background: #ccc;
+}
+
+
+.page-estatisticas .dozen-graph li:nth-child(2) .bar-inner { opacity: .8; }
+.page-estatisticas .dozen-graph li:nth-child(3) .bar-inner { opacity: .6; }
+.page-estatisticas .dozen-graph li:nth-child(4) .bar-inner { opacity: .4; }
+.page-estatisticas .dozen-graph li:nth-child(5) .bar-inner { opacity: .2; }
+
+.page-estatisticas .dozen-graph .bar .dozen {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    font-weight: bold;
+    color: white;
+    font-size: 36px;
+}
+
+.page-estatisticas .text .times-suffix,
+.page-estatisticas .text .times {
+   line-height: 1; 
+   display: block;
+   width: 100%;
+   text-align: center;
+   font-size: 18px;
+}
+
+.page-estatisticas .graph-horizontal {
+    background: whitesmoke;
+    border-radius: 5px;
+    margin: 30px auto;
+    width: 100%;
+    overflow: auto;
+}
+
+.page-estatisticas .graph-horizontal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 30px 15px;
+    position: relative;
+    width: 100%;
+    min-width: 590px; 
+}
+
+.page-estatisticas .graph-horizontal ul::after {
+    content: "";
+    display: block;
+    background: url(../images/stats/bg-lines.png);
+    height: 201px;
+    width: calc(100% - 30px);
+    position: absolute;
+    z-index: 0;
+    opacity: .1;
+}
+
+.page-estatisticas .graph-horizontal ul li {
+    display: block;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.page-estatisticas .graph-horizontal ul li .bar {
+    width: 100%;
+    height: 200px;
+    background: rgba(0,0,0, .1);
+    position: relative;
+}
+
+.page-estatisticas .graph-horizontal ul li .bar .bar-inner {
+    width: 100%;
+    height: 40%;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.page-estatisticas .graph-horizontal ul li .text {
+    line-height: 1em;
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+.page-estatisticas .graph-horizontal ul li .text {
+}
+
+.table-stats {
+    width: 100%;
+    overflow: auto;
+}
+
+.table-stats table {
+    width: 100%;
+}
+
+.table-stats .bar {
+    width: 100%;
+    height: 20px;
+    background: whitesmoke;
+    position: relative;
+}
+
+.table-stats .bar .bar-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+}
+
+.table-stats table tr td { vertical-align: middle; }
+/* .table-stats table tr th {
+    font-family: "insaniburger", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ababab;
+} */
+
+.table-stats table tr td { padding: 5px; }
+
+@media screen and (max-width: 992px) {
+
+    .page-estatisticas .navigator-wrap { width: 100%; }
+
+    .page-estatisticas .navigator {
+        overflow: auto;
+        padding-top: 0;
+    }
+
+    .page-estatisticas .navigator ul { white-space: nowrap; }
+
+    .page-estatisticas .navigator ul li { display: inline-block; margin-bottom: 0; }
+
+    .page-estatisticas .dozens-stats p { height: auto;}
+
+}

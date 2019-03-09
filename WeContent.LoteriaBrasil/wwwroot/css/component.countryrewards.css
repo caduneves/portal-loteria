@@ -1,0 +1,263 @@
+.hero-country-rewards {
+    width: 100%;
+    min-height: 314px;
+    background: #e0e493;
+    color: white;
+    position: relative;
+    padding: 20px 0;
+}
+
+.hero-country-rewards .container-fluid {
+    max-width: 1400px;
+    padding: 0 40px;
+}
+
+
+.hero-country-rewards .header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.hero-country-rewards .header h2 {
+    text-align: left;
+    font-size: 36px;
+    margin: 0 auto;
+}
+
+.hero-country-rewards .header p {
+    font-size: 19px;
+}
+
+.hero-country-rewards .more {
+    display: block;
+    border: 1px solid rgba(0,0,0,.5);
+    background: transparent;
+    text-transform: uppercase;
+    color: rgba(0,0,0,.5);
+    font-family: "Fredoka One", sans-serif;
+    text-decoration: none;
+    border-radius: 0;
+    height: 46px;
+    padding: 0 10px;
+    line-height: 44px;
+    font-size: 16px;
+    min-width: 248px;
+    transition: .1s all linear;
+    outline: none;
+    text-align: center;
+    margin: 20px auto 0;
+    max-width: 100px;
+}
+
+.hero-country-rewards .more:hover { background: rgba(255, 255, 255, .1); }
+
+.hero-country-rewards .country-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-country-rewards .country-list li {
+    display: inline-block;
+    margin: 15px 0;
+}
+
+.hero-country-rewards .country-list .country {
+    position: relative;
+    width: 168px;
+    height: 120px;
+}
+
+.hero-country-rewards .country-list .country img {
+    opacity: .5;
+}
+
+.hero-country-rewards .country-list .country .uf {
+    font-size: 18px;
+    font-family: "Fredoka One", sans-serif;
+    text-transform: uppercase;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    z-index: 1;
+    left: auto;
+    right: 52px;
+    top: 0;
+    text-align: center;
+    background: rgba(0,0,0,.2);
+    border-radius: 50%;
+}
+
+.hero-country-rewards .country-list .country .ranking {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    right: 19px;
+    font-family: "Fredoka One", sans-serif;
+    font-size: 21px;
+    color: rgba(0,0,0,.6);
+}
+
+.hero-country-rewards .country-list .description {
+    text-align: center;
+    color: rgba(0,0,0,.6);
+    font-size: 21px;
+    line-height: 1em;
+    margin-top: 5px;
+}
+
+.hero-country-rewards.dupla-sena { background: #e0e493; }
+.hero-country-rewards.mega-sena .header,
+.hero-country-rewards.mega-sena .country-list .country .ranking,
+.hero-country-rewards.mega-sena .country-list .description,
+.hero-country-rewards.mega-sena .header h2 { color: #434605; }
+.hero-country-rewards.mega-sena .country-list .country .ranking { background: #d89b31; }
+
+.hero-country-rewards.dupla-sena { background: #ff9fad; }
+.hero-country-rewards.dupla-sena .header,
+.hero-country-rewards.dupla-sena .country-list .country .ranking,
+.hero-country-rewards.dupla-sena .country-list .description,
+.hero-country-rewards.dupla-sena .header h2 { color: #35040b; }
+.hero-country-rewards.dupla-sena .country-list .country .ranking { background: #dba129 ; }
+
+.hero-country-rewards.lotomania { background: #ff8055; }
+.hero-country-rewards.lotomania .header,
+.hero-country-rewards.lotomania .country-list .country .ranking,
+.hero-country-rewards.lotomania .country-list .description,
+.hero-country-rewards.lotomania .header h2 { color: #601a03; }
+.hero-country-rewards.lotomania .country-list .country .ranking { background: #efbdac; }
+
+.hero-country-rewards.quina { background: #5174AD; }
+.hero-country-rewards.quina .header,
+.hero-country-rewards.quina .country-list .country .ranking,
+.hero-country-rewards.quina .country-list .description,
+.hero-country-rewards.quina .header h2 { color: #81aaef; }
+.hero-country-rewards.quina .country-list .country .ranking { background: #000f2a; }
+
+.hero-country-rewards.lotofacil { background: #ab42af; }
+.hero-country-rewards.lotofacil .header,
+.hero-country-rewards.lotofacil .country-list .country .ranking,
+.hero-country-rewards.lotofacil .country-list .description,
+.hero-country-rewards.lotofacil .header h2 { color: #67045c; }
+.hero-country-rewards.lotofacil .country-list .country .ranking { background: #efbdac; }
+
+.hero-country-rewards.loteca { background: #e97f83; }
+.hero-country-rewards.loteca .header,
+.hero-country-rewards.loteca .country-list .country .ranking,
+.hero-country-rewards.loteca .country-list .description,
+.hero-country-rewards.loteca .header h2 { color: white; }
+.hero-country-rewards.loteca .country-list .country .ranking { background: #ee363d; }
+.hero-country-rewards.loteca .country-list .country .uf { background: #914241; }
+
+.hero-country-rewards.lotogol { background: #037a90; }
+.hero-country-rewards.lotogol .header,
+.hero-country-rewards.lotogol .country-list .country .ranking,
+.hero-country-rewards.lotogol .country-list .description,
+.hero-country-rewards.lotogol .header h2 { color: white; }
+.hero-country-rewards.lotogol .country-list .country .ranking { background: #1a8ab5; }
+.hero-country-rewards.lotogol .country-list .country .uf { background: #00a3c2; }
+
+.hero-country-rewards.timemania { background: #c7bb8b; }
+.hero-country-rewards.timemania .header,
+.hero-country-rewards.timemania .country-list .country .ranking,
+.hero-country-rewards.timemania .country-list .description,
+.hero-country-rewards.timemania .header h2 { color: #534409; }
+.hero-country-rewards.timemania .country-list .country .ranking { background: #fef7da; }
+
+@media screen and (max-width: 1400px) {
+    .hero-country-rewards .header h2 { font-size: 32px; }
+    .hero-country-rewards .header p { font-size: 18px; }
+}
+
+@media screen and (max-width: 1040px) {
+    
+    .hero-country-rewards .country-list .country {
+        width: 160px;
+        height: 112px;
+    }
+    
+    .hero-country-rewards .country-list .description {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    
+    .hero-country-rewards .country-list .country {
+        width: 120px;
+        height: 84px;
+    }
+    
+    .hero-country-rewards .country-list .description {
+        font-size: 16px;
+    }
+
+    .hero-country-rewards .header { text-align: center; }
+    .hero-country-rewards .header h2 { text-align: center; }
+    .hero-country-rewards .header p { margin: 14px 0; }
+
+    .hero-country-rewards .country-list .country .ranking {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        right: 16px;
+        top: 2px;
+    }
+
+    .hero-country-rewards .country-list .country .uf {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        right: 40px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-country-rewards .header h2 { font-size: 22px; }
+    .hero-country-rewards .header p { font-size: 14px; }
+
+    .hero-country-rewards .country-list {
+        justify-content: space-around;
+        max-width: 470px;
+    }
+
+    .hero-country-rewards .container-fluid {
+        padding: 0 15px;
+    }
+
+    .hero-country-rewards .country-list .country .ranking {
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        right: 0;
+        top: 3px;
+        font-size: 16px;
+    }
+
+    .hero-country-rewards .country-list .country .uf {
+        right: 17px;
+    }
+}
+
+@media screen and (max-width: 478px) {
+    .hero-country-rewards .country-list .country {
+        width: 90px;
+        height: 64px;
+    }
+
+    .hero-country-rewards .country-list .description {
+        font-size: 11px;
+    }
+}

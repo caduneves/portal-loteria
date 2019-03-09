@@ -1,0 +1,478 @@
+@{
+    ViewData["Title"] = "Loteria";
+}
+<section id="aposteaqui" data-vue="Loteria" data-lottery="@Model"  v-bind:class="loteria.class">
+    @Html.Partial("_HeaderLoteria.cshtml")
+    
+    <div>
+        @Html.Partial("../Home/Apostar.cshtml")
+
+        @Html.Partial("./Boloes")
+    </div>
+
+    @Html.Partial("./PorqueApostar")
+
+    <div class="wrap-results-history" v-bind:class="loteria.class" v-if="apostar.isSelected(loteria) && resultadoSelected && loteria.isDezenas">
+        
+        <div class="anchor" id="ultimos-resultados"></div>
+        <section class="hero-lastresults bg-third" v-bind:class="loteria.class">
+            
+            <div class="container-fluid">
+                
+                <div class="lastresults-text">
+                    <div class="wrap">
+
+                        <div class="title">Últimos Resultados</div>
+                        <div class="description">
+                            Saiba quais foram as dezenas sorteadas no último concurso da Loteca.<br>
+                            <strong class="hidden-xs hidden-sm">Confira ao lado os últimos resultados.</strong>
+                            <strong class="hidden-md hidden-lg">Confira abaixo os últimos resultados.</strong>
+                        </div>
+
+                        <a href="#" class="btn">Mais Resultados</a>
+                    </div>
+                </div>
+
+                <div class="result-wrap" v-for="result in resultadoSelected">
+                    <div class="phone">
+                        <div class="phone-content">
+
+                        <div class="phone-title">
+                            Dia {{result.diaSorteio}}<br>
+                            Concurso {{result.concurso}}
+                        </div>
+                        <div v-for="(dozens, index) in result.dezenas">
+                            
+                            <span class="label" v-if="loteria.class == 'dupla-sena'">{{index+1}}º Sorteio</span>
+
+                            <ul class="dozens" v-bind:class="['dozens-' + index]">
+                                <li v-for="dozen in dozens">
+                                    <span class="color-primary">
+                                        <i class="fa fa-heart" v-if="index == 1 && loteria.class == 'timemania'"></i>
+                                        {{dozen}}
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>    
+                    </div>
+                </div>
+
+            </div>
+        </section> <!-- /.hero-lastresults -->
+
+        <div class="anchor" id="historia"></div>
+        <section class="hero-history bg-light" v-bind:class="loteria.class">
+
+            <div class="text">
+                <div class="title color-primary">História</div>
+                <div class="description color-primary">
+                    Lançada em 4 de março de 1996, a {{loteria.nome}} já deixou muito brasileiro endinheirado e com um único problema: saber como e onde gastar tanto dinheiro. Somente entre seus maiores prêmios, ela já entregou R$ 1,2 bilhão.
+                </div>
+            </div>
+        </section>
+    </div> <!-- .wrap-results-history -->
+
+
+    <section v-if="apostar.isSelected(loteria) && resultadoSelected && loteria.isFederal">
+        <div class="anchor" id="ultimos-resultados"></div>
+        <section class="hero-lastresults bg-third" v-bind:class="loteria.class">
+            
+
+            <div class="container-fluid">
+                
+                <div class="lastresults-text">
+                    <div class="wrap">
+
+                        <div class="title">Últimos Resultados</div>
+                        <div class="description">
+                            Saiba quais foram as dezenas sorteadas no último concurso da Loteca.<br>
+                            <strong class="hidden-xs hidden-sm">Confira ao lado os últimos resultados.</strong>
+                            <strong class="hidden-md hidden-lg">Confira abaixo os últimos resultados.</strong>
+                        </div>
+
+                        <a href="#" class="btn">Mais Resultados</a>
+                    </div>
+                </div>
+
+                <div class="result-wrap" v-for="result in resultadoSelected">
+                    <div class="result-federal">
+                        <div class="result-federal-content">
+                            <div class="result-federal-title">
+                                Dia {{result.diaSorteio}} - Concurso {{result.concurso}}
+                            </div>
+
+                            <ul>
+                                <li v-for="(dozens, index) in result.dezenas">
+                                    <span class="color-primary"><strong>{{ index + 1}}Âº</strong> {{dozens[0]}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section> <!-- /.hero-lastresults -->
+    </section> <!-- isFederal -->
+
+    <section v-if="apostar.isSelected(loteria) && resultadoSelected.length && loteria.isLoteca">
+        <div class="anchor" id="ultimos-resultados"></div>
+
+        <section class="hero-lastresults bg-third" v-bind:class="loteria.class">
+            
+
+            <div class="container-fluid">
+                
+                <div class="lastresults-text">
+                    <div class="wrap">
+
+                        <div class="title">Últimos Resultados</div>
+                        <div class="description">
+                            Saiba quais foram as dezenas sorteadas no último concurso da Loteca.<br>
+                            <strong class="hidden-xs hidden-sm">Confira ao lado os últimos resultados.</strong>
+                            <strong class="hidden-md hidden-lg">Confira abaixo os últimos resultados.</strong>
+                        </div>
+
+                        <a href="#" class="btn">Mais Resultados</a>
+                    </div>
+                </div>
+
+                <div class="wrap-result-table" v-for="result in resultadoSelected">
+
+                    <table class="table result-loteca" cellpadding="0" border="0">
+                        <tbody>
+                            <tr v-for="partida in result.partidas.slice(0, 7)">
+                                <td>{{partida.NumeroDoJogo}} -</td>
+                                <td><p><span>{{partida.TimeDaCasa}}</span></p></td>
+                                <td><div v-bind:class="{ active : partida.GolsDaCasa > partida.GolsDoVisitante }">{{partida.GolsDaCasa}}</div></td>
+                                <td><div v-bind:class="{ active : partida.GolsDaCasa == partida.GolsDoVisitante }">x</div></td>
+                                <td><div v-bind:class="{ active : partida.GolsDaCasa < partida.GolsDoVisitante }">{{partida.GolsDoVisitante}}</div></td>
+                                <td><p><span>{{partida.Visitante}}</span></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table result-loteca" cellpadding="0" border="0">
+                        <tbody>
+                            <tr v-for="partida in result.partidas.slice(7, 14)">
+                                <td>{{partida.NumeroDoJogo}} -</td>
+                                <td><p><span>{{partida.TimeDaCasa}}</span></p></td>
+                                <td><div v-bind:class="{ active : partida.GolsDaCasa > partida.GolsDoVisitante }">{{partida.GolsDaCasa}}</div></td>
+                                <td><div v-bind:class="{ active : partida.GolsDaCasa == partida.GolsDoVisitante }">x</div></td>
+                                <td><div v-bind:class="{ active : partida.GolsDaCasa < partida.GolsDoVisitante }">{{partida.GolsDoVisitante}}</div></td>
+                                <td><p><span>{{partida.Visitante}}</span></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </section> <!-- /.hero-lastresults -->
+
+    </section> <!-- /isLoteca -->
+
+
+    <section class="hero-country-rewards" v-if="apostar.isSelected(loteria) && premiosPorEstado.length" v-bind:class="loteria.class">
+        
+        <div class="container-fluid">
+            
+            <div class="header">
+                <h2>Prêmios por Estado</h2>
+                <p>Você sabe qual é o Estado que mais recebeu prêmios da {{ loteria.nome }}? Confira na lista e veja se você mora num destes lugares de sorte.</p>
+            </div>
+
+
+            <ul class="country-list">
+                <li v-for="(premioPorEstado, index) in premiosPorEstado">
+                    <div class="country">
+                        <img v-bind:src="premioPorEstado.mapUrl" class="img-responsive" alt="">
+                        <span class="uf bg">{{premioPorEstado.uf}}</span>
+                        <span class="ranking">{{index+1}}</span>
+                    </div>
+                    <div class="description">
+                        <strong>{{premioPorEstado.ganhadores}}</strong><br>
+                        <span>{{premioPorEstado.ganhadores == 1 ? 'Ganhador' : 'Ganhadores' }}</span>
+                    </div>
+                </li>
+            </ul>
+
+            <a href="#" class="more"><span>MAIS ESTADOS</span></a>
+
+        </div>
+    </section> <!-- /.hero-country-rewards -->
+
+
+    <section class="wrap-hero-rewards" v-bind:class="loteria.class" v-if="maioresPremios.length">
+        <section class="column rewards">
+            <div class="hero-header">
+                <h2 class="title">Maiores <br>Premiações</h2>
+                <p>Veja os maiores prêmios entregues na história da {{loteria.nome}}.</p>
+            </div>
+            <div class="hero-content">
+                
+                <ul class="price-list">
+                    <li v-for="(item, index) in maioresPremios">
+                        <span class="ranking">{{index+1}}</span> <span class="price">{{item.Premio.format("c")}}</span>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="hero-footer">
+                <a href="#">Ver Mais</a>
+            </div>
+        </section>
+        
+        <section class="column history" v-if="!loteria.isDezenas">
+            <div class="text">
+                <div class="title">História</div>
+                <div class="description">
+                    Lançada em 4 de março de 1996, a {{loteria.nome}} já deixou muito brasileiro endinheirado e com um único problema: saber como e onde gastar tanto dinheiro. Somente entre seus maiores prêmios, ela já entregou R$ 1,2 bilhão.
+                </div>
+            </div>
+        </section>
+
+        <section class="column numbers" v-if="loteria.isDezenas && numerosMaisSorteados.length">
+            <div class="hero-header">
+                <h2 class="title">Números mais<br>sorteados</h2>
+            </div>
+            <div class="hero-content">
+                
+                <ul class="numbers-list">
+                    <li v-for="(item, index) in numerosMaisSorteados">
+                        <span class="ranking">{{index+1}}-</span>
+                        <div class="bar" v-bind:style="{ opacity: (11-index)/10, width: item.percent+'%' }"></div>
+                        <span class="qty">{{item.dezena}}</span>
+                        <span class="times">{{ item.qtd }} vezes</span>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+    </section> <!-- /.wrap-hero-rewards -->
+
+    <section class="wrap-hero-probabilities" v-bind:class="loteria.class">
+        <div class="column -probabilities" v-if="!loteria.isFederal">
+            <div class="wrap">
+                <div id="probabilidades" class="anchor"></div>
+                <div class="hero-header">
+                    <h2>Probabilidades</h2>
+                    <p>
+                        <strong>Quer saber quais são as chances de ganhar na {{ loteria.nome }}?</strong><br>
+                        Confira as probabilidades e entenda como ficar mais perto do prêmio máximo.
+                    </p>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead class="border color">
+                            <tr>
+                                <th rowspan="3"><strong>Dezenas</strong></th>
+                                <th colspan="3"><strong>Probabilidade Acerto (1 em)</strong></th>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">Quadra</th>
+                                <th rowspan="2">Quina</th>
+                                <th rowspan="2">Sena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>6</td>
+                                <td>2.332</td>
+                                <td>154.518</td>
+                                <td>50.063.860</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>1.038</td>
+                                <td>44.981</td>
+                                <td>7.151.980</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>539</td>
+                                <td>17.192</td>
+                                <td>1.787.995</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>312</td>
+                                <td>7.791</td>
+                                <td>595.998</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>195</td>
+                                <td>3.973</td>
+                                <td>238.399</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>129</td>
+                                <td>2.211</td>
+                                <td>108.363</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>90</td>
+                                <td>1.317</td>
+                                <td>54.182</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>65</td>
+                                <td>628</td>
+                                <td>29.175</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>48</td>
+                                <td>544</td>
+                                <td>16.671</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>37</td>
+                                <td>370</td>
+                                <td>10.003</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="hero-footer">
+                    <a href="#"><i class="fa fa-chevron-right"></i> Veja a probabilidade completa</a>
+                </div>
+            </div>
+        </div>
+        <div class="column" v-bind:class="{ 'is-horizontal' : loteria.isFederal }">
+            <div class="line -stats" v-if="!loteria.isFederal">
+                <div class="wrap">
+                    <div class="hero-header">
+                        <h2>Estatísticas</h2>
+                        <p>
+                            As estatísticas permitem que você faça suas análise e, claro, aumente suas chances e se tornar um ganhador da {{loteria.nome}}.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span class="icon-estatisticas"></span>
+                    </div>
+
+                    <div class="hero-footer">
+                        <a v-bind:href="'/'+loteria.class+'/estatisticas'"><i class="fa fa-chevron-right"></i> Veja Mais sobre estatísticas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="line -howtoplay">
+                <div class="anchor" id="como-apostar"></div>
+                <div class="wrap">
+                    <div class="hero-header">
+                        <h2>Como apostar</h2>
+                        <p>
+                            {{ loteria.descricao }}
+                        </p>
+                    </div>
+
+                    <div class="hero-footer">
+                        <a href="#"><i class="fa fa-chevron-right"></i> Veja Mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="line -history" v-if="loteria.isFederal">
+                <div class="wrap">
+                    <div class="hero-header">
+                        <h2>História</h2>
+                        <p>
+                            A Loteria Federal foi a primeira loteria comercializada pela Caixa Econômica Federal e já tem 54 anos. Seu primeiro concurso foi realizado no dia 15 de setembro de 1962, no Rio de Janeiro.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- /.wrap-hero-probabilities -->
+
+    <section class="wrap-hero-news" v-bind:class="loteria.class">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="header">
+                    <h2 class="color-secondary">Notícias <span class="color-primary">{{loteria.nome}}</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="slider-news">
+                    <div class="items owl-carousel owl-carousel-news owl-theme">
+                        <div v-for="item in noticias" class="item">
+                            <a v-bind:href="item.url" class="cover">
+                                <div class="image bg-primary" v-bind:style="{ 'background-image' : 'url('+item.Imagem+')'}"></div>
+                                <div class="text">
+                                    <div class="date color-primary">{{item.data}}</div>
+                                    <div class="title color-primary">{{item.Titulo}}</div>
+                                    <div class="description">{{item.description}}</div>
+                                </div>
+                            </a>
+                            <a v-bind:href="item.url" class="btn color-primary"><i class="fa fa-chevron-right"></i> <span>Continuar Lendo</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- /.wrap-hero-news -->
+
+    <section class="wrap-great-rewards">
+        <div class="header-bar">
+            <h2>Prêmios no Site</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-intro">
+                        <p>Para quem quer ser milionário, a {{loteria.nome}} é a melhor aposta. A loteria é sorteada as quartas e aos sábados e para apostar é só escolher de 6 a 15 números. Ganha acertando 4, 5 ou 6 dezenas sorteadas, quanto mais acertos, maior o prêmio!</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-wrap">
+                        <table>
+                            <tr class="color-primary">
+                                <th></th>
+                                <th><i class="fa fa-chevron-down"></i> Concurso</th>
+                                <th><i class="fa fa-chevron-down"></i> Data</th>
+                                <th><i class="fa fa-chevron-down"></i> Prêmio</th>
+                                <th><i class="fa fa-chevron-down"></i> Grupo</th>
+                                <th></th>
+                            </tr>
+                            <tr v-for="premio in premios">
+                                <td><span class="ranking-bullet bg">{{premio.ranking}}</span></td>
+                                <td>{{premio.concurso}}</td>
+                                <td>{{premio.data}}</td>
+                                <td>{{premio.premio}}</td>
+                                <td>{{premio.grupo}}</td>
+                                <td class="color-primary">
+                                    <a href="javascript:void(0)" v-on:click="verJogo(premio)" class="color-primary"><i class="fa fa-file"></i></a>
+                                    <a href="javascript:void(0)" v-on:click="verComprovante(premio)" class="color-primary"><i class="fa fa-info-circle"></i></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="footer-bar">
+                        <a v-bind:href="`/premiacoes?CodigoLoteria=${codigoLoteria}`" class="bg"><i class="fa fa-chevron-right"></i> Mais Prêmios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.wrap-great-rewards -->
+    
+
+</section>

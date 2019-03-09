@@ -1,0 +1,245 @@
+
+#map {
+	display: block;
+	width: 100%;
+	background: whitesmoke;
+	position: relative;
+	margin: 30px auto;
+	padding: 40px;
+	padding-right: calc(50% + 40px);
+	max-height: calc(100vh - 160px);
+	min-height: 500px;
+	pointer-events: none;
+	opacity: .6;
+}
+
+#map.-loaded {
+	pointer-events: initial;
+	opacity: 1;
+}
+
+#svg-map {
+	width: 100%;
+	height: auto;
+	max-height: 400px;
+}
+
+#svg-map a:visited,
+#svg-map {
+	fill: #ccc;
+} 
+
+#svg-map text {
+	font-size: 10px;
+	font-weight: bold;
+	fill: #444;
+}
+
+#svg-map .circle {
+	fill: transparent;
+}
+
+#svg-map a { cursor: pointer; }
+
+#svg-map a.-active text,
+#svg-map a:hover text {
+	fill: #fff;
+}
+
+.mapa-ajax-container {
+	width: 50%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	background: #444;
+	color: white;
+	padding: 40px;
+	opacity: 1;
+	transition: .2s opacity linear;
+}
+
+#map .mapa-ajax-container .btn-close {
+	display: none;
+	width: 40px;
+	height: 40px;
+	appearance: none;
+	-webkit-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	border: 0;
+	border-radius: 0;
+	line-height: 40px;
+	color: white;
+	font-size: 26px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: rgba(0,0,0,.2);
+	padding: 0;
+	outline: none;
+}
+#map .mapa-ajax-container .btn-close i {
+	vertical-align: top;
+}
+
+.mapa-ajax-container .mapa-ajax-header {
+	text-transform: uppercase;
+	color: white;
+	font-size: 32px;
+	font-weight: bold;
+	border-bottom: 3px solid white;
+	margin-bottom: 10px;
+}
+
+.mapa-ajax-container .subtitle {
+	text-transform: uppercase;
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 0;
+	color: rgba(255,255,255,.8);
+}
+
+.mapa-ajax-container .quantidade {
+	text-align: left;
+	font-weight: bold;
+	color: white;
+	display: block;
+	font-size: 32px;
+	line-height: 1em;
+}
+
+.mapa-ajax-container .barra {
+	width: 50%;
+	position: relative;
+	height: 40px;
+	background: white;
+	border: 2px solid white;
+	margin: 0 0;
+}
+
+.mapa-ajax-container .barra div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 36px;
+	opacity: .8;
+	transition: .5s width linear;
+}
+
+.mapa-ajax-container .porcentagem,
+.mapa-ajax-container .percentual {
+	text-transform: uppercase;
+	font-size: 11px;
+	color: rgba(255, 255, 255, .6);
+	font-weight: bold;
+}
+
+.mapa-ajax-container .porcentagem {
+	font-size: 20px;
+}
+
+.map-federal #svg-map a:hover,
+.map-federal #svg-map a.-active
+{ fill: #104FC1; }
+.map-quina #svg-map a:hover,
+.map-quina #svg-map a.-active
+{ fill: #32077A; }
+.map-lotomania #svg-map a:hover,
+.map-lotomania #svg-map a.-active
+{ fill: #C96F01; }
+.map-timemania #svg-map a:hover,
+.map-timemania #svg-map a.-active
+{ fill: #E7A302; }
+.map-lotogol #svg-map a:hover,
+.map-lotogol #svg-map a.-active
+{ fill: #3992E4; }
+.map-dupla-sena #svg-map a:hover,
+.map-dupla-sena #svg-map a.-active
+{ fill: #A2032C; }
+.map-lotofacil #svg-map a:hover,
+.map-lotofacil #svg-map a.-active
+{ fill: #8A119A; }
+.map-loteca #svg-map a:hover,
+.map-loteca #svg-map a.-active
+{ fill: #FD0003; }
+.map-mega-sena #svg-map a:hover,
+.map-mega-sena #svg-map a.-active
+{ fill: #4B9711; }
+
+@media screen and (max-width: 992px){
+	#map {
+		padding: 20px;
+		padding-right: calc(40% + 20px);
+	}
+
+	#map .mapa-ajax-container {
+		width: calc(40% - 20px);
+		padding: 20px;
+	}
+	.mapa-ajax-container .mapa-ajax-header { font-size: 22px; }
+	.mapa-ajax-container .subtitle { font-size: 16px; }
+	.mapa-ajax-container .quantidade { font-size: 18px; }
+	.mapa-ajax-container .porcentagem { font-size: 10px; }
+	.mapa-ajax-container .percentual { margin-bottom: 15px; }
+	.mapa-ajax-container .barra {
+		width: 100%;
+		height: 20px;
+	}
+	.mapa-ajax-container .barra div {
+		height: 16px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	#map {
+		height: auto;
+		min-height: auto;
+		padding: 20px;
+		min-height: 400px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	#map .map-wrap {
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		padding: 10px;
+		width: 100%;
+		height: 100%;
+	}
+
+	#map #svg-map {
+		min-height: 100%;
+		min-width: 100%;
+	}
+
+	#map .mapa-ajax-container {
+		width: 100%;
+		overflow: auto;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	#map .mapa-ajax-container.-active {
+		opacity: 1;
+		pointer-events: initial;
+	}
+
+	#map .mapa-ajax-container .btn-close { display: block; }
+	#map .mapa-ajax-container .content-ajax,
+	#map .mapa-ajax-container .mapa-ajax-header {
+		width: 100%;
+		max-width: 320px;
+		margin: 0 auto 20px;
+	}
+
+	#map .mapa-ajax-container .content-ajax { margin-bottom: 0; }
+}

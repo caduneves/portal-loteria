@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Redefinir Senha | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Redefinir Senha | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+<section id="login-cadastro" data-vue="RedefinirSenha" class="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12"></div>
+                    <div class="col-md-6 col-sm-12">
+                        <h1 class="title text-md-center text-sm-center">
+                            Redefinir Senha
+                        </h1>
+                        <form>
+                            <div class="form-group login-form">
+                                <input v-on:keyup.enter="redefinir()" v-model="password" type="password" class="form-control" placeholder="Senha">
+                                <input v-on:keyup.enter="redefinir()" v-model="passwordConfirmation" type="password" class="form-control" placeholder="Confirmar Senha">
+
+                                <button type="button" class="btn btn-success" v-on:click="redefinir()">Redefinir</button>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

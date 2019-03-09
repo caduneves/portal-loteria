@@ -1,0 +1,56 @@
+﻿
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="pt-br"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="pt-br"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="pt-br"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt-br">
+<!--<![endif]-->
+@{
+    ViewBag.Url = $"{Context.Request.Scheme}://{Context.Request.Host}{Context.Request.Path}";
+}
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="pt" />
+    <meta name="author" content="Loteria Brasil" />
+    <meta name="revisit-after" content="1 days" />
+    <meta property="og:site_name" content="Loteria Brasil" />
+    <meta property="og:url" content="@($"{ViewBag.Url}{Context.Request.QueryString}")" />
+
+    @RenderSection("metas", required: false)
+
+    <title>@ViewBag.Title</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <!-- <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" /> -->
+    
+    @*Configuração de Bundle em bundlecondig.json *@
+    <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />
+
+    <script type="application/ld+json">{"@@context": "http://schema.org","@@type": "WebSite","url": "http://www.loteriabrasil.com.br/","potentialAction": {"@@type": "SearchAction","target": "http://www.loteriabrasil.com.br//search?&q={search_term_string}","query-input": "required name=search_term_string"}}</script>
+</head>
+<!-- invisible still loading vue-->
+<body class="invisible"> 
+
+    @Html.Partial("../Shared/Header/_Header.cshtml")
+
+    @RenderBody()
+        
+    @Html.Partial("Footer/_Footer.cshtml")
+
+    @*Configuração de Bundle em bundlecondig.json *@
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
+    
+
+    @RenderSection("scripts", required: false)
+
+    @Html.Partial("_Modals")
+    
+    @*Carrega dataLayer para Google Tag Manager*@ 
+    <div class="hidden" data-vue="DataLayer"></div>
+</body>
+</html>
+

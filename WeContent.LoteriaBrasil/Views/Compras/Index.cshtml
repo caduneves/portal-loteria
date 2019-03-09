@@ -1,0 +1,231 @@
+@Html.Partial("_StaticBanner", "top-banner")
+
+@section metas{
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Compras | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+
+<section class="content-cadastro">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_MenuMinhaConta")
+            <div class="col-xs-12 col-sm-12 col-xs-12 col-md-9" data-vue="MinhasCompras">
+                <div class="filters"> <span v-on:click="toogleFilter()">Filtros <i class="fas fa-filter"></i></span></div>
+                <div class="floating-filter" v-show="displayFilter">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <input type="text" v-model="dataInicial" v-mask="'##/##/####'">
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="text" v-model="dataFinal" v-mask="'##/##/####'">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <select v-model="formaPagamento">
+                                <option value="">Forma de Pagamento</option>
+                                <option value="0">Créditos</option>
+                                <option value="1">Boleto</option>
+                                <option value="28">Cartão de Crédito</option>
+                                <option value="39">Transferência BB</option>
+                                <option value="26">Neteller</option>
+                                <option value="29">PagVap</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row" v-show="tipoBusca == 1">
+                        <div class="col-xs-12">
+                            <select v-model="situacaoCompra">
+                                <option value="0">Situação</option>
+                                <option value="1">Confirmadas</option>
+                                <option value="2">Pendentes</option>
+                                <option value="3">Canceladas</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" v-show="tipoBusca == 1">
+                        <div class="col-xs-12">
+                            <select v-model="loteria">
+                                <option value="0">Loteria</option>
+                                <option value="1">Mega-Sena</option>
+                                <option value="2">Dupla Sena</option>
+                                <option value="3">Lotomania</option>
+                                <option value="4">Quina</option>
+                                <option value="5">Federal</option>
+                                <option value="6">Loteca</option>
+                                <option value="7">Lotogol</option>
+                                <option value="8">Lotofácil</option>
+                                <option value="9">Timemania</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" v-show="tipoBusca == 2">
+                        <div class="col-xs-12">
+                            <select v-model="loteria">
+                                <option value="0">Loteria</option>
+                                <option value="1">Mega-Sena</option>
+                                <option value="2">Dupla Sena</option>
+                                <option value="3">Lotomania</option>
+                                <option value="4">Quina</option>
+                                <option value="5">Federal</option>
+                                <option value="6">Loteca</option>
+                                <option value="7">Lotogol</option>
+                                <option value="8">Lotofácil</option>
+                                <option value="9">Timemania</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" v-show="tipoBusca == 2">
+                        <div class="col-xs-12">
+                            <select v-model="tipoAposta">
+                                <option value="0">Tipo Aposta</option>
+                                <option value="1">Bolões</option>
+                                <option value="2">Faça Seu Jogo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-success btn-full" v-on:click="filter()" />Filtrar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-dadoscadastrais minhas-compras">
+                    <div class="row header">
+                        <div class="col-xs-3 col-sm-2">
+                            Data
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            Valor
+                        </div>
+                        <div class="col-xs-3 col-sm-2">
+                            Código
+                        </div>
+                        <div class="col-sm-4 hidden-xs">
+                            Forma de Pagamento
+                        </div>
+                        <div class="hidden-xs col-sm-2">
+                            Situação
+                        </div>
+                    </div>
+                    <div class="row item empty" v-if="!minhasCompras || !minhasCompras.Compras || !minhasCompras.Compras.length">
+                        Nenhuma compra encontrada.
+                    </div>
+                    <div class="row item" v-for="compra in minhasCompras.Compras" v-on:click="toogle(compra)" v-bind:class="[ (compra.canExpand && !compra.expanded ? 'expandable' : ''), (compra.canExpand && compra.expanded ? 'expanded' : '')]">
+                        <div class="col-xs-3 col-sm-2">
+                            {{compra.Data.format("dd/MM/yyyy")}}
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            {{compra.Valor.format("C2")}}
+                        </div>
+                        <div class="col-xs-3 col-sm-2">
+                            {{compra.FormaDePagamento}}{{compra.CodigoPagamento}}
+                        </div>
+                        <div class="col-sm-4 hidden-xs">
+                            <img v-bind:src="`/images/pagamento/${paymentImage(compra)}`" v-bind:alt="compra.NomeFormaPagamento" />
+                        </div>
+                        <div class="col-xs-2 col-sm-2 pendente" v-if="compra.Situacao == 'P'">
+                            <span class="hidden-xs">Pendente</span>
+                            <span class="hidden-sm hidden-md hidden-lg">Pend...</span>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 confirmado" v-if="compra.Situacao == 'C'">
+                            <span class="hidden-xs">Confirmado</span>
+                            <span class="hidden-sm hidden-md hidden-lg">Conf...</span>
+                            <small v-if="compra.DataDaConferencia">(às {{compra.DataDaConferencia.format("HH:mm")}} de {{compra.DataDaConferencia.format("dd/MM")}})</small>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 cancelado" v-if="compra.Situacao == 'E'">
+                            <span class="hidden-xs">Cancelado</span>
+                            <span class="hidden-sm hidden-md hidden-lg">Canc...</span>
+                            <small class="hidden-xs" v-if="compra.DataDaConferencia">(às {{compra.DataDaConferencia.format("HH:mm")}} de {{compra.DataDaConferencia.format("dd/MM")}})</small>
+                        </div>
+                        <div class="row" v-show="compra.canExpand && compra.expanded">
+                            <div class="col-xs-12 colheader">
+                                <div class="row subheader hidden-xs">
+                                    <div class="col-xs-2">
+                                        Loteria
+                                    </div>
+                                    <div class="col-xs-1">
+                                        Sorteio
+                                    </div>
+                                    <div class="col-xs-1">
+                                        Concurso
+                                    </div>
+                                    <div class="col-xs-2">
+                                        Grupo
+                                    </div>
+                                    <div class="col-xs-1">
+                                        Cotas
+                                    </div>
+                                    <div class="col-xs-2">
+                                        Valor
+                                    </div>
+                                    <div class="col-xs-1">
+                                        Situação
+                                    </div>
+                                    <div class="col-xs-2">
+                                        Premiação
+                                    </div>
+                                </div>
+                                <div class="row subitem" v-for="item in compra.Itens">
+                                    <div class="col-xs-4 col-sm-2">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Loteria</span>
+                                        {{item.NomeDaLoteria}}
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Sorteio</span>
+                                        {{item.DataDoSorteio}}
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Concurso</span>
+                                        {{item.NumeroDoConcurso}}
+                                    </div>
+                                    <div class="col-xs-6 col-sm-2">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Grupo</span>
+                                        {{item.NomeDoGrupo}}
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1" v-if="item.TotalDeCotas == 1">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Cotas</span>
+                                        Única
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1" v-if="item.TotalDeCotas > 1">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Cotas</span>
+                                        {{item.Cotas}}/{{item.TotalDeCotas}}
+                                    </div>
+                                    <div class="col-xs-4 col-sm-2">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Cotas</span>
+                                        {{(item.ValorDaCota * item.Cotas).format("C2")}}
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1" v-if="item.SituacaoDoGrupo != 'F' && compra.Situacao != 'E'">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Situação</span>
+                                        Aguardando
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1" v-if="item.SituacaoDoGrupo == 'F' && compra.Situacao != 'E'">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Situação</span>
+                                        {{item.MaximoDeAcertos}}
+                                    </div>
+                                    <div class="col-xs-4 col-sm-1" v-if="compra.Situacao == 'E'">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Situação</span>
+                                        -
+                                    </div>
+                                    <div class="col-xs-4 col-sm-2" v-if="!item.Premiado || compra.Situacao == 'E'">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Prêmiação</span>
+                                        -
+                                    </div>
+                                    <div class="col-xs-4 col-sm-2" v-if="item.Premiado && compra.Situacao != 'E'">
+                                        <span class="mini-title hidden-md hidden-lg hidden-sm">Prêmiação</span>
+                                        {{(item.PremiacaoPorCota * item.Cotas).format("C2")}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

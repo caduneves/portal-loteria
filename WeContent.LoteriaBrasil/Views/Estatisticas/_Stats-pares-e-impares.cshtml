@@ -1,0 +1,19 @@
+<section v-if="data.length">
+    <div class="graph-horizontal">
+        <ul>
+            <li v-for="(item, index) in data">
+                <div class="bar">
+                    <div class="bar-inner bg" v-bind:style="{ height: item.PercentualBarra+'%', opacity: item.PercentualBarra/100 }"></div>
+                </div>
+                <div class="text">
+                    <strong class="data color">{{item.SomaDaFaixa}}</strong>
+                    <div class="description">
+                        Pares: {{ item.Pares }}<br>
+                        Ímpares: {{ item.Impares }}<br>
+                        <strong>{{item.Percentual.toFixed(0)}}%</strong>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>

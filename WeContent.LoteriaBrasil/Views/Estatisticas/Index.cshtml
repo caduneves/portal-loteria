@@ -1,0 +1,132 @@
+@{
+    ViewData["Title"] = "Estatísticas | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Estatísticas | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="" />
+}
+
+
+<section class="page-estatisticas" data-vue="Estatisticas" data-lottery="@Model" v-bind:class="loteria.class">
+    @Html.Partial("../Loteria/_HeaderLoteria.cshtml")
+
+    <div class="container">
+        <div class="col-lg-2 col-md-3 navigator-wrap">
+            @Html.Partial("_Navigator.cshtml")
+        </div>
+
+        <div class="col-lg-10 col-md-9">
+            <article>
+                <h2 class="color">Estatísticas</h2>
+
+                <p>
+                    Você sabia que as estatísticas podem fazer diferença na hora de apostar na Loteria {{loteria.nome}}? Aqui você fica sabendo quais foram os números mais sorteados, os que estão mais atrasados e ainda a quantidade de prêmios da {{loteria.nome}} divididos por região.Tudo isso para que você possa fazer suas apostas de uma maneira ainda mais eficaz.Os sorteios da {{loteria.nome}} ocorrem duas vezes na semana, todas às quartas e sábados às 20:00 h.<br>
+                    <strong>Confira abaixo um resumo das estatísticas da {{loteria.nome}}.</strong>
+                </p>
+
+                <h3 class="color">5 Maiores Premiações</h3>
+
+                <p>Estes são os maiores prêmios entregues na história desta loteria. Confira a lista dos mais altos valores, quantos apostadores receberam esses valores, onde moram e a data em que o prêmio saiu.</p>
+
+                <div class="list-rewards">
+                    <ul class="color-primary">
+                        <li v-for="(item, index) in maioresPremios">
+                            <div class="item">
+                                <span class="rank">{{index+1}}.</span>
+                                <span class="icon bg"></span>
+                                <span class="price">
+                                    {{item.Premio.format("c")}}
+                                </span>
+                            </div><!-- /.item -->
+                        </li>
+                    </ul>
+                    <div class="list-footer">
+                        <a v-bind:href="loteria.class + '/estatisticas/maiores-premios'" class="btn-more color-primary">Lista Completa</a>
+                    </div>
+                </div> <!-- /.list-rewards -->
+
+                <h3 class="color">Quantidade de Prêmios por Estados</h3>
+                <p>
+                    Você sabe qual é o Estado que mais recebeu prêmios desta loteria? Confira na lista e veja se você mora num destes lugares de sorte.
+                </p>
+
+                <div class="list-states">
+                    <ul>
+                        <li v-for="(item, index) in premiosPorEstado">
+                            <div class="map-wrap">
+                                <span class="map bg" v-bind:class="'-'+item.uf.toLowerCase()"></span>
+                                <span class="uf">{{ item.uf }}</span>
+                            </div>
+                            <span class="qty color">{{item.ganhadores}}</span>
+                            <span class="qty-suffix">{{item.ganhadores != 1 ? "Ganhadores" : "Ganhador"}}</span>
+                        </li>
+                    </ul>
+                    <div class="list-footer">
+                        <a v-bind:href="loteria.class + '/estatisticas/maiores-premios'" class="btn-more color-primary">Lista Completa</a>
+                    </div>
+                    <div>
+                        <!-- /.list-states -->
+
+                        <div class="container-fluid container-fluid-stats" v-if="loteria.isDezenas">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="dozens-stats">
+                                        <h3 class="color">
+                                            Dezenas mais sorteadas</h2>
+                                            <p>
+                                                Você quer saber se o seu número da sorte está entre os mais sorteados? Veja a lista dos números mais sortudos da loteria e monte sua estratégia de jogo.
+                                            </p>
+
+                                            <ul class="dozen-graph">
+                                                <li v-for="item in numerosMaisSorteados">
+                                                    <div class="bar">
+                                                        <div class="bar-inner bg" v-bind:style="{ height: item.percent+'%' }"></div>
+                                                        <span class="dozen">{{item.dezena}}</span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <span class="times color">{{ item.qtd }}</span>
+                                                        <span class="times-suffix">vezes</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                    </div>
+                                </div><!-- /.col -->
+
+                                <div class="col-md-6">
+                                    <div class="dozens-stats">
+                                        <h3 class="color">Dezenas mais Atrasadas</h3>
+                                        <p>
+                                            Será que faz muito tempo que o seu número da sorte não sai em nenhum concurso dessa loteria? Nesta lista, você descobre quais são as dezenas que estão há mais tempo sem aparecer nos resultados.<br>
+                                            * Quantidade consecutiva de concursos sem ser sorteado
+                                        </p>
+                                        <ul class="dozen-graph">
+                                            <li v-for="item in numerosMaisAtrasados">
+                                                <div class="bar">
+                                                    <div class="bar-inner bg" v-bind:style="{ height: item.percent+'%' }"></div>
+                                                    <span class="dozen">{{ item.dezena }}</span>
+                                                </div>
+                                                <div class="text">
+                                                    <span class="times color">{{item.qtd}}</span>
+                                                    <span class="times-suffix">sort </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div><!-- /.col -->
+                            </div>
+
+                        </div><!-- /.container-fluid -->
+
+
+                        <div class="article-footer">
+                            <a href="#" class="btn bg">Apostar na {{loteria.nome}}</a>
+                        </div>
+            </article>
+
+        </div> <!-- /.col -->
+    </div> <!-- /.container -->
+</section>

@@ -1,0 +1,23 @@
+﻿<section id="slider_loterias">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-carousel owl-carousel-loterias owl-theme owl-loaded owl-drag">
+                    <div class="item bg" v-bind:class="loteria.class" v-for="loteria in loterias">
+                        <div class="radial-interno"></div>
+                        <div class="label-container">
+                            <p>{{loteria.diaSorteio}}</p>
+                        </div>
+                        <span class="nome-concurso" v-on:click="goToLanding(loteria)">{{loteria.nome}}</span>
+                        <p class="valor-concurso" v-on:click="goToLanding(loteria)"><span v-if="loteria.concurso.EstimativaPremio">R$</span> {{loteria.estimativaPremio}}</p>
+                        <span class="status-concurso" v-if="loteria.acumulado">acumulou</span>
+                        <div class="row align-bottom">
+                            <span class="horario-concurso col-xs-12"><i class="far fa-clock"></i>{{timer(loteria)}}</span>
+                            <div class="col-xs-12 padding-top"><a v-on:click="goToLanding(loteria)" class="btn-apostar_concurso ">apostar</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

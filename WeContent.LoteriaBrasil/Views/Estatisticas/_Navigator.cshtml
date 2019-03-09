@@ -1,0 +1,23 @@
+@{
+    ViewBag.slugEstatisticas = (ViewBag.slugEstatisticas != null ? ViewBag.slugEstatisticas : "principal");
+}
+
+<div class="navigator">
+    <ul>
+        <li><a class='@(ViewBag.slugEstatisticas == "principal" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas'"><span>Principal</span></a></li>
+        <li><a class='@(ViewBag.slugEstatisticas == "maiores-premios" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/maiores-premios'"><span>maiores prêmios</span></a></li>
+        <li><a class='@(ViewBag.slugEstatisticas == "premios-estado" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/premios-estado'"><span>prêmios por estado</span></a></li>
+        <li v-if="loteria.isDezenas"><a class='@(ViewBag.slugEstatisticas == "numeros-mais-sorteados" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/numeros-mais-sorteados'"><span>números mais sorteados</span></a></li>
+        <li v-if="loteria.isDezenas"><a class='@(ViewBag.slugEstatisticas == "dezenas-mais-atrasadas" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/dezenas-mais-atrasadas'"><span>dezenas mais atrasadas</span></a></li>
+        <li v-if="loteria.isDezenas"><a class='@(ViewBag.slugEstatisticas == "soma-das-dezenas" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/soma-das-dezenas'"><span>Soma das Dezenas</span></a></li>
+        <li v-if="loteria.isDezenas"><a class='@(ViewBag.slugEstatisticas == "linhas-e-colunas" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/linhas-e-colunas'"><span>Linhas e Colunas</span></a></li>
+        <li v-if="loteria.isDezenas"><a class='@(ViewBag.slugEstatisticas == "pares-e-impares" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/pares-e-impares'"><span>Pares e Impares</span></a></li>
+        
+        <li v-if="loteria.isLoteca"><a class='@(ViewBag.slugEstatisticas == "colunas-por-concursos" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/colunas-por-concursos'"><span>Colunas por Concurso</span></a></li>
+        <li v-if="loteria.isLoteca"><a class='@(ViewBag.slugEstatisticas == "colunas-seguidas-por-concursos" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/colunas-seguidas-por-concursos'"><span>Qtd. Coluna seguidas por Concurso</span></a></li>
+
+        <li v-if="loteria.isLotogol"><a class='@(ViewBag.slugEstatisticas == "placares-mais-frequentes" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/placares-mais-frequentes'"><span>Placares mais Frequentes</span></a></li>
+        <li v-if="loteria.isLotogol"><a class='@(ViewBag.slugEstatisticas == "soma-de-gols-por-concurso" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/soma-de-gols-por-concurso'"><span>Soma de Gols por concurso</span></a></li>
+        <li v-if="loteria.isLotogol"><a class='@(ViewBag.slugEstatisticas == "quantidade-de-gols-por-concurso" ? "active color" : "")' v-bind:href="'/' + loteria.class + '/estatisticas/quantidade-de-gols-por-concurso'"><span>Qtd. Gols no mesmo Concurso</span></a></li>
+    </ul> 
+</div>

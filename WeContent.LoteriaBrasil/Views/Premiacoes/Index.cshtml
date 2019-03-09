@@ -1,0 +1,148 @@
+@{
+    ViewData["Title"] = "Premiações | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Premiações | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}/images/main/logo.png")" />
+    <meta property="og:description" content="Veja os 20 maiores pr&#234;mios obtidos pelos apostadores de Loteria Brasil. Fa&#231;a a sua aposta online nas principais loterias do Brasil com toda a seguran&#231;a." />
+}
+
+<section id="banner-ranking" data-vue="Premios">
+    <div class="container-fluid banner-ranking_container">
+        <div class="row">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 premiacao1">
+                        <p class="text-center static">nos últimos 30 dias</p>
+                        <p class="text-center valor">{{ mes }}</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 premiacao2">
+                        <p class="text-center static">nos últimos 12 meses</p>
+                        <p class="text-center valor">{{ ano }}</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 premiacao3">
+                        <p class="text-center static2">pagos até o momentos</p>
+                        <p class="text-center valor">{{ total }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content-ranking" data-vue="RankingPremios" data-lottery="@(Model ?? 0)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h4>ranking de prêmios</h4>
+                <div class="row">
+                    <p class="text-center">Veja o ranking das maiores premiações entregues em toda história do site! Não perca a oportunidade de ser o mais novo milionário do país com o Loteria Brasil!</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <form class="form-inline text-center">
+                    <div class="form-group form-group1">
+                        <select class="form-control" v-model="quantidade" v-on:change="update()">
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <label>Maiores prêmios</label>
+                    </div>
+                    <div class="form-group form-group-mobile">
+                        <select class="form-control" v-model="quantidade" v-on:change="update()">
+                            <option value="20">20 maiores prêmios</option>
+                            <option value="50">50 maiores prêmios</option>
+                            <option value="100">100 maiores prêmios</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-group2">
+                        <select class="form-control" v-model="loteria" v-on:change="update()">
+                            <option value="0">Loteria</option>
+                            <option value="1">Mega-Sena</option>
+                            <option value="2">Dupla Sena</option>
+                            <option value="3">Lotomania</option>
+                            <option value="4">Quina</option>
+                            <option value="5">Lot. Federal</option>
+                            <option value="6">Loteca</option>
+                            <option value="7">Lotogol</option>
+                            <option value="8">Lotofácil</option>
+                            <option value="9">Timemania</option>
+                            <option value="10">Dia de Sorte</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-group3">
+                        <i class="far fa-calendar-alt fa-lg"></i>
+                        <input type="tel" v-mask="'##/##/####'" class="form-control" v-model="dataInicio" v-on:change="update()">
+                    </div>
+                    <div class="form-group form-group4">
+                        <i class="far fa-calendar-alt fa-lg"></i>
+                        <input type="tel" v-mask="'##/##/####'" class="form-control" v-model="dataFim" v-on:change="update()">
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="panel panel-default">
+                    <div class="table-responsive">
+                        <table class="table table-fixed">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        <a>
+                                            <i class="fas fa-angle-down fa-lg"></i>loteria
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a>
+                                            <i class="fas fa-angle-down fa-lg"></i>concurso
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a>
+                                            <i class="fas fa-angle-down fa-lg"></i>data
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a>
+                                            <i class="fas fa-angle-down fa-lg"></i>prêmio
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a>
+                                            <i class="fas fa-angle-down fa-lg"></i>grupo
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a>
+                                            <i class="fas fa-angle-down fa-lg"></i>cotas
+                                        </a>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="resultado in resultados">
+                                    <td>{{resultado.ranking}}°</td>
+                                    <td>{{resultado.name}}</td>
+                                    <td>{{resultado.concurso}}</td>
+                                    <td>{{resultado.data}}</td>
+                                    <td>{{resultado.premio}}</td>
+                                    <td>{{resultado.grupo}}</td>
+                                    <td>{{resultado.cotas}}</td>
+                                    <td>
+                                        <i class="far fa-file fa-lg" v-on:click="verJogo(resultado)"></i>
+                                        <i class="fas fa-info-circle fa-lg" v-on:click="verComprovante(resultado)"></i>
+                                    </td>
+                                    <td>
+                                        <a v-bind:href="resultado.urlLoteria" class="btn btn-success btn-apostar">Apostar</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

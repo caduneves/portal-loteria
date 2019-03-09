@@ -1,0 +1,12 @@
+@model string
+@{
+    string id = Model ?? "top-banner";
+}
+<section id="static-banner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 static-banner-container" id="@id">
+                </div>
+            </div>
+        </div>
+</section>

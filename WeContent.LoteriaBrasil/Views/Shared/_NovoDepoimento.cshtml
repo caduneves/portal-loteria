@@ -1,0 +1,16 @@
+<div class="message hidden novo-depoimento" v-show="visible" data-vue="NovoDepoimento">
+    <div class="background" v-on:click="close()"></div>
+    <div class="modal">
+        <div>
+            <p class="title">Cadastrar Depoimento</p>
+            <p class="subtitle" v-if="user">
+                {{user.NomeUsuario}}
+            </p>
+            <div class="city-state" v-if="user">{{user.Cidade}} - {{user.Estado}}</div>
+            <textarea id="field_depoimento" character-count="600" class="no-resize" v-model="depoimento"></textarea>
+            <div class="text-limit">Limite de caracteres 600.</div>
+            <div>Ao clicar em "Enviar Depoimento" autorizo a publicação das informações acima no site Loteria Brasil para fins exclusivamente informativos.</div>
+            <button type="button" class="btn btn-success value-btn" v-on:click="send()">Enviar Depoimento</button>
+        </div>
+    </div>
+</div>

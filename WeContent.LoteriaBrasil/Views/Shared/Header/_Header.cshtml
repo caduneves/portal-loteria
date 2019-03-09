@@ -1,0 +1,594 @@
+﻿@{
+    ViewBag.isHome = (ViewBag.isHome != null) ? ViewBag.isHome : false;
+}
+<header id="header">
+    <button class="btn-menu">
+        <i class="fa fa-bars"></i>
+    </button>
+    <div class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="social">
+                        <li><a href="https://www.facebook.com/loteriabrasil/" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a></li>
+                        <li><a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" target="_blank" title="Google Plus"><i class="fab fa-google-plus-square"></i></a></li>
+                    </ul>
+                </div> <!-- /.col -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div> <!-- /.topbar -->
+
+    <div class="header-inner">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-5">
+                    <a href="/" class="logo" title="Loteria Brasil">
+                        @( ViewBag.isHome ? "<h1>Loteria Brasil</h1>" : "<span>Loteria Brasil</span>" );
+                    </a>
+                </div>
+
+                <div class="hidden-xs col-sm-6 col-md-3">
+                    <ul class="user-options">
+                        <li><a href="/credito/comprar"><span>Comprar<br>Créditos</span></a></li>
+                        <li><a href="javascript:ApostaFacil.show()"><span>Aposta<br>Fácil</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-md-4 wrap-login">
+                    <div class="user login-header" data-vue="LoginHeader">
+
+                        <div class="avatar" v-bind:class="{ '-unlogged' : !userImage() }">
+                            <a v-bind:href=" isLoggedIn() ? '/usuario/cadastrar' : '/usuario/login'" v-bind:style="{ 'background-image' : 'url('+userImage()+')' }">{{ isLoggedIn() ? 'Minha Conta' : 'Login' }} </a>
+                        </div>
+
+                        <div class="text">
+                            <div v-if="!isLoggedIn()">
+                                <div class="wellcome">Olá,</div>
+                                <a href="/usuario/login">entre</a> ou <a href="/usuario/login">cadastre-se</a>
+                            </div>
+
+                            <div v-if="isLoggedIn()">
+                                <div class="wellcome">Olá, <strong>{{user.NomeExibicao}}</strong></div>
+                                ver <a href="/usuario/cadastrar">Minha Conta</a><br>
+                                <a href="javascript:void(0);" v-on:click="logoff()"><i class="fa fa-power-off"></i> Sair</a>
+                            </div>
+                        </div>
+
+                    </div> <!-- /.user -->
+
+                    <div class="cart" data-vue="MiniCart">
+                        
+                        <a href="/carrinho" class="mini-cart">
+                            <div class="icon"></div>
+                            <div class="text">
+                                R$<br /><span class="price">{{cart.TotalValor.format("N2")}}</span>
+                            </div>
+                        </a>
+
+                        <div class="box-cart">
+                            <div class="box-cart-header">
+                                <div class="name">Grupo</div>
+                                <div class="quota">Cota</div>
+                                <div class="price">Valor</div>
+                            </div>
+                            <div class="scroller" v-if="cart.TotalItens">
+                                <ul>
+                                        <li v-for="item in cart.Itens">
+                                            <div class="name">{{item.NomeGrupo}}</div>
+                                            <div class="quota">{{item.Cotas.format("00")}}</div>
+                                            <div class="price">{{(item.ValorCota * item.Cotas).format('C2')}}</div>
+                                            <i class="fas fa-times" v-on:click="remove(item)"></i>
+                                        </li>
+                                </ul>
+                            </div>
+                            <!-- /.scroller -->
+                            <div class="box-cart-footer mega-sena"  v-if="cart.TotalItens"> 
+                                <button type="button" class="btn center-block bg bg-hover white-text" v-on:click="go('/carrinho')">Finalizar Pagamento</button>
+                            </div>
+                            <div class="box-cart-empty" v-if="!cart.TotalItens">
+                                <span class="icon"><i class="lnr lnr-sad"></i></span>
+                                Ops! Seu carrinho está vazio.
+                            </div>
+                        </div>
+
+                    </div><!--/.cart -->
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /.header-inner -->
+
+    <div class="main-menu-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <nav class="main-menu">
+
+                        <ul>
+                            <li>
+                                <a href="/loterias">Loterias</a>
+
+                                <ul>
+                                    <li class="mega-sena">
+                                        <a href="/mega-sena">Mega-Sena <i class="fa fa-chevron-circle-right color"></i></a>
+
+                                        <ul class="border-color">
+                                            <li><a href="/mega-sena/">Apostar</a></li>
+                                            <li><a href="/mega-sena/como-jogar">Como Jogar</a></li>
+                                            <li><a href="/mega-sena/resultados">Resultados</a></li>
+                                            <li><a href="/mega-sena/premios-no-site">Prêmios no Site</a></li>
+                                            <li><a href="/mega-sena/probabilidades">Probabilidades</a></li>
+                                            <li><a href="/mega-sena/estatisticas">Estatísticas</a></li>
+                                            <li><a href="/mega-sena/noticias">Notícias</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dupla-sena">
+                                        <a href="/dupla-sena">Dupla Sena <i class="fa fa-chevron-circle-right color"></i></a>
+
+                                        <ul class="border-color">
+                                            <li><a href="/dupla-sena/">Apostar</a></li>
+                                            <li><a href="/dupla-sena/como-jogar">Como Jogar</a></li>
+                                            <li><a href="/dupla-sena/resultados">Resultados</a></li>
+                                            <li><a href="/dupla-sena/premios-no-site">Prêmios no Site</a></li>
+                                            <li><a href="/dupla-sena/probabilidades">Probabilidades</a></li>
+                                            <li><a href="/dupla-sena/estatisticas">Estatísticas</a></li>
+                                            <li><a href="/dupla-sena/noticias">Notícias</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="lotomania">
+                                        <a href="/lotomania" class="border-color">Lotomania <i class="fa fa-chevron-circle-right color"></i></a>
+
+                                        <ul class="border-color">
+                                            <li><a href="/lotomania/">Apostar</a></li>
+                                            <li><a href="/lotomania/como-jogar">Como Jogar</a></li>
+                                            <li><a href="/lotomania/resultados">Resultados</a></li>
+                                            <li><a href="/lotomania/premios-no-site">Prêmios no Site</a></li>
+                                            <li><a href="/lotomania/probabilidades">Probabilidades</a></li>
+                                            <li><a href="/lotomania/estatisticas">Estatísticas</a></li>
+                                            <li><a href="/lotomania/noticias">Notícias</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="quina">
+                                        <a href="/quina">Quina <i class="fa fa-chevron-circle-right color"></i></a>
+
+                                        <ul class="border-color">
+                                            <li><a href="/mega-sena/">Apostar</a></li>
+                                            <li><a href="/mega-sena/como-jogar">Como Jogar</a></li>
+                                            <li><a href="/mega-sena/resultados">Resultados</a></li>
+                                            <li><a href="/mega-sena/premios-no-site">Prêmios no Site</a></li>
+                                            <li><a href="/mega-sena/probabilidades">Probabilidades</a></li>
+                                            <li><a href="/mega-sena/estatisticas">Estatísticas</a></li>
+                                            <li><a href="/mega-sena/noticias">Notícias</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="loteria-federal">
+                                        <a href="/loteria-federal">Loteria Federal <i class="fa fa-chevron-circle-right color"></i></a>
+
+                                        <ul class="border-color">
+                                            <li><a href="/loteria-federal/">Apostar</a></li>
+                                            <li><a href="/loteria-federal/como-jogar">Como Jogar</a></li>
+                                            <li><a href="/loteria-federal/resultados">Resultados</a></li>
+                                            <li><a href="/loteria-federal/premios-no-site">Prêmios no Site</a></li>
+                                            <li><a href="/loteria-federal/noticias">Notícias</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="loteca">
+                                        <a href="/loteca">Loteca <i class="fa fa-chevron-circle-right color"></i></a>
+
+                                        <ul class="border-color">
+                                            <li><a href="/loteca/">Apostar</a></li>
+                                            <li><a href="/loteca/como-jogar">Como Jogar</a></li>
+                                            <li><a href="/loteca/resultados">Resultados</a></li>
+                                            <li><a href="/loteca/premios-no-site">Prêmios no Site</a></li>
+                                            <li><a href="/loteca/probabilidades">Probabilidades</a></li>
+                                            <li><a href="/loteca/estatisticas">Estatísticas</a></li>
+                                            <li><a href="/loteca/noticias">Notícias</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="lotogol">
+                                        <a href="/lotogol">Lotogol <i class="fa fa-chevron-circle-right color"></i></a>
+
+                                        <ul class="border-color">
+                                            <li><a href="/lotogol/">Apostar</a></li>
+                                            <li><a href="/lotogol/como-jogar">Como Jogar</a></li>
+                                            <li><a href="/lotogol/resultados">Resultados</a></li>
+                                            <li><a href="/lotogol/premios-no-site">Prêmios no Site</a></li>
+                                            <li><a href="/lotogol/probabilidades">Probabilidades</a></li>
+                                            <li><a href="/lotogol/estatisticas">Estatísticas</a></li>
+                                            <li><a href="/lotogol/noticias">Notícias</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="lotofacil">
+                                        <a href="/lotofacil">Lotofácil <i class="fa fa-chevron-circle-right color"></i></a>
+
+                                        <ul class="border-color">
+                                            <li><a href="/lotofacil/">Apostar</a></li>
+                                            <li><a href="/lotofacil/como-jogar">Como Jogar</a></li>
+                                            <li><a href="/lotofacil/resultados">Resultados</a></li>
+                                            <li><a href="/lotofacil/premios-no-site">Prêmios no Site</a></li>
+                                            <li><a href="/lotofacil/probabilidades">Probabilidades</a></li>
+                                            <li><a href="/lotofacil/estatisticas">Estatísticas</a></li>
+                                            <li><a href="/lotofacil/noticias">Notícias</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="timemania">
+                                        <a href="/timemania">Timemania <i class="fa fa-chevron-circle-right color"></i></a>
+
+                                        <ul class="border-color">
+                                            <li><a href="/timemania/">Apostar</a></li>
+                                            <li><a href="/timemania/como-jogar">Como Jogar</a></li>
+                                            <li><a href="/timemania/resultados">Resultados</a></li>
+                                            <li><a href="/timemania/premios-no-site">Prêmios no Site</a></li>
+                                            <li><a href="/timemania/probabilidades">Probabilidades</a></li>
+                                            <li><a href="/timemania/estatisticas">Estatísticas</a></li>
+                                            <li><a href="/timemania/noticias">Notícias</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/">sorteios especiais</a>
+                                    </li>
+                                    <li>
+                                        <a href="/loterias">Todas loterias</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="/resultados">Resultados</a>
+                                <ul>
+                                    <li><a href="/mega-sena/resultados">Mega-Sena</a></li>
+                                    <li><a href="/dupla-sena/resultados">Dupla-Sena</a></li>
+                                    <li><a href="/lotomania/resultados">Lotomania</a></li>
+                                    <li><a href="/quina/resultados">Quina</a></li>
+                                    <li><a href="/federal/resultados">Loteria Federal</a></li>
+                                    <li><a href="/loteca/resultados">Loteca</a></li>
+                                    <li><a href="/lotogol/resultados">Lotogol</a></li>
+                                    <li><a href="/lotofacil/resultados">Lotofácil</a></li>
+                                    <li><a href="/timemania/resultados">Timemania</a></li>
+                                    <li><a href="/dia-de-sorte/resultados">Dia de Sorte</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/premiacoes">Prêmios no site</a></li>
+                            <li><a href="/noticias">Notícias</a></li>
+                            <li><a href="/como-pagar">Conheça</a></li>
+                            <li><a href="/newsletter/indique">Indique um Amigo</a></li>
+                            <li><a href="/institucional/duvidas">Dúvidas</a></li>
+                            <li><a href="/institucional/atendimento">Fale Conosco</a></li>
+                        </ul>
+
+                    </nav> <!-- .main-nav -->
+
+                </div> <!-- /.col -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div> <!-- /.main-menu-wrap -->
+
+</header> <!-- /#header -->
+
+<nav class="mobile-menu">
+    <ul>
+        <li>
+            <a href="#" onclick="javascript:void(0);">Loterias</a>
+
+            <ul>
+                <li class="mega-sena">
+                    <a href="/mega-sena">Mega-Sena <i class="fa fa-chevron-circle-right color"></i></a>
+
+                    <ul class="border-color">
+                        <li><a href="/mega-sena/">Apostar</a></li>
+                        <li><a href="/mega-sena/como-jogar">Como Jogar</a></li>
+                        <li><a href="/mega-sena/resultados">Resultados</a></li>
+                        <li><a href="/mega-sena/premios-no-site">Prêmios no Site</a></li>
+                        <li><a href="/mega-sena/probabilidades">Probabilidades</a></li>
+                        <li><a href="/mega-sena/estatisticas">Estatísticas</a></li>
+                        <li><a href="/mega-sena/noticias">Notícias</a></li>
+                    </ul>
+                </li>
+                <li class="dupla-sena">
+                    <a href="/dupla-sena">Dupla Sena <i class="fa fa-chevron-circle-right color"></i></a>
+
+                    <ul class="border-color">
+                        <li><a href="/dupla-sena/">Apostar</a></li>
+                        <li><a href="/dupla-sena/como-jogar">Como Jogar</a></li>
+                        <li><a href="/dupla-sena/resultados">Resultados</a></li>
+                        <li><a href="/dupla-sena/premios-no-site">Prêmios no Site</a></li>
+                        <li><a href="/dupla-sena/probabilidades">Probabilidades</a></li>
+                        <li><a href="/dupla-sena/estatisticas">Estatísticas</a></li>
+                        <li><a href="/dupla-sena/noticias">Notícias</a></li>
+                    </ul>
+                </li>
+                <li class="lotomania">
+                    <a href="/lotomania" class="border-color">Lotomania <i class="fa fa-chevron-circle-right color"></i></a>
+
+                    <ul class="border-color">
+                        <li><a href="/lotomania/">Apostar</a></li>
+                        <li><a href="/lotomania/como-jogar">Como Jogar</a></li>
+                        <li><a href="/lotomania/resultados">Resultados</a></li>
+                        <li><a href="/lotomania/premios-no-site">Prêmios no Site</a></li>
+                        <li><a href="/lotomania/probabilidades">Probabilidades</a></li>
+                        <li><a href="/lotomania/estatisticas">Estatísticas</a></li>
+                        <li><a href="/lotomania/noticias">Notícias</a></li>
+                    </ul>
+                </li>
+                <li class="quina">
+                    <a href="/quina">Quina <i class="fa fa-chevron-circle-right color"></i></a>
+
+                    <ul class="border-color">
+                        <li><a href="/mega-sena/">Apostar</a></li>
+                        <li><a href="/mega-sena/como-jogar">Como Jogar</a></li>
+                        <li><a href="/mega-sena/resultados">Resultados</a></li>
+                        <li><a href="/mega-sena/premios-no-site">Prêmios no Site</a></li>
+                        <li><a href="/mega-sena/probabilidades">Probabilidades</a></li>
+                        <li><a href="/mega-sena/estatisticas">Estatísticas</a></li>
+                        <li><a href="/mega-sena/noticias">Notícias</a></li>
+                    </ul>
+                </li>
+                <li class="loteria-federal">
+                    <a href="/loteria-federal">Loteria Federal <i class="fa fa-chevron-circle-right color"></i></a>
+
+                    <ul class="border-color">
+                        <li><a href="/loteria-federal/">Apostar</a></li>
+                        <li><a href="/loteria-federal/como-jogar">Como Jogar</a></li>
+                        <li><a href="/loteria-federal/resultados">Resultados</a></li>
+                        <li><a href="/loteria-federal/premios-no-site">Prêmios no Site</a></li>
+                        <li><a href="/loteria-federal/noticias">Notícias</a></li>
+                    </ul>
+                </li>
+                <li class="loteca">
+                    <a href="/loteca">Loteca <i class="fa fa-chevron-circle-right color"></i></a>
+
+                    <ul class="border-color">
+                        <li><a href="/loteca/">Apostar</a></li>
+                        <li><a href="/loteca/como-jogar">Como Jogar</a></li>
+                        <li><a href="/loteca/resultados">Resultados</a></li>
+                        <li><a href="/loteca/premios-no-site">Prêmios no Site</a></li>
+                        <li><a href="/loteca/probabilidades">Probabilidades</a></li>
+                        <li><a href="/loteca/estatisticas">Estatísticas</a></li>
+                        <li><a href="/loteca/noticias">Notícias</a></li>
+                    </ul>
+                </li>
+                <li class="lotogol">
+                    <a href="/lotogol">Lotogol <i class="fa fa-chevron-circle-right color"></i></a>
+
+                    <ul class="border-color">
+                        <li><a href="/lotogol/">Apostar</a></li>
+                        <li><a href="/lotogol/como-jogar">Como Jogar</a></li>
+                        <li><a href="/lotogol/resultados">Resultados</a></li>
+                        <li><a href="/lotogol/premios-no-site">Prêmios no Site</a></li>
+                        <li><a href="/lotogol/probabilidades">Probabilidades</a></li>
+                        <li><a href="/lotogol/estatisticas">Estatísticas</a></li>
+                        <li><a href="/lotogol/noticias">Notícias</a></li>
+                    </ul>
+                </li>
+                <li class="lotofacil">
+                    <a href="/lotofacil">Lotofácil <i class="fa fa-chevron-circle-right color"></i></a>
+
+                    <ul class="border-color">
+                        <li><a href="/lotofacil/">Apostar</a></li>
+                        <li><a href="/lotofacil/como-jogar">Como Jogar</a></li>
+                        <li><a href="/lotofacil/resultados">Resultados</a></li>
+                        <li><a href="/lotofacil/premios-no-site">Prêmios no Site</a></li>
+                        <li><a href="/lotofacil/probabilidades">Probabilidades</a></li>
+                        <li><a href="/lotofacil/estatisticas">Estatísticas</a></li>
+                        <li><a href="/lotofacil/noticias">Notícias</a></li>
+                    </ul>
+                </li>
+                <li class="timemania">
+                    <a href="/timemania">Timemania <i class="fa fa-chevron-circle-right color"></i></a>
+
+                    <ul class="border-color">
+                        <li><a href="/timemania/">Apostar</a></li>
+                        <li><a href="/timemania/como-jogar">Como Jogar</a></li>
+                        <li><a href="/timemania/resultados">Resultados</a></li>
+                        <li><a href="/timemania/premios-no-site">Prêmios no Site</a></li>
+                        <li><a href="/timemania/probabilidades">Probabilidades</a></li>
+                        <li><a href="/timemania/estatisticas">Estatísticas</a></li>
+                        <li><a href="/timemania/noticias">Notícias</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/">sorteios especiais</a>
+                </li>
+                <li>
+                    <a href="/loterias">Todas loterias</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="/resultados">Resultados</a>
+            <ul>
+                <li><a href="/mega-sena/resultados">Mega-Sena</a></li>
+                <li><a href="/dupla-sena/resultados">Dupla-Sena</a></li>
+                <li><a href="/lotomania/resultados">Lotomania</a></li>
+                <li><a href="/quina/resultados">Quina</a></li>
+                <li><a href="/federal/resultados">Loteria Federal</a></li>
+                <li><a href="/loteca/resultados">Loteca</a></li>
+                <li><a href="/lotogol/resultados">Lotogol</a></li>
+                <li><a href="/lotofacil/resultados">Lotofácil</a></li>
+                <li><a href="/timemania/resultados">Timemania</a></li>
+                <li><a href="/dia-de-sorte/resultados">Dia de Sorte</a></li>
+            </ul>
+        </li>
+        <li><a href="/premiacoes">Prêmios no site</a></li>
+        <li><a href="/noticias">Notícias</a></li>
+        <li><a href="/como-pagar">Conheça</a></li>
+        <li><a href="/newsletter/indique">Indique um Amigo</a></li>
+        <li><a href="/institucional/duvidas">Dúvidas</a></li>
+        <li><a href="/institucional/atendimento">Fale Conosco</a></li>
+    </ul>
+</nav> <!-- .main-nav -->
+<div class="mobile-menu-shadow"></div>
+
+@*
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="header-bar_social">
+                <div class="container">
+                    <a class="logo" href="/">
+                        <h1>Brand</h1>
+                    </a>
+                    <ul class="list-inline social pull-right">
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="header-bar_customer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3 col-sm-offset-4 col-md-3 col-md-offset-5">
+                            <ul class="nav nav-justified nav-comprar">
+                                <li role="presentation">
+                                    <a href="/credito/comprar">
+                                        comprar
+                                        <br>créditos
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="javascript:ApostaFacil.show()">
+                                        aposta
+                                        <br>fácil
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-5 col-md-4 container-user">
+                            <div class="col-xs-6 col-sm-8 col-md-7 login-header" data-vue="LoginHeader">
+                                <img v-bind:src="userImage()" class="img-user" />
+                                <p class="login-btns">
+                                    Olá, <span v-if="isLoggedIn()">{{user.NomeExibicao}}</span>
+                                    <br />
+                                    <span v-if="isLoggedIn()">
+                                        ver <a href="/usuario/cadastrar">Minha Conta</a>
+                                    </span>
+                                    <span v-if="!isLoggedIn()">
+                                        <a href="/usuario/login">entre</a>&nbspou&nbsp
+                                        <a href="/usuario/login">cadastre-se</a>
+                                    </span>
+
+                                </p>
+                                 @Html.Partial("_MenuFlutuanteMinhaConta")
+                            </div>
+                            <a href="/carrinho">
+                                <div class="col-xs-6 col-sm-4 col-md-5 mini-cart" data-vue="MiniCart">
+                                    <img src="~/images/main/chart_icon.png" class="" />
+                                    <p>
+                                        R$
+                                        <br />
+                                        <a href="/carrinho">{{cart.TotalValor.format("N2")}}</a>
+                                    </p>
+                                    <div class="box-cart">
+                                        <div class="box-cart-header">
+                                            <div class="name">Grupo</div>
+                                            <div class="quota">Cota</div>
+                                            <div class="price">Valor</div>
+                                        </div>
+                                        <div class="scroller" v-if="cart.TotalItens">
+                                            <ul>
+                                                    <li v-for="item in cart.Itens">
+                                                        <div class="name">{{item.NomeGrupo}}</div>
+                                                        <div class="quota">{{item.Cotas.format("00")}}</div>
+                                                        <div class="price">{{(item.ValorCota * item.Cotas).format('C2')}}</div>
+                                                        <i class="fas fa-times" v-on:click="remove(item)"></i>
+                                                    </li>
+                                            </ul>
+                                        </div>
+                                        <!-- /.scroller -->
+                                        <div class="box-cart-footer mega-sena"  v-if="cart.TotalItens"> 
+                                            <button type="button" class="btn center-block bg bg-hover white-text" v-on:click="go('/carrinho')">Finalizar Pagamento</button>
+                                        </div>
+                                        <div class="box-cart-empty" v-if="!cart.TotalItens">
+                                            <span class="icon"><i class="lnr lnr-sad"></i></span>
+                                            Ops! Seu carrinho está vazio.
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-principal" id="bs-example-navbar-collapse-1">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">loterias</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/mega-sena">mega-sena</a></li>
+                                <li><a href="/dupla-sena">dupla sena</a></li>
+                                <li><a href="/lotomania">lotomania</a></li>
+                                <li><a href="/quina">quina</a></li>
+                                <li><a href="/loteria-federal">loteria federal</a></li>
+                                <li><a href="/loteca">loteca</a></li>
+                                <li><a href="/lotogol">lotogol</a></li>
+                                <li><a href="/lotofacil">lotofácil</a></li>
+                                <li><a href="/timemania">timemania</a></li>
+                                <li><a href="/">sorteios especiais</a></li>
+                                <li><a href="/">todas loterias</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/resultados">resultados</a>
+                        </li>
+                        <li>
+                            <a href="/premiacoes">prêmios no site</a>
+                        </li>
+                        <li>
+                            <a href="/noticias">notícias</a>
+                        </li>
+                        <li>
+                            <a href="/como-pagar">conheça</a>
+                        </li>
+                        <li>
+                            <a href="/newsletter/indique">indique um amigo</a>
+                        </li>
+                        <li>
+                            <a href="/institucional/duvidas">dúvidas</a>
+                        </li>
+                        <li>
+                            <a href="/institucional/atendimento">fale conosco</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+
+        <!-- /.container-fluid -->
+    </nav>
+</header>
+*@

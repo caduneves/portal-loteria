@@ -1,0 +1,36 @@
+<div id="boloes" class="anchor"></div>
+                            <table class="table table-striped table-responsive">
+                                <tr v-for="bolao in apostar.boloesSelected">
+                                    <td>
+                                        <p>{{bolao.NmGrupo}}</p>
+                                        <span v-if="bolao.CodigoSelo == 1" class="selo inedito bg">inédito</span>
+                                        <span v-if="bolao.CodigoSelo == 2" class="selo novo">novo</span>
+                                        <span v-if="bolao.CodigoSelo == 3" class="selo premiada">série premiada</span>
+                                    </td>
+                                    <td>
+                                        <i class="far fa-file fa-2x" v-on:click="bolao.verJogo()"></i>
+                                        <i class="fas fa-info-circle fa-2x" v-on:click="bolao.verComprovante()" v-show="bolao.StatusGC == 2"></i>
+                                    </td>
+                                    <td>
+                                        <p>{{bolao.TtCotas.format('00')}} Cotas</p>
+                                        <p>{{bolao.availableQuantity.format('00')}} Disponíveis</p>
+                                    </td>
+                                    <td>
+                                        <p>Valor por Cota</p>
+                                        <p>{{bolao.VlCota.format("C2")}}</p>
+                                    </td>
+                                    <td>
+                                        <div class="input-group selecionaBolao">
+                                            <a data-button="-" class="sign bg-hover" href="javascript:void(0)" v-on:click="bolao.decrement()">-</a>
+                                            <input type="text" name="value" v-model="bolao.quantity" class="input-number">
+                                            <a data-button="+" class="sign bg-hover" href="javascript:void(0)" v-on:click="bolao.increment()">+</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn_apostar center-block bg bg-hover" v-on:click="bolao.addToCart(false)">
+                                            apostar
+                                            <i class="fas fa-thumbs-up fa-sm"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>

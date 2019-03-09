@@ -1,0 +1,64 @@
+.howto-wrap {
+    width: 100%;
+    margin: 30px auto;
+}
+
+.howto-wrap h2 {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    text-align: left;
+}
+
+.howto-wrap h3 { 
+    color: white;
+    text-align: left;
+    font-size: 1em;
+    text-transform: capitalize;
+    font-family: 'calibri-bold', sans-serif;
+}
+
+.howto-wrap a { color: inherit; }
+
+.howto-wrap .step {
+    background: #272727;
+    width: 100%;
+    margin: 0;
+    padding: 40px 0;
+    color: white;
+}
+
+.howto-wrap .step::after,
+.howto-wrap .step::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    clear: both;
+}
+
+.howto-wrap .step:nth-of-type(even) { background: #6baf52; }
+
+
+.howto-wrap .step .step-content {
+    margin: 25px auto;
+    width: 100%;
+    font-size: 16px;
+    font-family: 'calibri-light', sans-serif;   
+}
+
+.howto-wrap .step .step-content figure {
+    margin: 20px 0;
+}
+
+.howto-wrap .step .step-content p {
+    line-height: 1.5em;
+}
+
+
+@media screen and (min-width: 992px) {
+    .howto-wrap .flex-centering {
+        display: flex;
+        align-items: center;
+    }
+}

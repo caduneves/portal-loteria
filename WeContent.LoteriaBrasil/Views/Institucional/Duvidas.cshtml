@@ -1,0 +1,163 @@
+@{
+    ViewData["Title"] = "Dúvidas | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Dúvidas | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+@Html.Partial("_StaticBanner", "top-banner")
+
+<section class="content-institucional content-duvidas">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <h1 class="title-h1 text-left-important">dúvidas</h1>
+                    <div class="row">
+                        <p>Tem alguma dúvida sobre como funciona o Loteria Brasil? Listamos abaixo as perguntas mais frequentes sobre o Grupo Sorte Online, como apostar, formas de pagamento e premiações.</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                </div>
+                <button class="accordion-duvidas">Como funciona o Loteria Brasil ?</button>
+                <div class="panel">
+                    <p>No site do Loteria Brasil você encontra dois itens do menu superior, "Quem Somos" e "Como Funciona", que podem ajudá-lo nestas questões. Você perceberá que é fácil e seguro jogar no Loteria Brasil.</p>
+                </div>
+
+                <button class="accordion-duvidas">O Loteria Brasil é seguro?</button>
+                <div class="panel">
+                    <p>
+                        O Loteria Brasil é extremamente seguro, pois:<br />
+
+                        Utiliza protocolo SSL em todas as páginas que pedem seus dados pessoais e confidenciais. Suas são criptografadas e não podem ser visualizadas por terceiros. É a mesma tecnologia utilizada pelos grandes bancos em suas operações pela Internet. Você pode conferir se está realmente seguro visualizando a imagem do cadeado na barra inferior de seu browser.<br />
+                        A segurança do site é certificada por uma das maiores empresas do mundo em segurança de Internet. Você pode conferir o certificado clicando na imagem "Segurança garantida pela Thawte".
+                    </p>
+                </div>
+
+                <button class="accordion-duvidas">Como funcionam os grupos ? O que são cotas ? Como é a divisão dos prêmios?</button>
+                <div class="panel">
+                    <p>
+                        Os grupos são organizados para permitirem a participação de mais de um apostador em um mesmo jogo. São divididos em cotas, que representam a quantidade de pessoas que podem participar do grupo. A quantidade de cotas de cada grupo está disponível na coluna "Total Cotas", ao lado do nome do Grupo, na página principal do site.<br />
+                        Os apostadores que comprarem cotas de um grupo concorrem com todas as suas apostas (cartões), independentemente de quantas cotas foram compradas. No rateio dos prêmios, a participação de cada apostador será proporcional à quantidade de cotas adquiridas no Grupo. Vejamos exemplos:
+                        Em um grupo de 10 cotas, o apostador que comprar 1 cota investirá 10% do valor total do jogo e conseqüentemente receberá 10% do prêmio, quando houver.<br />
+                        Neste mesmo grupo, se o apostador quiser adquirir 4 cotas fará um investimento 4 vezes maior, e em compensação ficará com 40% do rateio do prêmio.<br />
+                        Em um grupo com 4 cotas, se um apostador adquirir uma delas estará arcando com 25% do valor investido e também receberá ¼ do prêmio, e assim por diante.<br />
+                        Os grupos são mais comumente conhecidos como "bolões", e são uma maneira inteligente de aumentar suas chances de ganhar, já que o jogo elaborado contém muito mais apostas que haveriam se o apostador quisesse fazer seu jogo individualmente.
+                    </p>
+                </div>
+
+                <button class="accordion-duvidas">Há jogos individuais no Loteria Brasil ou apenas em grupo?</button>
+                <div class="panel">
+                    <p>
+                        No Loteria Brasil você também encontra jogos individuais. Para identificá-los basta verificar a coluna "Total Cotas" de cada grupo, que será igual a 1. Estes grupos normalmente são os primeiros na relação de cada modalidade de jogo (ex: Mega Sena, Dupla Sena, etc.).<br />
+                        Nestes casos, em caso de premiação, o apostador recebe o valor do prêmio sozinho.
+                    </p>
+                </div>
+
+                <button class="accordion-duvidas">E se nem todas as cotas forem vendidas, mesmo assim todos os cartões listados tem suas apostas feitas?</button>
+                <div class="panel">
+                    <p>Claro, mesmo que tenha sido vendida apenas uma cota do grupo, o jogo é feito por completo, com todos os seus cartões.</p>
+                </div>
+
+                <button class="accordion-duvidas">E se eu for premiado? Como recebo meu prêmio?</button>
+                <div class="panel">
+                    <p>
+                        O Loteria Brasil apura automaticamente os ganhadores, e os comunica por e-mail. O apostador também pode verificar seus prêmios no site através da opção "Minhas Apostas" do menu do usuário. A seção "Premiações" do menu superior também relaciona todos os Grupos premiados nos últimos concursos.
+                        O rateio do prêmio é creditado automaticamente na conta do usuário no Loteria Brasil, que pode ser verificada através da seção "Minha Conta" do menu do usuário.<br />
+                        O ganhador tem, então, duas alternativas: Manter o valor do prêmio em sua conta no Loteria Brasil para utilizá-lo em novas apostas ou solicitar seu resgate. O resgate pode ser efetuado também através da opção "Minha Conta" do menu do usuário, onde o ganhador informará os dados de uma conta-corrente em sua titularidade. Em um prazo máximo de 5 dias úteis o valor será creditado diretamente na conta bancária indicada, com toda a comodidade, descontando-se apenas a taxa de resgate, no valor de R$3,50, independente do valor e banco solicitado. Não há cobrança de qualquer outra taxa sobre a premiação.
+                    </p>
+                </div>
+
+                <button class="accordion-duvidas">Que garantia eu tenho de que realmente vou receber meu prêmio?</button>
+                <div class="panel">
+                    <p>
+                        Loteria Brasil é uma empresa de Internet extremamente séria e comprometida com a qualidade. Entre seus parceiros estão os maiores portais de Internet do Brasil, uma grande demonstração de reconhecimento aos nossos serviços.<br />
+                        Em caso de grandes premiações, convidamos a todos que queiram sentir ainda mais segurança a se dirigirem pessoalmente ao nosso escritório, em São Paulo, para acompanharem o processo de recebimento dos prêmios junto à Caixa Econômica Federal.
+                    </p>
+                </div>
+
+                <button class="accordion-duvidas">O valor dos prêmios indicado na seção "Premiações" do Loteria Brasil corresponde ao total do grupo ou ao prêmio por cota?</button>
+                <div class="panel">
+                    <p>Os valores desta seção representam o prêmio total do Grupo. Os valores individualizados são apresentados nas seções "Minhas Apostas" ou "Minha Conta" do menu do usuário.</p>
+                </div>
+
+                <button class="accordion-duvidas">Como vejo com que números estou concorrendo?</button>
+                <div class="panel">
+                    <p>
+                        Na página principal do site existe a relação de grupos disponíveis para venda. Ao lado do nome de cada grupo existe uma "Lupa". Este recurso permite que você visualize e/ou imprima, e salve os cartões que fazem parte dos grupos.<br />
+                        Se você já efetuou sua compra e o sorteio ainda não foi realizado, visualize suas apostas na seção "Minhas Apostas" do menu do usuário, também clicando na "Lupa" ao lado do nome dos grupos.
+                    </p>
+                </div>
+
+                <button class="accordion-duvidas">Por que os pagamentos com Boleto Bancário não estão disponíveis para compra de apostas nos dias dos sorteios?</button>
+                <div class="panel">
+                    <p>
+                        A compensação do Boleto Bancário demora 1 dia útil para ser processada e confirmar a compra, por isso, fica disponível para compra de apostas até 1 dia útil antes do sorteio.<br />
+                        Isto inviabiliza a utilização desta forma de pagamento para apostas nos dias dos sorteios, pois não haveria tempo hábil para identificar as apostas que estariam concorrendo aos sorteios e as que estariam canceladas por ausência de pagamento.<br />
+                        Se você quer apostar no mesmo dia e só pode utilizar esta forma de pagamento, é necessário enviar o comprovante de pagamento para o e-mail pagamento@sorteonline.com.br ou para o fax (11) 3541-3001. Seu comprovante será encaminhado para análise. Em caso de aprovação, sua compra será confirmada.
+                    </p>
+                </div>
+
+                <button class="accordion-duvidas">E se eu fizer meu pagamento após o prazo de expiração?</button>
+                <div class="panel">
+                    <p>Não se preocupe. Você não estará mais concorrendo aos sorteios dos grupos selecionados, mas o valor pago será convertido em créditos e ficará disponível em sua conta do Loteria Brasil para novas apostas.</p>
+                </div>
+
+                <button class="accordion-duvidas">Em quanto tempo são confirmados os pagamentos que fiz para o Loteria Brasil?</button>
+                <div class="panel">
+                    <p>
+                        Os pagamentos são confirmados dentro dos prazos a seguir:<br />
+                        Transferência Eletrônica e Débito Online: Em no máximo 30 minutos após a efetivação do pagamento, 24 horas por dia, 07 dias por semana (mesmo finais de semana e feriados). Cartão de Crédito: Em no máximo 20 minutos após análise interna da Elavon. Boleto Bancário: No dia seguinte para pagamentos efetuados de Segunda à Sexta-feira, e na Terça-Feira para os pagamentos realizados nos Finais de Semana. Transferência entre Contas: Em no máximo 2 horas, desde que dentro de nosso horário de atendimento.
+                    </p>
+                </div>
+
+                <button class="accordion-duvidas">Como vou saber que conclui a aposta ? Onde que vejo que joguei realmente?</button>
+                <div class="panel">
+                    <p>
+                        Ao efetuar a compra de apostas ou créditos, você recebe um e-mail do Loteria Brasil informando que a operação de compra foi concluída. Neste momento você sabe que sua transação no Loteria Brasil foi feita corretamente, faltando apenas efetuar o pagamento.<br />
+                        Realizando o pagamento de sua compra (através de boleto ou transferência), basta aguardar um novo e-mail do Loteria Brasil com a confirmação do pagamento. Este é o ponto que você pode considerar a operação toda concluída, ou seja, você já estará concorrendo aos sorteios.<br />
+                        Durante este processo você consegue acompanhar o status de suas apostas e os números que você está concorrendo no item "Minhas Apostas" do menu do usuário, que você visualiza após efetuar seu login.
+                    </p>
+                </div>
+
+                <button class="accordion-duvidas">Não consigo fazer meu login.</button>
+                <div class="panel">
+                    <p>Certifique-se de estar digitando seu e-mail e senha corretamente. Se você trocou seu e-mail recentemente, tente fazer seu login com o endereço de e-mail anterior. Você também pode ter digitado seu e-mail erroneamente...</p>
+                </div>
+
+                <button class="accordion-duvidas">Não sou correntista dos bancos relacionados, ou não tenho conta em bancos, ou moro no exterior mas tenho conta em um banco brasileiro. Como faço minhas compras ?</button>
+                <div class="panel">
+                    <p>Para todos estes casos a solução é a utilização de boleto bancário. Basta imprimí-los e pagá-los diretamente em uma agência bancária (para residentes no Brasil) ou através do seu Internet Banking.</p>
+                </div>
+
+                <button class="accordion-duvidas">Tenho outras dúvidas de como participar, como comprar créditos ou apostas e como efetuar meu pagamento</button>
+                <div class="panel">
+                    <p>Não deixe de verificar a opção "Como Funciona" no menu superior do Loteria Brasil. Lá você encontra um passo-a-passo que ensina como efetuar suas apostas com toda a comodidade e segurança que o Loteria Brasil oferece.</p>
+                </div>
+                <p class="text-center mais-infos">
+                    Se você não encontrou respostas para as suas dúvidas ou tem sugestões a fazer, envie-nos um e-mail
+                    clicando <a href="mailto:contato@loteriabrasil.com.br">aqui</a> , que responderemos com a maior satisfação.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var acc = document.getElementsByClassName("accordion-duvidas");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>

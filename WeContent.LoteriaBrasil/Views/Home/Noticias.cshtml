@@ -1,0 +1,29 @@
+﻿
+<section id="noticias" data-vue="BannerNoticias">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>
+                    notícias sobre loterias
+                </h4>
+                <p class="pull-left">Encontre aqui as principais novidades e curiosidades sobre as Loterias Oficiais</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3" v-for="noticia in noticias">
+                <div class="noticia-item-home">
+                    <a v-bind:href="noticia.url" class="cover">
+                        <img v-bind:src="noticia.Imagem" v-bind:alt="noticia.Titulo">
+                    </a>
+                    <div>
+                        <a v-bind:href="noticia.url" class="title">{{ noticia.Titulo }}</a>
+                        <a v-bind:href="noticia.url" class="description">{{ noticia.description }}</a>
+                        <div class="text-center">
+                            <div class="btn-group">
+                                <a v-bind:href="noticia.url" class="btn btn-success center-block" v-bind:data-id="noticia.Codigo">Ler Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

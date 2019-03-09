@@ -1,0 +1,255 @@
+.wrap-hero-probabilities {
+    width: 100%;
+    clear: both;
+}
+
+.wrap-hero-probabilities::after,
+.wrap-hero-probabilities::before {
+    width: 100%;
+    height: 0;
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.wrap-hero-probabilities .column {
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    height: 772px;
+    background: #ccc;
+    float: left;
+}
+
+.wrap-hero-probabilities .column .icon-estatisticas {
+    width: 194px;
+    height: 172px;
+    display: block;
+    background: url(../images/icon-estatisticas.png) no-repeat center center;
+    margin: 15px auto;
+    opacity: .5;
+    background-size: contain;
+}
+
+.wrap-hero-probabilities .column .line {
+    width: 100%;
+    /* height: 50%; */
+    background: #444;
+    position: absolute;
+    padding: 20px 50px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 60%; 
+}
+
+.wrap-hero-probabilities .column .line.-howtoplay {
+    height: 40%;
+    bottom: 0;
+}
+
+.wrap-hero-probabilities .column.is-horizontal { width: 100%; height: auto; }
+.wrap-hero-probabilities .column.is-horizontal .line {
+    width: 50%;
+    float: left;
+    position: static;
+    bottom: auto;
+    height: 375px;
+}
+
+.wrap-hero-probabilities .column .hero-header { width: 100%; color: white; }
+
+.wrap-hero-probabilities .column .hero-header h2 {
+    text-align: left;
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+}
+
+.wrap-hero-probabilities .column .hero-header p {
+    font-size: 21px;
+    line-height: 1.2em;
+}
+
+.wrap-hero-probabilities .column .line .wrap {
+    max-width: 540px;
+}
+
+.wrap-hero-probabilities .column .line .hero-header h2 {
+    text-align: center;
+}
+
+
+.wrap-hero-probabilities .column .hero-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.wrap-hero-probabilities .column .hero-footer a {
+    font-family: "Fredoka One", sans-serif;
+    color: white;
+    font-size: 21px;
+}
+
+.wrap-hero-probabilities .column.-probabilities {
+    padding: 50px;
+    background: #444;
+}
+
+.wrap-hero-probabilities .column.-probabilities .wrap {
+    width: 100%;
+    height: 100%;
+    max-width: 685px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.wrap-hero-probabilities .column.-probabilities .hero-footer {
+    text-align: right;
+    width: 100%;
+}
+
+.wrap-hero-probabilities .table-wrapper {
+    overflow: auto;
+    width: 100%;
+    background: #dedede;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin: 20px auto;
+}
+
+.wrap-hero-probabilities .table-wrapper table {
+    border-radius: 4px;
+    width: 100%;
+    font-size: 22px;
+}
+.wrap-hero-probabilities .table-wrapper table tr th,
+.wrap-hero-probabilities .table-wrapper table tr td {
+    border: 2px solid #ababab;
+    text-align: center;
+    color: #6c6c6c;
+    background: transparent;
+}
+
+
+.wrap-hero-probabilities .table-wrapper table tr th:first-child,
+.wrap-hero-probabilities .table-wrapper table tr td:first-child {
+    border-left-width: 0;
+}
+
+.wrap-hero-probabilities .table-wrapper table tr th:last-child,
+.wrap-hero-probabilities .table-wrapper table tr td:last-child {
+    border-right-width: 0;
+}
+
+.wrap-hero-probabilities .table-wrapper table tr th {
+    font-family: "Fredoka One", sans-serif;
+}
+
+/*  MEGA-SENA */
+.wrap-hero-probabilities.mega-sena .column.-probabilities { background: #5a5e0f; }
+.wrap-hero-probabilities.mega-sena .table-wrapper table tr th { color: #5a5e0f; }
+.wrap-hero-probabilities.mega-sena .column .line.-stats { background: #7e813e; }
+.wrap-hero-probabilities.mega-sena .column .line.-howtoplay { background: #c4cb29 }
+
+
+/*  DUPLA-SENA */
+.wrap-hero-probabilities.dupla-sena .column.-probabilities { background: #35040b; }
+.wrap-hero-probabilities.dupla-sena .table-wrapper table tr th { color: #35040b; }
+.wrap-hero-probabilities.dupla-sena .column .line.-stats { background: #af1129; }
+.wrap-hero-probabilities.dupla-sena .column .line.-howtoplay { background: #805057 }
+
+
+/*  QUINA */
+.wrap-hero-probabilities.quina .column.-probabilities { background: #81aaef; }
+.wrap-hero-probabilities.quina .table-wrapper table tr th { color: #81aaef; }
+.wrap-hero-probabilities.quina .column .line.-stats { background: #496aa0; }
+.wrap-hero-probabilities.quina .column .line.-howtoplay { background: #002966 }
+
+/*  LOTOMANIA */
+.wrap-hero-probabilities.lotomania .column.-probabilities { background: #563125; }
+.wrap-hero-probabilities.lotomania .table-wrapper table tr th { color: #563125; }
+.wrap-hero-probabilities.lotomania .column .line.-stats { background: #bd7963; }
+.wrap-hero-probabilities.lotomania .column .line.-howtoplay { background: #f95f2c }
+
+/*  LOTOFACIL */
+.wrap-hero-probabilities.lotofacil .column.-probabilities { background: #99209e; }
+.wrap-hero-probabilities.lotofacil .table-wrapper table tr th { color: #99209e; }
+.wrap-hero-probabilities.lotofacil .column .line.-stats { background: #ab42af; }
+.wrap-hero-probabilities.lotofacil .column .line.-howtoplay { background: #67045c }
+
+/* TIMEMANIA */
+.wrap-hero-probabilities.timemania .column.-probabilities { background: #bd9b15; }
+.wrap-hero-probabilities.timemania .table-wrapper table tr th { color: #bd9b15; }
+.wrap-hero-probabilities.timemania .column .line.-stats { background: #70622a; }
+.wrap-hero-probabilities.timemania .column .line.-howtoplay { background: #534409; }
+
+/* LOTECA */
+.wrap-hero-probabilities.loteca .column.-probabilities { background: #e97f83; }
+.wrap-hero-probabilities.loteca .table-wrapper table tr th { color: #ee363d; }
+.wrap-hero-probabilities.loteca .column .line.-stats { background: #ee363d; }
+.wrap-hero-probabilities.loteca .column .line.-howtoplay { background: #8b3f41; }
+
+/* FEDERAL */
+.wrap-hero-probabilities.loteria-federal .column .line.-stats { background: #0d49a1; }
+.wrap-hero-probabilities.loteria-federal .column .line.-history { background: #648bc3; }
+
+/* LOTECA */
+.wrap-hero-probabilities.loteria-federal .column .line.-howtoplay { background: #0d49a1; }
+.wrap-hero-probabilities.loteria-federal .column .line.-history { background: #648bc3; }
+
+
+/* LOTOGOL */
+.wrap-hero-probabilities.lotogol .column.-probabilities { background: #1a8ab5; }
+.wrap-hero-probabilities.lotogol .table-wrapper table tr th { color: #1a8ab5; }
+.wrap-hero-probabilities.lotogol .column .line.-stats { background: #00a3c2; }
+.wrap-hero-probabilities.lotogol .column .line.-howtoplay { background: #8b3f41; }
+
+@media screen and (max-width: 992px) {
+    .wrap-hero-probabilities .column .hero-header h2 { font-size: 32px; }
+    
+    .wrap-hero-probabilities .column .hero-footer a,
+    .wrap-hero-probabilities .table-wrapper table,
+    .wrap-hero-probabilities .column .hero-header p { font-size: 18px; }
+}
+
+@media screen and (max-width: 768px) {
+    .wrap-hero-probabilities .column .hero-header h2 { 
+        font-size: 22px;
+        margin: 0 0 10px 0;
+        text-align: center;
+    }
+
+    .wrap-hero-probabilities .column.-probabilities { padding: 15px; }
+    .wrap-hero-probabilities .column {
+        width: 100%;
+        height: auto;
+    }
+    
+    .wrap-hero-probabilities .column.is-horizontal .line,
+    .wrap-hero-probabilities .column .line {
+        width: 100%;
+        position: static;
+        padding: 15px;
+        height: auto;
+    }
+
+    .wrap-hero-probabilities .column .hero-header p { text-align: center; }
+    .wrap-hero-probabilities .column .line.-howtoplay { height: auto; }
+
+    .wrap-hero-probabilities .column .icon-estatisticas {
+        width: 97px;
+        height: 86px;
+    }
+
+    .wrap-hero-probabilities .column .hero-footer a,
+    .wrap-hero-probabilities .table-wrapper table { font-size: 14px; }
+
+}

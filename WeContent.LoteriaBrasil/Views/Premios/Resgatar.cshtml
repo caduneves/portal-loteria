@@ -1,0 +1,80 @@
+@Html.Partial("_StaticBanner", "top-banner")
+
+@section metas{
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Extrato | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+
+<section class="content-cadastro">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_MenuMinhaConta")
+            <div class="col-xs-12 col-sm-12 col-md-9" data-vue="Resgatar">
+                <div class="filters">
+                    <div class="left-table">
+                        <div class="row">
+                            <div class="col">Disponível para Resgate<br /><span class="value">{{saldo.Premiados.format("C2")}}</span></div>
+                            <div class="col">Créditos<br /><span class="value">{{saldo.Comprados.format("C2")}}</span></div>
+                            <div class="col">Saldo <br /><span class="value">{{saldo.Total.format("C2")}}</span></div>
+                        </div>
+                    </div>
+                    <span>&nbsp;</span>
+                </div>
+                <div class="container-dadoscadastrais minhas-compras resgate">
+                    <div class="row header">
+                        <div class="col-xs-12">
+                            {{title}}
+                        </div>
+                    </div>
+                    <div class="row item empty" v-if="showMessage">
+                        {{message}}
+                    </div>
+                    <div class="row item" v-if="!showMessage">
+                        <div class="col-xs-12">
+                            <div class="col-sm-6 col-xs-12 no-padding">
+                                <input type="tel" placeholder="Valor a ser resgatado" v-model.lazy="resgateInfo.valor" v-money="money" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <select v-model="resgateInfo.banco" class="form-control" v-on:change="onBancoChange">
+                                <option value="">Banco</option>
+                                <option v-bind:value="banco.Numero" v-for="banco in bancos">{{banco.Numero.format("000")}} - {{banco.Nome}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-xs-12" v-if="bancoAceitaPoupanca()">
+                            <select v-model="resgateInfo.tipoConta" class="form-control">
+                                <option value="">Tipo Conta</option>
+                                <option value="CC">Conta corrente</option>
+                                <option value="CP">Poupança</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4 col-xs-8">
+                            <input type="tel" v-model="resgateInfo.agencia" maxlength="4" placeholder="Agência" class="form-control" v-mask="'####'" />
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <input type="tel" v-model="resgateInfo.agenciaDV" maxlength="1" placeholder="DV" class="form-control" />
+                        </div>
+                        <div class="col-sm-4 col-xs-8">
+                            <input type="tel" v-model="resgateInfo.conta" maxlength="11" placeholder="Conta" class="form-control" v-mask="'###########'" />
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <input type="tel" v-model="resgateInfo.contaDV" v-if="bancoPossuiDigitoConta()" maxlength="1" placeholder="DV" class="form-control" v-mask="'#'" />
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <input type="text" v-model="resgateInfo.titular" placeholder="Titular" class="form-control" />
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <input type="tel" v-model="resgateInfo.cpf" placeholder="CPF do Titular" v-mask="'###.###.###-##'" class="form-control" />
+                        </div>
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-success" v-on:click="resgatar()">Resgatar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

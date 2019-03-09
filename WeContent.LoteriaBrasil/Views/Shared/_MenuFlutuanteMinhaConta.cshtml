@@ -1,0 +1,20 @@
+<span class="box-minha-conta" v-if="isLoggedIn()">
+    <a href="/compras/listar#apostas">
+        <span class="label">Apostas</span>
+    </a>
+    <a href="/usuario/extrato">
+        <span class="label">Saldo</span>
+    </a>
+    <a href="/usuario/cadastrar#dadospessoais">
+        <span class="label">Cadastro</span>
+    </a>
+    <a href="/usuario/cadastrar#dadosdepagamento">
+       <span class="label">Cartões</span>
+    </a>
+    <a href="/premios/resgatar">
+       <span class="label">Resgatar Prêmios</span>
+    </a>
+    <a href="javascript:void(0)" v-on:click="logoff()">
+       <span class="label">Sair</span>
+    </a>
+</span>

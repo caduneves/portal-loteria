@@ -1,0 +1,287 @@
+<div class="col-md-12" data-vue="Pagamento" v-if="!isEmpty()">
+    <h5 v-if="!isEmpty()">formas de pagamento</h5>
+    <div class="row container-escolher-pagamentos" v-if="paymentMethods != null && !paymentMethods.Success">
+        <div class="text-md-center text-sm-center">
+            <div class="payment-error"><b>{{paymentMethods.ErrorMessage}}</b></div>
+            <button type="button" class="btn btn-lg btn-success btn-pagar" style="width: auto;" v-on:click="go('/')">Voltar às Apostas</button>
+            <button type="button" class="btn btn-lg btn-success btn-pagar" style="width: auto;" v-on:click="goLogin()">Fazer Pagamento</button>
+        </div>
+    </div>
+    <div class="row container-escolher-pagamentos" v-if="paymentMethods != null && paymentMethods.Success">
+        <ul class="nav nav-tabs nav-justified nav-pills container-abas_pagamentos">
+            <li role="presentation" v-if="isActive('Stone')" class="active">
+                <a data-toggle="tab" href="#cartaocredito" class="aba1">cartão de crédito</a>
+            </li>
+            <li role="presentation" v-if="isActive('PagVap')">
+                <a data-toggle="tab" href="#transfbancaria" class="aba2">transferência bancária</a>
+            </li>
+            <li role="presentation" v-if="isActive('Transferência Eletrônica Banco do Brasil SS')">
+                <a data-toggle="tab" href="#transfbb" class="aba3">transferência eletrônica bb</a>
+            </li>
+            <li role="presentation" v-if="isActive('Boleto Bancário')">
+                <a data-toggle="tab" href="#boleto" class="aba4">boleto</a>
+            </li>
+            <li role="presentation" v-if="isActive('Neteller')">
+                <a data-toggle="tab" href="#neteller" class="aba5" >neteller</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="cartaocredito" class="tab-pane fade in active" v-if="isActive('Stone')">
+                <div class="row" v-show="unAvailabilityReason('Stone')">
+                    <div class="col-md-12">
+                        <div class="text-md-center text-sm-center">
+                            <div class="payment-error"><b>{{unAvailabilityReason('Stone')}}</b></div>
+                        </div>
+                     </div>
+                </div>
+                <div class="row" v-show="!unAvailabilityReason('Stone')">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <p>
+                                Aprovação automática pelo site imediatamente após sua compra, 7 dias por
+                                semana, 24 horas por dia.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-4">
+                        <p>Informe os dados do cartão:</p>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="Nome do titular" v-model="dadosTransferencia.NomeDoTitular">
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-md-offset-2"></div>
+                        <div class="col-md-7">
+                            <input type="tel" class="form-control" placeholder="Número do cartão" v-model="dadosTransferencia.NumeroCartao"   v-mask="['####-######-####', '####-####-####-####']" >
+                        </div>
+                        <div class="col-md-3">
+                            <input type="tel" class="form-control" placeholder="Validade"  v-mask="'##/##'" v-model="dadosTransferencia.ValidadeCartao">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="tel" class="form-control" placeholder="CVV" v-model="dadosTransferencia.CVV"   v-mask="['###', '####']" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-4" v-show="!unAvailabilityReason('Stone')">
+                    <div class="checkbox">
+                        <label class="center-block">
+                            <input type="checkbox" class="checkbox" v-model="termosDeUso">Sim, eu li e aceito as
+                            <a href="#">Disposições Gerais.</a>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-lg btn-success btn-pagar" v-on:click="pagarCartaoCredito()">finalizar pagamento</button>
+                </div>
+            </div>
+            <div id="transfbancaria" class="tab-pane fade" v-if="isActive('PagVap')">
+               <div class="row" v-show="unAvailabilityReason('PagVap')">
+                    <div class="col-md-12">
+                        <div class="text-md-center text-sm-center">
+                            <div class="payment-error"><b>{{unAvailabilityReason('PagVap')}}</b></div>
+                        </div>
+                     </div>
+                </div>
+                <div class="row" v-show="!unAvailabilityReason('PagVap')">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <p>
+                                Aprovação manual do pagamento em até 2 horas após a sua efetivação. Apenas
+                                de segunda a sábado, das 9h às 19h30.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-4">
+                        <p>Selecione o seu banco:</p>
+                        <ul class="list-inline center-block">
+                            <li v-bind:class="[ bancoSelecionado == 1 ? 'selected' : '' ]">
+                                <a href="javascript:void(0)" v-on:click="selectBanco(1)">
+                                    <img src="/images/main/icon_pagamento_bradesco.png" alt="" />
+                                </a>
+                            </li>
+                            <li  v-bind:class="[ bancoSelecionado == 2 ? 'selected' : '' ]">
+                                <a href="javascript:void(0)"  v-on:click="selectBanco(2)">
+                                    <img src="/images/main/icon_pagamento_itau.png" alt="" />
+                                </a>
+                            </li>
+                            <li  v-bind:class="[ bancoSelecionado == 3 ? 'selected' : '' ]">
+                                <a href="javascript:void(0)"  v-on:click="selectBanco(3)">
+                                    <img src="/images/main/icon_pagamento_santander.png" alt="" />
+                                </a>
+                            </li>
+                            <li v-if="type == 'CR'"  v-bind:class="[ bancoSelecionado == 4 ? 'selected' : '' ]">
+                                <a href="javascript:void(0)" v-on:click="selectBanco(4)">
+                                    <img src="/images/main/icon_pagamento_caixa.png" alt="" />
+                                </a>
+                            </li>
+                            <li  v-bind:class="[ bancoSelecionado == 5 ? 'selected' : '' ]">
+                                <a href="javascript:void(0)" v-on:click="selectBanco(5)">
+                                    <img src="/images/main/icon_pagamento_bb.png" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2" v-show="bancoSelecionado != 3 && bancoSelecionado != 0" >
+                         <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="Nome do titular" v-model="dadosTransferencia.NomeDoTitular">
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-md-offset-2"></div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Agência" v-model="dadosTransferencia.Agencia" >
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" placeholder="DV" v-model="dadosTransferencia.DVAgencia" v-show="bancoSelecionado != 4" >
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Conta Corrente" v-model="dadosTransferencia.ContaCorrente">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" placeholder="DV" v-model="dadosTransferencia.DVContaCorrente">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2" v-show="bancoSelecionado == 3 && bancoSelecionado != 0" >
+                         <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="CPF do titular" v-model="dadosTransferencia.CPF" v-mask="'###.###.###-##'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="checkbox">
+                            <label class="center-block confirma-compra">
+                                <input type="checkbox" class="checkbox" v-model="termosDeUso">Sim, eu li e aceito as
+                                <a href="#">Disposições Gerais.</a>
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-lg btn-success btn-pagar" v-on:click="transferenciaPagVap()">finalizar pagamento</button>
+                    </div>
+                </div>
+            </div>
+            <div id="transfbb" class="tab-pane fade" v-if="isActive('Transferência Eletrônica Banco do Brasil SS')">
+                 <div class="row" v-show="unAvailabilityReason('Transferência Eletrônica Banco do Brasil SS')">
+                    <div class="col-md-12">
+                        <div class="text-md-center text-sm-center">
+                            <div class="payment-error"><b>{{unAvailabilityReason('Transferência Eletrônica Banco do Brasil SS')}}</b></div>
+                        </div>
+                     </div>
+                </div>
+                <div class="row" v-show="!unAvailabilityReason('Transferência Eletrônica Banco do Brasil SS')">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <p>
+                                Aprovação manual do pagamento em até 2 horas após a sua efetivação. Apenas
+                                de segunda a sábado, das 9h às 19h30.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-offset-3">
+                        <p>Informe os dados da sua conta do Banco do Brasil:</p>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="Nome do titular" v-model="dadosTransferencia.NomeDoTitular">
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-md-offset-2"></div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Agência" v-model="dadosTransferencia.Agencia">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" placeholder="DV" v-model="dadosTransferencia.DVAgencia">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Conta Corrente" v-model="dadosTransferencia.ContaCorrente">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" placeholder="DV" v-model="dadosTransferencia.DVContaCorrente">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-4"  v-show="!unAvailabilityReason('Transferência Eletrônica Banco do Brasil SS')">
+                    <div class="checkbox">
+                        <label class="center-block">
+                            <input type="checkbox" class="checkbox" v-model="termosDeUso">Sim, eu li e aceito as
+                            <a href="#">Disposições Gerais.</a>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-lg btn-success btn-pagar" v-on:click="transferenciaBB()">finalizar pagamento</button>
+                </div>
+            </div>
+            <div id="boleto" class="tab-pane fade" v-if="isActive('Boleto Bancário')">
+                <div class="row" v-show="unAvailabilityReason('Boleto Bancário')">
+                    <div class="col-md-12">
+                        <div class="text-md-center text-sm-center">
+                            <div class="payment-error"><b>{{unAvailabilityReason('Boleto Bancário')}}</b></div>
+                        </div>
+                     </div>
+                </div>
+                <div class="row" v-show="!unAvailabilityReason('Boleto Bancário')">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <p>ATENÇÃO: Confirmação em até 3 dias</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-offset-3">
+                        <p>Favor emitir o boleto acionando o botão ao lado "Gerar Boleto"</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-4" v-show="!unAvailabilityReason('Boleto Bancário')"> 
+                    <div class="checkbox">
+                        <label class="center-block">
+                            <input type="checkbox" class="checkbox" v-model="termosDeUso">Sim, eu li e aceito as
+                            <a href="#">Disposições Gerais.</a>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-lg btn-success btn-pagar" v-on:click="gerarBoleto()">gerar boleto</button>
+                </div>
+            </div>
+            <div id="neteller" class="tab-pane fade" v-if="isActive('Neteller')">
+                <div class="row" v-show="unAvailabilityReason('Neteller')">
+                    <div class="col-md-12">
+                        <div class="text-md-center text-sm-center">
+                            <div class="payment-error"><b>{{unAvailabilityReason('Neteller')}}</b></div>
+                        </div>
+                     </div>
+                </div>
+                <div class="row" v-show="!unAvailabilityReason('Neteller')">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <p>
+                                Aprovação automática pelo site imediatamente após sua compra, 7 dias por
+                                semana, 24 horas por dia.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-4">
+                        <p>Preencha abaixo os dados da sua conta Neteller</p>
+                    </div>
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="Código de Segurança">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-4"  v-show="!unAvailabilityReason('Neteller')">
+                    <div class="checkbox">
+                        <label class="center-block">
+                            <input type="checkbox" class="checkbox" v-model="termosDeUso">Sim, eu li e aceito as
+                            <a href="#">Disposições Gerais.</a>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-lg btn-success btn-pagar">finalizar pagamento</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

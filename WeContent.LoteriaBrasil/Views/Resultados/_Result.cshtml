@@ -1,0 +1,259 @@
+@{
+    ViewBag.hasFilter = ViewBag.hasFilter != null ? ViewBag.hasFilter : false;
+}
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="@(ViewBag.sectionName) | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="" />
+}
+
+
+<section class="bigresult-container" v-bind:class="item.className">
+    <div class="result-header">
+        <h2 class="color">RESULTADOS DA {{item.loteriaNome}}</h2>
+
+        <div class="result-resume">
+            <div>
+                <div class="text-center text-uppercase color">Data</div>
+                <div class="text-center text-uppercase color"><strong>{{item.diaSorteioFull}}</strong></div>
+            </div>
+
+            <div>
+                <div class="text-center text-uppercase color">Concuro</div>
+                <div class="text-center text-uppercase color"><strong>{{item.concurso}}</strong></div>
+            </div>
+
+            <div>
+                <div class="text-center text-uppercase color">Prêmio</div>
+                <div class="text-center text-uppercase color"><strong> R$ {{item.premio}}</strong></div>
+            </div>
+            <div v-if="item.localSorteio">
+                <div class="text-center text-uppercase color">Local do Sorteio</div>
+                <div class="text-center text-uppercase color"><strong>{{item.localSorteio}}</strong></div>
+            </div>
+        </div>
+
+        @if (ViewBag.hasFilter)
+        {
+            <form v-bind:action="'/'+loteria.class+'/resultados'" v-on:submit.prevent="submitFilter" class="form-inline filter">
+                <div class="form-group">
+
+                    <a v-bind:href="'/'+loteria.class+'/resultados/'+(item.concurso-1)" class="btn bg" target="_self"><i class="fa fa-chevron-left"></i></a>
+
+                    <div class="wrap-input border-color">
+                        <input type="concurso" class="form-control" placeholder="Nº do Concurso" data-mask="00000000">
+                        <button class="btn color" type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+
+                    <a v-bind:href="'/'+loteria.class+'/resultados/'+(item.concurso+1)" class="btn bg" target="_self"><i class="fa fa-chevron-right"></i></a>
+
+                </div>
+            </form>
+        }
+
+    </div> <!-- /.result-header -->
+
+    <div v-if="item.isDezenas && (item.Loteria != 9 && item.Loteria != 10 && item.Loteria != 2)" class="result-container">
+
+        <ul class="dozens" v-for="numeros in item.dezenas">
+            <li v-for="dozen in numeros"><span class="bg-third">{{dozen}}</span></li>
+        </ul>
+
+        <div class="color acumulado" v-if="item.isAcumulada">Acumulou</div>
+
+    </div><!--/.result-container:dezenas -->
+
+    <div v-if="item.isDezenas && item.Loteria == 2" v-for="(numeros, index) in item.dezenas" class="result-container">
+        <div class="order-sorteio color">{{index + 1}}º Sorteio</div>
+
+        <ul class="dozens">
+            <li v-for="dozen in numeros"><span class="bg-third">{{dozen}}</span></li>
+        </ul>
+
+        <div class="wrap-table-ganhadores" v-if="item.Premiacao.length && item.Loteria == 2">
+            <table class="table text-center">
+                <tr>
+                    <th width="33%" class="text-center text-uppercase border-color color">Faixa</th>
+                    <th width="33%" class="text-center text-uppercase border-color color">Ganhadores</th>
+                    <th width="33%" class="text-center text-uppercase border-color color">Prêmio</th>
+                </tr>
+                <tr v-for="premiacao in item.Premiacao.filter((a) => { return a.Sorteio == (index+1)})">
+                    <td class="border-color text-center">{{premiacao.Faixa.split(" ")[0]}}</td>
+                    <td class="border-color text-center">{{premiacao.Acertadores ? premiacao.Acertadores : '---'}}</td>
+                    <td class="border-color text-center">{{ premiacao.Premio ? premiacao.Premio.format("c") : '---' }}</td>
+                </tr>
+            </table> <!-- /.table -->
+        </div> <!-- /.wrap-table-ganhadores:dupla-sena -->
+
+        <div class="color acumulado" v-if="item.isAcumulada && index == 1">Acumulou</div>
+
+
+    </div><!--/.result-container:dupla-sena -->
+
+    <div v-if="item.isDezenas && (item.Loteria == 9 || item.Loteria == 10)" class="result-container">
+        <ul class="dozens" v-for="(numeros, index) in item.dezenas">
+            <li v-for="dozen in numeros" v-if="index == 0"><span class="bg-third">{{dozen}}</span></li>
+            <li v-for="dozen in numeros" v-if="index == 1" class="key color"><i class="fa fa-heart" v-if="item.Loteria == 9"></i> {{dozen}}</li>
+        </ul>
+
+        <div class="color acumulado" v-if="item.isAcumulada">Acumulou</div>
+    </div><!--/.result-container:timemania -->
+
+    <div v-if="item.isFederal" class="result-container">
+
+        <table class="table table-federal">
+            <tr>
+                <th class="border color text-uppercase text-left">Sorteio</th>
+                <th class="border color text-uppercase text-right">Resultado</th>
+            </tr>
+            <tr v-for="(dozen, index) in item.NumerosSorteados">
+                <td class="border text-left"><span class="contest color">{{index+1}}°</span></td>
+                <td class="border text-right"><span class="bg result">{{dozen.Value}}</span></td>
+            </tr>
+        </table>
+
+    </div><!--/.result-container:federal -->
+
+    <div v-if="item.isLoteca" class="result-container">
+        <table class="table table-loteca">
+            <tbody>
+                <tr v-for="(partida, index) in item.Partidas">
+                    <td class="border-color color text-center"><span>{{ partida.NumeroDoJogo }}</span></td>
+                    <td class="border-color color text-center text-uppercase"><p><span>{{partida.TimeDaCasa}}</span></p></td>
+                    <td class="border-color color"><div class="border-color" v-bind:class="{ 'bg' : partida.Coluna == 1 }">{{partida.GolsDaCasa}}</div></td>
+                    <td class="border-color color"><div class="border-color" v-bind:class="{ 'bg' : partida.Coluna == 2 }">x</div></td>
+                    <td class="border-color color"><div class="border-color" v-bind:class="{ 'bg' : partida.Coluna == 3 }">{{partida.GolsDoVisitante}}</div></td>
+                    <td class="border-color color text-center text-uppercase"><p><span>{{partida.Visitante}}</span></p></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!-- /.result-container:loteca -->
+
+    <div v-if="item.isLotogol" class="result-container">
+        <table class="table table-lotogol" cellpadding="0" border="0">
+            <tr v-for="(partida, index) in item.Partidas">
+                <td class="border-color color">{{ partida.NumeroDoJogo }}</td>
+                <td class="border-color color text-uppercase text-center">
+                    <p><span>{{partida.TimeDaCasa}}</span></p>
+                    <p class="hidden-md hidden-lg"><span>x</span></p>
+                    <p class="hidden-md hidden-lg"><span>{{partida.Visitante}}</span></p>
+                </td>
+                <td class="border-color">
+                    <ul class="color">
+                        <li><div class="border-color" v-bind:class="{'bg' : partida.GolsDaCasa == 0 }">0</div></li>
+                        <li><div class="border-color" v-bind:class="{'bg' : partida.GolsDaCasa == 1 }">1</div></li>
+                        <li><div class="border-color" v-bind:class="{'bg' : partida.GolsDaCasa == 2 }">2</div></li>
+                        <li><div class="border-color" v-bind:class="{'bg' : partida.GolsDaCasa == 3 }">3</div></li>
+                        <li><div class="border-color" v-bind:class="{'bg' : partida.GolsDaCasa > 3 }">+</div></li>
+                    </ul>
+                    <span class="hidden-xs hidden-sm color">x</span>
+                    <ul class="color">
+                        <li><div class="border-color" v-bind:class="{'bg' : partida.GolsDoVisitante == 0 }">0</div></li>
+                        <li><div class="border-color" v-bind:class="{'bg' : partida.GolsDoVisitante == 1 }">1</div></li>
+                        <li><div class="border-color" v-bind:class="{'bg' : partida.GolsDoVisitante == 2 }">2</div></li>
+                        <li><div class="border-color" v-bind:class="{'bg' : partida.GolsDoVisitante == 3 }">3</div></li>
+                        <li><div class="border-color" v-bind:class="{'bg' : partida.GolsDoVisitante > 3 }">+</div></li>
+                    </ul>
+                </td>
+                <td class="hidden-xs hidden-sm color border-color text-uppercase text-center"><p><span>{{partida.Visitante}}</span></p></td>
+            </tr>
+        </table>
+    </div><!-- /.result-container:lotogol -->
+
+    <div class="wrap-table-ganhadores" v-if="item.Premiacao.length && item.Loteria != 2 && item.Loteria != 5">
+        <table class="table text-center">
+            <tr>
+                <th width="33%" class="text-center text-uppercase border-color color">Faixa</th>
+                <th width="33%" class="text-center text-uppercase border-color color">Ganhadores</th>
+                <th width="33%" class="text-center text-uppercase border-color color">Prêmio</th>
+            </tr>
+            <tr v-for="premiacao in item.Premiacao">
+                <td class="border-color text-center">{{premiacao.Faixa}}</td>
+                <td class="border-color text-center">{{premiacao.Acertadores ? premiacao.Acertadores : '---'}}</td>
+                <td class="border-color text-center">{{ premiacao.Premio ? premiacao.Premio.format("c") : '---' }}</td>
+            </tr>
+        </table> <!-- /.table -->
+    </div> <!-- /.wrap-table-ganhadores:dezenas -->
+
+    <div class="wrap-table-ganhadores" v-if="item.Premiacao.length && item.Loteria == 5">
+        <div class="drop-wrap border-color" v-for="n in 5" v-bind:class="{'-active' : isOpenDropFederal == n }">
+            <div class="drop-header bg" v-on:click="setDrop(n)">
+                <span class="text-uppercase">{{n}}º Sorteio</span>
+                <i class="fa" v-bind:class="{ 'fa-chevron-down' : (isOpenDropFederal != n), 'fa-chevron-up' : (isOpenDropFederal == n) }"></i>
+            </div>
+            <div class="drop-content">
+                <div class="drop-inner">
+                    <table class="table text-center">
+                        <tr>
+                            <th width="33%" class="text-center text-uppercase border-color color">Faixa</th>
+                            <th width="33%" class="text-center text-uppercase border-color color">Ganhadores</th>
+                            <th width="33%" class="text-center text-uppercase border-color color">Prêmio</th>
+                        </tr>
+                        <tr v-for="premiacao in item.Premiacao.filter((a) => { return a.Sorteio == n})">
+                            <td class="border-color text-center">{{premiacao.Faixa.split("(")[0]}}</td>
+                            <td class="border-color text-center">{{premiacao.Acertadores ? premiacao.Acertadores : '---'}}</td>
+                            <td class="border-color text-center">{{ premiacao.Premio ? premiacao.Premio.format("c") : '---' }}</td>
+                        </tr>
+                    </table> <!-- /.table -->
+                </div>
+            </div>
+        </div>
+    </div> <!-- /.wrap-table-ganhadores:federal -->
+
+
+
+    <div class="wrap-gameresume border-color" v-if="codigoLoteria != 3 && codigoLoteria != 5">
+        <div v-if="item.ResumoSorteio.DescricaoParte1">
+            <div class="text-center text-uppercase color">{{item.ResumoSorteio.DescricaoParte1}}</div>
+            <div class="text-center text-uppercase color"><strong>{{item.ResumoSorteio.AcumuladoParte1 ? item.ResumoSorteio.AcumuladoParte1.format("c") : 'A Definir'}}</strong></div>
+        </div>
+        <span class="separator" v-if="item.ResumoSorteio.DescricaoParte1"></span>
+        <div v-if="item.ResumoSorteio.DescricaoParte2">
+            <div class="text-center text-uppercase color">{{item.ResumoSorteio.DescricaoParte2}}</div>
+            <div class="text-center text-uppercase color"><strong>{{item.ResumoSorteio.AcumuladoParte2 ? item.ResumoSorteio.AcumuladoParte2.format("c") : 'A Definir'}}</strong></div>
+        </div>
+        <span class="separator" v-if="item.ResumoSorteio.DescricaoParte2"></span>
+        <div>
+            <div class="text-center text-uppercase color">{{item.ResumoSorteio.DescricaoProximoSorteio}}</div>
+            <div class="text-center text-uppercase color"><strong>{{item.ResumoSorteio.AcumuladoProximoSorteio ? item.ResumoSorteio.AcumuladoProximoSorteio.format("c") : 'A Definir'}}</strong></div>
+        </div>
+        <div class="bg-light">
+            <div class="text-center text-uppercase color"><strong>Arrecadação Total</strong></div>
+            <div class="text-center text-uppercase color"><strong>{{(item.ResumoSorteio.AcumuladoParte1 + item.ResumoSorteio.AcumuladoParte2 + item.ResumoSorteio.AcumuladoProximoSorteio).format("c") }}</strong></div>
+        </div>
+    </div><!-- /.wrap-gameresume -->
+
+    <div class="wrap-final-resume">
+        <div class="column -estimativa">
+            <div class="color text-center">
+                ESTIMATIVA DE PRÊMIO<br> PARA O PRÓXIMO CONCURSO
+            </div>
+            <div class="color text-center text-uppercase">
+                <strong>R$ {{item.premioProximo}}</strong>
+            </div>
+        </div>
+
+        <div class="column -resume">
+            <div class="result-resume-footer">
+                <div>
+                    <div class="text-center text-uppercase color">Data</div>
+                    <div class="text-center text-uppercase color"><strong>{{"???"}}</strong></div>
+                </div>
+
+                <div>
+                    <div class="text-center text-uppercase color">Concuro</div>
+                    <div class="text-center text-uppercase color"><strong>{{item.concurso+1}}</strong></div>
+                </div>
+
+                <div v-if="item.isAcumulada">
+                    <div class="text-center text-uppercase color"><strong>Acumulada!</strong></div>
+                </div>
+            </div><!-- /.result-resume-footer -->
+
+            <a class="btn border-color color" v-bind:href="'/'+item.className">APOSTE AGORA SEM SAIR DE CASA!</a>
+
+        </div>
+    </div><!-- /.wrap-final-resume -->
+
+</section>

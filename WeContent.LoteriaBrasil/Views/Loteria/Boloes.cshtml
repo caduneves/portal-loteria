@@ -1,0 +1,15 @@
+ <div class="container-fluid" v-if="apostar.isSelected(loteria) && loteria.hasBolao && apostar.boloesSelected.length">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h4 class="pull-left color">ou ainda escolha um de nossos bolões</h4>
+                            <div class="aposta-desc">
+                               <div class="col-md-12 no-padding">
+                                    <p class="aposta-descricao">
+                                        {{ loteria.descricao }}
+                                    </p>
+                                </div>
+                            </div>
+                            @Html.Partial("../Home/ListaBoloes.cshtml")
+                        </div>
+                    </div>
+                </div>

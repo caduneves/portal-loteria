@@ -1,0 +1,49 @@
+<div class="bg-third">
+    <div class="main-banner-lottery" v-bind:class="loteria.class">
+        <div class="container">
+
+            <div class="column -intro">
+                <div class="text">
+
+                    <h1 class="title">{{ loteria.nome }}</h1>
+
+                    <p class="description">
+                        {{ loteria.descricao }}
+                    </p>
+                </div>
+            </div>
+            <div class="column -aposteja">
+                <p>
+                    Confira quando é o próximo sorteio e seu prêmio.<br>
+                    Não fique de fora. <strong>Aposte já!</strong>
+                </p>
+
+                <div class="reward" v-if="loteria.estimativaPremio" v-bind:class="{ 'to-define' : (loteria.estimativaPremio == 'a definir') }">
+                    <span class="rs">R$</span>
+                    <span class="price">{{loteria.estimativaPremio.split(' ')[0]}}</span>
+                    <span class="unity" v-html="loteria.estimativaPremioUnidadeEstilizado"></span>
+                </div>
+
+                <div class="next">
+                    <div class="next-title">
+                        <span>Próximo Sorteio</span>
+                    </div>  
+                    <div v-if="loteria.concurso" class="date">{{loteria.diaSorteio}} - concurso {{loteria.concurso.Numero}}</div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div> <!-- /.main-banner-lottery -->
+
+    <div class="container-fluid">
+        <div class="menu-loterias text-center text-uppercase">
+            <a v-if="loteria.isDezenas" v-on:click="scrollTo('#boloes', 45)" href="javascript:void(0)">Bolões</a>
+            <a v-if="!loteria.isFederal"  v-on:click="scrollTo('#facaseujogo', 50)" href="javascript:void(0)">Faça seu Jogo</a>
+            <a v-bind:href="'/'+loteria.class+'/resultados'">Últimos Resultados</a>
+            <a v-on:click="scrollTo('#probabilidades', 55)" href="javascript:void(0)">Probabilidades</a>
+            <a v-bind:href="'/'+loteria.class+'/estatisticas'">Estatísticas</a>
+            <a v-on:click="scrollTo('#como-apostar', 150)" href="javascript:void(0)">Como Apostar</a>
+        </div>
+    </div>
+</div>

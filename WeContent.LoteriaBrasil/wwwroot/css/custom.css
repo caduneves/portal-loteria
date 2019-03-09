@@ -1,0 +1,3876 @@
+/* font-face */
+@font-face {
+    font-family: calibri;
+    src: url("../fonts/calibri/calibri.ttf");
+}
+
+@font-face {
+    font-family: calibri-bold;
+    src: url(../fonts/calibri/calibrib.ttf);
+}
+
+@font-face {
+    font-family: calibri-light;
+    src: url(../fonts/calibri/calibril.ttf);
+}
+
+@font-face {
+    font-family: 'insaniburger';
+    src: url('../fonts/insaniburger/Insaniburger.eot');
+    src: url('../fonts/insaniburger/Insaniburger.eot?iefix') format('eot'), url('../fonts/insaniburger/Insaniburger.woff') format('woff'), url('../fonts/insaniburger/Insaniburger.ttf') format('truetype'), url('../fonts/insaniburger/Insaniburger.svg#webfontZaJl2R9s') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General */
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "calibri", sans-serif;
+    color: #393939;
+    font-size: 14px;
+}
+
+.container-fluid, .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.title-h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    color: #6baf52;
+    text-align: center;
+}
+
+h2 {
+    font-size: 53px;
+}
+
+h3 {
+    font-size: 46px;
+}
+
+h4 {
+    font-size: 32px;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+p.center-text {
+    text-align: center;
+}
+
+form input {
+    border: 1px solid #7f7f7f !important;
+    border-radius: 0 !important;
+}
+
+/* Header */
+
+.header-bar_social {
+    width: 100%;
+    background-image: linear-gradient(to bottom, #202020, #292929, #313131, #3b3b3b, #444444);
+    height: 35px;
+    float: left;
+}
+
+    .header-bar_social ul.social li {
+        background-color: #FFF;
+        border-radius: 5px;
+        width: 20px;
+        text-align: center;
+    }
+
+    .header-bar_social ul.social {
+        margin-top: 8px;
+    }
+
+.header-bar_customer {
+    width: 100%;
+    background-color: #cecaca;
+    height: 40px;
+    float: left;
+}
+
+    .header-bar_customer img.img-user {
+        bottom: 14px;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        float: left;
+        position: relative;
+    }
+
+    .header-bar_customer p, .header-bar_customer a {
+        font-size: 10px;
+    }
+
+    .header-bar_customer .col-md-7 p {
+        margin-left: 5px;
+        margin-top: 6px;
+    }
+
+    .header-bar_customer .col-md-5 p {
+        margin-left: 10px;
+    }
+
+    .header-bar_customer .col-md-5 {
+        margin-top: 4px;
+    }
+
+    .header-bar_customer p, .header-bar_customer img {
+        float: left;
+    }
+
+        .header-bar_customer p a {
+            color: #6baf52;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+.nav-comprar {
+    background-color: #69ae53;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 5px !important;
+}
+
+nav .nav-comprar li a {
+    font-family: "calibri-bold", sans-serif;
+    text-transform: uppercase;
+    color: #252525;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+    nav .nav-comprar li a:hover {
+        background-color: #69ae53;
+        color: #FFF;
+        transition: color .2s;
+    }
+
+    nav .nav-comprar li a:focus {
+        background-color: #69ae53;
+    }
+
+nav.navbar, nav.navbar-default {
+    border: none;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-toggle {
+    position: absolute;
+    float: left;
+    padding: 9px 13px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #6baf52 !important;
+    border: 1px solid #6baf52 !important;
+    margin-top: 0;
+    border-radius: 0;
+    left: 0;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFF;
+}
+
+/* ul.nav {
+    margin: 10px 0px;
+}
+
+nav li {
+    border-right: 1px solid #252525;
+} */
+
+    /* nav li:last-child {
+        border-right: none;
+    }
+
+    nav li a {
+        font-family: "calibri-bold";
+        text-transform: uppercase;
+        color: #252525;
+        font-size: 12.5px;
+        padding: 0 !important;
+        border-radius: 0px !important;
+    }
+
+nav .nav-principal li a:hover {
+    background-color: #FFF;
+    color: #6a8e20;
+    transition: color .2s;
+} */
+
+/* a.logo {
+    display: block;
+    float: left;
+    overflow: hidden;
+    text-indent: -999px;
+    height: 69px;
+    width: 215px;
+    background-color: transparent;
+    background-image: url(../images/main/logo.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    will-change: opacity;
+    opacity: 1;
+    margin-top: 4px;
+} */
+
+.carousel-indicators {
+    bottom: -35px;
+}
+
+    .carousel-indicators li {
+        width: 13px;
+        height: 13px;
+        background-color: #bdbdbd;
+        border: 1px solid #bdbdbd;
+    }
+
+    .carousel-indicators .active {
+        width: 13px;
+        height: 13px;
+        background-color: #00f26a;
+        border: 1px solid #00f26a;
+        margin-bottom: 1px;
+    }
+
+/* SLIDER BACKGROUND */
+
+.carousel-inner .item > div{
+    background-size: cover;
+    background-position: center;
+    height: 335px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .carousel-inner .item > div {
+        height: 250px;
+    }
+}
+@media screen and (max-width: 576px) { 
+    .carousel-inner .item > div {
+        height: 150px;
+    }
+ }
+
+/* SLIDER LOTERIAS */
+
+section#slider_loterias {
+    margin-top: 50px;
+}
+
+    section#slider_loterias .col-md-12 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    section#slider_loterias .item {
+        height: 225px;
+        background-image: url(../images/main/bg_loteria.png);
+        background-color: #1c2e5f;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border-top: 4px solid white;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+    }
+
+.item .radial-interno {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0.41) 0%, rgba(255,255,255,0.41) 1%, rgba(28,46,95,0) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.41) 0%,rgb(255, 255, 255) 1%,rgba(28,46,95,0) 100%);
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.41) 0%,rgba(255,255,255,0.41) 1%,rgba(28,46,95,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#69ffffff', endColorstr='#001c2e5f',GradientType=1 );
+}
+
+section#slider_loterias .item .label-container {
+    width: 127px;
+    height: 25px;
+    background-image: url(../images/main/bg_label_loteria.png);
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    top: -4px;
+}
+
+section#slider_loterias .item .nome-concurso, section#slider_loterias .item .valor-concurso, section#slider_loterias .item .status-concurso {
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+section#slider_loterias .item .label-container p {
+    color: #253e1c;
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    line-height: 25px;
+}
+
+section#slider_loterias .item .status-concurso {
+    background-color: #dec72f;
+    padding: 0 25px;
+    position: relative;
+    z-index: 1000;
+    overflow: hidden;
+    line-height: 30px;
+    height: 30px;
+    margin: 6px 0;
+    display: inline-block;
+}
+
+section#slider_loterias .item .horario-concurso {
+    color: #FFF;
+    justify-content: center;
+    font-family: "calibri";
+    font-size: 16px;
+}
+
+section#slider_loterias .item .btn-apostar_concurso {
+    background-color: rgba(255,255,255,0);
+    font-family: "calibri";
+    font-size: 14px;
+    text-transform: uppercase;
+    border: 1px solid #FFF;
+    color: #FFF;
+    padding: 7px 55px;
+    transition: .2s all linear;
+}
+
+    section#slider_loterias .item .btn-apostar_concurso:hover {
+        background-color: rgba(255,255,255,.2);
+        text-decoration: none;
+        transition: color .2s;
+    }
+
+section#slider_loterias .item .horario-concurso i {
+    margin-top: 2px;
+    margin-right: 5px;
+}
+
+section#slider_loterias .item .nome-concurso, section#slider_loterias .item .valor-concurso {
+    font-size: 34px;
+    color: #fff;
+    line-height: 32px;
+}
+
+section#slider_loterias .item .nome-concurso {
+    width: 100%;
+    margin-top: 0;
+    display: inline-block;
+    line-height: 1.2em;
+    font-size: 30px;
+}
+
+section#slider_loterias .item .valor-concurso {
+    margin-bottom: 0;
+}
+
+.owl-theme .owl-nav {
+    display: none;
+}
+
+/* slider - como apostar */
+
+section#slider_comoapostar {
+    margin-top: 0;
+}
+
+.owl-carousel-comoapostar .item img {
+    width: auto !important;
+    height: auto;
+}
+
+/* section - Aposte aqui */
+
+section#aposteaqui {
+    /* margin-top: 50px; */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+section#aposteaqui.home { margin: 3em auto; }
+
+.bg-cinza {
+    background-color: #efefef;
+}
+
+/*section#aposteaqui h2 {
+     height: 60px; 
+     overflow: hidden; 
+    line-height: 1.2em;
+    margin: 0 auto;
+}*/
+
+/* section - Premiação */
+
+section#premiacao {
+    margin-top: 50px;
+}
+
+    section#premiacao .premiacao-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section#premiacao .premiacao-container1 {
+        background-color: #345329;
+        overflow: hidden;
+    }
+
+        section#premiacao .premiacao-container1 p {
+            font-family: 'Fredoka One', cursive;
+            text-transform: uppercase;
+            color: #FFF;
+            font-size: 26px;
+            margin-top: 10px;
+        }
+
+    section#premiacao .premiacao-container2 {
+        background-color: #427e2b;
+    }
+
+    section#premiacao .premiacao-container3 {
+        background-color: #6baf52;
+    }
+
+    section#premiacao .premiacao-container4 {
+        background-color: #93ba82;
+    }
+
+    section#premiacao .premiacao-container2, section#premiacao .premiacao-container3, section#premiacao .premiacao-container4 {
+        background-image: url(../images/main/bg_money.png);
+        height: 255px;
+        /*padding-left: 35px;
+        padding-top: 65px;*/
+    }
+
+    section#premiacao .premiacao-container_interno,
+    section#premiacao .premiacao-container_interno span,
+    section#premiacao .premiacao-container_interno p {
+        /*display:inline-block;*/
+    }
+
+    section#premiacao .premiacao-container_interno {
+        display: inline-block;
+    }
+
+    section#premiacao .premiacao-container2 p, section#premiacao .premiacao-container3 p, section#premiacao .premiacao-container4 p {
+        font-family: "calibri-bold";
+        text-transform: uppercase;
+        color: #FFF;
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+
+    section#premiacao .premiacao-container2 span, section#premiacao .premiacao-container3 span, section#premiacao .premiacao-container4 span {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        color: #FFF;
+        font-size: 54px;
+    }
+
+    section#premiacao div {
+        padding: 0;
+    }
+
+/* section - noticias */
+
+
+section#noticias .cover {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+
+section#noticias h4, section.noticias_loterias-especiais h4 {
+    text-align: left;
+}
+
+section#noticias .btn, section.noticias_loterias-especiais .btn {
+    background-color: #253e1c;
+    border-radius: 0;
+    width: 140px;
+    height: 35px;
+    font-family: "calibri-bold";
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 18px;
+    border: 0;
+}
+
+section#noticias .noticia_desc,
+section#noticias .noticia_title {
+    text-align: center;
+    line-height: 1.2em;
+    font-size: 14px;
+}
+
+.noticia_desc {
+    display: block;
+    margin: 5px 0;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+section.noticias_loterias-especiais .noticia_desc {
+    height: 100px;
+}
+
+section#noticias .noticia_title, section.noticias_loterias-especiais .noticia_title {
+    font-family: "calibri-bold";
+    text-transform: uppercase;
+    color: #363636;
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 10px;
+    text-decoration: none;
+    padding: 0;
+    display: block;
+}
+
+section#noticias img {
+    height: 245px;
+}
+
+.row_loteria-individual {
+    margin-bottom: 50px;
+}
+section.noticias_loterias-especiais{
+    margin-top: 50px;
+}
+section.banner_apostar .banner_apostar-container {
+    margin: 50px 0;
+}
+section.noticias_loterias-especiais .row {
+    padding-bottom: 30px;
+}
+section#noticias img{
+    display: inline-block;
+}
+.row.row_loteria-individual .col-sm-3 {
+    text-align: center;
+}
+@media (max-width: 767px) {
+    .noticia_container, .row_loteria-individual .col-md-3 {
+        margin-bottom: 20px !important;
+    }
+
+    .row_loteria-individual {
+        margin-bottom: 20px;
+    }
+    section#noticias .noticia_title, section.noticias_loterias-especiais .noticia_title, section.noticias_loterias-especiais .noticia_desc, section.noticias_loterias-especiais .btn {
+        text-align: center !important;
+    }
+}
+
+/* 16:9 IMAGES - NO'TÍCIAS */
+
+/*$screen-xs   = 520px  // Extra small screen / phone
+$screen-sm   = 768px  // Small screen / tablet
+$screen-md   = 992px  // Medium screen / desktop
+$screen-lg     = 1200px // Large screen / wide desktop
+$screen-xlg    = 1400px // Extra Large screen / wide desktop
+$screen-xxlg   = 1600px // Extra Large screen / wide desktop */
+
+@media (min-width: 320px) {
+    section#noticias img {
+        height: 163px;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+    section#noticias img {
+        height: 211px;
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+    section#noticias img {
+        height: 89px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    section#noticias img {
+        height: 89px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    section#noticias img {
+        height: 119px;
+    }
+}
+
+@media (min-width: 1200px) {
+    section#noticias img {
+        height: 134px;
+    }
+}
+
+/*@media (min-width: 768px) {
+    section.noticias_loterias-especiais .btn {
+        text-align: left !important;
+    }
+}*/
+
+/* section ultimos resultados */
+
+section#ultimosresultados {
+    margin-top: 50px;
+}
+
+    section#ultimosresultados h4, section#ultimosresultados p {
+        text-align: left;
+    }
+
+    section#ultimosresultados .col-md-12,
+    section#depoimentos .col-md-12 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    #depoimentosContainer .text-center{
+        text-align: center;
+    }
+    #depoimentosContainer .btn-novo-depoimento{
+
+        font-family: 'Fredoka One',cursive;
+        text-transform: uppercase;
+        height: 40px;
+        width: 302px;
+        max-width: 100%;
+        font-size: 20px;
+        line-height: 20px;
+        border-radius: 10px;
+        text-align: center;
+        vertical-align: middle;
+        top: 19px;
+        position: relative;
+        margin-bottom: 40px;
+    }
+    @media screen and (min-width: 769px){
+        #depoimentosContainer .btn-novo-depoimento{
+            float: right;
+        }
+    }
+
+    section#ultimosresultados .item {
+        height: 292px;
+        background-image: url(../images/main/bg_loteria.png);
+        background-color: #1c2e5f;
+        background-repeat: no-repeat;
+        background-position: center center;
+        text-align: center;
+        position: relative;
+    }
+
+        section#ultimosresultados .item .resultado-item-container {
+            padding-top: 15px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 290px;
+            margin: 0 auto;
+            height: 180px;
+            float: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+            section#ultimosresultados .item .resultado-item-container div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            section#ultimosresultados .item .resultado-item-container .key {
+                width: 100%;
+                display: block;
+                color: white;
+            }
+
+                section#ultimosresultados .item .resultado-item-container .key.-big {
+                    font-size: 22px;
+                    margin: 10px 0;
+                }
+
+        section#ultimosresultados .item .resultado-item {
+            background-color: #FFF;
+            color: #393939;
+            font-family: 'calibri', sans-serif;
+            font-weight: 600;
+        }
+
+        section#ultimosresultados .item .resultado-item-grande {
+            width: 56px;
+            height: 56px;
+            float: left;
+            border-radius: 50%;
+            font-size: 26px;
+            padding-top: 0;
+            display: block;
+            display: block;
+            float: none;
+            padding: 0;
+            /* line-height: 56px; */
+            line-height: 2.2em;
+            margin: 10px;
+        }
+
+        section#ultimosresultados .item .resultado-item-peq {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 20px;
+            line-height: 1.5em;
+            margin: 6px;
+        }
+
+        section#ultimosresultados .item .resultado-item-peq-15 {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 20px;
+            line-height: 30px;
+            margin: 0px 10px;
+        }
+
+        section#ultimosresultados .item .resultado-item-grande-7 {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 26px;
+            line-height: 48px;
+            margin: 8px;
+        }
+
+        section#ultimosresultados .item .resultado-item-grande_lotfederal {
+            width: auto;
+            border-radius: 5px;
+            height: auto;
+            padding: 10px;
+            line-height: 1em;
+        }
+
+        section#ultimosresultados .item .resultado-item-grande_lotfederal {
+            font-size: 16px !important;
+        }
+
+.footer-resultado {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    max-width: 210px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+.footer-container p,
+.footer-container span {
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+.footer-container p {
+    font-family: "calibri-light";
+    font-size: 14px;
+    margin-bottom: 0px;
+    line-height: 1em;
+}
+
+.footer-container span {
+    font-family: 'Fredoka One', cursive;
+    font-size: 25px;
+    line-height: 1.5em;
+}
+
+section#ultimosresultados .item .label-container {
+    float: left;
+    width: 354px;
+    height: 25px;
+    background-image: url(../images/main/bg_label_loteria.png);
+}
+
+section#ultimosresultados .item .nome-concurso,
+section#ultimosresultados .item .valor-concurso,
+section#ultimosresultados .item .status-concurso {
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+section#ultimosresultados .item .label-container p {
+    color: #253e1c;
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    width: 140px;
+    font-size: 18px;
+}
+
+section#ultimosresultados .item .status-concurso {
+    background-color: #dec72f;
+    padding: 2px 25px;
+}
+
+section#ultimosresultados .item .nome-concurso {
+    font-size: 36px;
+    color: #fff;
+    line-height: 35px;
+}
+
+section#ultimosresultados .item .nome-concurso {
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+    opacity: 0.6;
+    line-height: 1em;
+}
+
+section#ultimosresultados .item .valor-concurso {
+    margin-bottom: 15px;
+}
+
+/* section depoimentos*/
+
+section#depoimentos {
+    margin-top: 50px;
+}
+
+    section#depoimentos h4 {
+        text-align: left;
+    }
+
+    section#depoimentos .col-md-4 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    section#depoimentos span.depoimento_data {
+        font-family: "calibri-light";
+        color: #949494;
+        font-size: 13px;
+        margin-left: 5px;
+    }
+
+    section#depoimentos i {
+        color: #6baf52;
+    }
+
+p.depoimento_text {
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.depoimento_user_container span {
+    width: 100%;
+}
+
+section#depoimentos h4.media-heading {
+    font-family: "calibri-bold";
+    color: #393939;
+    font-size: 14px;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 180px;
+}
+
+span.depoimento_local {
+    font-style: italic;
+}
+
+/*section#depoimentos .media {
+    padding: 0 20px;
+}*/
+
+/* section boletim */
+
+section#boletim {
+    margin-top: 50px;
+}
+
+    section#boletim div.container-boletim {
+        background-image: url(../images/main/bg_boletim.png);
+        background-color: #6baf52;
+        height: 100%;
+        padding: 25px 0;
+    }
+
+    section#boletim p.title {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        color: #FFF;
+        font-size: 46px;
+        line-height: 40px;
+        text-align: center;
+        /* height: 106px; */
+        overflow: hidden;
+        /* line-height: 66px; */
+    }
+
+    section#boletim p.desc {
+        font-family: "calibri";
+        color: #FFFFFF;
+        font-size: 21px;
+        line-height: 1.2em;
+    }
+
+    section#boletim .btn {
+        background-color: #253e1c;
+        border-radius: 0;
+        width: 140px;
+        height: 35px;
+        font-family: "calibri-bold";
+        text-transform: uppercase;
+        color: #FFF;
+        font-size: 18px;
+        border: 0;
+        margin-top: 10px;
+    }
+
+/* VIEW NOTICIAS */
+
+/* NOTICIAS DESTAQUES */
+
+.noticias_destaques{
+    padding-top: 30px;
+}
+#banner-noticias .banner-noticias_container {
+    margin-bottom: 50px;
+}
+
+section.noticias_destaques div.row, section.noticias_ultimas div.row {
+    margin-bottom: 15px !important;
+}
+
+section.noticias_ultimas h4 {
+    text-align: left;
+}
+
+.col-md-8 .noticia_container {
+    width: 100%;
+    position: relative;
+}
+
+.noticia_container .cover-float {
+    position: relative;
+    z-index: 0;
+}
+
+    .noticia_container .cover-float img {
+        width: 100%;
+        height: auto;
+    }
+
+.noticia_container .detalhes-container {
+    position: absolute;
+    bottom: 0;
+}
+
+.col-md-4 .noticia_container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.col-md-6 .noticia_container {
+    width: 100%;
+    height: 360px;
+}
+.col-md-6 .noticia_container img {
+    height: 360px;
+}
+.col-md-3 .noticia_container img {
+    height: 168px;
+}
+.col-md-8 .noticia_container img {
+    height: 500px;
+}
+.col-md-4 .noticia_container img {
+    height: 240px;
+}
+.col-md-3 .noticia_container {
+    width: 100%;
+}
+.row_loteria-individual p.noticia_title {
+    height: 55px;
+}
+.row_loteria-individual p.noticia_desc {
+    height: 49px;
+}
+
+.noticia_container img {
+    width: 100%;
+    height: 100%;
+}
+
+.noticia_container {
+    position: relative;
+}
+
+    .noticia_container a:hover {
+        text-decoration: none;
+    }
+
+    .noticia_container .detalhes-container {
+        position: absolute;
+        bottom: 0;
+    }
+
+p.titulo-noticia {
+    font-family: "calibri-bold";
+}
+
+p.data-noticia {
+    font-family: "calibri-light";
+}
+
+p.titulo-noticia, p.data-noticia {
+    color: #FFF;
+    font-size: 20px;
+    line-height: 1;
+    padding: 0 20px;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+    p.titulo-noticia:focus, p.data-noticia:hover {
+        outline: none;
+    }
+
+/* CARRINHO */
+
+ul .container-abas_pagamentos {
+    background-color: #ececec;
+    border-radius: 15px;
+    min-height: 50px;
+    padding-top: 5px;
+    width: 99% !important;
+    margin: 5px auto 0 auto;
+}
+
+.content-carrinho .row {
+    margin: 30px 0;
+}
+
+.content-carrinho .btn-pagar {
+    margin-bottom: 30px;
+}
+
+.content-carrinho .nav-tabs.nav-justified li a {
+    /*border-radius: 15px;
+    background-color: #ececec;*/
+    color: #444444 !important;
+    font-family: "calibri-light";
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+    .content-carrinho .nav-tabs.nav-justified li.active a, .content-carrinho .nav-tabs.nav-justified li a:hover {
+        background-color: transparent;
+        border-radius: 15px;
+        color: #6baf52 !important;
+        /* border: none; */
+        border-color: transparent;
+    }
+
+.content-carrinho p, .content-carrinho label {
+    font-family: "calibri-light";
+    font-size: 18px;
+    color: #444444;
+    text-align: center;
+    padding-left: 0;
+}
+
+.content-carrinho .table {
+    border: 1px solid #a0a0a0;
+}
+
+/*.content-carrinho p, .content-carrinho label.confirma-compra {
+        padding-left: 45px;
+        padding-top: 3px;
+    }*/
+
+.content-carrinho input.checkbox {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #a0a0a0;
+    display: inline-block;
+    position: relative;
+    padding: 0px;
+    top: 0px;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+    .content-carrinho input.checkbox::after {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border: 1px solid grey;
+    }
+
+    .content-carrinho input.checkbox:checked::after {
+        content: "✔";
+        text-align: center;
+    }
+
+    .static-banner-container div {
+        background-size: cover;
+        background-position: center;
+        min-width: 100vw;
+        min-height: 195px;
+    }
+    .static-banner-container {
+        padding: 0px;
+    }
+
+section.content-carrinho h5 {
+    color: #000000;
+}
+
+button.btn-valor {
+    width: 100%;
+    outline: none;
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 22px;
+}
+
+button.btn-valor_green {
+    border: 1px solid #6baf52;
+    color: #6baf52;
+}
+
+    button.btn-valor_green:hover, button.btn-valor_green.selected {
+        border: 1px solid #6baf52;
+        background-color: #6baf52;
+        color: #FFFFFF;
+    }
+
+button.btn-valor_yellow {
+    border: 1px solid #ffcd05;
+    color: #ffcd05;
+}
+
+    button.btn-valor_yellow:hover, button.btn-valor_yellow.selected {
+        border: 1px solid #ffcd05;
+        background-color: #ffcd05;
+        color: #FFFFFF;
+    }
+
+section.content-carrinho hr {
+    color: #6baf52;
+    background-color: #6baf52;
+    height: 4px;
+    margin-bottom: 0;
+}
+
+section.content-carrinho input {
+    background-color: #ececec;
+    border: none;
+}
+section.content-carrinho input.coupom{
+    width: calc(100% - 50px) !important;
+    display: inline-block !important;
+}
+section.content-carrinho button.btn-pagar.coupom{
+    width: 40px !important;
+    text-align: center !important;
+    padding: 4px !important;
+    margin: 0 !important;
+    display: inline-block !important;
+    height: 34px !important;
+    line-height: 28px;
+}
+p.total-compra {
+    color: #373536;
+    text-align: right;
+}
+
+p span.total-compra {
+    color: #6baf52;
+}
+
+.total-compra {
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    font-size: 23px;
+}
+
+.content-carrinho ul.list-inline {
+    width: 280px;
+    text-align: center;
+}
+
+.btn-pagar {
+    width: 100%;
+    background-color: #6baf52;
+    font-family: "calibri-bold";
+    font-size: 22px;
+    border-radius: 0;
+    text-transform: uppercase;
+}
+
+.container-escolher-pagamentos {
+    border: 1px solid #a0a0a0;
+    border-radius: 20px;
+}
+
+.content-carrinho .nav-tabs.nav-justified li a::after {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -7px;
+    margin-left: 10px;
+}
+
+.content-carrinho .nav-tabs.nav-justified li a.aba1::after {
+    background-image: url(../images/main/icone_pagamento_cartao.png);
+}
+
+.content-carrinho .nav-tabs.nav-justified li a.aba2::after {
+    background-image: url(../images/main/icone_pagamento_transf.png);
+}
+
+.content-carrinho .nav-tabs.nav-justified li a.aba3::after {
+    background-image: url(../images/main/icone_pagamento_bb.png);
+}
+
+.content-carrinho .nav-tabs.nav-justified li a.aba4::after {
+    background-image: url(../images/main/icone_pagamento_boleto.png);
+}
+
+.content-carrinho .nav-tabs.nav-justified li a.aba5::after {
+    background-image: url(../images/main/icone_pagamento_neteller.png);
+}
+
+.content-carrinho .nav-tabs.nav-justified li a:hover::after, .content-carrinho .nav-tabs.nav-justified li.active a::after {
+    background-position-y: -50px;
+    color: #76b360;
+}
+
+.content-carrinho .nav-tabs.nav-justified nav li {
+    border-right: 1px solid #252525;
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+/*.content-carrinho .nav-tabs.nav-justified li:nth-child(2) a::after {
+    background: #000;
+}*/
+
+/* INSTITUCIONAL */
+
+ul.nav-institucional li {
+    padding: 0 10px;
+}
+
+    ul.nav-institucional li a {
+        border: 1px solid #818181;
+        border-radius: 10px;
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        color: #2e2e2e;
+        font-size: 17px;
+    }
+
+        ul.nav-institucional li.active a, ul.nav-institucional li a:hover {
+            color: #6baf52 !important;
+            background-color: #FFF !important;
+        }
+
+section.content-institucional .panel-heading {
+    font-family: "calibri-bold";
+    color: #363636;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.content-institucional h4, .content-newsletter h4 {
+    margin: 40px 0 10px 10px;
+}
+
+section.content-institucional .panel-heading p.subtitulo {
+    text-transform: none;
+}
+
+section.content-institucional .panel-body p, section.content-institucional .panel-body ul li {
+    font-family: "calibri-light";
+    color: #363636;
+    font-size: 17px;
+}
+
+section.content-institucional .panel-default, section.content-institucional .panel-heading {
+    border: none;
+}
+
+section.content-institucional table {
+    margin-top: 20px;
+}
+
+    section.content-institucional table thead th {
+        font-family: "calibri-bold";
+        color: #2e2e2e;
+        font-size: 17px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    section.content-institucional table tbody td {
+        font-family: "calibri-light";
+        color: #2e2e2e;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    section.content-institucional table tbody th {
+        font-family: "calibri-bold";
+        font-size: 17px;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    section.content-institucional table tbody td .btn-apostar {
+        background-color: #3f7d29;
+        border-radius: 15px;
+        color: #FFF;
+        font-family: "calibri-bold";
+        font-size: 17px;
+        text-transform: uppercase;
+        border: 0;
+        padding: 0px 10px;
+    }
+
+section.content-institucional .panel-default strong {
+    font-family: "calibri-bold";
+}
+
+section.content-institucional .panel-heading {
+    background-color: #FFF;
+}
+
+section.content-institucional .menu_atendimento {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+    section.content-institucional .menu_atendimento li {
+        margin-bottom: 10px;
+    }
+
+        section.content-institucional .menu_atendimento li i {
+            margin-right: 10px;
+            color: #e58f09;
+        }
+
+        section.content-institucional .menu_atendimento li a {
+            color: #363636;
+        }
+
+section .content-newsletter textarea {
+    resize: none;
+}
+
+section.content-newsletter input, section.content-newsletter textarea, section.content-newsletter button {
+    margin-bottom: 20px;
+}
+
+section.content-newsletter input, section.content-newsletter textarea {
+    border-radius: 0;
+    border-color: #969696;
+}
+
+section.content-newsletter input {
+    height: 40px;
+}
+
+section.content-newsletter button {
+    background-color: #6baf52;
+    border-radius: 0;
+    width: 100%;
+    height: 35px;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 18px;
+    border: 0;
+    line-height: 19px;
+}
+
+/* RANKING DE PRÊMIOS */
+
+/*section#banner-ranking .banner-ranking_container {
+    background-image: url("../images/banner/banner_ranking.jpg");
+    height: 180px;
+    padding-top: 40px;
+}
+
+    section#banner-ranking .banner-ranking_container p {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 35px;
+        line-height: 30px;
+        padding: 0 10px;
+    }
+
+        section#banner-ranking .banner-ranking_container p.valor {
+            color: #282828
+        }
+
+        section#banner-ranking .banner-ranking_container p.static2 {
+            color: #f1be23
+        }
+
+section.content-ranking h4 {
+    color: #89b776;
+    margin: 30px 0;
+}
+
+section.content-ranking .panel-default, section.content-ranking .panel-heading {
+    border: none;
+}
+
+section.content-ranking form, section.content-ranking form label, section.content-ranking form select, section.content-ranking form input {
+    font-family: "calibri";
+    color: #636262;
+    font-size: 16px;
+    text-align: center;
+    font-weight: normal;
+}
+
+    section.content-ranking form select, section.content-ranking form input {
+        border: 1px solid #c2c1c1 !important;
+        background-color: #e6e6e6;
+    }
+
+    section.content-ranking form i {
+        color: #c2c1c1;
+    }
+
+    section.content-ranking form select {
+        border-radius: 0;
+    }
+
+    section.content-ranking form .form-group1 {
+        margin-right: 40px;
+    }
+
+    section.content-ranking form .form-group2 {
+        margin-right: 60px;
+    }
+
+section.content-ranking table {
+    margin-top: 20px;
+}
+
+    section.content-ranking table thead th {
+        text-align: center;
+        border-bottom: 0;
+    }
+
+        section.content-ranking table thead th a {
+            font-family: 'Fredoka One', cursive;
+            color: #89b776;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+            section.content-ranking table thead th a i {
+                margin-right: 5px;
+            }
+
+            section.content-ranking table thead th a:hover {
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+    section.content-ranking table tbody td {
+        font-family: "calibri-light";
+        color: #242424;
+        font-size: 17px;
+        text-align: center;
+        padding: 4px;
+        border-top: 0;
+    }
+
+    section.content-ranking table tbody th {
+        font-family: "calibri-bold";
+        font-size: 17px;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    section.content-ranking table tbody td .btn-apostar {
+        background-color: #679955;
+        border-radius: 0px;
+        color: #1b1819;
+        font-family: "calibri-bold";
+        font-size: 15px;
+        text-transform: uppercase;
+        border: 0;
+        padding: 2px 20px;
+    }
+
+@media (max-width: 479px) {
+    .premiacao1, .premiacao2 {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    section.content-ranking form label, section.content-ranking form i {
+        display: none;
+    }
+
+    section.content-ranking form .form-group1, section.content-ranking form .form-group2 {
+        margin-right: 0;
+    }
+
+    section.content-ranking form select {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1199px) {
+    section#banner-ranking .banner-ranking_container p {
+        font-size: 27px;
+    }
+
+    section.content-ranking form, section.content-ranking form label, section.content-ranking form select, section.content-ranking form input {
+        font-size: 13px;
+    }
+}*/
+
+/* Footer */
+
+footer {
+    margin-top: 50px;
+}
+
+    footer ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+.footer-bar {
+    width: 100%;
+    float: left;
+}
+
+.footer-bar_darkgrey {
+    background-color: #2e2e2e;
+    padding: 60px 0;
+}
+
+.footer-bar_green {
+    background-color: #679955;
+}
+
+    .footer-bar_green p {
+        font-size: 12px;
+        color: #FFF;
+        text-transform: uppercase;
+        margin-top: 10px;
+    }
+
+footer ul li a, footer span {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+footer ul li a {
+    font-family: "calibri-light";
+}
+
+footer span {
+    font-family: "calibri-bold";
+}
+
+
+footer .container-produtos,
+footer .container-pagamentos,
+footer .container-institucional {
+    padding: 0 0;
+}
+
+    footer .container-produtos ul li a, footer .container-produtos span {
+        color: #89b776;
+    }
+
+    footer .container-pagamentos ul.list-inline {
+        margin: 20px 0;
+        border-bottom: 1px solid #FFF;
+        padding-bottom: 20px;
+    }
+
+    footer .container-pagamentos ul:last-child {
+        border-bottom: none;
+    }
+
+    footer .container-produtos ul {
+        margin-top: 10px;
+    }
+
+    footer .container-institucional ul li a, footer .container-pagamentos span {
+        color: #FFFFFF;
+    }
+
+    footer .container-institucional ul li {
+        margin-bottom: 10px;
+    }
+
+    footer .container-pagamentos .col-md-4 ul li {
+        margin: 10px 0;
+    }
+
+/* BREAKPOINTS - RESPONSIVE */
+
+@media (max-width: 767px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* HEADER RESPONSIVE */
+
+@media (max-width: 767px) {
+    .nav-comprar, .header-bar_social ul.social {
+        display: none;
+    }
+
+    .header-bar_social {
+        height: 50px;
+    }
+
+    .header-bar_customer {
+        width: 100%;
+        background-color: #cecaca;
+        height: 50px;
+        float: left;
+    }
+
+    a.logo {
+        display: block;
+        float: none;
+        margin: 5px auto 0 auto;
+        overflow: hidden;
+        text-indent: -999px;
+        height: 40px;
+        width: 125px;
+        background-color: transparent;
+        background-image: url(../images/main/logo_mobile.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .header-bar_customer .container-user div {
+        padding-left: 55px;
+    }
+
+    .header-bar_customer img.img-user {
+        position: relative;
+        bottom: 1px;
+    }
+
+    .header-bar_customer .col-md-5 {
+        margin-top: 10px;
+    }
+
+    .login-btns {
+        display: none;
+    }
+
+    h3 {
+        font-size: 36px;
+    }
+
+    section#premiacao .premiacao-container2 span, section#premiacao .premiacao-container3 span, section#premiacao .premiacao-container4 span {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        color: #FFF;
+        font-size: 36px;
+    }
+
+    section#premiacao p {
+        margin: 0;
+        font-size: 20px !important;
+    }
+
+    section#premiacao .premiacao-container2, section#premiacao .premiacao-container3, section#premiacao .premiacao-container4 {
+        background-image: url(../images/main/bg_money.png);
+        height: auto;
+        text-align: center;
+        padding: 0;
+    }
+
+    h4 {
+        text-align: center !important;
+    }
+
+    section#depoimentos h4.media-heading {
+        text-align: left !important;
+    }
+
+    /* nav li a {
+        color: #FFFFFF;
+        background-color: #252525;
+    } */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* nav li a {
+        font-size: 10px;
+    } */
+
+    .header-bar_customer p, .header-bar_customer a {
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    nav li a {
+        font-size: 11.5px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    nav li a {
+        font-size: 10px;
+    }
+}
+
+/* FOOTER RESPONSIVE */
+
+@media (max-width: 767px) {
+    footer p, footer .container-pagamentos {
+        text-align: center;
+    }
+
+    .container-produtos, .container-institucional, .container-pagamentos {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 991px) {
+    footer ul li a, footer span {
+        font-size: 13px;
+    }
+}
+
+/* TESTE CAROUSEL */
+
+.carousel-item1 {
+    background-image: url(../images/banner/temp-1.jpg) !important;
+}
+
+.carousel-item2 {
+    background-image: url(../images/banner/temp-1.jpg) !important;
+}
+
+.carousel-item3 {
+    background-image: url(../images/banner/temp-1.jpg) !important;
+}
+
+/*Tela apostar*/
+
+.no-padding {
+    padding: 0px;
+}
+
+.menu-loterias {
+    height: 42px;
+    line-height: 42px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+    .menu-loterias a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        margin: auto;
+    }
+
+        .menu-loterias a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+/*Login*/
+
+.login .title {
+    color: #6baf52;
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+}
+
+.login .subtitle {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: 'Fredoka One', cursive;
+    color: #2a2a2a;
+}
+
+.login .login-form {
+    text-align: center;
+}
+
+    .login .login-form select {
+        width: 100%;
+        background: white;
+        padding-left: 8px;
+        color: #9e9e9e;
+    }
+
+        .login .login-form select.valid {
+            color: #5b5b5b;
+        }
+
+    .login .login-form input, .login .login-form select {
+        border-color: #c1c1c1 !important;
+        margin-top: 20px;
+        height: 40px;
+    }
+
+    .login .login-form a {
+        display: inline-block;
+        width: 49%;
+        color: #6baf52;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .message button, .login .login-form button {
+        height: 40px;
+        width: 302px;
+        max-width: 100%;
+        font-size: 20px;
+        line-height: 20px;
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .login .login-form button {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+        .login .login-form button.facebook, .content-cadastro button.facebook {
+            font-family: "Calibri";
+            background-color: #23599b;
+            border-color: #2e6da4;
+            text-transform: none;
+            position: relative;
+            padding-left: 38px;
+        }
+
+            .login .login-form button.facebook:hover, .content-cadastro button.facebook:hover {
+                background-color: #286090;
+                border-color: #204d74;
+            }
+
+            .login .login-form button.facebook i, .content-cadastro button.facebook i {
+                display: inline-block;
+                border-right: 2px white solid;
+                position: absolute;
+                left: 0px;
+                top: -1px;
+                width: 38px;
+                height: 41px;
+                line-height: 40px;
+            }
+
+.content-cadastro button.facebook {
+    width: 100%;
+    font-size: 18px;
+}
+
+.login .login-form .separator {
+    color: #c1c1c1 !important;
+}
+
+.message, .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+    .message button {
+        max-width: 30%;
+    }
+
+    .message .modal div {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+        .message .modal div.no-padding-bottom {
+            padding-bottom: 0;
+        }
+
+    .message .background, .loading .background {
+        position: fixed;
+        display: block;
+        background-color: black;
+        opacity: 0.6;
+        width: 100%;
+        height: 100%;
+    }
+
+    .message .modal {
+        position: relative;
+        display: block;
+        top: 40%;
+        left: 50%;
+        width: 570px;
+        margin-left: -260px;
+        max-width: 100%;
+        text-align: center;
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .loading .animation {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        height: 30px;
+        margin-left: -15px;
+        margin-top: -15px;
+    }
+
+        .loading .animation circle {
+            fill: transparent;
+            stroke: #5cb85c;
+            stroke-width: 2;
+            stroke-dasharray: 250;
+            stroke-dashoffset: 1000;
+            animation: rotate 3s linear infinite;
+        }
+
+.default-green {
+    color: #6baf52 !important;
+}
+
+.payment-error {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: red;
+    font-size: 22px;
+}
+
+.table {
+    /*border: 1px solid #a0a0a0;*/
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0;
+}
+
+    /* .table td {
+            border-top: none !important;
+        } */
+
+    .table .header {
+        background: #efeeee;
+        overflow: hidden;
+        border-radius: 8px 8px 0px 0px;
+        padding: 0;
+        line-height: 35px;
+        text-align: center;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    .table .row:not(.header) {
+        padding: 0;
+        margin: 10px;
+        border-bottom: 1px solid #d8d8d8;
+        height: 30px;
+    }
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #ececec;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #dfdede;
+}
+
+.table .row:nth-last-child(1) {
+    border-bottom: none;
+}
+
+.table .row i.fa-trash-alt {
+    color: #a0a0a0;
+}
+
+.table .row select {
+    background: none;
+    border: none;
+    user-select: none;
+    outline: none;
+}
+
+@keyframes rotate {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media (max-width: 902px) {
+    .message .modal {
+        margin: 0px 10px;
+        left: 0px;
+        top: 40%;
+        max-width: calc(100vw - 20px);
+    }
+}
+
+@media (min-width: 320px) {
+    .text-sm-center {
+        text-align: center !important;
+    }
+
+    .text-sm-left {
+        text-align: left !important;
+    }
+
+    .text-sm-right {
+        text-align: right !important;
+    }
+}
+
+.table .row .mini-title {
+    display: none;
+}
+
+.cart-total {
+    font-size: 24px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.table .row i.fa-trash-alt {
+    cursor: pointer;
+}
+
+.table .row .fas.fa-redo {
+    color: #a0a0a0;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.noticia-item-home {
+    width: 100%;
+    display: block;
+}
+
+.noticia-item-home .cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+    position: relative;
+    overflow: hidden;
+}
+
+.noticia-item-home .cover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 70%;
+}
+
+.noticia-item-home .cover img {
+    display: block;
+    width: 120%;
+    height: auto !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.noticia-item-home .title {
+    font-family: "calibri-bold", sans-serif;
+    color: #363636;
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 10px;
+    text-decoration: none;
+    padding: 0;
+    display: block;
+    text-transform: capitalize;
+    text-align: left;
+    min-height: 55px;
+}
+
+
+.noticia-item-home .description {
+    font-family: "calibri-light", sans-serif;
+    color: #444;
+    display: block;
+    padding: 8px 0;
+    min-height: 55px;
+}
+
+@media (min-width: 768px) {
+    .text-md-left {
+        text-align: left !important;
+    }
+
+    .text-md-right {
+        text-align: right !important;
+    }
+
+    .text-md-center {
+        text-align: center !important;
+    }
+}
+
+@media (min-width: 545px) {
+    .hidden-sm-up {
+        display: none !important;
+    }
+}
+
+@media (max-width: 544px) {
+    .hidden-xs-down {
+        display: none;
+    }
+
+    .table .row:not(.header) {
+        height: 80px;
+    }
+
+    .table .row .col-xs-4, .table .row .col-xs-6, .table .row .col-xs-8 {
+        padding: 0px;
+    }
+
+    .table .row .mini-title {
+        display: block;
+        color: #8a8a8a;
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    .table .row i.fa-trash-alt {
+        color: #a0a0a0;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    .cart-total-wrapper {
+        padding-top: 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    section#premiacao .premiacao-container2 span, section#premiacao .premiacao-container3 span, section#premiacao .premiacao-container4 span {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 991px) {
+    .noticia-item {
+        margin-bottom: 50px;
+    }
+
+    .content-carrinho .nav-tabs.nav-justified li a::after {
+        content: "";
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: -7px;
+        left: 0px;
+        margin-left: 20px;
+    }
+
+    .content-carrinho .nav-tabs.nav-justified li a {
+        color: #444444 !important;
+        font-family: "calibri-light";
+        font-size: 14px;
+        text-transform: uppercase;
+        padding-left: 80px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .comprar-credito .row .col-md-4 {
+        margin-bottom: 10px;
+    }
+
+    .comprar-credito .row {
+        padding: 0;
+        margin: 0;
+    }
+
+    .content-carrinho .nav-tabs.nav-justified > li {
+        display: block;
+        width: 100%;
+    }
+
+    .content-carrinho .tab-content .row {
+        padding: 0;
+        margin: 0;
+    }
+
+        .content-carrinho .tab-content .row input {
+            margin-bottom: 10px;
+        }
+
+        .content-carrinho .tab-content .row:nth-child(1) {
+            padding-top: 40px;
+        }
+}
+
+.slidecontainer .slidenumbers {
+    margin-top: 10px
+}
+
+    .slidecontainer .slidenumbers span {
+        display: inline-block;
+        text-align: center;
+        font-weight: bold;
+    }
+
+.lotofacil .jogo_cartela .card .units .unit {
+    display: block;
+    text-align: center;
+    width: 50px !important;
+    height: 50px !important;
+    line-height: 21px;
+    padding: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 0;
+    color: #000000;
+    user-select: none;
+    font-weight: 600;
+    font-size: 1em;
+    transition: .2s all linear;
+    border: 1px solid #000000;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.lotofacil .jogo_cartela .card .units li {
+    width: 18%;
+    text-align: center;
+}
+
+.lotofacil .jogo_cartela .card .units {
+    margin-left: 35px;
+}
+
+.timeDoCoracao i {
+    position: absolute;
+    z-index: 9;
+    left: -30px;
+    font-size: 20px;
+    top: 8px;
+    color: #d2a907;
+}
+
+.timeDoCoracao select {
+    width: 100% !important;
+}
+
+.timeDoCoracao {
+    padding-bottom: 20px;
+    position: relative;
+    padding-right: 0px;
+}
+
+section#aposteaqui div.container-outras_apostas .card .units li:nth-last-child(1) .unit {
+    width: auto !important;
+    padding: 0px 5px;
+}
+
+.delete-game {
+    display: inline;
+    margin-left: 10px;
+    line-height: 21px;
+    color: #a0a0a0;
+    cursor: pointer;
+}
+/* INSTITUCIONAL */
+ul.nav-institucional li {
+    padding: 0 10px;
+}
+
+    ul.nav-institucional li a {
+        border: 1px solid #818181;
+        border-radius: 10px;
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        color: #2e2e2e;
+        font-size: 17px;
+    }
+
+        ul.nav-institucional li.active a, ul.nav-institucional li a:hover {
+            color: #6baf52 !important;
+            background-color: #FFF !important;
+        }
+
+section.content-institucional .panel-heading {
+    font-family: "calibri-bold";
+    color: #363636;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    background-color: white;
+}
+
+section.content-institucional h4 {
+    margin: 40px 0 10px 10px;
+}
+
+section.content-institucional .panel-heading p.subtitulo {
+    text-transform: none;
+}
+
+section.content-institucional .panel-body p {
+    font-family: "calibri-light";
+    color: #363636;
+    font-size: 17px;
+}
+
+section.content-institucional .panel-default, section.content-institucional .panel-heading {
+    border: none;
+}
+
+section.content-institucional table {
+    margin-top: 20px;
+}
+
+    section.content-institucional table thead th {
+        font-family: "calibri-bold";
+        color: #2e2e2e;
+        font-size: 17px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    section.content-institucional table tbody td {
+        font-family: "calibri-light";
+        color: #2e2e2e;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    section.content-institucional table tbody th {
+        font-family: "calibri-bold";
+        font-size: 17px;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    section.content-institucional table tbody td .btn-apostar {
+        background-color: #3f7d29;
+        border-radius: 15px;
+        color: #FFF;
+        font-family: "calibri-bold";
+        font-size: 17px;
+        text-transform: uppercase;
+        border: 0;
+        padding: 0px 10px;
+    }
+/* RANKING DE PRÊMIOS */
+section#banner-ranking .banner-ranking_container {
+    background-image: url(../images/banner/banner_ranking.jpg);
+    height: auto;
+    padding: 40px 0;
+    background-position: center;
+    background-size: cover;
+}
+
+    section#banner-ranking .banner-ranking_container p {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 30px;
+        line-height: 30px;
+        padding: 0 20px;
+    }
+
+        section#banner-ranking .banner-ranking_container p.valor {
+            color: #282828
+        }
+
+        section#banner-ranking .banner-ranking_container p.static2 {
+            color: #f1be23
+        }
+
+section.content-ranking h4 {
+    color: #89b776;
+    margin: 30px 0;
+}
+
+section.content-ranking .panel-default, section.content-ranking .panel-heading {
+    border: none;
+}
+
+section.content-ranking form, section.content-ranking form label, section.content-ranking form select, section.content-ranking form input {
+    font-family: "calibri";
+    color: #636262;
+    font-size: 16px;
+    text-align: center;
+    font-weight: normal;
+}
+
+    section.content-ranking form select, section.content-ranking form input {
+        border: 1px solid #c2c1c1 !important;
+        background-color: #e6e6e6;
+    }
+
+    section.content-ranking form i {
+        color: #c2c1c1;
+    }
+
+    section.content-ranking form select {
+        border-radius: 0;
+    }
+
+    section.content-ranking form .form-group1 {
+        margin-right: 40px;
+    }
+
+    section.content-ranking form .form-group2 {
+        margin-right: 60px;
+    }
+
+section.content-ranking table {
+    margin-top: 20px;
+}
+
+    section.content-ranking table thead th {
+        text-align: center;
+        border-bottom: 0;
+    }
+
+        section.content-ranking table thead th a {
+            font-family: 'Fredoka One', cursive;
+            color: #89b776;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+            section.content-ranking table thead th a i {
+                margin-right: 5px;
+            }
+
+            section.content-ranking table thead th a:hover {
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+    section.content-ranking table tbody td {
+        font-family: "calibri-light";
+        color: #242424;
+        font-size: 17px;
+        text-align: center;
+        padding: 4px;
+        border-top: 0;
+    }
+
+    section.content-ranking table tbody th {
+        font-family: "calibri-bold";
+        font-size: 17px;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    section.content-ranking table tbody td .btn-apostar {
+        background-color: #679955;
+        border-radius: 0px;
+        color: white;
+        font-family: "calibri-bold";
+        font-size: 15px;
+        text-transform: uppercase;
+        border: 0;
+        padding: 2px 20px;
+    }
+
+@media (max-width: 479px) {
+    section#banner-ranking .banner-ranking_container {
+        padding: 15px 0;
+    }
+    section#banner-ranking .banner-ranking_container p {
+        font-size: 14px;
+        margin-bottom: 0;
+        line-height: 1.2em;
+    }
+
+    section#banner-ranking .premiacao1,
+    section#banner-ranking .premiacao2{
+        margin-bottom:10px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    section.content-ranking form label, section.content-ranking form i {
+        display: none;
+    }
+
+    section.content-ranking form select {
+        width: 100%;
+        text-align: center;
+    }
+
+    section#banner-ranking .banner-ranking_container p {
+        font-size: 24px;
+    }
+
+    section.content-ranking table tbody td {
+        font-size: 12px;
+    }
+
+    section.content-ranking .panel-body {
+        padding: 0;
+    }
+
+    section.content-ranking table tbody td .btn-apostar {
+        font-size: 10px;
+        padding: 2px 7px;
+    }
+
+    section.content-ranking table thead th a {
+        font-size: 10px;
+    }
+
+    section.content-ranking .table-responsive {
+        border: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section.content-ranking form i {
+        height: 30px;
+        width: 40px;
+        line-height: 30px;
+    }
+
+    section.content-ranking div.form-group3,
+    section.content-ranking div.form-group4 {
+        width: 50%;
+        float: left;
+    }
+
+    section.content-ranking div.form-group3 input.form-control,
+    section.content-ranking div.form-group4 input.form-control {
+        width: calc(100% - 40px);
+        float: right;
+    }
+
+    section.content-ranking div.form-group1{
+        display:none;
+    }
+
+    section.content-ranking .panel-body {
+        padding:0;
+    }
+
+    section.content-ranking .table-responsive{
+        border:0;
+    }
+
+    section.content-ranking table thead th a {
+        /*font-family: "calibri-bold";*/
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    section.content-ranking table tbody td {
+        font-size: 13px;
+    }
+ }
+
+@media screen and (min-width: 768px) {
+    section.content-ranking div.form-group-mobile{
+        display:none;
+    }
+}
+
+
+
+    @media screen and (max-width: 991px) {
+        section.content-ranking form .form-group1, section.content-ranking form .form-group2 {
+            margin-right: 0;
+        }
+    }
+
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) {
+        section#banner-ranking .banner-ranking_container p {
+            font-size: 21px;
+        }
+
+        section.content-ranking form, section.content-ranking form label, section.content-ranking form select, section.content-ranking form input {
+            font-size: 13px;
+        }
+    }
+    /* NOTICIA DETALHE */
+    .content-noticia .static-banner-container {
+        margin-bottom: 20px;
+    }
+
+    .container_noticia-sections {
+        margin: 20px 0;
+    }
+
+    .content-noticia .container_veja-tambem {
+        margin-top: 60px;
+    }
+
+    .content-noticia h2 {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        font-size: 32px;
+        text-align: left;
+    }
+
+    .content-noticia h2 {
+        margin-top: 50px;
+    }
+
+    .content-noticia h3 {
+        font-family: "calibri-bold";
+        text-transform: uppercase;
+        color: #363636;
+        font-size: 26px;
+        text-align: left;
+    }
+
+    .content-noticia p strong {
+        font-family: "calibri-bold";
+        color: #000;
+    }
+
+    .content-noticia .noticia-data span {
+        font-family: "calibri";
+        color: #363636;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .content-noticia .noticia-data {
+        margin-bottom: 20px;
+    }
+
+    ul.menu_compartilha-noticia {
+        margin: 30px 0;
+    }
+
+        ul.menu_compartilha-noticia li {
+            list-style: none;
+        }
+
+        ul.menu_compartilha-noticia span {
+            font-family: "calibri-bold";
+            color: #363636;
+            font-size: 26px;
+        }
+
+    .content-noticia .aposte-agora p {
+        font-family: "calibri-bold";
+        color: #363636;
+        font-size: 26px;
+    }
+
+    .content-noticia .aposte-agora .btn-apostar {
+        border: none;
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        font-size: 26px;
+        border-radius: 10px;
+        padding: 5px 55px;
+        margin-top: 15px;
+    }
+
+    .content-noticia .noticia_item .noticia_title {
+        font-family: "calibri-bold";
+        color: #363636;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 16px;
+        min-height: 55px;
+        padding-top: 10px;
+    }
+    .static-banner-container div {
+        cursor: pointer;
+    }
+    .noticias_geral img, .noticias_geral .noticia_title, .noticias_geral .noticia_desc, .noticias_geral .noticia_container {
+        cursor: pointer;
+    }
+
+    .content-noticia .noticia_item a {
+        background-color: #181b57;
+        font-family: "calibri-bold";
+        color: #FFF;
+        font-size: 22px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        padding: 2px 0;
+    }
+
+    .content-noticia p.noticia_veja-tambem {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        color: #181b57;
+        font-size: 32px;
+    }
+
+    @media (max-width: 991px) {
+        .content-noticia .noticia_item {
+            margin-bottom: 40px;
+        }
+
+        .content-noticia p.noticia_veja-tambem {
+            text-align: center !important;
+        }
+
+        .content-noticia .aposte-agora {
+            text-align: center;
+        }
+
+        ul.menu_compartilha-noticia {
+            text-align: center;
+        }
+
+            ul.menu_compartilha-noticia span {
+                width: 100%;
+                float: left;
+                margin-bottom: 20px;
+            }
+
+        .menu-loterias {
+            display: block;
+            width: 100%;
+            text-align: left;
+            overflow: auto;
+            height: 42px;
+        }
+
+            .menu-loterias a {
+                display: table-cell;
+                padding: 0 10px;
+                white-space: nowrap;
+            }
+    }
+
+    @media (max-width: 991px) {
+        .content-cadastro .row {
+            margin: 0;
+        }
+
+        .content-cadastro input, .content-cadastro select {
+            margin: 10px 0;
+        }
+
+        .container_btn-confirmar {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .content-cadastro button.facebook {
+            margin: 20px 0;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .container-btn_facebook {
+            text-align: center;
+        }
+    }
+
+    /* DEPOIMENTOS */
+
+    .banner-depoimentos h4 {
+        margin: 40px 0px 20px 0px;
+    }
+
+    .banner-depoimentos_container {
+        background-color: #6baf52;
+        padding: 20px 0;
+        margin-bottom: 60px;
+        position: relative;
+    }
+
+        .banner-depoimentos_container::before {
+            content: "";
+            display: block;
+            background-image: url(../images/main/banner_depoimentos_img1.png);
+            width: 247px;
+            height: 152px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .banner-depoimentos_container::after {
+            content: "";
+            display: block;
+            background-image: url(../images/main/banner_depoimentos_img2.png);
+            width: 252px;
+            height: 180px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+        .banner-depoimentos_container::before {
+            background-image: url(../images/main/banner_depoimentos_sm_img1.png);
+            width: 124px;
+            height: 76px;
+        }
+
+        .banner-depoimentos_container::after {
+            background-image: url(../images/main/banner_depoimentos_sm_img2.png);
+            width: 126px;
+            height: 90px;
+        }
+    }
+
+    @media (max-width: 479px) {
+        .banner-depoimentos_container::before, .banner-depoimentos_container::after {
+            display: none;
+        }
+    }
+
+    section.banner-depoimentos .banner-depoimentos_container .panel {
+        background-color: #6baf52;
+        border: none;
+    }
+
+    .container-depoimentos {
+        padding: 0px 5px;
+    }
+
+    section.content-depoimentos .container-depoimentos .panel {
+        margin-bottom: 10px;
+        background-color: #efefef;
+        border: none;
+        border-radius: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .container-depoimentos p {
+        font-size: 20px;
+    }
+
+    section.content-depoimentos .row-depoimentos {
+        position: relative;
+        float: left;
+    }
+
+        section.content-depoimentos .row-depoimentos::before {
+            content: "";
+            display: block;
+            background-image: url(../images/main/texto_depoimentos_img1.png);
+            width: 90px;
+            height: 72px;
+            position: absolute;
+            left: -65px;
+            top: -30px;
+        }
+
+        section.content-depoimentos .row-depoimentos::after {
+            content: "";
+            display: block;
+            background-image: url(../images/main/texto_depoimentos_img2.png);
+            width: 91px;
+            height: 72px;
+            position: absolute;
+            right: -23px;
+            bottom: -27px;
+        }
+
+    section.banner-depoimentos .container-depoimentos p {
+        color: #FFFFFF;
+    }
+
+    section.content-depoimentos .container-depoimentos p {
+        color: #2b2b2b;
+    }
+
+    .container-depoimentos p.depoimento-texto, .container-depoimentos p.depoimento-data {
+        font-family: "calibri-light";
+    }
+
+    .container-depoimentos p.depoimento-autor {
+        font-family: "calibri-bold";
+    }
+
+    .container-depoimentos p.depoimento-data, .container-depoimentos p.depoimento-autor {
+        text-align: right;
+    }
+
+    /* RESULTADOS */
+    ul.menu_resultados {
+        padding-left: 0;
+    }
+
+        ul.menu_resultados li a {
+            background-color: #FFF;
+            font-family: 'Fredoka One', cursive;
+            text-transform: uppercase;
+            font-size: 18px;
+            color: #2e2e2e;
+            text-align: center;
+            list-style: none;
+            padding: 10px 0;
+            border: 1px solid #818181;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            float: left;
+            width: 100%;
+        }
+
+        ul.menu_resultados li {
+            list-style: none;
+        }
+
+            ul.menu_resultados li a {
+                color: #2e2e2e;
+            }
+
+                ul.menu_resultados li a:hover {
+                    text-decoration: none;
+                    color: #6baf52;
+                }
+
+                ul.menu_resultados li a:focus {
+                    text-decoration: none;
+                }
+
+    .resultados_loteria h1 {
+        color: #6baf52;
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        font-size: 32px;
+    }
+
+    .resultados_loteria .arrecadacao-total {
+        width: 50%;
+        padding: 10px;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+
+        .resultados_loteria .arrecadacao-total p {
+            margin: 0;
+        }
+
+    .resultados_loteria section {
+        padding: 45px 0;
+    }
+
+    .resultados_loteria h2 {
+        font-size: 39px;
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+
+    .resultados_loteria .subtitulo {
+        font-family: "calibri-light" sans-serif;
+        font-size: 16px;
+        color: #363636;
+    }
+
+    .resultados_loteria .table-federal {
+        margin: 30px auto;
+        max-width: 300px;
+    }
+
+        .resultados_loteria .table-federal .contest {
+            font-family: "calibri-bold";
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            font-size: 16px;
+            background: rgba(0,0,0,.1);
+            text-align: center;
+        }
+
+        .resultados_loteria .table-federal .result {
+            font-family: 'Fredoka One', cursive;
+            display: inline-block;
+            color: #FFF;
+            border-radius: 5px;
+            padding: 0 10px;
+            font-size: 24px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .resultados_loteria .table-federal thead td {
+            font-family: "calibri-bold";
+        }
+
+    /* acordeon loteria federal */
+    .accordion-lotfederal {
+        background-color: #0d46a6;
+        color: #fff;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+        .accordion-lotfederal .active, .accordion-duvidas:hover {
+            background-color: #cecaca;
+        }
+
+    /*.content-duvidas .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 0;
+}*/
+
+    .panel p {
+        margin: 20px 0;
+    }
+
+    .accordion-lotfederal {
+        font-family: calibri-bold;
+        text-transform: uppercase;
+    }
+
+        .accordion-lotfederal:after {
+            font-family: FontAwesome;
+            content: '\f055';
+            font-size: 13px;
+            color: #FFF;
+            float: right;
+            margin-left: 5px;
+        }
+
+    .loteria-federal .active:after {
+        font-family: FontAwesome;
+        content: "\f056";
+    }
+
+    .resultados_loteria .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        margin-bottom: 0;
+    }
+
+
+    .resultados_loteria .dozens {
+        margin: 30px auto 15px auto;
+        padding: 0;
+        text-align: center;
+    }
+
+    .resultados_loteria .resultado-lotomania .dozens,
+    .resultados_loteria .resultado-lotofacil .dozens {
+        max-width: 320px;
+    }
+
+    .resultados_loteria .dozens li {
+        display: inline-block;
+        vertical-align: top;
+        margin: 3px;
+    }
+
+        .resultados_loteria .dozens li.titulo-sorteio {
+            font-family: "calibri-bold";
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .resultados_loteria .dozens li span {
+            color: #FFF;
+            font-family: 'Fredoka One', cursive;
+            display: block;
+            border-radius: 50%;
+            font-size: 24px;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+        }
+
+    .resultados_loteria table {
+        text-align: center;
+    }
+
+        .resultados_loteria table td {
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .resultados_loteria table .resultado-estatico {
+            font-family: "calibri-light";
+        }
+
+        .resultados_loteria table .resultado-dinamico {
+            font-family: "calibri-bold";
+        }
+
+    .resultados_loteria .status-loteria {
+        font-family: 'Fredoka One', cursive;
+        font-size: 32px;
+        text-transform: uppercase;
+        text-align: center;
+        width: 100%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .table-sorteio td {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .table-ganhadores thead td {
+        font-family: "calibri";
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+
+    .table-ganhadores tbody td {
+        font-family: "calibri";
+        font-size: 18px;
+        text-transform: capitalize;
+        color: #363636;
+    }
+
+    .concurso-estatico {
+        text-align: center;
+        font-family: "calibri-light";
+        font-size: 13px;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+    }
+
+    .concurso-dinamico {
+        text-align: center;
+        font-family: "calibri-bold";
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    .valor-proxconcurso {
+        font-size: 22px;
+    }
+
+    .arrecadacao-total p {
+        text-align: center;
+        font-family: "calibri-bold";
+        font-size: 18px;
+        text-transform: uppercase;
+        line-height: 20px;
+    }
+
+    .resultados_loteria .aposte-agora {
+        background-color: transparent;
+        cursor: pointer;
+        border: 1px solid;
+        width: 100%;
+        border-radius: 6px;
+        text-align: center;
+        font-family: "calibri-bold";
+        font-size: 14px;
+        text-transform: uppercase;
+        float: left;
+        padding: 5px 0;
+    }
+
+        .resultados_loteria .aposte-agora:hover {
+            text-decoration: none;
+        }
+
+    .resultados_loteria .table-sorteio tr td,
+    .resultados_loteria .table-ganhadores tr td {
+        border-top: none;
+    }
+
+    .resultados_loteria .table-ganhadores tr td {
+        border-bottom: 1px solid #d1d1d1;
+        width: 33.333%;
+    }
+
+    .resultados_loteria table.table-lotogol td.lotogol-coluna3 ul li {
+        background-color: #FFF;
+    }
+
+    .resultados_loteria .table-loteca tr td:nth-child(1) {
+        font-family: 'Fredoka One', cursive;
+        font-size: 22px;
+    }
+
+    .resultados_loteria .table-loteca tr td:nth-child(3),
+    .resultados_loteria .table-loteca tr td:nth-child(4),
+    .resultados_loteria .table-loteca tr td:nth-child(5) {
+        width: 25px;
+        padding: 3px;
+    }
+
+    .resultados_loteria .table-loteca tr td p {
+        font-family: "calibri-light";
+        margin: 0;
+    }
+
+    .resultados_loteria .table-loteca tr td div {
+        background-color: #FFF;
+        border: 1px solid #ee363d;
+        border-radius: 100px;
+        display: inline-block;
+        font-family: "calibri-bold";
+        font-size: 14px;
+        font-weight: 600;
+        height: 25px;
+        line-height: 24px;
+        list-style: none;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        width: 25px;
+    }
+
+        .resultados_loteria .table-loteca tr td div.active {
+            background-color: #ff2222;
+            color: #FFF;
+        }
+
+    @media (max-width: 479px) {
+        .resultados_loteria table tr td {
+            padding: 8px 0;
+        }
+
+        .resultados_loteria .dozens li span {
+            font-size: 22px;
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+        }
+
+        .resultados_loteria .resultado-lotomania .dozens, .resultados_loteria .resultado-lotofacil .dozens {
+            max-width: 279px;
+        }
+
+        .resultados_loteria table td {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .table-ganhadores thead td {
+            font-size: 16px;
+        }
+
+        .table-ganhadores tbody td {
+            font-size: 14px;
+        }
+
+        .resultados_loteria h2 {
+            font-size: 32px;
+        }
+
+        .resultados_loteria .status-loteria {
+            font-size: 24px;
+        }
+
+        table.table-lotogol td.lotogol-coluna1 {
+            width: 62px;
+        }
+    }
+
+    /*MINI CART*/
+    .box-cart {
+        position: absolute;
+        top: 35px;
+        left: -200px;
+        background: white;
+        z-index: 999;
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 2px -2px 3px rgba(0, 0, 0, .2);
+        border: 1px solid #f0efef;
+        display: none;
+    }
+
+    @media (min-width: 479px) {
+        .mini-cart:hover .box-cart {
+            display: block !important;
+        }
+    }
+
+
+    .box-cart .scroller ul {
+        list-style: none;
+        padding: 0 10px;
+        margin: 10px 0;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+        .box-cart .scroller ul li div {
+            display: inline-block;
+            width: 30%;
+            text-align: center;
+        }
+    table.table-lotogol td.lotogol-coluna1 {
+        width: 62px;
+    } 
+
+        .box-cart .scroller ul li i {
+            color: #a0a0a0;
+            cursor: pointer;
+            float: right;
+            margin-right: 5px;
+            margin-top: 2px;
+        }
+
+    .box-cart-footer {
+        padding-bottom: 10px;
+    }
+
+        .box-cart-footer button {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+    .box-cart .scroller ul li {
+        border-right: none !important;
+    }
+
+    .box-cart-empty {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .box-cart-footer button:hover {
+        color: white !important;
+    }
+
+    .anchor {
+        width: 0;
+        height: 0;
+        position: relative;
+        top: -112px;
+    }
+
+    /* CADASTRO */
+
+    .container-dadoscadastrais {
+        background-color: #f1f1f1;
+        border-radius: 10px;
+        padding: 7px;
+    }
+
+    .content-cadastro ul.tabs-cadastro {
+        background-color: #c9c9c9;
+        margin-top: 0;
+        border-radius: 10px;
+        padding: 15px 0;
+    }
+
+    .content-cadastro ul {
+        padding-left: 0;
+    }
+
+    .content-cadastro .tab_dadoscadastrais {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        font-size: 18px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+
+    /*.content-cadastro .tab_dadoscadastrais:hover,
+.content-cadastro .tab_dadoscadastrais .active{
+    color: #6baf52;
+}*/
+
+    .content-cadastro .tabs-cadastro li.active a, .content-cadastro .tabs-cadastro li a:hover {
+        color: #6baf52 !important;
+    }
+
+    .content-cadastro .nav-tabs.nav-justified li a {
+        border: none !important;
+        background: none !important;
+    }
+
+    .content-cadastro .tab_dadoscadastrais i {
+        margin-right: 10px;
+    }
+
+    ul.menu_cadastro li a {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        font-size: 18px;
+        color: #2e2e2e;
+        text-align: center;
+        list-style: none;
+        padding: 10px 0;
+        border: 1px solid #818181;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        float: left;
+        width: 100%;
+    }
+
+    ul.menu_cadastro li {
+        list-style: none;
+    }
+
+        ul.menu_cadastro li a {
+            color: #2e2e2e;
+        }
+
+            ul.menu_cadastro li a:hover,  ul.menu_cadastro li a.selected {
+                text-decoration: none;
+                color: #6baf52;
+            }
+
+    .content-cadastro .row {
+        margin: 30px 0;
+    }
+
+    .container_btn-confirmar {
+        text-align: right;
+    }
+
+    .content-cadastro .btn-confirmar {
+        font-family: "calibri-bold";
+        font-size: 16px;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 55px;
+        margin-top: 15px;
+    }
+
+    .btn_escolherfoto {
+        float: left;
+        width: 85px;
+        height: 85px;
+        border: 1px solid #969696;
+        border-radius: 100px;
+        background-image: url(../images/main/bg_escolherfoto.png);
+        background-repeat: no-repeat;
+        background-position-x: 4px;
+        background-position-y: 4px;
+    }
+
+    span.dado_usuario_titulo, span.dado_usuario, .content-cadastro input, .content-cadastro select, .checkbox {
+        font-family: "calibri-light";
+        font-size: 17px;
+        width: 100%;
+        float: left;
+    }
+
+    input.checkbox_recebernotificacoes {
+        width: auto;
+        float: left;
+        height: auto !important;
+    }
+
+    input.checkbox_recebernotificacoes {
+        display: none;
+    }
+
+        input.checkbox_recebernotificacoes + label {
+            display: inline-block;
+            width: 37px;
+            height: 20px;
+            position: relative;
+            margin-right: 10px;
+        }
+
+            input.checkbox_recebernotificacoes + label::after {
+                content: "";
+                display: block;
+                width: 37px;
+                height: 20px;
+                top: 2px;
+                left: 2px;
+                position: absolute;
+            }
+
+            input.checkbox_recebernotificacoes + label::after {
+                background-image: url("../images/main/checkbox_notifica_off.jpg");
+                /*background-image: url("../images/main/checkbox_notifica_on.jpg");*/
+            }
+
+        input.checkbox_recebernotificacoes:checked + label::after {
+            background-image: url("../images/main/checkbox_notifica_on.jpg");
+        }
+
+    .content-cadastro label {
+        font-family: "calibri-light";
+        font-size: 17px;
+        float: left;
+    }
+
+    span.dado_usuario_titulo {
+        color: #6baf52;
+    }
+
+    span.dado_usuario, .content-cadastro input, .content-cadastro select, .content-cadastro input::placeholder, .content-cadastro select::placeholder {
+        color: #2e2e2e;
+    }
+
+    .content-cadastro input, .content-cadastro select {
+        height: 40px;
+        border-radius: 0;
+        border-color: #969696;
+    }
+
+    .content-cadastro button.facebook {
+        font-family: "Calibri";
+        background-color: #23599b;
+        border-color: #2e6da4;
+        text-transform: none;
+        position: relative;
+        padding-left: 38px;
+    }
+
+        .content-cadastro button.facebook i {
+            display: inline-block;
+            border-right: 2px white solid;
+            position: absolute;
+            left: 0px;
+            top: -1px;
+            width: 38px;
+            height: 41px;
+            line-height: 40px;
+        }
+
+
+    /* DÚVIDAS */
+    .content-duvidas h4 {
+        margin-bottom: 30px !important;
+    }
+
+
+    /* Style the buttons that are used to open and close the accordion panel */
+.accordion-duvidas {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    position: relative;
+    padding-right: 30px;
+    transition: 0.4s;
+}
+
+        .accordion-duvidas .active, .accordion-duvidas:hover {
+            background-color: #cecaca;
+        }
+
+    .content-duvidas .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        margin-bottom: 0;
+    }
+
+    .panel p {
+        margin: 20px 0;
+    }
+
+    .accordion-duvidas {
+        font-family: calibri-bold;
+    }
+
+        .accordion-duvidas:after {
+            font-family: Font Awesome\ 5 Free;
+            content: "\f107";
+            font-size: 13px;
+            color: #777;
+            float: right;
+            margin-left: 5px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            font-weight: 900;
+            transform: translate(0, -50%);
+        }
+
+    .content-duvidas .active:after {
+        font-family: Font Awesome\ 5 Free;
+        content: "\f106";
+    }
+
+    .content-duvidas .mais-infos {
+        margin-top: 30px;
+        background-color: #679955;
+        color: #FFF;
+        padding: 20px 0;
+    }
+
+        .content-duvidas .mais-infos a {
+            color: #FFF;
+            font-family: "calibri-bold";
+        }
+
+    .content-duvidas .btn {
+        background-color: #6baf52;
+        font-family: "calibri-bold";
+        font-size: 18px;
+        color: #fff;
+        text-transform: uppercase;
+        border-radius: 0;
+        padding: 10px 40px;
+        margin-top: 40px;
+    }
+
+    @media (max-width: 768px){
+        .container-dadoscadastrais ul > div {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 479px) {
+        .content-duvidas h4 {
+            font-size: 28px !important;
+            text-align: left !important;
+        }
+
+        .content-duvidas .btn {
+            padding: 5px 10px;
+        }
+    }
+
+    #slider_loterias .col-xs-12.padding-top {
+        padding-top: 15px;
+    }
+
+    #slider_loterias .row.align-bottom {
+        position: absolute;
+        width: 100%;
+        bottom: 20px;
+    }
+
+    /*
+    Finalizar Pagamento
+    */
+    .content-finalizar .text-center {
+        text-align: center;
+    }
+
+    .content-finalizar .text-left {
+        text-align: left;
+    }
+
+    .content-finalizar .text-right {
+        text-align: right;
+    }
+
+    .content-finalizar .font-medium {
+        font-size: 18px;
+    }
+
+    .content-finalizar .padding-top {
+        padding-top: 15px;
+    }
+
+    .content-finalizar .btn {
+        height: 40px;
+        width: 302px;
+        max-width: 100%;
+        font-size: 20px;
+        line-height: 25px;
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .content-finalizar .text-red {
+        color: #c51813 !important
+    }
+
+    .content-finalizar small {
+        font-size: 14px;
+    }
+
+    @media (max-width:768px) {
+        .content-finalizar .btn-indique {
+            text-align: center !important;
+        }
+
+        .content-finalizar .btn-depoimento {
+            text-align: center;
+            margin-top: 15px !important;
+        }
+    }
+
+    .content-finalizar .text-red {
+        color: #c51813 !important
+    }
+
+    .content-finalizar small {
+        font-size: 14px;
+    }
+    .noticia_container .cover-float:after{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to top,#0a0a0a 0,rgba(10,10,10,0) 70%);
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    
+    .btn-jogar-left{
+        margin-top: 3px !important;
+    }
+    .far.fa-file{
+        cursor: pointer;
+    }
+    .fas.fa-info-circle{
+        cursor: pointer;
+    }
+    .g-recaptcha > div{
+        margin: 25px auto 5px auto;
+    }
+    .text-left-important{
+        text-align: left !important;
+    }
+    .col-xs-12.btn-esvaziar 
+    {
+        text-align: right;
+    }
+    @media (max-width:768px) {
+        .col-xs-12.btn-esvaziar{
+            text-align: center;
+        }
+    }
+    .col-xs-12.btn-esvaziar a {
+        position: relative;
+        top: -5px;
+    }
+    .no-margin{
+        margin: 0 !important;
+    }
+    #transfbancaria ul li.selected {
+        border: 3px solid #6baf52;
+        padding: 0;
+        border-radius: 11px;
+    }
+    .footer-bar a {
+        color: white;
+    }
+    .container-dadoscadastrais li a {
+        cursor: pointer;
+    }

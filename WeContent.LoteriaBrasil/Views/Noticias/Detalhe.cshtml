@@ -1,0 +1,82 @@
+@model dynamic
+@{
+    ViewData["Title"] = Model.Titulo + " | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="@(Model.Titulo) | Loteria Brasil" />
+    <meta property="og:image" content="@(Model.Imagem)" />
+    <meta property="og:description" content="Veja no Loteria Brasil as principais not&#237;cias sobre as principais loterias do Brasil. Curiosidades, pr&#234;mios acumulados, pr&#243;ximos sorteios e tudo sobre a sua loteria favorita!" />
+}
+
+@Html.Partial("_StaticBanner", "top-banner")
+
+
+<section class="content-noticia" data-vue="NoticiasDetalhe">
+    <div class="container" v-if="destaque" v-bind:class="destaque.class">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="color">{{destaque.Titulo}}</h2>
+                        <div class="noticia-data">
+                            <span>{{destaque.DataDaPublicacao.format("dd/MM/yyyy")}}</span> -
+                            <span>{{destaque.DataDaPublicacao.format("HH:mm")}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img v-bind:src="destaque.Imagem" class="img-responsive center-block" alt="">
+                    </div>
+                </div>
+                <div class="row container_noticia-sections">
+                    <div class="col-md-12" v-html="destaque.TextoDoConteudo"></div>
+                </div>
+                <div class="row container_noticia-sections">
+                    <div class="col-md-7 col-md-offset-3">
+                        <ul class="menu_compartilha-noticia list-inline">
+                            <span>compartilhar:</span>
+                            <li>
+                                <a href="#">
+                                    <img src="/images/main/compartilha_noticia_fcb.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/images/main/compartilha_noticia_twitter.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/images/main/compartilha_noticia_email.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row container_noticia-sections">
+                    <div class="col-md-12 aposte-agora">
+                        <p>Aposte agora na {{destaque.Nome}} sem sair de casa!</p>
+                        <a v-bind:href="destaque.Url" class="btn btn-primary btn-apostar btn-lg bg bg-hover">aposte agora</a>
+                    </div>
+                </div>
+                <div class="row container_veja-tambem">
+                    <div class="col-md-12">
+                        <p class="noticia_veja-tambem color">veja também</p>
+                        <div class="col-sm-6 col-md-3" v-for="noticia in noticias">
+                            <div class="noticia_item">
+                                <img v-bind:src="noticia.Imagem" class="img-responsive center-block" alt="">
+                                <div class="">
+                                    <p class="noticia_title">{{noticia.Titulo}}</p>
+                                    <a v-bind:href="noticia.Url" class="btn btn-success center-block bg bg-hover">ler mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

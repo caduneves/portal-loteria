@@ -1,0 +1,96 @@
+.message.ver-jogo .modal {
+    top: 30px;
+    height: calc(100% - 60px);
+    padding: 0px;
+}
+.message.ver-jogo .modal .title {
+    font-size: 28px;
+    font-weight: bold;
+}
+.message.ver-jogo .modal div{
+    padding: 0px;
+}
+.message.ver-jogo .modal .text-white {
+    color: white;
+}
+.message.ver-jogo .modal .text-left {
+    text-align: left;
+    width: 49%;
+    display: inline-block;
+    padding-left: 15px;
+}
+.message.ver-jogo .modal .text-right {
+    text-align: right;
+    width: 49%;
+    display: inline-block;
+    padding-right: 15px;
+}
+.message.ver-jogo .modal .description {
+    text-align: justify;
+    margin-top: 10px;
+    padding: 0px 15px;
+    display: block;
+}
+.message.ver-jogo .modal .wrapper {
+    overflow-y: auto;
+    height: calc(100vh - 120px);
+    overflow-x: hidden;
+}
+.message.ver-jogo .modal .cards .card {
+    padding-bottom: 20px;
+}
+.message.ver-jogo .modal .cards .card .dozen {
+    display: inline-block;
+    min-width: 24px;
+    height: 24px;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    line-height: 22px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 3px;
+    color: #4a4a4a;
+    padding: 0 3px;
+    margin-right: 5px;
+    margin-top: 5px;
+    text-align: center;
+}
+.message.ver-jogo .modal .cards {
+    text-align: left;
+    margin-left: 15px;
+}
+
+.message.ver-jogo .cards-menu {
+    text-align: left;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+.message.ver-jogo .cards-menu span {
+    display: inline-block;
+}
+.message.ver-jogo span.arrow-left, 
+.message.ver-jogo span.arrow-right{
+    cursor: pointer;
+    line-height: 40px;
+}
+.message.ver-jogo span.arrow-left {
+    margin-right: 10px;
+}
+.message.ver-jogo span.arrow-right {
+    margin-left: 10px;
+}
+.message.ver-jogo .right{
+    text-align: right;
+}
+.message.ver-jogo .text-center{
+    text-align: center;
+    padding: 0px;
+}
+.message.ver-jogo .cards img{
+    max-width: 100%;
+    max-height: calc(100vh - 200px);
+}
+.message.ver-jogo .modal .cards.comprovantes {
+    display: table;
+    margin: 3px auto;
+}

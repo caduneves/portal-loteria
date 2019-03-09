@@ -1,0 +1,270 @@
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="color"> opções para fazer sua aposta</h4>
+            <p class="instrucoes text-center">Você pode apostar on-line com seus palpites na Loteca, como se estivesse em uma casa lotérica. Escolha seus palpites e boa sorte! Atenção: O horário limite para apostar com seus palpites no dia da partida de futebol é as 9h (horário de Brasília).</p>
+            <div class="row">
+                <h5 class="color">escolha seus palpites</h5>
+            </div>
+        </div>
+    </div>
+    <div class="row container-table_loteca_lotogol">
+        <div class="col-md-6">
+            <table class="table table-responsive table-loteca">
+              
+                <tr v-for="i in 7">
+                    <td class="loteca-coluna1">
+                        <p>{{i}}-</p>
+                    </td>
+                    <td class="loteca-coluna2">
+                        <p>{{loteria.getTimeDaCasaLoteca(i-1)}}</p>
+                    </td>
+                    <td class="loteca-coluna3">
+                        <input type="checkbox" v-bind:id="`l${i}_01`" v-model="apostar.game(loteria, 0).isLotecaSelected(i-1, 0)">
+                        <label v-bind:for="`l${i}_01`" v-on:click="apostar.toogleLoteca(loteria, i-1, 0)"></label>
+                        <input type="checkbox" v-bind:id="`l${i}_02`" v-model="apostar.game(loteria, 0).isLotecaSelected(i-1, 1)">
+                        <label v-bind:for="`l${i}_02`" v-on:click="apostar.toogleLoteca(loteria, i-1, 1)"></label>
+                        <input type="checkbox" v-bind:id="`l${i}_03`" v-model="apostar.game(loteria, 0).isLotecaSelected(i-1, 2)">
+                        <label v-bind:for="`l${i}_03`" v-on:click="apostar.toogleLoteca(loteria, i-1, 2)"></label>
+                    </td>
+                    <td class="loteca-coluna4">
+                        <p>{{loteria.getVisitanteLoteca(i-1)}}</p>
+                    </td>
+                    <td class="loteca-coluna5">
+                        <p>{{apostar.game(loteria, 0).lotecaLineText(i-1)}}</p>
+                    </td>
+                </tr>
+              
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-responsive table-loteca">
+                <tr v-for="i in 7">
+                    <td class="loteca-coluna1">
+                          <p>{{i+7}}-</p>
+                    </td>
+                    <td class="loteca-coluna2">
+                       <p>{{loteria.getTimeDaCasaLoteca(i+6)}}</p>
+                    </td>
+                    <td class="loteca-coluna3">
+                       <input type="checkbox" v-bind:id="`l${i+7}_01`"  v-model="apostar.game(loteria, 0).isLotecaSelected(i+6, 0)"> 
+                        <label v-bind:for="`l${i+7}_01`" v-on:click="apostar.toogleLoteca(loteria, i+6, 0)"></label>
+                        <input type="checkbox" v-bind:id="`l${i+7}_02`" v-model="apostar.game(loteria, 0).isLotecaSelected(i+6, 1)">
+                        <label v-bind:for="`l${i+7}_02`" v-on:click="apostar.toogleLoteca(loteria, i+6, 1)"></label>
+                        <input type="checkbox" v-bind:id="`l${i+7}_03`" v-model="apostar.game(loteria, 0).isLotecaSelected(i+6, 2)">
+                        <label v-bind:for="`l${i+7}_03`" v-on:click="apostar.toogleLoteca(loteria, i+6, 2)"></label>
+                    </td>
+                    <td class="loteca-coluna4">
+                        <p>{{loteria.getVisitanteLoteca(i+6)}}</p>
+                    </td>
+                    <td class="loteca-coluna5">
+                        <p>{{apostar.game(loteria, 0).lotecaLineText(i+6)}}</p>
+                    </td>
+                </tr>
+               
+            </table>
+        </div>
+    </div>
+     <div class="row container-table_loteca_lotogol">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 container-loteca-results">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <input type="text" class="result" readonly="readonly" v-bind:value="apostar.game(loteria, 0).lotecaTotal('Seco')">
+                <p>secos</p>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <input type="text" class="result" readonly="readonly" v-bind:value="apostar.game(loteria, 0).lotecaTotal('Duplo')">
+                <p>duplos</p>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <input type="text" class="result" readonly="readonly" v-bind:value="apostar.game(loteria, 0).lotecaTotal('Triplo')">
+                <p>triplos</p>
+            </div>
+        </div>
+    </div>
+    <div class="row container-table_loteca_lotogol">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-4 col-md-offset-1">
+                <button type="button" class="btn btn_limpar-aposta bg bg-hover" v-on:click="apostar.cleanGame(loteria, 0)">limpar
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn_incluir-aposta bg bg-hover" v-on:click="apostar.add(loteria, 0)">incluir aposta
+                </button>
+            </div>
+        </div>
+    </div>
+   
+    <div class="row hidden">
+        <div class="col-md-12">
+            <div class="container-outras_apostas">
+                <div class="block block-gameresume-loteca block-gameresume has-items is-affix-mobile">
+
+                    <header class="block-header">
+                        <div class="col-sm-12 col-md-12 container-total_aposta"><span class="qtde_aposta"> Simples - 01 Aposta </span> <b class="valor_aposta color">R$ 3,00</b> <i class="delete-game fas fa-trash-alt"></i></div>
+
+                    </header>
+                    <div class="block-content">
+                        <div class="list">
+                            <div class="scroller mCustomScrollbar _mCS_1 mCS_no_scrollbar">
+                                <div id="mCSB_1" class="mCustomScrollBox mCS-rounded-dark mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
+                                    <div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                        <div class="list-content list-content-loteca">
+                                            <div class="list-item animated" data-concurso="797" data-loteria="6" data-val="3" data-cartao="1">
+                                                <div class="column col-md-8">
+                                                    <ul class="result-loteca" data-dezenas="43222222212442">
+                                                        <li data-markvalue="4">
+                                                            <div>1</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="3">
+                                                            <div>2</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="2">
+                                                            <div>3</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="2">
+                                                            <div>4</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="2">
+                                                            <div>5</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="2">
+                                                            <div>6</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="2">
+                                                            <div>7</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="2">
+                                                            <div>8</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="2">
+                                                            <div>9</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="1">
+                                                            <div>10</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="2">
+                                                            <div>11</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="4">
+                                                            <div>12</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="4">
+                                                            <div>13</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-markvalue="2">
+                                                            <div>14</div>
+                                                            <div class="marks">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="column col-md-2 text-center">
+                                                    <ul class="result-loteca-total" data-tipo="">
+                                                        <li>
+                                                            13
+                                                            <div>S</div>
+                                                        </li>
+                                                        <li>
+                                                            1
+                                                            <div>D</div>
+                                                        </li>
+                                                        <li>
+                                                            0
+                                                            <div>T</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="column col-md-2">
+                                                    <span class="total_aposta pull-right color">R$ 3,00</span>
+                                                </div>
+                                                <div class="col-md-12"><button type="button" class="btn btn-success btn_finalizar-compra pull-right">finalizar compra</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-rounded-dark mCSB_scrollTools_vertical" style="display: none;">
+                                        <div class="mCSB_draggerContainer">
+                                            <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 49px; top: 0px;">
+                                                <div class="mCSB_dragger_bar"></div>
+                                            </div>
+                                            <div class="mCSB_draggerRail"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

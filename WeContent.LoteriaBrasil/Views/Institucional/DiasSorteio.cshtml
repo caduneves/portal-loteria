@@ -1,0 +1,206 @@
+@{
+    ViewData["Title"] = "Dias de Sorteio das Loterias | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Dias de Sorteio das Loterias | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Confira no Loteria Brasil Online datas de aposta, dias e hor&#225;rios dos sorteios e n&#227;o perca nenhuma oportunidade de jogar nas principais loterias do pa&#237;s!" />
+}
+@Html.Partial("_StaticBanner", "top-banner")
+
+<section class="content-institucional">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="row">
+                        <h1 class="title-h1">dias de sorteio</h1>
+                        <p class="text-center">Confira abaixo todas as datas e horários dos próximos sorteios de todas as loterias disponíveis no Loteria Brasil e não perca nenhum resultado!</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <ul class="nav nav-pills nav-justified nav-institucional">
+                        <li>
+                            <a href="/quem-somos">quem somos</a>
+                        </li>
+                        <li>
+                            <a href="/como-funciona">como funciona</a>
+                        </li>
+                        <li class="active">
+                            <a href="/sobre-sorteios">dias de sorteio</a>
+                        </li>
+                        <li>
+                            <a href="/como-pagar">como pagar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <table class="table table-responsive table-fixed">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Segunda</th>
+                                        <th>Terça</th>
+                                        <th>Quarta</th>
+                                        <th>Quinta</th>
+                                        <th>Sexta</th>
+                                        <th>Sábado</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="mega-sena color">mega-sena</th>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>
+                                            <a type="button" class="btn btn-success btn-apostar" href="/mega-sena">Apostar</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="dupla-sena color">dupla-sena</th>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>
+                                            <a type="button" class="btn btn-success btn-apostar" href="/dupla-sena">Apostar</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="lotomania color">lotomania</th>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>
+                                            <a type="button" class="btn btn-success btn-apostar" href="/lotomania">Apostar</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="quina color">quina</th>
+                                        <td>20:00</td>
+                                        <td>20:00</td>
+                                        <td>20:00</td>
+                                        <td>20:00</td>
+                                        <td>20:00</td>
+                                        <td>20:00</td>
+                                        <td>
+                                            <a type="button" class="btn btn-success btn-apostar" href="/quina">Apostar</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="loteria-federal color">loteria federal</th>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>19:00</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>
+                                            <a type="button" class="btn btn-success btn-apostar" href="/loteria-federal">Apostar</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="loteca color">loteca</th>
+                                        <td>17:00</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>
+                                            <a type="button" class="btn btn-success btn-apostar" href="/loteca">Apostar</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="lotogol color">lotogol</th>
+                                        <td>17:00</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>17:00</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>
+                                            <a type="button" class="btn btn-success btn-apostar" href="/lotogol">Apostar</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="lotofacil color">lotofácil</th>
+
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>
+                                            <a type="button" class="btn btn-success btn-apostar" href="/lotofacil">Apostar</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="timemania color">timemania</th>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>
+                                            <a type="button" class="btn btn-success btn-apostar" href="/timemania">Apostar</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="diadesorte color">dia de sorte</th>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>--</td>
+                                        <td>20:00</td>
+                                        <td>
+                                            <a type="button" class="btn btn-success btn-apostar" href="/dia-de-sorte">Apostar</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel-body">
+                            <p>* Horário de Brasília</p>
+                        </div>
+                        <div class="panel-heading">onde são realizados?</div>
+                        <div class="panel-body">
+                            <p>
+                                Há mais de vinte anos o Caminhão da Sorte percorre as estradas de todo o Brasil, levando
+                                na carroceria os sonhos de milhões de brasileiros.
+                                <br>
+                                <br> Criado em 1980, com o objetivo de mostrar a transparência e a lisura das Loterias Federais,
+                                o Sistemclass="active"a Móvel de Sorteios da CAIXA conta hoje com duas unidades. Enquanto uma permanece
+                                na cidade sede dos sorteios, a outra viaja até a cidade onde serão realizados os próximos.
+                                <br>
+                                <br> O Caminhão da Sorte é equipado com o que há de mais moderno para os sorteios das Loterias
+                                da CAIXA, que são realizados com a participação da comunidade local.As pessoas do público
+                                acionam o dispositivo que libera as bolas numeradas. Todos os procedimentos são validados
+                                ali mesmo, pelo público presente, por auditoria popular.
+                                <br>
+                                <br> Uma unidade lotérica instalada no Caminhão da Sorte permite a realização de apostas
+                                até uma hora antes do início dos sorteios. É apostar e conferir a sorte de perto!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,616 @@
+.page-resultados .list-info {
+    border-top: 1px solid;
+    padding-top: 40px;
+}
+
+.page-resultados .list-info .info-section {
+    border-bottom: 1px solid #b6b6b6;
+    padding: 20px 15px;
+    padding-top: 0;
+}
+
+.page-resultados .list-info .info-section:last-child { border-bottom-width: 0; }
+
+.page-resultados .list-info .info-section .title {
+    text-align: left;
+    font-size: 21px;
+    margin: 20px auto;
+}
+
+.page-resultados .list-info .info-section .description {
+    color: #363636;
+    font-size: 17px;
+}
+
+
+.bigresult-container { 
+    padding: 40px 0;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1020px;
+}
+
+.bigresult-container .result-header h2 {
+    font-size: 38px;
+    margin: 0 auto;
+}
+
+.bigresult-container .wrap-gameresume,
+.bigresult-container .result-resume {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+}
+
+.bigresult-container .wrap-gameresume { 
+    max-width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 10px 0;
+}
+
+.bigresult-container .wrap-gameresume div,
+.bigresult-container .result-resume div { line-height: 1em; font-size: 13px; }
+
+.bigresult-container .wrap-gameresume div strong { font-size: 18px; line-height: 1.1em; }
+
+.bigresult-container .wrap-gameresume .separator {
+    display: inline-block;
+    width: 1px;
+    height: 26px;
+    background: rgba(0,0,0,.1);
+}
+
+.bigresult-container .wrap-gameresume > div,
+.bigresult-container .result-resume > div { 
+    padding : 8px 10px; 
+    border-radius: 5px;
+}
+
+.bigresult-container .result-container { 
+    width: 100%;
+    clear: both; 
+}
+
+.bigresult-container .result-container .table-federal {
+    width: 100%;
+    max-width: 300px;
+    margin: 30px auto;
+}
+
+.bigresult-container .result-container .table-federal th { border-top-width: 0; }
+
+.bigresult-container .result-container .table-federal .contest {
+    font-family: "calibri-bold";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    background: rgba(0,0,0,.1);
+    text-align: center;
+}
+
+.bigresult-container .result-container .table-federal .result {
+    font-family: 'Fredoka One', sans-serif;
+    display: inline-block;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 24px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 100px;
+}
+
+
+.bigresult-container .result-container .table-lotogol,
+.bigresult-container .result-container .table-loteca {
+    width: 100%;
+    max-width: 815px;
+    margin: 30px auto;
+}
+
+.bigresult-container .result-container .table-loteca tr td {
+    vertical-align: middle;
+    border-bottom: 1px solid;
+}
+
+.bigresult-container .result-container .table-loteca tr:last-child td {
+    border-bottom-width: 0;
+}
+
+.bigresult-container .result-container .table-loteca tr td:nth-child(1) {
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 22px;
+    width: 50px;
+}
+
+.bigresult-container .result-container .table-loteca tr td:nth-child(2) p,
+.bigresult-container .result-container .table-loteca tr td:last-child p {
+    margin: 0;
+    display: block;
+    font-size: 16px;
+}
+
+.bigresult-container .result-container .table-loteca tr td:last-child, 
+.bigresult-container .result-container .table-loteca tr td:nth-child(2) {
+    width: 300px;
+}
+
+.bigresult-container .result-container .table-loteca tr td:nth-child(3),
+.bigresult-container .result-container .table-loteca tr td:nth-child(4),
+.bigresult-container .result-container .table-loteca tr td:nth-child(5) {
+    width: 32px;
+    padding: 3px;
+}
+
+.bigresult-container .table-lotogol tr td {
+    border-bottom: 1px solid;
+}
+
+.bigresult-container .table-lotogol tr:last-child td { border-bottom: 0; }
+
+.bigresult-container .table-lotogol tr td:first-child {
+    text-align: center;
+    width: 50px;
+    font-size: 22px;
+    font-family: "Fredoka One", sans-serif;
+}
+
+.bigresult-container .table-lotogol tr td p { margin: 0; }
+
+.bigresult-container .table-lotogol tr td { vertical-align: middle; }
+
+.bigresult-container .table-lotogol tr td:nth-child(3) {
+    width: 50%;
+    text-align: center;
+}
+
+.bigresult-container .table-lotogol tr td:nth-child(3) span {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.bigresult-container .table-lotogol ul {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.bigresult-container .table-lotogol ul li {
+    display: inline-block;
+}
+
+.bigresult-container .table-lotogol ul li div {
+    width: 26px;
+    height: 26px;
+    border: 1px solid;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.bigresult-container .table-lotogol ul li div.bg { color: white; }
+
+.bigresult-container .result-container .table-loteca tr td div {
+    background-color: #FFF;
+    border: 1px solid #ee363d;
+    border-radius: 50%;
+    display: inline-block;
+    font-family: "calibri-bold";
+    font-size: 14px;
+    font-weight: 600;
+    height: 25px;
+    line-height: 24px;
+    list-style: none;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    width: 25px;
+}
+
+.bigresult-container .result-container .table-loteca tr td div.bg {
+    color: white;
+}
+
+.bigresult-container .result-container .dozens {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto 15px auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+}
+
+.bigresult-container .result-container .dozens + .dozens { margin-top: 15px; }
+
+.bigresult-container .result-container .order-sorteio {
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.bigresult-container .result-container .order-sorteio + .dozens {
+    margin-top: 5px;
+}
+
+
+.bigresult-container .result-container .dozens li {
+    display: inline-block;
+    text-align: center;
+    margin: 3px;
+}
+
+.bigresult-container .result-container .dozens li.key {
+    font-size: 23px;
+}
+
+.bigresult-container .result-container .dozens li span {
+    display: block;
+    width: 46px;
+    height: 46px;
+    overflow: hidden;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 23px;
+    line-height: 46px;
+    color: white;
+    border-radius: 50%;
+}
+
+.bigresult-container .result-container .acumulado {
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    float: left;
+    margin: 0 auto 30px ;
+}
+
+.bigresult-container .wrap-table-ganhadores {
+    margin: 20px auto 40px;
+    width: 100%;
+}
+
+.bigresult-container .wrap-table-ganhadores th { font-size: 21px; border-top: 0; }
+.bigresult-container .wrap-table-ganhadores td { font-size: 18px; }
+
+
+.bigresult-container .wrap-final-resume {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.bigresult-container .wrap-final-resume .column.-estimativa {
+    width: 160px;
+    font-size: 13px;
+    line-height: 1em;
+}
+
+.bigresult-container .wrap-final-resume .column.-estimativa strong {
+    font-size: 21px;
+    margin-top: 15px;
+    display: block;
+}
+
+.bigresult-container .wrap-final-resume .column.-resume {
+    width: 340px;
+}
+
+.bigresult-container .wrap-final-resume .result-resume-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+.bigresult-container .wrap-final-resume .result-resume-footer div {
+    line-height: 1em;
+    font-size: 13px;
+}
+
+.bigresult-container .wrap-final-resume .result-resume-footer > div { padding: 8px 10px; }
+
+.bigresult-container .wrap-final-resume .btn {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    background: rgba(0,0,0,0);
+    transition: .2s all linear;
+}
+
+.bigresult-container .wrap-final-resume .btn:hover {
+    background: rgba(0,0,0,.1);
+}
+
+.page-resultados .wrap-allresults-list {
+    overflow: hidden;
+}
+
+.page-resultados .wrap-result-list .bigresult-container {
+    width: 100%;
+    padding-left: 320px;
+    max-width: 100%;
+}
+
+.page-resultados .wrap-menu-resultados {
+    position: relative;
+}
+
+.page-resultados .wrap-menu-resultados .menu_resultados {
+    position: absolute;
+    top: 0;
+    left: auto;
+    max-width: 300px;
+    width: 100%;
+    z-index: 99;
+    transform: translate(0, 40px);
+}
+
+.page-resultados .wrap-menu-resultados .menu_resultados.-fixed { 
+    position: fixed; 
+    transform: translate(0, 155px);
+}
+
+.bigresult-container .wrap-table-ganhadores .drop-wrap {
+    width: 100%;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+
+.bigresult-container .wrap-table-ganhadores .drop-wrap .drop-header {
+    cursor: pointer;
+    color: white;
+    padding: 10px 20px;
+    font-family: 'calibri-bold', sans-serif;
+}
+
+.bigresult-container .wrap-table-ganhadores .drop-wrap .drop-header span {
+    line-height: 30px;
+}
+.bigresult-container .wrap-table-ganhadores .drop-wrap .drop-header .fa {
+    float: right;
+    line-height: 1em;
+    height: 30px;
+    line-height: 30px;
+}
+
+.bigresult-container .wrap-table-ganhadores .drop-wrap .drop-content {
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: .2s all linear;
+    max-height: 0px;
+}
+
+.bigresult-container .wrap-table-ganhadores .drop-wrap .drop-inner {
+    padding: 15px;
+}
+
+.bigresult-container .wrap-table-ganhadores .drop-wrap.-active {
+    margin-bottom: 20px;
+}
+.bigresult-container .wrap-table-ganhadores .drop-wrap.-active .drop-content {
+    max-height: 400px; 
+}
+
+
+
+.bigresult-container .form-inline.filter {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.bigresult-container .form-inline.filter .form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;   
+}
+
+.bigresult-container .form-inline.filter .form-group .btn.bg {
+    color: white;
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    transition: .2s all linear;
+    border-radius: 5px;   
+}
+
+.bigresult-container .form-inline.filter .form-group .btn.bg:hover { opacity: .8; }
+
+
+.bigresult-container .form-inline.filter .wrap-input {
+    margin: 0 10px;
+    width: calc(100% - 100px);
+    border-radius: 5px;
+    overflow: hidden;
+    height: 40px;
+    border: 1px solid;   
+}
+
+.bigresult-container .form-inline.filter .wrap-input input {
+    display: block;
+    width: calc(100% - 50px);
+    float: left;
+    border: 0 !important;
+    height: 40px;
+}
+
+.bigresult-container .form-inline.filter .wrap-input .btn {
+    border-radius: 0;
+    width: 50px;
+    height: 40px;
+    background: whitesmoke;
+    font-size: 24px;
+    padding: 0 0;
+    line-height: 40px;
+}
+
+.bigresult-container .form-inline.filter .wrap-input .btn:hover { opacity: .8; }
+
+@media screen and (max-width: 1300px) {
+    .page-resultados .wrap-menu-resultados .menu_resultados {
+        width: 220px;
+    }
+
+    ul.menu_resultados li a {
+        margin-bottom: 10px;
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .page-resultados .wrap-result-list .bigresult-container {
+        padding-left: 240px;
+    }
+}
+
+
+@media screen and (max-width: 1090px) {
+    .bigresult-container .table-lotogol ul { display: block; }
+}
+
+@media screen and (max-width: 992px) {
+    .bigresult-container .result-header h2 { font-size: 28px; }
+    .bigresult-container .result-container .acumulado { font-size: 22px; }
+
+    .bigresult-container .result-container .dozens li span {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+    }
+
+    .bigresult-container .wrap-table-ganhadores th { font-size: 18px; }
+    .bigresult-container .wrap-table-ganhadores td { font-size: 16px; }
+
+    .bigresult-container .result-container .acumulado {
+        margin: 0 auto 15px;
+    }
+
+    .bigresult-container .wrap-gameresume .separator { display: none; }
+
+    .bigresult-container .wrap-gameresume {
+        flex-wrap: wrap;
+    }
+
+    .bigresult-container .wrap-gameresume > div {
+        width: 50%;
+    }
+
+    .bigresult-container .wrap-gameresume div strong {
+        font-size: 16px;
+    }
+
+    .page-resultados .wrap-menu-resultados .menu_resultados {
+        width: 150px;
+    }
+
+    .page-resultados .wrap-result-list .bigresult-container {
+        padding-left: 170px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-resultados .wrap-menu-resultados { display: none; }
+    .page-resultados .wrap-result-list .bigresult-container { padding-left: 0; }
+}
+
+@media screen and (max-width: 479px) {
+    .bigresult-container .wrap-gameresume div, .bigresult-container .result-resume div { font-size: 11px; }
+    .bigresult-container .wrap-gameresume div strong { font-size: 14px; }
+
+    .bigresult-container .wrap-gameresume > div { width: 100%; }
+
+    .bigresult-container .wrap-gameresume,
+    .bigresult-container .result-resume {
+        margin: 10px 0;
+        flex-wrap: wrap;
+    }
+
+    .bigresult-container .wrap-table-ganhadores {
+        margin: 10px auto 20px;
+    }
+
+    .bigresult-container .wrap-table-ganhadores th { font-size: 14px; }
+    .bigresult-container .wrap-table-ganhadores td { font-size: 11px; }
+
+    .bigresult-container .wrap-final-resume { 
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    .bigresult-container .wrap-final-resume .column.-estimativa {
+        margin-bottom: 15px;
+    }
+
+    .bigresult-container {
+        padding: 15px 0;
+    }
+
+    .page-resultados .list-info { padding-top: 15px; }
+
+    .page-resultados .list-info .info-section .title {
+        font-size: 16px;
+        margin: .5em 0;
+    }
+
+    .page-resultados .list-info .info-section .description {
+        color: #363636;
+        font-size: 12px;
+        line-height: 1.5em;
+    }
+
+    .bigresult-container .result-container .table-loteca tr td:nth-child(1) {
+        font-size: 18px;
+        width: 45px;
+    }
+
+    .bigresult-container .result-container .table-loteca tr td:nth-child(2) p,
+    .bigresult-container .result-container .table-loteca tr td:last-child p {
+        font-size: 12px;
+    }
+
+    .bigresult-container .result-container .table-loteca tr td div {
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+        line-height: 20px;
+        overflow: hidden;
+        float: left;
+    }
+
+    .bigresult-container .form-inline.filter .wrap-input input { width: calc(100% - 40px); }
+    .bigresult-container .form-inline.filter .wrap-input .btn { width: 40px; }
+}

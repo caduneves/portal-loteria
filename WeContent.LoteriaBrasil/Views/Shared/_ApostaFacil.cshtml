@@ -1,0 +1,42 @@
+<div class="message hidden aposta-facil" v-show="visible" data-vue="ApostaFacil">
+    <div class="background" v-on:click="close()"></div>
+    <div class="modal">
+        <div>
+            <p class="title">APOSTA FÁCIL</p>
+            <p class="subtitle">A maneira mais rápida de comprar no Loteria Brasil.</p>
+            <div class="steps">
+                <div class="step" v-if="step == 0">
+                    <p>Até quanto deseja apostar?</p>
+                    <input type="text" class="form-control value-input" placeholder="Informe um valor" aria-describedby="basic-addon1" v-model.lazy="value" v-money="money" v-on:keyup.enter="searchOptions"/>
+                    <button type="button" class="btn btn-success value-btn" v-on:click="searchOptions()">Ok</button>
+                </div>
+                <div v-if="step == 1" class="step">
+                    <p>Em qual loteria deseja apostar?</p>
+                    <select v-model="loteria" v-on:change="onLotteryChange()">
+                        <option v-for="option in options" v-bind:value="option.Codigo">{{option.Texto}}</option>
+                    </select>
+                    <button type="button" class="btn btn-success value-btn" v-on:click="next()">Ok</button>
+                </div>
+                <div v-if="step == 2" class="step">
+                    <p>Quer dividir o jogo com outra pessoa?</p>
+                    <select v-model="opcaoJogo">
+                        <option v-for="option in opcoesJogo()" v-bind:value="option.QuantidadeMaximaDeCotas">{{option.Texto}}</option>
+                    </select>
+                    <button type="button" class="btn btn-success value-btn" v-on:click="next()">Ok</button>
+                </div>
+                <div v-if="step == 3" class="step">
+                    <p>Gostaria de informar seus números da sorte?</p>
+                    <input class="dezena-sorte" type="tel" v-mask="'##'" v-model="dezenas[0]"/>
+                    <input class="dezena-sorte"type="tel" v-mask="'##'" v-model="dezenas[1]"/>
+                    <input class="dezena-sorte"type="tel" v-mask="'##'" v-model="dezenas[2]"/>
+                    <br/>
+                    <br/>
+                    <button type="button" class="btn btn-success" v-on:click="ok()">Comprar</button>
+                </div>
+            </div>
+           
+            
+        </div>
+        
+    </div>
+</div>

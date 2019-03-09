@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Cadastrado | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Cadastrado | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+<section id="login-cadastro" data-vue="Cadastrado" class="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12"></div>
+                    <div class="col-md-6 col-sm-12">
+                        <h1 class="title text-md-center text-sm-center">
+                            USUÁRIO CADASTRADO
+                        </h1>
+                        <form>
+
+                            <h3 class="subtitle text-md-center text-sm-center default-green">Bem vindo!</h3>
+                            <div class="form-group login-form">
+                                <div v-if="this.user.SituacaoCadastro != 'C'">O <b class="default-green">Loteria Brasil</b> agradece seu cadastro. Boa Sorte!</div>
+                                <div v-if="this.user.SituacaoCadastro != 'C'">Dentro de instantes você reberá um e-mail para que você confirme seu cadastro.<br />Somente após a confirmação do seu cadastro será possível fazer suas compras.<br /><span class="small"><b>Obs:</b> Dependendo do seu provedor o e-mail pode levar alguns minutos para chegar</span><br /><br /></div>
+                                <div v-if="this.user.SituacaoCadastro == 'C'">O <b class="default-green">Loteria Brasil</b> agradece seu cadastro e aguarda sua confirmação. Boa Sorte!</div>
+
+                                <button type="button" class="btn btn-success" v-on:click="back()" v-if="this.returnUrl">Finalizar Pagamento</button>
+                                <button type="button" class="btn btn-success" v-on:click="back()" v-if="!this.returnUrl">Ir para Apostas</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

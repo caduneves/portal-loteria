@@ -1,0 +1,182 @@
+.hero-whybet {
+    background: #ccc;
+    height: 236px;
+    width: 100%;
+    margin: 20px 0;
+    color: white;
+}
+
+.hero-whybet.mega-sena.bg-third { background-color: #b2b484 !important; }
+.hero-whybet.loteca.bg-third { background-color: #e97f83 !important; }
+
+.hero-whybet .container {
+    position: relative;
+    height: 236px;
+    padding: 0 40px;
+    padding-top: 22px;
+}
+
+.hero-whybet .icon {
+    position: relative;
+    width: 219px;
+    height: 189px;
+    background: #444;
+    float: left;
+    background: url(../images/porque-apostar/icon-quina.png) no-repeat;
+}
+
+.hero-whybet.mega-sena .icon { background-image: url(../images/porque-apostar/icon-mega-sena.png); }
+.hero-whybet.dupla-sena .icon { background-image: url(../images/porque-apostar/icon-dupla-sena.png); }
+.hero-whybet.lotomania .icon { background-image: url(../images/porque-apostar/icon-lotomania.png); }
+.hero-whybet.loteca .icon { background-image: url(../images/porque-apostar/icon-loteca.png); }
+.hero-whybet.lotogol .icon { background-image: url(../images/porque-apostar/icon-lotogol.png); }
+.hero-whybet.lotofacil .icon { background-image: url(../images/porque-apostar/icon-lotofacil.png); }
+.hero-whybet.timemania .icon { background-image: url(../images/porque-apostar/icon-timemania.png); }
+
+.hero-whybet.mega-sena .color { color: #5a5e0f !important; }
+.hero-whybet.loteria-federal .color { color: #062043 !important; }
+
+.hero-whybet .text {
+    position: relative;
+    width: 405px;
+    margin-left: 40px;
+    margin-top: 36px;
+    float: left;
+    font-family: 'Fredoka One', sans-serif;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.hero-whybet .text::after {
+    content: "";
+    display: inline-block;
+    width: 166px;
+    height: 70px;
+    background: #ccc;
+    position: absolute;
+    right: -64px;
+    bottom: 0;
+    background: url(../images/porque-apostar/arrow.png) no-repeat;
+}
+
+.hero-whybet .text .title {
+    font-size: 42px;
+    line-height: 1em;
+}
+
+.hero-whybet .text p {
+    font-size: 23px;
+}
+
+.hero-whybet .monitor {
+    width: 407px;
+    height: 240px;
+    overflow: hidden;
+    text-indent: -999px;
+    display: block;
+    float: right;
+    background: url(../images/porque-apostar/monitor.png) no-repeat center center;
+    position: relative;
+    top: -27px;
+    opacity: 1;
+    transition: .2s all linear;
+}
+
+.hero-whybet .monitor:hover { opacity: .8; }
+
+.hero-whybet.-default { background: #6baf52; }
+.hero-whybet.-default .title { font-size: 34px; line-height: 1.2em; }
+.hero-whybet.-default .title .color { color: #202020; }
+.hero-whybet.-default .icon { 
+    background-image: url(../images/porque-apostar/icon-default.png);
+    background-size: contain;
+}
+
+
+@media ( max-width: 1200px ){
+    .hero-whybet { height: 210px; }
+
+    .hero-whybet .container { height: 210px; }
+
+    .hero-whybet .icon {
+        width: 160px;
+        height: 143px;
+        background-size: cover;
+    }
+    .hero-whybet .text {
+        width: 326px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .hero-whybet .text::after {
+        width: 126px;
+        height: 54px;
+        background-size: cover;
+    }
+
+    .hero-whybet .text .title { font-size: 40px; }
+
+    .hero-whybet .monitor {
+        background-size: cover;
+        width: 364px;
+        height: 215px;
+    }
+
+    .hero-whybet.-default .title { font-size: 30px; }
+}
+
+@media screen and (max-width: 992px) {
+    .hero-whybet, 
+    .hero-whybet .container { height: auto; }
+    .hero-whybet .container { max-width: 640px; }
+    
+    .hero-whybet .text {
+        margin-left: 0;
+        padding-left: 20px;
+        width: calc(100% - 160px);
+        height: 125px;
+    }
+    
+    .hero-whybet .text .title {
+        max-width: 330px;
+    }
+
+    .hero-whybet .text::after { display: none; }
+    
+    .hero-whybet .monitor {
+        width: 100%;
+        background-size: contain;
+        top: auto;
+        float: left;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 586px) {
+    
+    .hero-whybet .container {
+        padding: 0 15px;
+    }
+
+    .hero-whybet .icon { display: none; }
+
+    .hero-whybet .text {
+        width: 100%;
+        max-width: initial;
+        padding: 0 0;
+        height: auto;
+        text-align: center;
+        font-size: 32px;
+    }
+    .hero-whybet.-default .title,
+    .hero-whybet .text .title {
+        max-width: initial;
+        font-size: 35px;
+    }
+
+    .hero-whybet .monitor {
+        padding-top: 60%;
+        height: 0;
+    }
+}

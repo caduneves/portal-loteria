@@ -1,0 +1,152 @@
+.wrap-great-rewards .header-bar {
+    width: 100%;
+    background: url(../images/bg-rewardsbar.jpg) #edad32 no-repeat center center;
+    padding: 29px 15px;
+    height: 128px;
+    text-align: center;
+}
+
+.wrap-great-rewards .header-bar h2 {
+    margin: 0 auto;
+    color: white;
+    line-height: 1;
+    font-size: 70px;
+    position: relative;
+    display: inline-block;
+}
+
+.wrap-great-rewards .header-bar h2::before,
+.wrap-great-rewards .header-bar h2::after {
+    content: "";
+    background: url(../images/coins-right.png) no-repeat;
+    width: 128px;
+    height: 157px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+    transform: translate(79%, -44%);
+    display: block;
+}
+
+.wrap-great-rewards .header-bar h2::before {
+    background-image: url(../images/coins-left.png);
+    background-repeat: no-repeat;
+    right: auto;
+    left: 0;
+    width: 86px;
+    height: 144px;
+    transform: translate(-100%, -50%);
+}
+
+.wrap-great-rewards .text-intro {
+    padding: 20px 0;
+    font-size: 21px;
+    text-align: center;
+}
+
+.wrap-great-rewards .text-intro p {
+    line-height: 1.2em;
+}
+
+.wrap-great-rewards .table-wrap  { overflow: auto; }
+
+.wrap-great-rewards .table-wrap table {
+    width: 100%;
+    max-width: 790px;
+    min-width: 540px;
+    margin: 0 auto;
+}
+
+.wrap-great-rewards .table-wrap table tr th {
+    font-size: 21px;
+    font-family: "Fredoka One", sans-serif;
+    text-align: center;
+    padding: 5px;
+    padding-bottom: 25px;
+}
+.wrap-great-rewards .table-wrap table tr td {
+    font-size: 17px;
+    text-align: center;
+    line-height: 1;
+    padding: 5px;
+}
+
+.wrap-great-rewards .table-wrap table tr td:nth-child(1) {
+    text-align: left;
+    width: 34px;
+}
+
+.wrap-great-rewards .table-wrap .ranking-bullet {
+    color: white;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 24px;
+    font-family: 'Fredoka One', sans-serif;
+}
+
+.wrap-great-rewards .footer-bar {
+    width: 100%;
+    max-width: 790px;
+    margin: 20px auto;
+    text-align: right;
+    float: none;
+}
+
+.wrap-great-rewards .footer-bar a {
+    font-family: 'Fredoka One', sans-serif;
+    display: inline-block;
+    border-radius: 3px;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white;
+    padding: 0 20px;
+    opacity: 1;
+    transition: 2s all linear;
+}
+
+.wrap-great-rewards .footer-bar a:hover { opacity: .8; text-decoration: none; }
+
+@media screen and (max-width: 992px) {
+    .wrap-great-rewards .header-bar { height: 100px; }
+    .wrap-great-rewards .header-bar h2 { font-size: 50px; }
+    .wrap-great-rewards .text-intro { font-size: 18px; }
+    .wrap-great-rewards .table-wrap { border: 1px solid whitesmoke; }
+    .wrap-great-rewards .table-wrap table tr th { font-size: 18px; }
+}
+
+@media screen and (max-width: 479px) {
+    .wrap-great-rewards .header-bar {
+        padding: 20px 15px;
+        height: 70px;
+     }
+    .wrap-great-rewards .header-bar h2 { font-size: 36px; }
+
+    .wrap-great-rewards .header-bar h2::before,
+    .wrap-great-rewards .header-bar h2::after {
+        display: none;
+    }
+
+    .wrap-great-rewards .text-intro {
+        padding: 15px 0;
+        font-size: 12px;
+    }
+
+    .wrap-great-rewards .table-wrap table tr th {
+        font-size: 14px;
+        padding: 3px;
+        padding-bottom: 10px;
+    }
+
+    .wrap-great-rewards .table-wrap table tr td {
+        padding: 3px;
+        font-size: 12px;
+    }
+    
+}

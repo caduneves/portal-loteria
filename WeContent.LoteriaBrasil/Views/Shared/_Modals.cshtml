@@ -1,0 +1,20 @@
+
+@Html.Partial("_ApostaFacil.cshtml")
+@Html.Partial("_VerJogo.cshtml")
+@Html.Partial("_VerComprovante.cshtml")
+<div class="message hidden" v-show="visible" data-vue="Message">
+    <div class="background" v-on:click="cancel()"></div>
+    <div class="modal">
+        <div><span v-html="messageText"></span></div>
+        <button type="button" class="btn btn-success" v-on:click="ok()">{{confirmText}}</button>
+        <button type="button" class="btn btn-warning" v-on:click="cancel()" v-if="isConfirmation">{{cancelText}}</button>
+    </div>
+</div>
+<div class="loading hidden" v-show="visible" data-vue="Loading">
+    <div class="background"></div>
+    <div class="animation">
+        <svg height="50" width="50">
+            <circle cx="25" cy="25" r="20" fill-opacity="0"></circle>
+        </svg>
+    </div>
+</div>

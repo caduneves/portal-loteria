@@ -1,0 +1,92 @@
+@Html.Partial("_StaticBanner", "top-banner")
+
+@section metas{
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Extrato | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+
+<section class="content-cadastro">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_MenuMinhaConta")
+            <div class="col-xs-12 col-sm-12 col-md-9" data-vue="Saldo">
+                <div class="filters">
+                    <div class="left-table">
+                        <div class="row">
+                            <div class="col">Prêmios<br /><span class="value">{{saldo.Premiados.format("C2")}}</span></div>
+                            <div class="col">Créditos<br /><span class="value">{{saldo.Comprados.format("C2")}}</span></div>
+                            <div class="col">Saldo <br /><span class="value">{{saldo.Total.format("C2")}}</span></div>
+                        </div>
+                    </div>
+                    <span v-on:click="toogleFilter()">Filtros <i class="fas fa-filter"></i></span>
+                </div>
+                <div class="floating-filter" v-show="displayFilter">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <input type="text" v-model="dataInicial" v-mask="'##/##/####'">
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="text" v-model="dataFinal" v-mask="'##/##/####'">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <select v-model="tipoLancamento">
+                                <option value="">Lançamentos</option>
+                                <option value="bônus">Bônus</option>
+                                <option value="prêmio">Prêmio</option>
+                                <option value="aposta">Aposta</option>
+                                <option value="créditos">Créditos</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-success btn-full" v-on:click="filter()" />Filtrar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-dadoscadastrais minhas-compras">
+                    <div class="row header">
+                        <div class="col-xs-3">
+                            Data
+                        </div>
+                        <div class="col-xs-3">
+                            Lançamentos
+                        </div>
+                        <div class="col-xs-3">
+                            Valor
+                        </div>
+                        <div class="col-xs-3">
+                            Saldo
+                        </div>
+
+                    </div>
+                    <div class="row item empty" v-if="!saldo || !saldo.extrato || !saldo.extrato.length">
+                        Nenhum lançamento encontrado.
+                    </div>
+                    <div class="row item" v-for="item in saldo.extrato">
+                        <div class="col-xs-3">
+                            {{item.data.format("dd/MM/yyyy")}}
+                        </div>
+                        <div class="col-xs-3" v-bind:class=" item.tipo == 'P' || item.tipo == 'D' ? 'text-red' : '' ">
+                            {{item.descricao}}
+                        </div>
+                        <div class="col-xs-3" v-bind:class=" item.tipo == 'P' || item.tipo == 'D' ? 'text-red' : '' ">
+                            <span v-if="item.tipo == 'P' || item.tipo == 'D'">-</span> {{item.valor.format("C2")}}
+                        </div>
+                        <div class="col-xs-3" v-bind:class=" item.saldo  < 0 ? 'text-red' : '' ">
+                            {{item.saldo.format("C2")}}
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

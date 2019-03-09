@@ -1,0 +1,59 @@
+﻿ <section id="aposteaqui" class="home" data-vue="AposteAqui">
+    <div class="container-fluid">
+        <div class="row bg-cinza">
+            <div class="col-md-12">
+                <h2>
+                    faça sua aposta aqui
+                </h2>
+                <p class="center-text">
+                    Aqui você pode apostar em qualquer Loteria Oficial, usando seus números ou então pode contar com a nossa
+                    ajuda.
+                </p>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-md-12 bg-cinza nopadding">
+                <ul class="nav nav_loterias nav-tabs nav-justified">
+                   <li role="presentation"
+                       class="bg" 
+                       v-bind:class="[ apostar.isSelected(loteria) ? 'active' : '', loteria.class ]" 
+                       v-for="loteria in apostar.loterias"
+                       v-on:click="apostar.select(loteria)" >
+                         <img src="/images/main/icone_trevo.png" alt="" />
+                         <a v-bind:href="'#' + loteria.class" v-on:click="apostar.select(loteria)">{{ loteria.nome }}</a>
+                         <a v-bind:href="'#' + loteria.class" v-on:click="apostar.select(loteria)" class="mobile">{{ loteria.nome.replace("Loteria ", "Lot.") }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div v-bind:id="loteria.class" class="tab-pane fade in" v-bind:class="[ apostar.isSelected(loteria) ? 'active' : '', loteria.class ]" v-for="loteria in apostar.loterias">
+                @Html.Partial("Apostar.cshtml")
+                <div class="container container-fluid" v-if="apostar.isSelected(loteria) && loteria.hasBolao && apostar.boloesSelected.length">
+                    <div class="row row-tabela-aposteaqui">
+                        <h4 class="pull-left color">ou ainda escolha um de nossos bolões</h4>
+                        @Html.Partial("ListaBoloes.cshtml")
+                        <a v-if="apostar.countBoloes > apostar.boloesSelected.length" href="javascript:void(0)" v-on:click="apostar.expandBoloes(loteria)" class="btn_maisjogos pull-right">mais jogos</a>
+                        <a v-if="apostar.countBoloes == apostar.boloesSelected.length" href="javascript:void(0)" v-on:click="apostar.reduceBoloes(loteria)" class="btn_maisjogos pull-right">menos jogos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="message hidden" v-show="apostar.selectedCard">
+                    <div class="background" v-on:click="apostar.closeSelectedCard()"></div>
+                    <div class="dozen-modal modal" v-if="apostar.selectedCard">
+                        <div>
+                            <span v-for="dozen in apostar.selectedCard.split('-')[0].trim().split(' ')" class="unit">
+                                {{parseInt(dozen).format("00")}}
+                            </span>
+                            <span v-if="apostar.selectedCard.split('-')[1]" class="unit last">
+                            {{apostar.selectedCard.split('-')[1].trim()}}
+                            </span>
+                        </div>
+                    
+                        <button type="button" class="btn btn-success" v-on:click="apostar.closeSelectedCard()">Fechar</button>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</section> 

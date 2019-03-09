@@ -1,0 +1,49 @@
+<section>
+    <div class="container-fluid container-fluid-stats">
+        <div class="row">
+
+        <div class="col-md-6">
+            <div>
+                <h3 class="color text-center">Por ordem de dezena</h3>
+                <br>
+
+                <div class="table-responsive table-stats">
+                    <table class="table">
+                        <tr v-for="item in data[0]">
+                            <td class="text-center">{{item.dezena}}</td>
+                            <td style="min-width: 150px;">
+                                <div class="bar">
+                                    <div class="bar-inner bg" v-bind:style="{ width: item.porcentagem+'%', opacity: item.porcentagem/100 }"></div>
+                                </div>
+                            </td>
+                            <td class="text-center color"><strong>{{item.qtd}}</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div><!-- /.col -->
+
+        <div class="col-md-6">
+            <div>
+                <h3 class="color text-center">Por ordem de Sorteio</h3>
+                <br>
+
+                <div class="table-responsive table-stats">
+                    <table class="table">
+                        <tr v-for="item in data[1]">
+                            <td class="text-center">{{item.dezena}}</td>
+                            <td style="min-width: 150px;">
+                                <div class="bar">
+                                    <div class="bar-inner bg" v-bind:style="{ width: item.porcentagem+'%', opacity: item.porcentagem/100 }"></div>
+                                </div>
+                            </td>
+                            <td class="text-center color"><strong>{{item.qtd}}</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div><!-- /.col -->
+        </div>
+
+    </div><!-- /.container-fluid -->
+</section>

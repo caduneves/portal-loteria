@@ -1,0 +1,457 @@
+.wrap-hero-rewards {
+    width: 100%;
+    background: #ccc;
+    overflow: hidden;
+}
+
+.wrap-hero-rewards .column {
+    float: left;
+    height: 586px;
+    box-sizing: border-box;
+    padding: 15px 40px;
+    color: white;
+}
+
+.wrap-hero-rewards .hero-header {
+    max-width: 390px;
+    margin: 0 auto;
+}
+
+.wrap-hero-rewards .hero-header .title {
+    font-size: 36px;
+    line-height: 1em;
+    color: white;
+    font-family: 'Fredoka One', sans-serif;
+}
+
+.wrap-hero-rewards .hero-header p {
+    font-size: 21px;
+    text-align: center;
+        margin-bottom: 0;
+        line-height: 1.2em;
+}
+
+.wrap-hero-rewards .column.rewards { width: 500px; }
+.wrap-hero-rewards .column.history {
+    width: 50%;
+    height: 586px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    float: left;
+    text-align: center;
+}
+
+.wrap-hero-rewards .column.history .text {
+    margin: 0 auto;
+    max-width: 520px;
+    font-size: 24px;
+}
+
+.wrap-hero-rewards .column.history .title {
+    font-family: "insaniburger", sans-serif;
+    font-size: 36px;
+}
+
+.hero-history .description {
+    line-height: 1.2em;
+    margin: 14px 0;
+}
+
+.wrap-hero-rewards .numbers-list,
+.wrap-hero-rewards .price-list {
+    list-style: none;
+    padding: 0;
+    margin: 40px auto 20px;
+    width: 410px;
+}
+
+.wrap-hero-rewards .numbers-list {
+    width: 100%;
+    max-width: 710px;
+}
+
+.wrap-hero-rewards .numbers-list li {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 0;
+    display: block;
+}
+
+.wrap-hero-rewards .numbers-list .times {
+    line-height: 40px;
+    height: 40px;
+    display: block;
+    width: 100px;
+    float: left;
+    padding-left: 30px;
+}
+
+.wrap-hero-rewards .price-list .ranking {
+    color: white;
+    font-size: 21px;
+    font-family: 'Fredoka One', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    background: #444;
+    display: inline-block;
+    overflow: hidden;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.wrap-hero-rewards .price-list .price {
+    display: inline-block;
+    vertical-align: top;
+    height: 40px;
+    padding-left: 40px;
+    font-size: 30px;
+    font-family: 'Fredoka One', sans-serif;
+    line-height: 40px;
+}
+
+.wrap-hero-rewards .numbers-list .ranking {
+    font-family: 'Fredoka One', sans-serif;
+    width: 50px;
+    height: 40px;
+    display: block;
+    text-align: right;
+    font-size: 28px;
+    position: relative;
+    z-index: 1;
+    float: left;
+    padding-right: 10px;
+}
+
+.wrap-hero-rewards .numbers-list .bar {
+    height: 40px;
+    padding-left: 40px;
+    min-width: 3px;
+    background: #444;
+    display: block;
+    position: relative;
+    float: left;
+    z-index: 0;
+    max-width: calc(100% - 150px);
+}
+
+.wrap-hero-rewards .numbers-list .qty {
+    display: block;
+    font-family: 'Fredoka One', sans-serif;
+    min-width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    background: #444;
+    text-align: center;
+    font-size: 22px;
+    margin-left: -20px;
+    margin-right: -20px;
+    float: left;
+    position: relative;
+    z-index: 1;
+}
+
+.wrap-hero-rewards .hero-footer a {
+    font-family: 'Fredoka One', sans-serif;
+    display: block;
+    float: right;
+    font-size: 30px;
+    color: #444;
+    text-decoration: none;
+    opacity: 1;
+    transition: .2s all linear;
+}
+
+.wrap-hero-rewards .hero-footer a:hover { opacity: .6; }
+
+.wrap-hero-rewards .price-list li { margin-bottom: 20px;  }
+.wrap-hero-rewards .price-list li:last-child { margin-bottom: 0;  }
+.wrap-hero-rewards .column.numbers { width: calc(100% - 500px); }
+
+
+/* LOTOMANIA */
+.wrap-hero-rewards.lotomania .price-list .ranking { background: #563125; }
+.wrap-hero-rewards.lotomania .column.rewards { background: #c1694c; }
+.wrap-hero-rewards.lotomania .column.numbers { background: #cb9c8c; }
+.wrap-hero-rewards.lotomania .numbers-list .bar { background: #563125; }
+.wrap-hero-rewards.lotomania .numbers-list .qty { background: #c1694c; }
+.wrap-hero-rewards.lotomania .hero-footer a,
+.wrap-hero-rewards.lotomania .numbers-list .ranking,
+.wrap-hero-rewards.lotomania .numbers-list .times,
+.wrap-hero-rewards.lotomania .hero-header .title {
+    color: #563125;
+}
+
+/* MEGA-SENA */
+.wrap-hero-rewards.mega-sena .price-list .ranking { background: #434605; }
+.wrap-hero-rewards.mega-sena .column.rewards { background: #9fa43c; }
+.wrap-hero-rewards.mega-sena .column.numbers { background: #b2b484; }
+.wrap-hero-rewards.mega-sena .numbers-list .bar { background: #434605; }
+.wrap-hero-rewards.mega-sena .numbers-list .qty { background: #70724a; }
+.wrap-hero-rewards.mega-sena .hero-footer a,
+.wrap-hero-rewards.mega-sena .numbers-list .ranking,
+.wrap-hero-rewards.mega-sena .numbers-list .times,
+.wrap-hero-rewards.mega-sena .hero-header .title {
+    color: #434605;
+}
+
+/* DUPLA-SENA */
+.wrap-hero-rewards.dupla-sena .price-list .ranking { background: #35040b; }
+.wrap-hero-rewards.dupla-sena .column.rewards { background: #af1129; }
+.wrap-hero-rewards.dupla-sena .column.numbers { background: #f9c6cd; }
+.wrap-hero-rewards.dupla-sena .numbers-list .bar { background: #35040b; }
+.wrap-hero-rewards.dupla-sena .numbers-list .qty { background: #805057; }
+.wrap-hero-rewards.dupla-sena .hero-footer a,
+.wrap-hero-rewards.dupla-sena .numbers-list .ranking,
+.wrap-hero-rewards.dupla-sena .numbers-list .times,
+.wrap-hero-rewards.dupla-sena .hero-header .title {
+    color: #35040b;
+}
+
+/* QUINA */
+.wrap-hero-rewards.quina .price-list .ranking { background: #5174AD; }
+.wrap-hero-rewards.quina .column.rewards { background: #002966; }
+.wrap-hero-rewards.quina .column.numbers { background: #000f2a; }
+.wrap-hero-rewards.quina .numbers-list .bar { background: #5174AD; }
+.wrap-hero-rewards.quina .numbers-list .qty { background: #81aaef; }
+.wrap-hero-rewards.quina .hero-footer a,
+.wrap-hero-rewards.quina .numbers-list .ranking,
+.wrap-hero-rewards.quina .numbers-list .times,
+.wrap-hero-rewards.quina .hero-header .title {
+    color: #5174AD;
+}
+
+/* LOTOFACIl */
+.wrap-hero-rewards.lotofacil .price-list .ranking { background: #99209e; }
+.wrap-hero-rewards.lotofacil .column.rewards { background: #67045c; }
+.wrap-hero-rewards.lotofacil .column.numbers { background: #f2c9f4; }
+.wrap-hero-rewards.lotofacil .numbers-list .bar { background: #99209e; }
+.wrap-hero-rewards.lotofacil .numbers-list .qty { background: #99209e; }
+.wrap-hero-rewards.lotofacil .hero-footer a,
+.wrap-hero-rewards.lotofacil .numbers-list .ranking,
+.wrap-hero-rewards.lotofacil .numbers-list .times,
+.wrap-hero-rewards.lotofacil .hero-header .title {
+    color: #99209e;
+}
+
+/* QUINA */
+.wrap-hero-rewards.quina .price-list .ranking { background: #5174AD; }
+.wrap-hero-rewards.quina .column.rewards { background: #002966; }
+.wrap-hero-rewards.quina .column.numbers { background: #000f2a; }
+.wrap-hero-rewards.quina .numbers-list .bar { background: #5174AD; }
+.wrap-hero-rewards.quina .numbers-list .qty { background: #81aaef; }
+.wrap-hero-rewards.quina .hero-footer a,
+.wrap-hero-rewards.quina .numbers-list .ranking,
+.wrap-hero-rewards.quina .numbers-list .times,
+.wrap-hero-rewards.quina .hero-header .title {
+    color: #5174AD;
+}
+
+/* TIMEMANIA */
+.wrap-hero-rewards.timemania .price-list .ranking { background: #534409; }
+.wrap-hero-rewards.timemania .column.rewards { background: #d2a907; }
+.wrap-hero-rewards.timemania .column.numbers { background: #e4d9ac; }
+.wrap-hero-rewards.timemania .numbers-list .bar { background: #534409; }
+.wrap-hero-rewards.timemania .numbers-list .qty { background: #d2a907; }
+.wrap-hero-rewards.timemania .hero-footer a,
+.wrap-hero-rewards.timemania .numbers-list .ranking,
+.wrap-hero-rewards.timemania .numbers-list .times,
+.wrap-hero-rewards.timemania .hero-header .title {
+    color: #534409;
+}
+
+/* LOTECA */
+.wrap-hero-rewards.loteca .price-list .ranking { background: #ee363d; }
+.wrap-hero-rewards.loteca .column.rewards { 
+    width: 50%;
+    background: #ee363d;
+    color: white;
+}
+
+.wrap-hero-rewards.loteca .column.history {
+    background: #8b3f41;
+    color: white;
+}
+
+.wrap-hero-rewards.loteca .price-list .ranking {
+    background: #e97f83;
+    color: #8b3f41;
+}
+
+.wrap-hero-rewards.loteca .hero-footer a,
+.wrap-hero-rewards.loteca .hero-header .title { color: white; }
+
+/* LOTOGOL */
+.wrap-hero-rewards.lotogol .column.rewards { 
+    width: 50%;
+    background: #00a3c2;
+    color: white;
+}
+
+.wrap-hero-rewards.lotogol .column.history {
+    background: #004c62;
+    color: white;
+}
+
+.wrap-hero-rewards.lotogol .price-list .ranking {
+    background: #004c62;
+    color: white;
+}
+
+.wrap-hero-rewards.lotogol .hero-footer a  { color: #004c62; }
+.wrap-hero-rewards.lotogol .hero-header .title { color: white; }
+
+.wrap-hero-rewards.lotogol .column.rewards { 
+    width: 50%;
+    background: #00a3c2;
+    color: white;
+}
+
+/* FEDERAL */
+.wrap-hero-rewards.loteria-federal .column.rewards { 
+    width: 50%;
+    background: #055cef;
+    color: white;
+}
+
+.wrap-hero-rewards.loteria-federal .column.history {
+    background: #033585;
+    color: white;
+}
+
+.wrap-hero-rewards.loteria-federal .price-list .ranking {
+    background: #062043;
+    color: white;
+}
+
+.wrap-hero-rewards.loteria-federal .hero-footer a,
+.wrap-hero-rewards.loteria-federal .hero-header .title { color: white; }
+
+@media screen and (max-width: 992px) {
+
+    .wrap-hero-rewards .column {
+        padding: 10px 20px;
+    }
+
+    .wrap-hero-rewards .column.rewards,
+    .wrap-hero-rewards .column.numbers { width: 50%; }
+
+    .wrap-hero-rewards .numbers-list, 
+    .wrap-hero-rewards .price-list {
+        width: 100%;
+    }
+
+    .wrap-hero-rewards .hero-header .title {
+        font-size: 32px;
+    }
+
+    .wrap-hero-rewards .hero-header p {
+        font-size: 18px;
+    }
+
+    .wrap-hero-rewards .price-list .price { padding-left: 20px; }
+    
+    .wrap-hero-rewards .hero-footer { text-align: center; }
+
+    .wrap-hero-rewards .hero-footer a { float: none; }
+}
+
+@media screen and (max-width: 768px) {
+    .wrap-hero-rewards .hero-header,
+    .wrap-hero-rewards.loteca .column.rewards,
+    .wrap-hero-rewards.lotogol .column.rewards,
+    .wrap-hero-rewards .column.history,
+    .wrap-hero-rewards .column.rewards {
+        width: 100%;
+        max-width: initial;
+        height: auto;
+    }
+
+    .wrap-hero-rewards .column.history { padding: 20px; }
+
+    .wrap-hero-rewards .column.history .title,
+    .wrap-hero-rewards .hero-header .title { font-size: 22px; }
+    
+
+    .wrap-hero-rewards .column.history .description { 
+        font-size: 18px;
+        line-height: 1.2em;
+    }
+
+    .wrap-hero-rewards .column.history { height: auto; }
+    
+    .wrap-hero-rewards .price-list { 
+        max-width: 310px;
+        width: auto;
+        display: inline-block; 
+    }
+    .wrap-hero-rewards .numbers-list, 
+    .wrap-hero-rewards .price-list {
+        margin: 20px auto;
+    }
+    
+    .wrap-hero-rewards .column.numbers,
+    .wrap-hero-rewards .column.rewards {
+        height: auto;
+        width: 100%;
+    }
+
+    .wrap-hero-rewards .column.rewards {
+        text-align: center;
+    }
+
+    .wrap-hero-rewards .price-list .ranking {
+        width: 20px;
+        font-size: 12px;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+    }
+
+    .wrap-hero-rewards .price-list .price {
+        padding-left: 5px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 18px;
+    }
+
+    .wrap-hero-rewards .price-list li { margin-bottom: 10px; }
+    .wrap-hero-rewards .numbers-list .ranking {
+        width: 30px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+        padding-right: 5px;
+    }
+
+    .wrap-hero-rewards .numbers-list .bar {
+        max-width: calc(100% - 90px);
+        height: 20px;
+        padding-left: 20px;
+    }
+    .wrap-hero-rewards .numbers-list .qty {
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        border-radius: 0;
+        font-size: 12px;
+        min-width: 20px;
+    }
+
+    .wrap-hero-rewards .numbers-list .times {
+        height: 20px;
+        line-height: 20px;
+        padding-left: 10px;
+        font-size: 11px;
+        width: 60px;
+    }
+    
+    .wrap-hero-rewards .numbers-list li { height: 20px; }
+    .wrap-hero-rewards .hero-footer a { font-size: 16px; }
+
+}

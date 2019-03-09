@@ -1,0 +1,28 @@
+<div class="message hidden ver-jogo" v-show="visible" data-vue="VerComprovante">
+    <div class="background" v-on:click="close()"></div>
+    <div class="modal">
+        <div v-if="volante" v-bind:class="volante.class">
+            <div class="title color">{{volante.nomeLoteria}}</div>
+            <div class="text-white bg"><span class="text-left">{{volante.nomeGrupo}}</span> <span class="text-right">R$ {{volante.premio}}</span></div>
+            <div class="text-white bg-secondary"><span class="text-left">SORTEIO: {{volante.dataSorteio}}</span> <span class="text-right">CONCURSO: {{volante.numeroConcurso}}</span></div>
+            <div class="wrapper">
+                <div class="cards-menu row"  v-if="comprovante">
+                     <span class="col-xs-3">
+                        <span class="arrow-left" v-on:click="firstPage()">&lt;&lt;</span> 
+                        <span class="arrow-left" v-on:click="pageBack()">&lt;</span>
+                     </span>
+                     <span class="col-xs-6 text-center" v-if="totalApostas > 1"> <b>{{totalApostas}} Apostas</b> <br> Exibindo {{comprovante.CartaoInicial}} de {{comprovante.CartaoFinal}} apostas</span>
+                     <span class="col-xs-6 text-center" v-if="totalApostas <= 1"> <b>1 Aposta</b> <br> Exibindo 1 de 1 aposta</span>
+                     
+                     <span class="col-xs-3 right">
+                        <span class="arrow-right"  v-on:click="pageNext()">&gt;</span>
+                        <span class="arrow-right" v-on:click="lastPage()">&gt;&gt;</span>  
+                     </span>
+                </div>
+                <div class="cards comprovantes"  v-if="comprovante">
+                    <img v-bind:src="`data:image/gif;base64,${comprovante.imageBase64}`" alt="Comprovante"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Notícias e Curiosidades | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Not&#237;cias e Curiosidades | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}/images/main/logo.png")" />
+    <meta property="og:description" content="Veja no Loteria Brasil as principais not&#237;cias sobre as principais loterias do Brasil. Curiosidades, pr&#234;mios acumulados, pr&#243;ximos sorteios e tudo sobre a sua loteria favorita!" />
+}
+@Html.Partial("_StaticBanner", "top-banner")
+
+<section class="noticias_geral" data-vue="NoticiasGeral" data-sku="@(Model.Sku ?? -1)">
+    <section class="noticias_destaques">
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-8 col-md-8">
+                    <div class="noticia_container" v-on:click="go(destaque[0].Url)">
+                        <div class="cover-float">
+                            <img v-bind:src="destaque[0].Imagem" alt="" class="img-responsive">
+                        </div>
+                        <a class="detalhes-container" v-bind:href="destaque[0].Url">
+                            <p class="titulo-noticia">{{destaque[0].Titulo}}</p>
+                            <p class="data-noticia">{{destaque[0].DataDaPublicacao}}</p>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col col-sm-4 col-md-4" v-for="noticia in destaque.slice(1)">
+                    <div class="noticia_container" v-on:click="go(noticia.Url)">
+                        <div class="cover-float">
+                            <img v-bind:src="noticia.Imagem" alt="" class="img-responsive">
+                        </div>
+                        <a class="detalhes-container" v-bind:href="noticia.Url">
+                            <p class="titulo-noticia">{{noticia.Titulo}}</p>
+                            <p class="data-noticia">{{noticia.DataDaPublicacao}}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="noticias_ultimas">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 v-bind:class="classLoteria">
+                        últimas notícias <span v-if="nomeLoteria"> - {{nomeLoteria}}</span>
+                    </h4>
+                </div>
+                <div class="col col-sm-6 col-md-6" v-for="noticia in noticias.slice(0, 2)">
+                    <div class="noticia_container" v-on:click="go(noticia.Url)">
+                        <div class="cover-float">
+                            <img v-bind:src="noticia.Imagem" alt="" class="img-responsive">
+                        </div>
+                        <a class="detalhes-container" v-bind:href="noticia.Url">
+                            <p class="titulo-noticia">{{noticia.Titulo}}</p>
+                            <p class="data-noticia">{{noticia.DataDaPublicacao}}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 col-md-3" v-for="noticia in noticias.slice(2)">
+                    <div class="noticia_container" v-on:click="go(noticia.Url)">
+                        <div class="cover-float">
+                            <img v-bind:src="noticia.Imagem" alt="" class="img-responsive">
+                        </div>
+                        <a class="detalhes-container" v-bind:href="noticia.Url">
+                            <p class="titulo-noticia">{{noticia.Titulo}}</p>
+                            <p class="data-noticia">{{noticia.DataDaPublicacao}}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner_apostar">
+        <div class="container-fluid banner_apostar-container">
+            @Html.Partial("_StaticBanner", "center-banner")
+        </div>
+    </section>
+
+    <section id="noticias">
+        <div class="container">
+            <div class="row row_loteria-individual" v-for="categoria in categorias">
+                <div class="col-sm-12 col-md-12">
+                    <h4>
+                        {{categoria.name}}
+                    </h4>
+                    <p class="pull-left">Encontre aqui as principais novidades e curiosidades sobre a {{categoria.name}}</p>
+                </div>
+                <div class="col-sm-3 col-md-3" v-for="noticia in categoria.noticias">
+                    <div v-on:click="go(noticia.Url)">
+                        <img v-bind:src="noticia.Imagem" class="img-responsive" alt="" />
+                        <div>
+                            <p class="noticia_title">{{noticia.Titulo}}</p>
+                            <p class="noticia_desc">{{noticia.ConteudoReduzido}}</p>
+                            <div class=" text-center">
+                                <div class="btn-group">
+                                    <a v-bind:href="noticia.Url" class="btn btn-success center-block bg bg-hover">ler mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div v-if="codigoLoteria == -1">
+        @Html.Partial("~/Views/Home/Premiacao.cshtml")
+    </div>
+
+
+    <section class="noticias_loterias-especiais" v-if="codigoLoteria == -1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>
+                        loterias especiais
+                    </h4>
+                </div>
+            </div>
+            <div class="row" v-for="especial in especiais">
+                <div class="col-sm-7 col-md-7" v-on:click="go(especial.noticias[0].Url)">
+                    <img v-bind:src="especial.noticias[0].Imagem" alt="" class="img-responsive">
+                </div>
+                <div class="col-sm-5 col-md-5" v-on:click="go(especial.noticias[0].Url)">
+                    <div class="">
+                        <p class="noticia_title">{{especial.noticias[0].Titulo}}</p>
+                        <p class="noticia_desc">
+                            {{especial.noticias[0].ConteudoReduzido}}
+                        </p>
+                        <div class="btn-group">
+                            <a v-bind:href="especial.noticias[0].Url" class="btn btn-success bg bg-hover">ler mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

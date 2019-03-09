@@ -1,0 +1,7 @@
+﻿{
+  "sorteOnlineAPI": "https://homolog.mobilefirst.sorteonline.com.br",
+  "url" : "loteriabrasil.com.br",
+  "urlHomologacao" : "loteriabrasil.azurewebsites.net",
+  "codigoSite": 5,
+  "midiaDefault": 50001
+}

@@ -1,0 +1,22 @@
+<div class="col-xs-12 col-md-3 hidden-sm hidden-xs" data-vue="MenuMinhaConta">
+                    <ul class="menu_cadastro">
+                        <li>
+                            <a href="/compras/listar#compras" v-bind:class="isSelected('compras')">compras</a>
+                        </li>
+                        <li>
+                            <a href="/compras/listar#apostas" v-bind:class="isSelected('apostas')">apostas</a>
+                        </li>
+                        <li>
+                            <a href="/usuario/extrato" v-bind:class="isSelected('saldo')">saldo</a>
+                        </li>
+                        <li>
+                            <a href="/usuario/cadastrar#dadospessoais" v-bind:class="isSelected('cadastro')">cadastro</a>
+                        </li>
+                        <li>
+                            <a href="/usuario/cadastrar#dadosdepagamento" v-bind:class="isSelected('cartoes')"> cartões</a>
+                        </li>
+                        <li>
+                            <a href="/premios/resgatar" v-bind:class="isSelected('resgatar')">resgatar prêmios</a>
+                        </li>
+                    </ul>
+                </div>

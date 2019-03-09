@@ -1,0 +1,97 @@
+@{
+    ViewData["Title"] = "Carrinho | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="noindex, follow">
+    <meta property="og:title" content="Carrinho | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta name="description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+@Html.Partial("_StaticBanner", "top-banner")
+
+<section class="content-carrinho">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 comprar-credito" data-vue="ComprarCreditos">
+                <h1 class="title-h1">Comprar Créditos</h1>
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="row">
+                        <p>Compre créditos para suas apostas sem sair de casa! Basta escolher o valor abaixo, escolher a sua forma de pagamento, finalizar a compra e começar a apostar!</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default btn-valor btn-valor_green"
+                                    v-bind:class="[ isSelected(30) ? 'selected' : '' ]"
+                                    v-on:click="select(30)">
+                                R$ 30,00
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default btn-valor btn-valor_green"
+                                    v-bind:class="[ isSelected(50) ? 'selected' : '' ]"
+                                    v-on:click="select(50)">
+                                R$ 50,00
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default btn-valor btn-valor_green"
+                                    v-bind:class="[ isSelected(100) ? 'selected' : '' ]"
+                                    v-on:click="select(100)">
+                                R$ 100,00
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default btn-valor btn-valor_green"
+                                    v-bind:class="[ isSelected(250) ? 'selected' : '' ]"
+                                    v-on:click="select(250)">
+                                R$ 250,00
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default btn-valor btn-valor_yellow"
+                                    v-bind:class="[ isSelected(500) ? 'selected' : '' ]"
+                                    v-on:click="select(500)">
+                                R$ 500,00
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default btn-valor btn-valor_yellow"
+                                    v-bind:class="[ isSelected(1000) ? 'selected' : '' ]"
+                                    v-on:click="select(1000)">
+                                R$ 1000,00
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" placeholder="Ou informe outro valor" aria-describedby="basic-addon1"
+                                   v-model.lazy="value" v-money="money">
+                        </div>
+                    </div>
+                    <div class="row" v-if="hasCoupom()">
+                        <div class="col-xs-12">
+                            <input v-model="coupom" type="text" placeholder="Cupom" aria-describedby="basic-addon1" class="form-control coupom" v-on:keyup.enter="validateCoupom()">
+                            <button type="button" class="btn btn-lg btn-success btn-pagar coupom" v-on:click="validateCoupom()">Ok</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <hr>
+                            <p class="total-compra">
+                                total:
+                                <span class="total-compra">{{value}}</span>
+                                <div v-if="coupomInfo && coupomInfo.ValorDesconto"><small>Desconto: {{coupomInfo.ValorDesconto.format("C2")}}</small></div>
+                                <div v-if="coupomInfo && coupomInfo.ValorBonus"><small>Bônus: {{coupomInfo.ValorBonus.format("C2")}}</small></div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @Html.Partial("../Carrinho/FormasPagamento")
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Depoimentos | Loteria Brasil";
+}
+@section metas{
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Depoimentos | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}/images/main/logo.png")" />
+    <meta property="og:description" content="Aposte nas principais loterias atraves do Portal Loteria Brasil: apostas na mega sena, duplasena e nas principais loterias de forma r&#225;pida e segura." />
+}
+<div data-vue="Depoimentos" id="depoimentosContainer">
+    <section class="banner-depoimentos" v-if="destaque">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <h1 class="pull-left title-h1">depoimentos</h1>
+                    <button type="button" class="btn btn-success btn-novo-depoimento" v-on:click="novoDepoimento()">Enviar Depoimento</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid banner-depoimentos_container">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+                            <div class="col-md-12 container-depoimentos">
+                                <p class="depoimento-texto">{{destaque.Texto}}</p>
+                                <p class="depoimento-data">{{destaque.Data}} - {{destaque.Hora}}</p>
+                                <p class="depoimento-autor">{{destaque.NomeUsuarioExibicao}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-depoimentos">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="row row-depoimentos" v-for="line in (displayQuantity / 2)">
+                        <div class="col-sm-6 col-md-6 container-depoimentos" v-if="depoimento(line, 0)">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <p class="depoimento-texto">
+                                        {{depoimento(line, 0).Texto}}
+                                    </p>
+                                    <p class="depoimento-data">{{depoimento(line, 0).Data}} - {{depoimento(line, 0).Hora}}</p>
+                                    <p class="depoimento-autor">{{depoimento(line, 0).NomeUsuarioExibicao}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 container-depoimentos" v-if="depoimento(line, 1)">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <p class="depoimento-texto">
+                                        {{depoimento(line, 1).Texto}}
+                                    </p>
+                                    <p class="depoimento-data">{{depoimento(line, 1).Data}} - {{depoimento(line, 1).Hora}}</p>
+                                    <p class="depoimento-autor">{{depoimento(line, 1).NomeUsuarioExibicao}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@Html.Partial("_NovoDepoimento")

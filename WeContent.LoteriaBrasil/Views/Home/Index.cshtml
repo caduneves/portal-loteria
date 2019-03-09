@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Loterias Online | Loteria Brasil";
+    ViewBag.isHome = true;
+}
+@section metas{
+    <meta name="description" content="Milhares de apostadores jogam na Mega-Sena, Lotofácil, Quina e demais loterias do Brasil através do Loteria Brasil. Aposte hoje de forma fácil e segura!" />
+    <meta property="og:title" content="Loterias Online | Loteria Brasil" />
+    <meta property="og:image" content="@($"{ViewBag.Url}images/main/logo.png")" />
+    <meta property="og:description" content="Milhares de apostadores jogam na Mega-Sena, Lotof&#225;cil, Quina e demais loterias do Brasil atrav&#233;s do Loteria Brasil. Aposte hoje de forma f&#225;cil e segura!" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Loteria Brasil" />
+    <meta name="twitter:description" content="Milhares de apostadores jogam na Mega-Sena, Lotofácil, Quina e demais loterias do Brasil através do Loteria Brasil. Aposte hoje de forma fácil e segura!" />
+    <meta name="twitter:image" content="http://www.loteriabrasil.com.br/images/main/logo.png" />
+    <meta name="robots" content="index, follow">
+
+}
+
+@Html.Partial("../Shared/Header/_Carousel")
+
+<div data-vue="Home">
+    @Html.Partial("Sliders/BannerLoterias")
+    @Html.Partial("Sliders/ComoApostar")
+</div>
+
+@Html.Partial("AposteAqui")
+
+@Html.Partial("Premiacao")
+
+@Html.Partial("Noticias")
+@Html.Partial("UltimosResultados")
+@Html.Partial("Depoimentos")
+@Html.Partial("Boletim")
